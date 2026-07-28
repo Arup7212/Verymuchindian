@@ -6,89 +6,337 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
-    "hero_jVaWmY": {
-      "type": "hero",
+    "slideshow_7JBU7R": {
+      "type": "slideshow",
       "blocks": {
-        "text_YLPk4p": {
-          "type": "text",
-          "name": "t:names.heading",
+        "slide_zPJNAj": {
+          "type": "_slide",
+          "name": "t:names.slide",
           "settings": {
-            "text": "<p>Browse our latest products</p>",
-            "text_color": "{{ settings.color_palette.background }}",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "h2",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "media_type_1": "image",
+            "image_1": "shopify://shop_images/VMI_Web_Banner_2_9_July_copy.webp",
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "background_color": "",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "padding-block-start": 48,
+            "padding-block-end": 48,
+            "padding-inline-start": 48,
+            "padding-inline-end": 48
           },
-          "blocks": {}
+          "blocks": {
+            "text_cAYT4J": {
+              "type": "text",
+              "name": "t:names.heading",
+              "disabled": true,
+              "settings": {
+                "text": "<h3>New arrivals</h3>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_cMTHgG": {
+              "type": "text",
+              "disabled": true,
+              "settings": {
+                "text": "<p>Introducing our latest products, made especially for the season. Shop your favorites before they're gone!</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 20,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "button_y6QeiE": {
+              "type": "button",
+              "disabled": true,
+              "settings": {
+                "label": "Shop now",
+                "link": "shopify://collections/all",
+                "open_in_new_tab": false,
+                "style_class": "button",
+                "custom_button_background": "{{ settings.color_palette.foreground }}",
+                "custom_button_text": "{{ settings.color_palette.background }}",
+                "custom_button_border": "{{ settings.color_palette.background }}",
+                "link_text_color": "",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_cAYT4J",
+            "text_cMTHgG",
+            "button_y6QeiE"
+          ]
         },
-        "button_H9gpTf": {
-          "type": "button",
-          "name": "t:names.button",
+        "slide_ULUF7Q": {
+          "type": "_slide",
           "settings": {
-            "label": "Shop all",
-            "link": "shopify://collections/all",
-            "open_in_new_tab": false,
-            "style_class": "button-custom",
-            "custom_button_background": "rgba(0,0,0,0)",
-            "custom_button_text": "{{ settings.color_palette.background }}",
-            "custom_button_border": "{{ settings.color_palette.background }}",
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
+            "media_type_1": "image",
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "background_color": "",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "padding-block-start": 48,
+            "padding-block-end": 48,
+            "padding-inline-start": 48,
+            "padding-inline-end": 48
           },
-          "blocks": {}
+          "blocks": {
+            "text_JzVJFa": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<h3>New arrivals</h3>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_EkGb9f": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Introducing our latest products, made especially for the season. Shop your favorites before they're gone!</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 20,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "button_xJNc63": {
+              "type": "button",
+              "settings": {
+                "label": "Shop now",
+                "link": "shopify://collections/all",
+                "open_in_new_tab": false,
+                "style_class": "button",
+                "custom_button_background": "{{ settings.color_palette.foreground }}",
+                "custom_button_text": "{{ settings.color_palette.background }}",
+                "custom_button_border": "{{ settings.color_palette.background }}",
+                "link_text_color": "",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_JzVJFa",
+            "text_EkGb9f",
+            "button_xJNc63"
+          ]
+        },
+        "slide_QrBYkJ": {
+          "type": "_slide",
+          "settings": {
+            "media_type_1": "image",
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "background_color": "",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "padding-block-start": 48,
+            "padding-block-end": 48,
+            "padding-inline-start": 48,
+            "padding-inline-end": 48
+          },
+          "blocks": {
+            "text_8dGAXt": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<h2>Bestsellers</h2>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_CWgnqY": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Discover the bestsellers that have captured the hearts of our customers with their perfect blend of functionality and style.</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 20,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "button_JMmwik": {
+              "type": "button",
+              "settings": {
+                "label": "Shop now",
+                "link": "shopify://collections/all",
+                "open_in_new_tab": false,
+                "style_class": "button",
+                "custom_button_background": "{{ settings.color_palette.foreground }}",
+                "custom_button_text": "{{ settings.color_palette.background }}",
+                "custom_button_border": "{{ settings.color_palette.background }}",
+                "link_text_color": "",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_8dGAXt",
+            "text_CWgnqY",
+            "button_JMmwik"
+          ]
         }
       },
       "block_order": [
-        "text_YLPk4p",
-        "button_H9gpTf"
+        "slide_zPJNAj",
+        "slide_ULUF7Q",
+        "slide_QrBYkJ"
       ],
-      "name": "t:names.hero",
+      "name": "t:names.slideshow_full_frame",
       "settings": {
-        "media_type_1": "image",
-        "media_type_2": "image",
-        "stack_media_on_mobile": false,
-        "custom_mobile_media": false,
-        "media_type_1_mobile": "image",
-        "media_type_2_mobile": "image",
-        "open_in_new_tab": false,
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "space-between",
-        "vertical_alignment": "flex-end",
-        "align_baseline": true,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "flex-end",
-        "gap": 24,
-        "section_width": "page-width",
-        "section_height": "medium",
-        "section_height_custom": 50,
-        "background_color": "rgba(0,0,0,0)",
-        "toggle_overlay": true,
-        "overlay_color": "#12121266",
-        "overlay_style": "solid",
-        "gradient_direction": "to bottom",
-        "blurred_reflection": false,
-        "reflection_opacity": 75,
-        "padding-block-start": 100,
-        "padding-block-end": 72
+        "display_mode": "full_frame",
+        "section_width": "full-width",
+        "full_frame_on_mobile": false,
+        "slideshow_gap": 12,
+        "corner_radius": 0,
+        "slide_height": "medium",
+        "content_position": "on-media",
+        "background_color": "",
+        "icons_style": "arrows_large",
+        "icons_shape": "none",
+        "slideshow_controls_style": "dots",
+        "autoplay": false,
+        "autoplay_speed": 4,
+        "padding-block-start": 0,
+        "padding-block-end": 0
       }
     },
     "product_list_fa6P9H": {
@@ -114,11 +362,13 @@
             "height": "fit",
             "custom_height": 100,
             "background_media": "none",
+            "background_color": "",
             "video_position": "cover",
             "background_image_position": "cover",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
+            "border_color": "",
             "border_radius": 0,
             "padding-block-start": 0,
             "padding-block-end": 0,
@@ -136,10 +386,12 @@
                 "alignment": "left",
                 "type_preset": "h4",
                 "font": "var(--font-body--family)",
+                "font_size": "1rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
+                "text_color": "",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
@@ -157,6 +409,10 @@
                 "label": "View all",
                 "open_in_new_tab": false,
                 "style_class": "link",
+                "custom_button_background": "{{ settings.color_palette.foreground }}",
+                "custom_button_text": "{{ settings.color_palette.background }}",
+                "custom_button_border": "{{ settings.color_palette.background }}",
+                "link_text_color": "",
                 "width": "fit-content",
                 "custom_width": 100,
                 "width_mobile": "fit-content",
@@ -176,9 +432,11 @@
           "static": true,
           "settings": {
             "product_card_gap": 4,
+            "background_color": "",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
+            "border_color": "",
             "border_radius": 0,
             "padding-block-start": 0,
             "padding-block-end": 0,
@@ -194,6 +452,7 @@
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
+                "border_color": "",
                 "border_radius": 0,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
@@ -216,6 +475,7 @@
                 "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
+                "text_color": "",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
@@ -241,6 +501,7 @@
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
+                "text_color": "",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -256,6 +517,7 @@
           ]
         }
       },
+      "disabled": true,
       "name": "t:names.product_list",
       "settings": {
         "collection": "all",
@@ -276,10 +538,633 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "tradition_collections_CUAxEP": {
+      "type": "tradition-collections",
+      "blocks": {
+        "trust_feature_EA4LCY": {
+          "type": "trust_feature",
+          "settings": {
+            "icon_svg": "",
+            "title": "4.8/5",
+            "subtitle": "From 10,000+ Happy Customers",
+            "link": ""
+          }
+        },
+        "trust_feature_PGzjUk": {
+          "type": "trust_feature",
+          "settings": {
+            "icon_svg": "",
+            "title": "Featured On",
+            "subtitle": "Shark Tank India Season 2",
+            "link": ""
+          }
+        },
+        "trust_feature_gVQtgc": {
+          "type": "trust_feature",
+          "settings": {
+            "icon_svg": "",
+            "title": "Silk Mark",
+            "subtitle": "Certified",
+            "link": ""
+          }
+        },
+        "trust_feature_8Qqz9i": {
+          "type": "trust_feature",
+          "settings": {
+            "icon_svg": "",
+            "title": "100% Authentic",
+            "subtitle": "Handloom Paithani",
+            "link": ""
+          }
+        },
+        "trust_feature_kYb9YK": {
+          "type": "trust_feature",
+          "settings": {
+            "icon_svg": "",
+            "title": "Worldwide",
+            "subtitle": "Shipping",
+            "link": ""
+          }
+        },
+        "collection_box_fBN77i": {
+          "type": "collection_box",
+          "settings": {
+            "collection": "",
+            "title": "ILKULS & KHUN",
+            "url": ""
+          }
+        },
+        "collection_box_WKUYit": {
+          "type": "collection_box",
+          "settings": {
+            "collection": "",
+            "title": "PAITHANI",
+            "url": ""
+          }
+        },
+        "collection_box_TQw7zT": {
+          "type": "collection_box",
+          "settings": {
+            "collection": "",
+            "title": "GADWAL",
+            "url": ""
+          }
+        },
+        "collection_box_78yjFk": {
+          "type": "collection_box",
+          "settings": {
+            "collection": "",
+            "title": "KANJEEVARAM",
+            "url": ""
+          }
+        },
+        "collection_box_jxTm3m": {
+          "type": "collection_box",
+          "settings": {
+            "collection": "",
+            "title": "BANARASI",
+            "url": ""
+          }
+        },
+        "collection_box_AQcMbp": {
+          "type": "collection_box",
+          "settings": {
+            "collection": "",
+            "title": "CHANDERI",
+            "url": ""
+          }
+        },
+        "collection_box_h8NEzN": {
+          "type": "collection_box",
+          "settings": {
+            "collection": "",
+            "title": "MAHESHWARI",
+            "url": ""
+          }
+        },
+        "collection_box_UA9nzh": {
+          "type": "collection_box",
+          "settings": {
+            "collection": "",
+            "title": "TUSSAR SILK",
+            "url": ""
+          }
+        },
+        "collection_box_WPeH64": {
+          "type": "collection_box",
+          "settings": {
+            "collection": "",
+            "title": "ORGANZA & LINEN",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "trust_feature_EA4LCY",
+        "trust_feature_PGzjUk",
+        "trust_feature_gVQtgc",
+        "trust_feature_8Qqz9i",
+        "trust_feature_kYb9YK",
+        "collection_box_fBN77i",
+        "collection_box_WKUYit",
+        "collection_box_TQw7zT",
+        "collection_box_78yjFk",
+        "collection_box_jxTm3m",
+        "collection_box_AQcMbp",
+        "collection_box_h8NEzN",
+        "collection_box_UA9nzh",
+        "collection_box_WPeH64"
+      ],
+      "name": "Tradition & Collections",
+      "settings": {
+        "background_color": "#FAF8F5",
+        "show_dot_bg": true,
+        "dot_color": "#B8B09D",
+        "brand_title": "Thread . Time . Tradition",
+        "brand_subtitle_1": "Very Much Indian Brings Together India's Most Skilled Weavers And Their Timeless Craft - Pure Handloom Sarees And Textiles.",
+        "brand_subtitle_2": "Woven Thread By Thread, Region By Region, Story By Story.",
+        "collection_heading": "Our Collection"
+      }
+    },
+    "shop_by_fabric_EVqkJQ": {
+      "type": "shop-by-fabric",
+      "blocks": {
+        "fabric_item_99bCdP": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "title": "Pure Silk",
+            "url": ""
+          }
+        },
+        "fabric_item_Xmp3iB": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "title": "Chiffon",
+            "url": ""
+          }
+        },
+        "fabric_item_VrRFUt": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "title": "Cotton Linen",
+            "url": ""
+          }
+        },
+        "fabric_item_HDqXEM": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "title": "Cotton Silk",
+            "url": ""
+          }
+        },
+        "fabric_item_c4BdLN": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "title": "Dupion Silk",
+            "url": ""
+          }
+        },
+        "fabric_item_CYKHKf": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "title": "Katan Silk",
+            "url": ""
+          }
+        },
+        "fabric_item_9KPjAJ": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "title": "Organza",
+            "url": ""
+          }
+        },
+        "fabric_item_wd4zbY": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "title": "Mul Cotton",
+            "url": ""
+          }
+        },
+        "fabric_item_YmNitR": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "title": "Tussar Silk",
+            "url": ""
+          }
+        },
+        "fabric_item_PHHxmB": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "title": "Georgette",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "fabric_item_99bCdP",
+        "fabric_item_Xmp3iB",
+        "fabric_item_VrRFUt",
+        "fabric_item_HDqXEM",
+        "fabric_item_c4BdLN",
+        "fabric_item_CYKHKf",
+        "fabric_item_9KPjAJ",
+        "fabric_item_wd4zbY",
+        "fabric_item_YmNitR",
+        "fabric_item_PHHxmB"
+      ],
+      "name": "Shop By Fabric",
+      "settings": {
+        "background_color": "#FFFFFF",
+        "heading": "Shop By Fabric",
+        "subtitle": "Ten Fabrics, Each With Its Own Hand — From Featherlight Organza To Everyday Mul Cotton.",
+        "enable_autoplay": true,
+        "autoplay_speed": 4,
+        "circle_size": 190,
+        "show_arrows": true
+      }
+    },
+    "best_sellers_products_yb6QDW": {
+      "type": "best-sellers-products",
+      "blocks": {
+        "custom_product_EegDPN": {
+          "type": "custom_product",
+          "settings": {
+            "title": "Chandrakor",
+            "subtitle": "Pure Silk Maharani Paithani · Maharani Pallu · Peacock Blue",
+            "category": "PAITHANI · YEOLA",
+            "badge_text": "LIMITED",
+            "badge_type": "limited",
+            "manhours": "450hrs",
+            "price": "₹28,560",
+            "compare_price": "₹32,436",
+            "save_percentage": "Save 12%",
+            "url": ""
+          }
+        },
+        "custom_product_LYTwaN": {
+          "type": "custom_product",
+          "settings": {
+            "title": "Chandrakor",
+            "subtitle": "Pure Silk Maharani Paithani · Maharani Pallu · Peacock Blue",
+            "category": "PAITHANI · YEOLA",
+            "badge_text": "SALE",
+            "badge_type": "sale",
+            "manhours": "450hrs",
+            "price": "₹28,560",
+            "compare_price": "₹32,436",
+            "save_percentage": "Save 12%",
+            "url": ""
+          }
+        },
+        "custom_product_fmrAWf": {
+          "type": "custom_product",
+          "settings": {
+            "title": "Chandrakor",
+            "subtitle": "Pure Silk Maharani Paithani · Maharani Pallu · Peacock Blue",
+            "category": "PAITHANI · YEOLA",
+            "badge_text": "BESTSELLER",
+            "badge_type": "bestseller",
+            "manhours": "450hrs",
+            "price": "₹28,560",
+            "compare_price": "₹32,436",
+            "save_percentage": "Save 12%",
+            "url": ""
+          }
+        },
+        "custom_product_xp87iz": {
+          "type": "custom_product",
+          "settings": {
+            "title": "Chandrakor",
+            "subtitle": "Pure Silk Maharani Paithani · Maharani Pallu · Peacock Blue",
+            "category": "PAITHANI · YEOLA",
+            "badge_text": "LIMITED",
+            "badge_type": "limited",
+            "manhours": "450hrs",
+            "price": "₹28,560",
+            "compare_price": "₹32,436",
+            "save_percentage": "Save 12%",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "custom_product_EegDPN",
+        "custom_product_LYTwaN",
+        "custom_product_fmrAWf",
+        "custom_product_xp87iz"
+      ],
+      "name": "Best Sellers Products",
+      "settings": {
+        "background_color": "#FFFFFF",
+        "heading": "Best Sellers",
+        "collection": "",
+        "sort_by": "best-selling",
+        "category_display_type": "collection",
+        "show_category": true,
+        "manhours_bg_color": "#f7941e",
+        "manhours_text_color": "#1e2447",
+        "products_to_show": 4,
+        "show_view_all": true,
+        "view_all_text": "View All",
+        "view_all_url": ""
+      }
+    },
+    "festive_collection_H9MFYc": {
+      "type": "festive-collection",
+      "blocks": {
+        "collection_card_NDKDja": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
+          }
+        },
+        "collection_card_jiG3ma": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
+          }
+        },
+        "collection_card_bQPxW3": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
+          }
+        },
+        "collection_card_erY4zm": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
+          }
+        },
+        "collection_card_tYYrFy": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
+          }
+        },
+        "collection_card_E4wnNA": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_card_NDKDja",
+        "collection_card_jiG3ma",
+        "collection_card_bQPxW3",
+        "collection_card_erY4zm",
+        "collection_card_tYYrFy",
+        "collection_card_E4wnNA"
+      ],
+      "name": "Festive Collection Grid",
+      "settings": {
+        "background_color": "#FFFFFF",
+        "heading": "Season Finest: Festive Collection",
+        "subtitle": "Every Rite Has Its Colour, And Every Colour Has Its Weave — From The Haldi Yellow To The Maroon Kept For The Puja Room."
+      }
+    },
+    "best_sellers_products_UkXTJU": {
+      "type": "best-sellers-products",
+      "blocks": {
+        "custom_product_BpBWiL": {
+          "type": "custom_product",
+          "settings": {
+            "title": "Chandrakor",
+            "subtitle": "Pure Silk Maharani Paithani · Maharani Pallu · Peacock Blue",
+            "category": "PAITHANI · YEOLA",
+            "badge_text": "LIMITED",
+            "badge_type": "limited",
+            "manhours": "450hrs",
+            "price": "₹28,560",
+            "compare_price": "₹32,436",
+            "save_percentage": "Save 12%",
+            "url": ""
+          }
+        },
+        "custom_product_cYxURw": {
+          "type": "custom_product",
+          "settings": {
+            "title": "Chandrakor",
+            "subtitle": "Pure Silk Maharani Paithani · Maharani Pallu · Peacock Blue",
+            "category": "PAITHANI · YEOLA",
+            "badge_text": "SALE",
+            "badge_type": "sale",
+            "manhours": "450hrs",
+            "price": "₹28,560",
+            "compare_price": "₹32,436",
+            "save_percentage": "Save 12%",
+            "url": ""
+          }
+        },
+        "custom_product_g7g8xb": {
+          "type": "custom_product",
+          "settings": {
+            "title": "Chandrakor",
+            "subtitle": "Pure Silk Maharani Paithani · Maharani Pallu · Peacock Blue",
+            "category": "PAITHANI · YEOLA",
+            "badge_text": "BESTSELLER",
+            "badge_type": "bestseller",
+            "manhours": "450hrs",
+            "price": "₹28,560",
+            "compare_price": "₹32,436",
+            "save_percentage": "Save 12%",
+            "url": ""
+          }
+        },
+        "custom_product_mRMwD8": {
+          "type": "custom_product",
+          "settings": {
+            "title": "Chandrakor",
+            "subtitle": "Pure Silk Maharani Paithani · Maharani Pallu · Peacock Blue",
+            "category": "PAITHANI · YEOLA",
+            "badge_text": "LIMITED",
+            "badge_type": "limited",
+            "manhours": "450hrs",
+            "price": "₹28,560",
+            "compare_price": "₹32,436",
+            "save_percentage": "Save 12%",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "custom_product_BpBWiL",
+        "custom_product_cYxURw",
+        "custom_product_g7g8xb",
+        "custom_product_mRMwD8"
+      ],
+      "name": "Best Sellers Products",
+      "settings": {
+        "background_color": "#FFFFFF",
+        "heading": "Latest Weaves",
+        "collection": "",
+        "sort_by": "best-selling",
+        "category_display_type": "collection",
+        "show_category": true,
+        "manhours_bg_color": "#f7941e",
+        "manhours_text_color": "#1e2447",
+        "products_to_show": 4,
+        "show_view_all": true,
+        "view_all_text": "View All",
+        "view_all_url": ""
+      }
+    },
+    "proud_moment_YwpchN": {
+      "type": "proud-moment",
+      "name": "Proud Moment",
+      "settings": {
+        "background_color": "#FFFFFF",
+        "image_top_alt": "Shark Tank India - Very Much Indian",
+        "image_bottom_alt": "Very Much Indian Saree Collection",
+        "heading_pre": "Proud Moment For",
+        "heading_brand": "Very Much Indian",
+        "heading_line2": "Traditional Weavers",
+        "description": "Very Much Indian was featured on for reviving the Shark Tank india heritage of Indian handlooms and empowering local weavers. Our journey is a tribute to the beauty of Indian craftsmanship, culture, and the timeless elegance of sarees cherished by millions of women.",
+        "endorsement_label": "Invested & Endorsed By",
+        "endorsement_name": "Namita Thapar",
+        "stat1_value": "4.9/5",
+        "stat1_label": "40K+ Reviews",
+        "stat2_value": "50K+",
+        "stat2_label": "Happy Customers",
+        "stat3_value": "100%",
+        "stat3_label": "Authentic",
+        "cta_text": "Shop Namita's Curated Collection",
+        "cta_collection": "",
+        "cta_url": ""
+      }
+    },
+    "shop_by_price_xfF4YB": {
+      "type": "shop-by-price",
+      "blocks": {
+        "price_range_argUje": {
+          "type": "price_range",
+          "settings": {
+            "collection": "",
+            "price_label": "5K - 10K",
+            "url": ""
+          }
+        },
+        "price_range_Rwp4Ac": {
+          "type": "price_range",
+          "settings": {
+            "collection": "",
+            "price_label": "10K - 20K",
+            "url": ""
+          }
+        },
+        "price_range_4VJTdn": {
+          "type": "price_range",
+          "settings": {
+            "collection": "",
+            "price_label": "20K - 30K",
+            "url": ""
+          }
+        },
+        "price_range_qfK6Fr": {
+          "type": "price_range",
+          "settings": {
+            "collection": "",
+            "price_label": "30K - 40K",
+            "url": ""
+          }
+        },
+        "price_range_xNcHwd": {
+          "type": "price_range",
+          "settings": {
+            "collection": "",
+            "price_label": "40K - 50K",
+            "url": ""
+          }
+        },
+        "price_range_CzYni3": {
+          "type": "price_range",
+          "settings": {
+            "collection": "",
+            "price_label": "Premium",
+            "url": ""
+          }
+        },
+        "price_range_UNVaDb": {
+          "type": "price_range",
+          "settings": {
+            "collection": "",
+            "price_label": "Luxury",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "price_range_argUje",
+        "price_range_Rwp4Ac",
+        "price_range_4VJTdn",
+        "price_range_qfK6Fr",
+        "price_range_xNcHwd",
+        "price_range_CzYni3",
+        "price_range_UNVaDb"
+      ],
+      "name": "Shop By Price",
+      "settings": {
+        "background_color": "#FFFFFF",
+        "heading": "Shop By Price",
+        "subtitle": "India's Most Loved Artisanal Brand, Handcrafted By 17000+ Artisans",
+        "enable_autoplay": true,
+        "autoplay_speed": 4,
+        "card_width": 180,
+        "show_arrows": true
+      }
     }
   },
   "order": [
-    "hero_jVaWmY",
-    "product_list_fa6P9H"
+    "slideshow_7JBU7R",
+    "product_list_fa6P9H",
+    "tradition_collections_CUAxEP",
+    "shop_by_fabric_EVqkJQ",
+    "best_sellers_products_yb6QDW",
+    "festive_collection_H9MFYc",
+    "best_sellers_products_UkXTJU",
+    "shop_by_price_xfF4YB",
+    "proud_moment_YwpchN"
   ]
 }
