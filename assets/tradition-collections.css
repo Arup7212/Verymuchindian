@@ -1,0 +1,359 @@
+/* tradition-collections.css */
+.tradition-collections-section {
+  position: relative;
+  width: 100%;
+  padding: 50px 0 80px 0;
+  background-color: var(--tc-bg-color, #faf8f5);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Dotted Matrix Background Container with Vertical Mask */
+.tc-dot-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 520px;
+  background-image: radial-gradient(var(--tc-dot-color, #b8b09d) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+  background-position: center top;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.95) 15%, rgba(0,0,0,0.95) 75%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.95) 15%, rgba(0,0,0,0.95) 75%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tc-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+/* --- Trust Bar Section --- */
+.tc-trust-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 10px 0 35px 0;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.tc-trust-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 12px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.tc-trust-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1.5px;
+  background: linear-gradient(180deg, rgba(247, 148, 30, 0.05) 0%, #e07a3c 50%, rgba(247, 148, 30, 0.05) 100%);
+}
+
+.tc-trust-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.tc-trust-item:hover .tc-trust-icon-wrapper {
+  transform: translateY(-4px) scale(1.08);
+}
+
+.tc-trust-icon {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.tc-trust-title {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e2447;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.tc-trust-subtitle {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #4a5068;
+  line-height: 1.35;
+  margin-top: 3px;
+}
+
+/* --- Brand Heading & Subtitle Banner --- */
+.tc-brand-banner {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 30px auto;
+  padding: 0 16px;
+}
+
+.tc-main-title {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font-size: 46px;
+  font-weight: 500;
+  color: #242946;
+  letter-spacing: 0.04em;
+  margin: 0 0 14px 0;
+  line-height: 1.2;
+}
+
+.tc-subtitle-1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 16px;
+  color: #585d73;
+  line-height: 1.6;
+  margin: 0 0 6px 0;
+  letter-spacing: 0.01em;
+}
+
+.tc-subtitle-2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 15px;
+  color: #6d7288;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Exact Figma Underline / Divider */
+.tc-divider {
+  display: block;
+  margin: 22px auto 36px auto;
+  width: 180px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, rgba(247, 148, 30, 0) 0%, #f7941e 25%, #e07a3c 50%, #f7941e 75%, rgba(247, 148, 30, 0) 100%);
+}
+
+/* --- Our Collection Heading --- */
+.tc-collection-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.tc-section-title {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: 40px;
+  font-weight: 500;
+  color: #242946;
+  margin: 0 0 4px 0;
+  letter-spacing: 0.02em;
+}
+
+/* --- Collection Grid --- */
+.tc-collection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.tc-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(30, 36, 71, 0.08);
+  aspect-ratio: 4 / 5;
+  background-color: #e8e4df;
+  text-decoration: none;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.tc-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(30, 36, 71, 0.18);
+}
+
+.tc-card-image-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.tc-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.tc-card:hover .tc-card-image {
+  transform: scale(1.06);
+}
+
+.tc-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(15, 18, 35, 0.88) 0%,
+    rgba(15, 18, 35, 0.4) 35%,
+    rgba(15, 18, 35, 0) 70%
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  transition: background 0.3s ease;
+}
+
+.tc-card:hover .tc-card-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(15, 18, 35, 0.95) 0%,
+    rgba(15, 18, 35, 0.5) 40%,
+    rgba(15, 18, 35, 0) 75%
+  );
+}
+
+.tc-card-title {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.tc-card:hover .tc-card-title {
+  transform: translateY(-2px);
+  color: #fff6ed;
+}
+
+/* Animations */
+.tc-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.tc-fade-in.tc-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .tc-dot-background {
+    height: 580px;
+  }
+
+  .tc-collection-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .tc-trust-bar {
+    flex-wrap: wrap;
+    gap: 24px 0;
+  }
+
+  .tc-trust-item {
+    flex: 1 1 33.333%;
+  }
+
+  .tc-trust-item:nth-child(3)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .tradition-collections-section {
+    padding: 35px 0 60px 0;
+  }
+
+  .tc-dot-background {
+    height: 640px;
+  }
+
+  .tc-main-title {
+    font-size: 32px;
+  }
+  
+  .tc-section-title {
+    font-size: 30px;
+  }
+
+  .tc-trust-item {
+    flex: 1 1 50%;
+  }
+
+  .tc-trust-item::after {
+    display: none;
+  }
+
+  .tc-collection-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .tc-card-title {
+    font-size: 18px;
+  }
+
+  .tc-divider {
+    width: 140px;
+    margin: 18px auto 28px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .tc-dot-background {
+    height: 900px;
+  }
+
+  .tc-trust-item {
+    flex: 1 1 100%;
+    padding: 10px 0;
+  }
+
+  .tc-collection-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .tc-main-title {
+    font-size: 26px;
+  }
+
+  .tc-subtitle-1 {
+    font-size: 14px;
+  }
+
+  .tc-subtitle-2 {
+    font-size: 13px;
+  }
+}

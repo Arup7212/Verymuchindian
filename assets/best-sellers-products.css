@@ -1,0 +1,347 @@
+/* best-sellers-products.css */
+.best-sellers-section {
+  position: relative;
+  width: 100%;
+  padding: 60px 0 80px 0;
+  background-color: var(--bsp-bg-color, #ffffff);
+  box-sizing: border-box;
+}
+
+.bsp-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+/* Header Bar with View All */
+.bsp-header-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.bsp-title-wrapper {
+  text-align: center;
+}
+
+.bsp-title {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: 44px;
+  font-weight: 500;
+  color: #242946;
+  letter-spacing: 0.02em;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.bsp-divider {
+  display: block;
+  margin: 16px auto 0 auto;
+  width: 160px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, rgba(247, 148, 30, 0) 0%, #f7941e 25%, #e07a3c 50%, #f7941e 75%, rgba(247, 148, 30, 0) 100%);
+}
+
+.bsp-view-all {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #e07a3c;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.bsp-view-all:hover {
+  color: #c85a1c;
+  transform: translateY(-50%) translateX(3px);
+}
+
+.bsp-view-all-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid #e07a3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.bsp-view-all:hover .bsp-view-all-icon {
+  background-color: #e07a3c;
+  border-color: #e07a3c;
+}
+
+.bsp-view-all:hover .bsp-view-all-icon svg {
+  stroke: #ffffff;
+}
+
+.bsp-view-all-icon svg {
+  width: 14px;
+  height: 14px;
+  stroke: #e07a3c;
+  stroke-width: 2;
+  fill: none;
+  transition: stroke 0.3s ease;
+}
+
+/* Products Grid */
+.bsp-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+/* Product Card - Equal Height & Baseline Alignment */
+.bsp-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.bsp-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Image Container */
+.bsp-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #f0ebe4;
+  box-shadow: 0 8px 24px rgba(30, 36, 71, 0.06);
+}
+
+.bsp-product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.bsp-card:hover .bsp-product-image {
+  transform: scale(1.05);
+}
+
+/* Dynamic Vertical Ribbon Badges (Top-Left) */
+.bsp-ribbon-badge {
+  position: absolute;
+  top: 0;
+  left: 14px;
+  padding: 10px 6px;
+  writing-mode: vertical-lr;
+  text-transform: uppercase;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: #ffffff;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  z-index: 3;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.bsp-ribbon-badge.limited {
+  background: linear-gradient(180deg, #998f86 0%, #7d736a 100%);
+}
+
+.bsp-ribbon-badge.sale {
+  background: linear-gradient(180deg, #e63956 0%, #c81d3a 100%);
+}
+
+.bsp-ribbon-badge.bestseller {
+  background: linear-gradient(180deg, #2b3252 0%, #1e2447 100%);
+}
+
+.bsp-ribbon-badge.new {
+  background: linear-gradient(180deg, #2a9d8f 0%, #1d7268 100%);
+}
+
+.bsp-ribbon-badge.pre-order {
+  background: linear-gradient(180deg, #8e44ad 0%, #6c3483 100%);
+}
+
+/* Product Info Container - Strictly Equal Card Heights */
+.bsp-info {
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Sub-header / Category Tag */
+.bsp-category {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #8c90a4;
+  letter-spacing: 0.12em;
+  margin-bottom: 6px;
+}
+
+/* Product Title - Equal 2-Line Height */
+.bsp-product-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 21px;
+  font-weight: 500;
+  color: #1e2447;
+  margin: 0 0 6px 0;
+  line-height: 1.25;
+  height: 2.5em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Subtitle Line - Equal 2-Line Height */
+.bsp-product-subtitle {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 12px;
+  color: #7b8096;
+  margin: 0 0 14px 0;
+  line-height: 1.4;
+  height: 2.8em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
+/* Craftsmanship / Manhours Badge with Customizable Background */
+.bsp-manhours-badge {
+  display: inline-block;
+  align-self: flex-start;
+  background: linear-gradient(90deg, var(--bsp-mh-bg, #f7941e) 0%, rgba(247, 148, 30, 0.4) 65%, rgba(247, 148, 30, 0) 100%);
+  color: var(--bsp-mh-color, #1e2447);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 5px 16px 5px 12px;
+  border-radius: 14px;
+  margin-bottom: 16px;
+}
+
+.bsp-manhours-badge strong,
+.bsp-manhours-badge b {
+  font-weight: 700;
+  color: var(--bsp-mh-color, #1e2447);
+}
+
+/* Price Box - Pushed to Absolute Bottom Baseline */
+.bsp-price-box {
+  margin-top: auto;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.bsp-price {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #1e2447;
+  line-height: 1;
+}
+
+.bsp-compare-price {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  color: #9296aa;
+  text-decoration: line-through;
+}
+
+.bsp-save-tag {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #e63956;
+}
+
+/* Responsive Styles */
+@media (max-width: 1100px) {
+  .bsp-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  .bsp-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 640px) {
+  .best-sellers-section {
+    padding: 40px 0 60px 0;
+  }
+
+  .bsp-header-bar {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .bsp-view-all {
+    position: static;
+    transform: none;
+  }
+
+  .bsp-view-all:hover {
+    transform: translateX(3px);
+  }
+
+  .bsp-title {
+    font-size: 30px;
+  }
+
+  .bsp-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .bsp-product-title {
+    font-size: 18px;
+    height: 2.5em;
+  }
+
+  .bsp-product-subtitle {
+    height: 2.8em;
+  }
+
+  .bsp-price {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 420px) {
+  .bsp-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

@@ -1,0 +1,421 @@
+{{ 'tradition-collections.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'tradition-collections.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign trust_blocks = section.blocks | where: 'type', 'trust_feature'
+  assign collection_blocks = section.blocks | where: 'type', 'collection_box'
+-%}
+
+<div 
+  id="TraditionCollections-{{ section.id }}" 
+  class="tradition-collections-section"
+  data-section-type="tradition-collections"
+  style="--tc-bg-color: {{ section.settings.background_color | default: '#faf8f5' }}; --tc-dot-color: {{ section.settings.dot_color | default: '#b8b09d' }};"
+>
+  {%- if section.settings.show_dot_bg -%}
+    <div class="tc-dot-background"></div>
+  {%- endif -%}
+
+  <div class="tc-container">
+    {%- if trust_blocks.size > 0 -%}
+      <div class="tc-trust-bar">
+        {%- for block in trust_blocks -%}
+          <div class="tc-trust-item" {{ block.shopify_attributes }}>
+            {%- if block.settings.link != blank -%}
+              <a href="{{ block.settings.link }}" class="tc-trust-link">
+            {%- endif -%}
+            
+            <div class="tc-trust-icon-wrapper">
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 140 | image_tag: class: 'tc-trust-icon', loading: 'lazy', alt: block.settings.title }}
+              {%- elsif block.settings.icon_svg != blank -%}
+                {{ block.settings.icon_svg }}
+              {%- else -%}
+                {%- case forloop.index -%}
+                  {%- when 1 -%}
+                    <!-- Shooting Star Icon -->
+                    <svg class="tc-trust-icon" width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 28L4 20" stroke="#F7941E" stroke-width="2.5" stroke-linecap="round"/>
+                      <path d="M16 20L10 12" stroke="#F7941E" stroke-width="2.5" stroke-linecap="round"/>
+                      <path d="M22 14L18 4" stroke="#F7941E" stroke-width="2.5" stroke-linecap="round"/>
+                      <path d="M34 10L38.2 20.4L49.5 21.2L40.8 28.5L43.5 39.5L34 33.6L24.5 39.5L27.2 28.5L18.5 21.2L29.8 20.4L34 10Z" stroke="#F7941E" stroke-width="3" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  {%- when 2 -%}
+                    <!-- Shark Tank Badge Icon -->
+                    <svg class="tc-trust-icon" width="56" height="50" viewBox="0 0 56 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="56" height="50" rx="4" fill="#0080A4"/>
+                      <text x="28" y="16" fill="#FFFFFF" font-size="10" font-weight="900" font-family="Arial Black, sans-serif" text-anchor="middle">SHARK</text>
+                      <text x="28" y="29" fill="#FFFFFF" font-size="10" font-weight="900" font-family="Arial Black, sans-serif" text-anchor="middle">TANK</text>
+                      <text x="28" y="42" fill="#F7941E" font-size="9" font-weight="900" font-family="Arial Black, sans-serif" text-anchor="middle">INDIA</text>
+                    </svg>
+                  {%- when 3 -%}
+                    <!-- Silk Mark Certified Icon -->
+                    <svg class="tc-trust-icon" width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M27 16C23 11 15 15 19 23C13 23 13 32 20 30C23 35 31 35 34 30C41 32 41 23 35 23C39 15 31 11 27 16Z" stroke="#E07A3C" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                      <text x="27" y="28" fill="#E07A3C" font-size="11" font-weight="900" font-family="Georgia, serif" text-anchor="middle">SM</text>
+                      <circle cx="39" cy="15" r="3" stroke="#E07A3C" stroke-width="1" fill="none"/>
+                      <text x="39" y="17.5" fill="#E07A3C" font-size="4" font-weight="700" text-anchor="middle">R</text>
+                    </svg>
+                  {%- when 4 -%}
+                    <!-- Handloom Mark Icon -->
+                    <svg class="tc-trust-icon" width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="7" y="7" width="40" height="40" rx="3" stroke="#B85D19" stroke-width="2.5" fill="none"/>
+                      <rect x="10" y="10" width="34" height="6" fill="#B85D19"/>
+                      <text x="27" y="15" fill="#FFFFFF" font-size="5" font-weight="800" font-family="Arial, sans-serif" text-anchor="middle" letter-spacing="0.5">HANDLOOM MARK</text>
+                      <path d="M16 20V42M27 20V42M38 20V42" stroke="#B85D19" stroke-width="1.5"/>
+                      <path d="M12 28H42M12 36H42" stroke="#B85D19" stroke-width="1.5"/>
+                      <rect x="20" y="24" width="14" height="10" stroke="#B85D19" stroke-width="2" fill="#FAF8F5"/>
+                    </svg>
+                  {%- when 5 -%}
+                    <!-- Worldwide Shipping Icon -->
+                    <svg class="tc-trust-icon" width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="27" cy="27" r="19" stroke="#E07A3C" stroke-width="3" fill="none"/>
+                      <ellipse cx="27" cy="27" rx="9.5" ry="19" stroke="#E07A3C" stroke-width="2.2" fill="none"/>
+                      <line x1="8" y1="27" x2="46" y2="27" stroke="#E07A3C" stroke-width="2.2"/>
+                      <line x1="11" y1="18" x2="43" y2="18" stroke="#E07A3C" stroke-width="1.8"/>
+                      <line x1="11" y1="36" x2="43" y2="36" stroke="#E07A3C" stroke-width="1.8"/>
+                    </svg>
+                {%- endcase -%}
+              {%- endif -%}
+            </div>
+
+            {%- if block.settings.title != blank -%}
+              <div class="tc-trust-title">{{ block.settings.title }}</div>
+            {%- endif -%}
+
+            {%- if block.settings.subtitle != blank -%}
+              <div class="tc-trust-subtitle">{{ block.settings.subtitle }}</div>
+            {%- endif -%}
+
+            {%- if block.settings.link != blank -%}
+              </a>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.brand_title != blank or section.settings.brand_subtitle_1 != blank -%}
+      <div class="tc-brand-banner">
+        {%- if section.settings.brand_title != blank -%}
+          <h2 class="tc-main-title">{{ section.settings.brand_title }}</h2>
+        {%- endif -%}
+
+        {%- if section.settings.brand_subtitle_1 != blank -%}
+          <p class="tc-subtitle-1">{{ section.settings.brand_subtitle_1 }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.brand_subtitle_2 != blank -%}
+          <p class="tc-subtitle-2">{{ section.settings.brand_subtitle_2 }}</p>
+        {%- endif -%}
+
+        <div class="tc-divider"></div>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.collection_heading != blank -%}
+      <div class="tc-collection-header">
+        <h2 class="tc-section-title">{{ section.settings.collection_heading }}</h2>
+        <div class="tc-divider"></div>
+      </div>
+    {%- endif -%}
+
+    {%- if collection_blocks.size > 0 -%}
+      <div class="tc-collection-grid">
+        {%- for block in collection_blocks -%}
+          {%- liquid
+            assign target_collection = block.settings.collection
+            
+            if block.settings.title != blank
+              assign card_title = block.settings.title
+            elsif target_collection != blank and target_collection.title != blank
+              assign card_title = target_collection.title
+            else
+              assign card_title = 'COLLECTION ' | append: forloop.index
+            endif
+
+            if block.settings.url != blank
+              assign card_url = block.settings.url
+            elsif target_collection != blank
+              assign card_url = target_collection.url
+            else
+              assign card_url = '#'
+            endif
+
+            assign card_image = null
+            if block.settings.image != blank
+              assign card_image = block.settings.image
+            elsif target_collection != blank and target_collection.featured_image != blank
+              assign card_image = target_collection.featured_image
+            endif
+          -%}
+
+          <a href="{{ card_url }}" class="tc-card" {{ block.shopify_attributes }}>
+            <div class="tc-card-image-wrapper">
+              {%- if card_image != blank -%}
+                {{ card_image | image_url: width: 800 | image_tag: class: 'tc-card-image', loading: 'lazy', alt: card_title }}
+              {%- else -%}
+                {%- comment -%} High resolution demo saree image placeholders for instant preview {%- endcomment -%}
+                {%- case forloop.index -%}
+                  {%- when 1 -%}
+                    <img class="tc-card-image" loading="lazy" src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800&auto=format&fit=crop" alt="{{ card_title }}">
+                  {%- when 2 -%}
+                    <img class="tc-card-image" loading="lazy" src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=800&auto=format&fit=crop" alt="{{ card_title }}">
+                  {%- when 3 -%}
+                    <img class="tc-card-image" loading="lazy" src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=800&auto=format&fit=crop" alt="{{ card_title }}">
+                  {%- when 4 -%}
+                    <img class="tc-card-image" loading="lazy" src="https://images.unsplash.com/photo-1609357605129-26f69add5d6e?q=80&w=800&auto=format&fit=crop" alt="{{ card_title }}">
+                  {%- when 5 -%}
+                    <img class="tc-card-image" loading="lazy" src="https://images.unsplash.com/photo-1610030469668-98e550d6193c?q=80&w=800&auto=format&fit=crop" alt="{{ card_title }}">
+                  {%- when 6 -%}
+                    <img class="tc-card-image" loading="lazy" src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=800&auto=format&fit=crop" alt="{{ card_title }}">
+                  {%- when 7 -%}
+                    <img class="tc-card-image" loading="lazy" src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=800&auto=format&fit=crop" alt="{{ card_title }}">
+                  {%- when 8 -%}
+                    <img class="tc-card-image" loading="lazy" src="https://images.unsplash.com/photo-1609357605129-26f69add5d6e?q=80&w=800&auto=format&fit=crop" alt="{{ card_title }}">
+                  {%- when 9 -%}
+                    <img class="tc-card-image" loading="lazy" src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800&auto=format&fit=crop" alt="{{ card_title }}">
+                  {%- else -%}
+                    {{ 'collection-1' | placeholder_svg_tag: 'tc-card-image' }}
+                {%- endcase -%}
+              {%- endif -%}
+            </div>
+            <div class="tc-card-overlay">
+              <h3 class="tc-card-title">{{ card_title }}</h3>
+            </div>
+          </a>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Tradition & Collections",
+  "class": "section-tradition-collections",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#FAF8F5"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dot_bg",
+      "label": "Show Dot Pattern Background",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "dot_color",
+      "label": "Dot Pattern Color",
+      "default": "#B8B09D"
+    },
+    {
+      "type": "header",
+      "content": "Brand Banner Content"
+    },
+    {
+      "type": "text",
+      "id": "brand_title",
+      "label": "Main Brand Title",
+      "default": "Thread . Time . Tradition"
+    },
+    {
+      "type": "text",
+      "id": "brand_subtitle_1",
+      "label": "Subtitle Line 1",
+      "default": "Very Much Indian Brings Together India's Most Skilled Weavers And Their Timeless Craft - Pure Handloom Sarees And Textiles."
+    },
+    {
+      "type": "text",
+      "id": "brand_subtitle_2",
+      "label": "Subtitle Line 2",
+      "default": "Woven Thread By Thread, Region By Region, Story By Story."
+    },
+    {
+      "type": "header",
+      "content": "Collection Section Header"
+    },
+    {
+      "type": "text",
+      "id": "collection_heading",
+      "label": "Collection Heading",
+      "default": "Our Collection"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "trust_feature",
+      "name": "Trust Feature",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Custom Icon Image"
+        },
+        {
+          "type": "html",
+          "id": "icon_svg",
+          "label": "Custom SVG Code (Optional)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Feature Title Line 1",
+          "default": "4.8/5"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Feature Subtitle Line 2",
+          "default": "From 10,000+ Happy Customers"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Optional Link"
+        }
+      ]
+    },
+    {
+      "type": "collection_box",
+      "name": "Collection Box",
+      "limit": 9,
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Select Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Custom Card Image (Overrides collection image)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Custom Collection Title",
+          "info": "Leave blank to use Shopify Collection Title"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Custom Link URL",
+          "info": "Leave blank to use Shopify Collection URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tradition & Collections",
+      "settings": {
+        "show_dot_bg": true,
+        "brand_title": "Thread . Time . Tradition",
+        "brand_subtitle_1": "Very Much Indian Brings Together India's Most Skilled Weavers And Their Timeless Craft - Pure Handloom Sarees And Textiles.",
+        "brand_subtitle_2": "Woven Thread By Thread, Region By Region, Story By Story.",
+        "collection_heading": "Our Collection"
+      },
+      "blocks": [
+        {
+          "type": "trust_feature",
+          "settings": {
+            "title": "4.8/5",
+            "subtitle": "From 10,000+ Happy Customers"
+          }
+        },
+        {
+          "type": "trust_feature",
+          "settings": {
+            "title": "Featured On",
+            "subtitle": "Shark Tank India Season 2"
+          }
+        },
+        {
+          "type": "trust_feature",
+          "settings": {
+            "title": "Silk Mark",
+            "subtitle": "Certified"
+          }
+        },
+        {
+          "type": "trust_feature",
+          "settings": {
+            "title": "100% Authentic",
+            "subtitle": "Handloom Paithani"
+          }
+        },
+        {
+          "type": "trust_feature",
+          "settings": {
+            "title": "Worldwide",
+            "subtitle": "Shipping"
+          }
+        },
+        {
+          "type": "collection_box",
+          "settings": {
+            "title": "ILKULS & KHUN"
+          }
+        },
+        {
+          "type": "collection_box",
+          "settings": {
+            "title": "PAITHANI"
+          }
+        },
+        {
+          "type": "collection_box",
+          "settings": {
+            "title": "GADWAL"
+          }
+        },
+        {
+          "type": "collection_box",
+          "settings": {
+            "title": "KANJEEVARAM"
+          }
+        },
+        {
+          "type": "collection_box",
+          "settings": {
+            "title": "BANARASI"
+          }
+        },
+        {
+          "type": "collection_box",
+          "settings": {
+            "title": "CHANDERI"
+          }
+        },
+        {
+          "type": "collection_box",
+          "settings": {
+            "title": "MAHESHWARI"
+          }
+        },
+        {
+          "type": "collection_box",
+          "settings": {
+            "title": "TUSSAR SILK"
+          }
+        },
+        {
+          "type": "collection_box",
+          "settings": {
+            "title": "ORGANZA & LINEN"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
