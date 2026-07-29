@@ -146,7 +146,10 @@
       "foreground": "#000000",
       "color1": "#333333",
       "color2": "#DFDFDF"
-    }
+    },
+    "swym_advanced_collections_wishlist_enabled": true,
+    "swym_advanced_pdp_button_enabled": true,
+    "swym_header_icon_enabled": false
   },
   "presets": {
     "Horizon": {
