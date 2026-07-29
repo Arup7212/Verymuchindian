@@ -1381,47 +1381,53 @@
         "logo_aTjCJr": {
           "type": "logo",
           "settings": {
+            "image": "shopify://shop_images/Group_219.png",
             "link": ""
           }
         },
-        "logo_EpYDTb": {
+        "logo_hLeAAG": {
           "type": "logo",
           "settings": {
+            "image": "shopify://shop_images/Group_219.png",
             "link": ""
           }
         },
-        "logo_axzpkf": {
+        "logo_iEbrti": {
           "type": "logo",
           "settings": {
+            "image": "shopify://shop_images/Group_219.png",
             "link": ""
           }
         },
-        "logo_RJcWAh": {
+        "logo_EpqQWG": {
           "type": "logo",
           "settings": {
+            "image": "shopify://shop_images/Group_219.png",
             "link": ""
           }
         },
-        "logo_WAM4b9": {
+        "logo_faEjkm": {
           "type": "logo",
           "settings": {
+            "image": "shopify://shop_images/Group_219.png",
             "link": ""
           }
         },
-        "logo_tFVLmb": {
+        "logo_d9kwFC": {
           "type": "logo",
           "settings": {
+            "image": "shopify://shop_images/Group_219.png",
             "link": ""
           }
         }
       },
       "block_order": [
         "logo_aTjCJr",
-        "logo_EpYDTb",
-        "logo_axzpkf",
-        "logo_RJcWAh",
-        "logo_WAM4b9",
-        "logo_tFVLmb"
+        "logo_hLeAAG",
+        "logo_iEbrti",
+        "logo_EpqQWG",
+        "logo_faEjkm",
+        "logo_d9kwFC"
       ],
       "name": "In The Press",
       "settings": {
