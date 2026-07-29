@@ -17,34 +17,36 @@
         "announcement_BxgCk9": {
           "type": "_announcement",
           "settings": {
-<<<<<<< HEAD
-            "text": "Welcome to our store",
+            "text": "3 day International Shipping",
             "link": "",
-=======
-            "text": "✈️ 3 DAY INTERNATIONAL SHIPPING",
             "font": "var(--font-subheading--family)",
             "font_size": "0.75rem",
+            "weight": "",
             "letter_spacing": "normal",
-            "case": "none"
+            "case": "none",
+            "text_color": ""
           },
           "blocks": {}
         },
-        "announcement_made_in_india": {
+        "announcement_rQqxUL": {
           "type": "_announcement",
           "settings": {
-            "text": "🏵️ AUTHENTIC HANDLOOM PAITHANI",
+            "text": "Authentic handloom paithani",
+            "link": "",
             "font": "var(--font-subheading--family)",
             "font_size": "0.75rem",
+            "weight": "",
             "letter_spacing": "normal",
-            "case": "none"
+            "case": "none",
+            "text_color": ""
           },
           "blocks": {}
         },
-        "announcement_shark_tank": {
+        "announcement_aEfqAc": {
           "type": "_announcement",
           "settings": {
-            "text": "🏷️ SILK MARK CERTIFIED",
->>>>>>> e145572 (new)
+            "text": "Silk mark Certified",
+            "link": "",
             "font": "var(--font-subheading--family)",
             "font_size": "0.75rem",
             "weight": "",
@@ -57,17 +59,18 @@
       },
       "block_order": [
         "announcement_BxgCk9",
-        "announcement_made_in_india",
-        "announcement_shark_tank"
+        "announcement_rQqxUL",
+        "announcement_aEfqAc"
       ],
       "name": "t:names.announcement_bar",
       "settings": {
-        "speed": 4,
-        "section_width": "full-width",
-        "background_color": "#1b2460",
-        "divider_width": 0,
-        "padding-block-start": 10,
-        "padding-block-end": 10
+        "speed": 5,
+        "section_width": "page-width",
+        "background_color": "{{ settings.color_palette.background }}",
+        "divider_width": 1,
+        "divider_color": "{{ settings.color_palette.color2 }}",
+        "padding-block-start": 15,
+        "padding-block-end": 15
       }
     },
     "header_section": {
@@ -88,6 +91,7 @@
           "static": true,
           "settings": {
             "menu": "main-menu",
+            "category_menu": "main-menu",
             "background_color": "{{ settings.color_palette.background }}",
             "text_color": "",
             "type_font_primary_size": "0.875rem",
