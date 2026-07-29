@@ -1161,6 +1161,7 @@
         "image_card_kawiEh": {
           "type": "image_card",
           "settings": {
+            "image": "shopify://shop_images/HMP_3586.webp",
             "title": "Shark Tank",
             "description": "Season 2 Feature",
             "link": "",
@@ -1170,6 +1171,7 @@
         "image_card_JXPF7D": {
           "type": "image_card",
           "settings": {
+            "image": "shopify://shop_images/HMP_2595.webp",
             "title": "Shark Tank",
             "description": "Season 2 Feature",
             "link": "",
@@ -1179,6 +1181,7 @@
         "image_card_KbEmDp": {
           "type": "image_card",
           "settings": {
+            "image": "shopify://shop_images/HEM_8721.webp",
             "title": "Shark Tank",
             "description": "Season 2 Feature",
             "link": "",
@@ -1188,6 +1191,7 @@
         "image_card_X8M7Wf": {
           "type": "image_card",
           "settings": {
+            "image": "shopify://shop_images/HMP_0001-Copy.webp",
             "title": "Shark Tank",
             "description": "Season 2 Feature",
             "link": "",
