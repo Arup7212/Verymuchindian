@@ -517,7 +517,6 @@
           ]
         }
       },
-      "disabled": true,
       "name": "t:names.product_list",
       "settings": {
         "collection": "all",
@@ -678,9 +677,9 @@
       ],
       "name": "Tradition & Collections",
       "settings": {
-        "background_color": "#FAF8F5",
+        "background_color": "#faf8f5",
         "show_dot_bg": true,
-        "dot_color": "#B8B09D",
+        "dot_color": "#b8b09d",
         "brand_title": "Thread . Time . Tradition",
         "brand_subtitle_1": "Very Much Indian Brings Together India's Most Skilled Weavers And Their Timeless Craft - Pure Handloom Sarees And Textiles.",
         "brand_subtitle_2": "Woven Thread By Thread, Region By Region, Story By Story.",
@@ -785,7 +784,7 @@
       ],
       "name": "Shop By Fabric",
       "settings": {
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "heading": "Shop By Fabric",
         "subtitle": "Ten Fabrics, Each With Its Own Hand — From Featherlight Organza To Everyday Mul Cotton.",
         "enable_autoplay": true,
@@ -866,7 +865,7 @@
       ],
       "name": "Best Sellers Products",
       "settings": {
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "heading": "Best Sellers",
         "collection": "",
         "sort_by": "best-selling",
@@ -960,7 +959,7 @@
       ],
       "name": "Festive Collection Grid",
       "settings": {
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "heading": "Season Finest: Festive Collection",
         "subtitle": "Every Rite Has Its Colour, And Every Colour Has Its Weave — From The Haldi Yellow To The Maroon Kept For The Puja Room."
       }
@@ -1037,7 +1036,7 @@
       ],
       "name": "Best Sellers Products",
       "settings": {
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "heading": "Latest Weaves",
         "collection": "",
         "sort_by": "best-selling",
@@ -1049,30 +1048,6 @@
         "show_view_all": true,
         "view_all_text": "View All",
         "view_all_url": ""
-      }
-    },
-    "proud_moment_YwpchN": {
-      "type": "proud-moment",
-      "name": "Proud Moment",
-      "settings": {
-        "background_color": "#FFFFFF",
-        "image_top_alt": "Shark Tank India - Very Much Indian",
-        "image_bottom_alt": "Very Much Indian Saree Collection",
-        "heading_pre": "Proud Moment For",
-        "heading_brand": "Very Much Indian",
-        "heading_line2": "Traditional Weavers",
-        "description": "Very Much Indian was featured on for reviving the Shark Tank india heritage of Indian handlooms and empowering local weavers. Our journey is a tribute to the beauty of Indian craftsmanship, culture, and the timeless elegance of sarees cherished by millions of women.",
-        "endorsement_label": "Invested & Endorsed By",
-        "endorsement_name": "Namita Thapar",
-        "stat1_value": "4.9/5",
-        "stat1_label": "40K+ Reviews",
-        "stat2_value": "50K+",
-        "stat2_label": "Happy Customers",
-        "stat3_value": "100%",
-        "stat3_label": "Authentic",
-        "cta_text": "Shop Namita's Curated Collection",
-        "cta_collection": "",
-        "cta_url": ""
       }
     },
     "shop_by_price_xfF4YB": {
@@ -1146,7 +1121,7 @@
       ],
       "name": "Shop By Price",
       "settings": {
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "heading": "Shop By Price",
         "subtitle": "India's Most Loved Artisanal Brand, Handcrafted By 17000+ Artisans",
         "enable_autoplay": true,
@@ -1154,17 +1129,41 @@
         "card_width": 180,
         "show_arrows": true
       }
+    },
+    "proud_moment_YwpchN": {
+      "type": "proud-moment",
+      "name": "Proud Moment",
+      "settings": {
+        "background_color": "#ffffff",
+        "image_top_alt": "Shark Tank India - Very Much Indian",
+        "image_bottom_alt": "Very Much Indian Saree Collection",
+        "heading_pre": "Proud Moment For",
+        "heading_brand": "Very Much Indian",
+        "heading_line2": "Traditional Weavers",
+        "description": "Very Much Indian was featured on for reviving the Shark Tank india heritage of Indian handlooms and empowering local weavers. Our journey is a tribute to the beauty of Indian craftsmanship, culture, and the timeless elegance of sarees cherished by millions of women.",
+        "endorsement_label": "Invested & Endorsed By",
+        "endorsement_name": "Namita Thapar",
+        "stat1_value": "4.9/5",
+        "stat1_label": "40K+ Reviews",
+        "stat2_value": "50K+",
+        "stat2_label": "Happy Customers",
+        "stat3_value": "100%",
+        "stat3_label": "Authentic",
+        "cta_text": "Shop Namita's Curated Collection",
+        "cta_collection": "",
+        "cta_url": ""
+      }
     }
   },
   "order": [
     "slideshow_7JBU7R",
-    "product_list_fa6P9H",
     "tradition_collections_CUAxEP",
     "shop_by_fabric_EVqkJQ",
     "best_sellers_products_yb6QDW",
     "festive_collection_H9MFYc",
     "best_sellers_products_UkXTJU",
     "shop_by_price_xfF4YB",
-    "proud_moment_YwpchN"
+    "proud_moment_YwpchN",
+    "product_list_fa6P9H"
   ]
 }
