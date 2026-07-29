@@ -123,6 +123,40 @@
     position: absolute;
     inset: 0;
   }
+
+  /* Desktop Override for Multi-Announcement display */
+  @media screen and (min-width: 750px) {
+    .announcement-bar__slider slideshow-arrows {
+      display: none !important;
+    }
+
+    .announcement-bar__slides {
+      display: flex !important;
+      width: 100% !important;
+      max-width: 1200px !important;
+      justify-content: space-evenly !important;
+      align-items: center !important;
+      margin: 0 auto;
+    }
+
+    .announcement-bar__slides > * {
+      grid-area: auto !important;
+      flex: 1 1 0;
+      display: flex !important;
+      justify-content: center;
+    }
+
+    .announcement-bar__slide,
+    .announcement-bar__slide[aria-hidden='true'] {
+      opacity: 1 !important;
+      visibility: visible !important;
+      position: static !important;
+    }
+    
+    .announcement-bar__slide .announcement-bar__text {
+      white-space: nowrap;
+    }
+  }
 {% endstylesheet %}
 
 {% schema %}

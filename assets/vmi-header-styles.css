@@ -1,0 +1,194 @@
+/*
+ * VMI Header Brand Styles — v3
+ * Very Much Indian — Matches header.html exactly
+ * ================================================================= */
+
+/* ── Brand Color Variables ───────────────────────────────────────── */
+:root {
+  --vmi-navy: #1b2460;
+  --vmi-gold: #f5a800;
+  --vmi-teal: #00a99d;
+  --vmi-pink: #e84393;
+}
+
+/* =================================================================
+   1. ANNOUNCEMENT BAR — navy background, white text
+   ================================================================= */
+#header-group .announcement-bar,
+.announcement-bar {
+  background-color: var(--vmi-navy) !important;
+}
+
+#header-group .announcement-bar .announcement-bar__text,
+#header-group .announcement-bar .announcement-bar__text *,
+#header-group .announcement-bar p,
+#header-group .announcement-bar a {
+  color: #ffffff !important;
+}
+
+/* =================================================================
+   2. MAIN HEADER ROW — white bg, navy bottom border, min-height
+   ================================================================= */
+.header__row--top {
+  background: #ffffff !important;
+  border-bottom: 2.5px solid var(--vmi-navy) !important;
+  box-shadow: 0 2px 8px rgba(27, 36, 96, 0.07) !important;
+  min-height: 70px;
+}
+
+/* =================================================================
+   3. DESKTOP 3-COLUMN GRID FIX
+   The theme sets display:contents on .header__column in drawer mode,
+   which makes grid children float into the 5-col mobile template.
+   We override this on desktop (≥750px) to restore the 3-col layout.
+   ================================================================= */
+@media screen and (min-width: 750px) {
+
+  /* KEY FIX: restore columns from display:contents → display:flex */
+  #header-component[data-menu-style='drawer'] .header__column {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  /* 3-column grid: [1fr | auto | 1fr] */
+  #header-component[data-menu-style='drawer'] .header__columns,
+  .header__row--top .header__columns {
+    display: grid !important;
+    grid-template-columns: 1fr auto 1fr !important;
+    grid-template-areas: 'left center right' !important;
+    grid-template-rows: auto !important;
+    align-items: center !important;
+    column-gap: 0 !important;
+    padding-inline: 24px !important;
+    padding-block: 0 !important;
+  }
+
+  /* Left column → hamburger + SHOP BY CATEGORY */
+  #header-component[data-menu-style='drawer'] .header__column--left,
+  .header__row--top .header__column--left {
+    grid-area: left !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Center column → VMI logo + Shark Tank badge */
+  #header-component[data-menu-style='drawer'] .header__column--center,
+  .header__row--top .header__column--center {
+    grid-area: center !important;
+    justify-content: center !important;
+  }
+
+  /* Right column → search + account + cart */
+  #header-component[data-menu-style='drawer'] .header__column--right,
+  .header__row--top .header__column--right {
+    grid-area: right !important;
+    justify-content: flex-end !important;
+  }
+
+  /* Reset direct grid-area overrides the theme puts on child elements
+     when in drawer mode (logo gets center, actions get rightB, etc.) */
+  #header-component[data-menu-style='drawer'] .header-logo {
+    grid-area: unset !important;
+  }
+
+  #header-component[data-menu-style='drawer'] header-actions {
+    grid-area: unset !important;
+    justify-self: unset !important;
+  }
+
+  #header-component[data-menu-style='drawer'] .search-action {
+    grid-area: unset !important;
+  }
+}
+
+/* =================================================================
+   6. RIGHT-COLUMN ICONS — search, account, cart
+   ================================================================= */
+header-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 2px !important;
+}
+
+.header-actions__action svg,
+.header-actions__action .account-button__icon {
+  color: var(--vmi-navy) !important;
+}
+
+/* =================================================================
+   7. RESPONSIVE — mobile layout
+   ================================================================= */
+@media screen and (max-width: 749px) {
+
+  /* Hide text label on mobile, showing only hamburger */
+  .vmi-category-dropdown-wrapper {
+    display: none !important;
+  }
+
+  /* Hide badge on mobile to save space */
+  .vmi-brand-shark-badge {
+    display: none !important;
+  }
+
+  .vmi-brand-name-accent {
+    font-size: 1.55rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  /* Hide the injected Shop By Category in the drawer on desktop (since it's outside) */
+  .vmi-mobile-category-menu {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .vmi-very-much {
+    font-size: 0.5rem;
+  }
+
+  .vmi-indian {
+    font-size: 1.3rem;
+  }
+}
+
+/* =================================================================
+   7. VMI FALLBACK LOGO
+   ================================================================= */
+.vmi-header-brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+}
+.vmi-brand-name-primary {
+  font-family: 'Outfit', Arial, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--vmi-navy);
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+.vmi-brand-name-accent {
+  font-family: 'Outfit', 'Georgia', serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  font-style: italic;
+  color: var(--vmi-navy);
+  letter-spacing: -0.03em;
+  text-transform: none;
+  margin-top: 2px;
+}
+.vmi-brand-shark-badge {
+  font-family: 'Outfit', Arial, sans-serif;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--vmi-navy);
+  background-color: #f5f5f5;
+  padding: 4px 8px;
+  border-radius: 4px;
+}

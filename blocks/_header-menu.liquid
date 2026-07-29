@@ -25,6 +25,7 @@
         block: block,
         section: section
       %}
+      {% render 'vmi-shop-by-category', block: block %}
     </div>
 
   {% when 'navigation_bar' %}
@@ -716,7 +717,13 @@
     {
       "type": "link_list",
       "id": "menu",
-      "label": "t:settings.menu",
+      "label": "Side Drawer Menu (Click ☰ Icon)",
+      "default": "main-menu"
+    },
+    {
+      "type": "link_list",
+      "id": "category_menu",
+      "label": "Shop By Category Dropdown Menu (Hover 'Shop By Category')",
       "default": "main-menu"
     },
     {

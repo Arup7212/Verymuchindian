@@ -1167,6 +1167,23 @@
     font-family: var(--menu-localization-font);
     font-size: var(--menu-localization-font-size);
   }
+
+  /* VMI Dual-Menu Overrides */
+  .header__drawer {
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .header-menu {
+    display: none !important;
+  }
+
+  @media screen and (min-width: 750px) {
+    #header-component :is(.dropdown-localization) {
+      display: flex !important;
+    }
+  }
 {% endstylesheet %}
 
 {% unless request.design_mode %}

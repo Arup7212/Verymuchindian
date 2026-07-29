@@ -101,6 +101,32 @@
           class="menu-drawer__menu has-submenu"
           role="list"
         >
+          {%- comment -%} VMI: Inject Shop By Category menu on mobile only {%- endcomment -%}
+          {%- if block_settings.category_menu != blank -%}
+            <li class="menu-drawer__list-item--deep vmi-mobile-category-menu">
+              {% capture cat_accordion_children %}
+                <details id="Details-menu-drawer-shop-by-category">
+                  <summary class="menu-drawer__menu-item menu-drawer__menu-item--mainlist menu-drawer__animated-element focus-inset">
+                    <span class="menu-drawer__menu-item-text wrap-text">Shop By Category</span>
+                    <span class="svg-wrapper icon-plus">
+                      {{- 'icon-plus.svg' | inline_asset_content -}}
+                    </span>
+                  </summary>
+                  <ul class="menu-drawer__menu menu-drawer__menu--childlist menu-drawer__animated-element details-content" role="list" tabindex="-1">
+                    {%- for cat_link in block_settings.category_menu.links -%}
+                      <li class="menu-drawer__list-item" style="--menu-drawer-animation-index: {{ forloop.index }};">
+                        <a href="{{ cat_link.url }}" class="menu-drawer__menu-item menu-drawer__menu-item--child focus-inset">
+                          <span class="menu-drawer__menu-item-text wrap-text">{{ cat_link.title | escape }}</span>
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                </details>
+              {% endcapture %}
+              {% render 'accordion-custom-component', children: cat_accordion_children, open_by_default_on_mobile: false %}
+            </li>
+          {%- endif -%}
+
           {%- comment -%}
             Handle menus with fewer than 3 levels of links
           {%- endcomment -%}

@@ -1,0 +1,44 @@
+﻿{% comment %}
+  VMI Logo Badge Snippet
+  Renders the "VERY MUCH indian™" wordmark with the Shark Tank India badge.
+  Injected inside the header-logo block anchor tag.
+{% endcomment %}
+
+<span class="vmi-logo-wrap" aria-label="{{ shop.name }}">
+
+  {{- '<!-- VMI wordmark -->' -}}
+  <span class="vmi-wordmark">
+
+    <span class="vmi-top-row">
+      <span class="vmi-very-much">VERY MUCH</span>
+
+      {{- '<!-- Diamond cluster -->' -}}
+      <span class="vmi-diamonds" aria-hidden="true">
+        <span class="vmi-diamond vmi-diamond--pink vmi-diamond--sm" style="transform:rotate(45deg) translateY(-2px)"></span>
+        <span class="vmi-diamond vmi-diamond--teal"></span>
+        <span class="vmi-diamond vmi-diamond--gold vmi-diamond--sm" style="transform:rotate(45deg) translateY(2px)"></span>
+        <span class="vmi-diamond vmi-diamond--navy vmi-diamond--sm" style="transform:rotate(45deg) translateY(-1px); margin-left:1px"></span>
+      </span>
+
+      <span class="vmi-tm" aria-hidden="true">&#8482;</span>
+    </span>
+
+    <span class="vmi-indian-wrap">
+      <span class="vmi-indian">indian</span>
+      <span class="vmi-indian-underline" aria-hidden="true"></span>
+    </span>
+
+  </span>
+
+  {{- '<!-- Divider -->' -}}
+  <span class="vmi-divider" aria-hidden="true"></span>
+
+  {{- '<!-- Shark Tank badge -->' -}}
+  <span class="vmi-sharktank" aria-label="As seen on Shark Tank India">
+    <span class="vmi-st-as">AS SEEN ON</span>
+    <span class="vmi-st-shark">SHARK</span>
+    <span class="vmi-st-tank">TANK</span>
+    <span class="vmi-st-india">INDIA</span>
+  </span>
+
+</span>
