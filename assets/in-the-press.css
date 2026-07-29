@@ -1,0 +1,99 @@
+/* ══════════════════════════════════════════════════════════════
+   In The Press Section Styles
+   ══════════════════════════════════════════════════════════════ */
+
+.in-the-press-section {
+  padding: var(--padding-block-start, 60px) 0 var(--padding-block-end, 60px) 0;
+  background-color: var(--background-color, #ffffff);
+  overflow: hidden;
+}
+
+/* Header Styles */
+.itp__header {
+  text-align: center;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.itp__title {
+  font-family: var(--font-heading-family, 'Playfair Display', Georgia, serif);
+  font-size: 42px;
+  font-weight: 500;
+  color: #34336e;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+
+.itp__divider {
+  width: 150px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #f7941e 50%, transparent 100%);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Logo Container */
+.itp__ticker-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.itp__ticker-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.itp__logo-item {
+  flex: 1 1 120px; /* Let items grow and shrink */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.itp__logo-image {
+  max-width: 100%;
+  max-height: 50px; /* Controls the size, matches the Figma proportion */
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .in-the-press-section {
+    padding-block: 40px;
+  }
+  
+  .itp__title {
+    font-size: 32px;
+  }
+
+  .itp__ticker-track {
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .itp__logo-item {
+    flex: 0 0 calc(33.333% - 20px);
+  }
+
+  .itp__logo-image {
+    max-height: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .itp__logo-item {
+    flex: 0 0 calc(50% - 20px);
+  }
+}

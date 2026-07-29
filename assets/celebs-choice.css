@@ -1,0 +1,198 @@
+/* ══════════════════════════════════════════════════════════════
+   Celeb's Choice Section Styles
+   ══════════════════════════════════════════════════════════════ */
+
+.celebs-choice-section {
+  padding: var(--padding-block-start, 60px) 0 var(--padding-block-end, 60px) 0;
+  background-color: var(--background-color, #ffffff);
+  overflow: hidden;
+}
+
+.celebs-choice__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+.celebs-choice__header {
+  text-align: center;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.celebs-choice__title {
+  font-family: var(--font-heading-family, 'Playfair Display', Georgia, serif);
+  font-size: 42px;
+  font-weight: 500;
+  color: #34336e; /* Dark blue matching design */
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+
+.celebs-choice__subtitle {
+  font-family: var(--font-body-family, 'Inter', sans-serif);
+  font-size: 13px;
+  color: #7b7e8e;
+  margin: 0 0 24px 0;
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
+}
+
+.celebs-choice__divider {
+  width: 150px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #f7941e 50%, transparent 100%);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Grid Styles */
+.celebs-choice__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Card Styles */
+.celebs-choice__item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  /* Default to 100% width, overridden by specific size classes on desktop */
+  width: 100%;
+  aspect-ratio: 16/11; /* Gives a nice rectangular shape */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transform: translateZ(0); /* Force hardware acceleration for rounding */
+}
+
+.celebs-choice__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.celebs-choice__image-wrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.celebs-choice__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.celebs-choice__item:hover .celebs-choice__image {
+  transform: scale(1.05);
+}
+
+/* Frosted Glass Content Overlay */
+.celebs-choice__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  padding: 16px 24px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.75) 60%, rgba(255, 255, 255, 0.2) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.celebs-choice__card-title {
+  font-family: var(--font-body-family, 'Inter', sans-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: #34336e; /* Dark blue */
+  margin: 0;
+  line-height: 1.3;
+}
+
+.celebs-choice__card-desc {
+  font-family: var(--font-body-family, 'Inter', sans-serif);
+  font-size: 12px;
+  font-weight: 400;
+  color: #7b7e8e; /* Gray text */
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Desktop sizing classes (Flexbox approach) */
+@media screen and (min-width: 768px) {
+  /* Subtract gap from percentage width */
+  .celebs-choice__item--wide {
+    width: calc(60% - 10px);
+  }
+  
+  .celebs-choice__item--standard {
+    width: calc(40% - 10px);
+  }
+
+  .celebs-choice__item--half {
+    width: calc(50% - 10px);
+  }
+
+  .celebs-choice__item--full {
+    width: 100%;
+  }
+}
+
+/* Mobile Layout - Swipeable Carousel */
+@media screen and (max-width: 767px) {
+  .celebs-choice-section {
+    padding-block: 40px;
+  }
+  
+  .celebs-choice__title {
+    font-size: 32px;
+  }
+  
+  .celebs-choice__container {
+    padding-right: 0; /* Let cards bleed to right edge */
+  }
+
+  .celebs-choice__grid {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding-right: 20px; /* Right padding for last item */
+    gap: 16px;
+    padding-bottom: 20px; /* Space for scrollbar */
+    /* Hide scrollbar */
+    scrollbar-width: none; 
+  }
+  
+  .celebs-choice__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .celebs-choice__item {
+    flex: 0 0 calc(85vw - 20px);
+    scroll-snap-align: center;
+    aspect-ratio: 4/5; /* Taller on mobile */
+  }
+  
+  /* Fix first item alignment on scroll */
+  .celebs-choice__item:first-child {
+    scroll-margin-left: 20px;
+  }
+}

@@ -1,0 +1,209 @@
+{{ 'celebs-choice.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'celebs-choice.js' | asset_url }}" defer="defer"></script>
+
+<celebs-choice class="celebs-choice-section" style="--padding-block-start: {{ section.settings.padding_top }}px; --padding-block-end: {{ section.settings.padding_bottom }}px; --background-color: {{ section.settings.background_color }};">
+  <div class="celebs-choice__container">
+    
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="celebs-choice__header">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="celebs-choice__title">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        
+        {%- if section.settings.subheading != blank -%}
+          <p class="celebs-choice__subheading celebs-choice__subtitle">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+        
+        <div class="celebs-choice__divider"></div>
+      </div>
+    {%- endif -%}
+
+    <ul class="celebs-choice__grid">
+      {%- for block in section.blocks -%}
+        <li class="celebs-choice__item celebs-choice__item--{{ block.settings.block_width }}" {{ block.shopify_attributes }}>
+          {%- if block.settings.link != blank -%}
+            <a href="{{ block.settings.link }}" class="celebs-choice__link">
+          {%- else -%}
+            <div class="celebs-choice__link">
+          {%- endif -%}
+            
+            <div class="celebs-choice__image-wrap">
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 1200 | image_tag: 
+                  class: 'celebs-choice__image', 
+                  loading: 'lazy', 
+                  widths: '400, 600, 800, 1200', 
+                  sizes: '(max-width: 767px) 85vw, (max-width: 1200px) 50vw, 33vw' 
+                }}
+              {%- else -%}
+                {{ 'image' | placeholder_svg_tag: 'celebs-choice__image placeholder-svg' }}
+              {%- endif -%}
+            </div>
+            
+            <div class="celebs-choice__content">
+              {%- if block.settings.title != blank -%}
+                <h3 class="celebs-choice__card-title">{{ block.settings.title }}</h3>
+              {%- endif -%}
+              
+              {%- if block.settings.description != blank -%}
+                <p class="celebs-choice__card-desc">{{ block.settings.description }}</p>
+              {%- endif -%}
+            </div>
+            
+          {%- if block.settings.link != blank -%}
+            </a>
+          {%- else -%}
+            </div>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+    
+  </div>
+</celebs-choice>
+
+{% schema %}
+{
+  "name": "Celeb's Choice",
+  "tag": "section",
+  "class": "section-celebs-choice",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Celeb's Choice"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "The Drapes Our Celebrity Clients And Shark Tank Judges Reached For — Swipe To Watch."
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image_card",
+      "name": "Image Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Shark Tank"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "Season 2 Feature"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Card Link"
+        },
+        {
+          "type": "select",
+          "id": "block_width",
+          "label": "Desktop Block Width",
+          "options": [
+            {
+              "value": "wide",
+              "label": "Wide (60%)"
+            },
+            {
+              "value": "standard",
+              "label": "Standard (40%)"
+            },
+            {
+              "value": "half",
+              "label": "Half (50%)"
+            },
+            {
+              "value": "full",
+              "label": "Full Width (100%)"
+            }
+          ],
+          "default": "half",
+          "info": "To recreate the Figma design, use 'Wide' and 'Standard' together in a row."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Celeb's Choice",
+      "blocks": [
+        {
+          "type": "image_card",
+          "settings": {
+            "title": "Shark Tank",
+            "description": "Season 2 Feature",
+            "block_width": "wide"
+          }
+        },
+        {
+          "type": "image_card",
+          "settings": {
+            "title": "Shark Tank",
+            "description": "Season 2 Feature",
+            "block_width": "standard"
+          }
+        },
+        {
+          "type": "image_card",
+          "settings": {
+            "title": "Shark Tank",
+            "description": "Season 2 Feature",
+            "block_width": "standard"
+          }
+        },
+        {
+          "type": "image_card",
+          "settings": {
+            "title": "Shark Tank",
+            "description": "Season 2 Feature",
+            "block_width": "wide"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

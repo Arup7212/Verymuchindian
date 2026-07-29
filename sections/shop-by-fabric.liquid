@@ -29,18 +29,23 @@
     {%- endif -%}
 
     {%- if fabric_blocks.size > 0 -%}
-      <div class="sbf-slider-wrapper">
-        {%- if section.settings.show_arrows -%}
-          <button class="sbf-nav-button prev" aria-label="Previous Slide">
-            <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
-          </button>
-          <button class="sbf-nav-button next" aria-label="Next Slide">
-            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-          </button>
-        {%- endif -%}
+      {%- if section.settings.layout_style == 'grid' -%}
+        <div class="sbf-grid-wrapper">
+      {%- else -%}
+        <div class="sbf-slider-wrapper">
+          {%- if section.settings.show_arrows -%}
+            <button class="sbf-nav-button prev" aria-label="Previous Slide">
+              <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            </button>
+            <button class="sbf-nav-button next" aria-label="Next Slide">
+              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </button>
+          {%- endif -%}
 
-        <div class="sbf-slider-viewport">
-          <div class="sbf-slider-track">
+          <div class="sbf-slider-viewport">
+            <div class="sbf-slider-track">
+      {%- endif -%}
+
             {%- for block in fabric_blocks -%}
               {%- liquid
                 assign target_collection = block.settings.collection
@@ -104,9 +109,14 @@
                 <div class="sbf-item-title">{{ card_title }}</div>
               </a>
             {%- endfor -%}
+            
+      {%- if section.settings.layout_style == 'grid' -%}
+        </div>
+      {%- else -%}
+            </div>
           </div>
         </div>
-      </div>
+      {%- endif -%}
     {%- endif -%}
   </div>
 </div>
@@ -136,6 +146,22 @@
       "id": "subtitle",
       "label": "Subtitle Line",
       "default": "Ten Fabrics, Each With Its Own Hand — From Featherlight Organza To Everyday Mul Cotton."
+    },
+    {
+      "type": "select",
+      "id": "layout_style",
+      "label": "Layout Style",
+      "options": [
+        {
+          "value": "slider",
+          "label": "Slider"
+        },
+        {
+          "value": "grid",
+          "label": "Normal Grid"
+        }
+      ],
+      "default": "slider"
     },
     {
       "type": "header",

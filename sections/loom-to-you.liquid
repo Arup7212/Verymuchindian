@@ -1,0 +1,211 @@
+{{ 'loom-to-you.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'loom-to-you.js' | asset_url }}" defer="defer"></script>
+
+<loom-to-you class="loom-section" style="
+  --padding-block-start: {{ section.settings.padding_top }}px; 
+  --padding-block-end: {{ section.settings.padding_bottom }}px; 
+  --background-color: {{ section.settings.background_color }};
+  --line-color: {{ section.settings.line_color }};
+  --node-color: {{ section.settings.node_color }};
+">
+  <div class="loom__container">
+    
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="loom__header">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="loom__title">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        
+        {%- if section.settings.subheading != blank -%}
+          <p class="loom__subheading loom__subtitle">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+        
+        <div class="loom__divider"></div>
+      </div>
+    {%- endif -%}
+
+    <div class="loom__timeline-wrapper">
+      <ul class="loom__grid">
+        {%- for block in section.blocks -%}
+          <li class="loom__item" {{ block.shopify_attributes }}>
+            <div class="loom__node"></div>
+            
+            <div class="loom__media-container">
+              <div class="loom__media-wrap">
+                {%- if block.settings.video != blank -%}
+                  {{ block.settings.video | video_tag: 
+                    class: 'loom__media',
+                    autoplay: true,
+                    loop: true,
+                    muted: true,
+                    controls: false,
+                    image_size: '600x'
+                  }}
+                {%- elsif block.settings.image != blank -%}
+                  {{ block.settings.image | image_url: width: 800 | image_tag: 
+                    class: 'loom__media', 
+                    loading: 'lazy', 
+                    widths: '400, 600, 800', 
+                    sizes: '(max-width: 767px) 85vw, 20vw' 
+                  }}
+                {%- else -%}
+                  {{ 'image' | placeholder_svg_tag: 'loom__media placeholder-svg' }}
+                {%- endif -%}
+              </div>
+              
+              <div class="loom__text-content">
+                {%- if block.settings.title != blank -%}
+                  <h3 class="loom__item-title">{{ block.settings.title }}</h3>
+                {%- endif -%}
+                
+                {%- if block.settings.description != blank -%}
+                  <p class="loom__item-desc">{{ block.settings.description }}</p>
+                {%- endif -%}
+              </div>
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+    
+  </div>
+</loom-to-you>
+
+{% schema %}
+{
+  "name": "From The Loom To You",
+  "tag": "section",
+  "class": "section-loom-to-you",
+  "max_blocks": 5,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "From The Loom To You"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Every Saree's Path, Start To Doorstep — Handled By Hand At Every Step."
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "line_color",
+      "label": "Timeline Line Color",
+      "default": "#34336e"
+    },
+    {
+      "type": "color",
+      "id": "node_color",
+      "label": "Timeline Circle Color",
+      "default": "#e91e63"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Timeline Step",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Will be used if no video is selected."
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video",
+          "info": "Overrides the image. Plays automatically in a silent loop."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "The Loom"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Warp threads set by hand, 100+ hours on a pit loom."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "From The Loom To You",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "title": "The Loom",
+            "description": "Warp threads set by hand, 100+ hours on a pit loom."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "The Weaver",
+            "description": "Pallu tapestry interlocked thread by thread, in Yeola."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Silk Mark Check",
+            "description": "Every saree certified authentic before it leaves the loom."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Packed With Care",
+            "description": "Folded, boxed and dispatched from our Pune facility."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "You",
+            "description": "Free shipping, right to your door, anywhere in India."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

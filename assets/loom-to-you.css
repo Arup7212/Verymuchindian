@@ -1,0 +1,244 @@
+/* ══════════════════════════════════════════════════════════════
+   From The Loom To You Section Styles
+   ══════════════════════════════════════════════════════════════ */
+
+.loom-section {
+  padding: var(--padding-block-start, 60px) 0 var(--padding-block-end, 60px) 0;
+  background-color: var(--background-color, #ffffff);
+  overflow: hidden;
+}
+
+.loom__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles (Matching the aesthetic of the site) */
+.loom__header {
+  text-align: center;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loom__title {
+  font-family: var(--font-heading-family, 'Playfair Display', Georgia, serif);
+  font-size: 42px;
+  font-weight: 500;
+  color: #34336e; /* Dark blue */
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+
+.loom__subtitle {
+  font-family: var(--font-body-family, 'Inter', sans-serif);
+  font-size: 14px;
+  color: #7b7e8e;
+  margin: 0 0 24px 0;
+  letter-spacing: 0.02em;
+}
+
+.loom__divider {
+  width: 150px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #f7941e 50%, transparent 100%);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Timeline Layout */
+.loom__timeline-wrapper {
+  position: relative;
+  /* Add padding so the nodes have room */
+  padding-top: 20px;
+}
+
+.loom__grid {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.loom__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  min-width: 0; /* Prevents flex items from overflowing */
+}
+
+/* The continuous horizontal line */
+.loom__item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 12px; /* Center of 28px node minus half of 4px line */
+  left: 50%;
+  width: calc(100% + 12px); /* Spans item and gap */
+  height: 4px;
+  background-color: var(--line-color, #34336e);
+  z-index: 1;
+}
+
+/* Timeline Node (The Circle) */
+.loom__node {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--node-color, #e91e63);
+  z-index: 3;
+  position: relative;
+  /* Fix layout rendering quirks */
+  box-sizing: border-box;
+}
+
+/* Middle dots hollow */
+.loom__item:not(:first-child):not(:last-child) .loom__node {
+  background-color: #ffffff;
+  border: 5px solid var(--node-color, #e91e63);
+}
+
+.loom__media-container {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 9/16;
+  margin-top: 24px;
+}
+
+.loom__text-content {
+  position: relative;
+  z-index: 3;
+  padding: 16px 10px 0;
+}
+
+/* Item Content (Title & Description) */
+.loom__item-title {
+  font-family: var(--font-body-family, 'Inter', sans-serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: #34336e; /* Dark blue */
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.loom__item-desc {
+  font-family: var(--font-body-family, 'Inter', sans-serif);
+  font-size: 12px;
+  color: #7b7e8e;
+  margin: 0;
+  line-height: 1.5;
+  /* Optional: Limit lines if needed */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Media Wrapper (Image/Video) */
+.loom__media-wrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+/* The White Fade Effect (Crucial Requirement) */
+/* This overlays a gradient that is white at the top and bottom, and transparent in the middle */
+.loom__media-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Let clicks pass through to media */
+  background: linear-gradient(
+    to bottom,
+    var(--background-color, #ffffff) 0%,
+    rgba(255, 255, 255, 0) 25%,
+    rgba(255, 255, 255, 0) 85%,
+    var(--background-color, #ffffff) 100%
+  );
+  z-index: 2;
+}
+
+.loom__media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Responsive - Mobile Swipeable Carousel */
+@media screen and (max-width: 989px) {
+  .loom-section {
+    padding-block: 40px;
+  }
+  
+  .loom__title {
+    font-size: 32px;
+  }
+  
+  .loom__container {
+    padding: 0; /* Bleed to edges on mobile */
+  }
+
+  .loom__header {
+    padding: 0 20px;
+  }
+
+  .loom__grid {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 20px 20px 20px; /* Space for scrollbar and edge */
+    gap: 20px;
+    /* Hide scrollbar */
+    scrollbar-width: none; 
+    justify-content: flex-start;
+  }
+  
+  .loom__item:not(:last-child)::after {
+    width: calc(100% + 20px); /* Spans item and gap on mobile */
+  }
+  
+  .loom__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .loom__item {
+    flex: 0 0 calc(70vw - 20px);
+    scroll-snap-align: center;
+  }
+  
+  /* Fix first item alignment on scroll */
+  .loom__item:first-child {
+    scroll-margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .loom__item {
+    flex: 0 0 calc(85vw - 20px);
+  }
+}

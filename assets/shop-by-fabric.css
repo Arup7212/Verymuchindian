@@ -176,6 +176,29 @@
   fill: currentColor;
 }
 
+/* Grid Layout Wrapper */
+.sbf-grid-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+@media (max-width: 1024px) {
+  .sbf-grid-wrapper {
+    gap: 30px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sbf-grid-wrapper {
+    gap: 24px 20px;
+  }
+}
+
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .sbf-title {

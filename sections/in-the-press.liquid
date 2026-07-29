@@ -1,0 +1,120 @@
+{{ 'in-the-press.css' | asset_url | stylesheet_tag }}
+
+<div class="in-the-press-section" style="
+  --padding-block-start: {{ section.settings.padding_top }}px; 
+  --padding-block-end: {{ section.settings.padding_bottom }}px; 
+  --background-color: {{ section.settings.background_color }};
+">
+  {%- if section.settings.heading != blank -%}
+    <div class="itp__header">
+      <h2 class="itp__title">{{ section.settings.heading }}</h2>
+      <div class="itp__divider"></div>
+    </div>
+  {%- endif -%}
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="itp__ticker-container">
+      <div class="itp__ticker-track">
+        {%- for block in section.blocks -%}
+          <div class="itp__logo-item" {{ block.shopify_attributes }}>
+            {%- if block.settings.link != blank -%}
+              <a href="{{ block.settings.link }}" class="itp__logo-link" target="_blank" rel="noopener noreferrer" aria-label="Press link">
+            {%- endif -%}
+            
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 320 | image_tag: 
+                class: 'itp__logo-image', 
+                loading: 'lazy', 
+                alt: block.settings.image.alt | default: 'Press Logo' 
+              }}
+            {%- else -%}
+              {{ 'logo' | placeholder_svg_tag: 'itp__logo-image placeholder-svg' }}
+            {%- endif -%}
+
+            {%- if block.settings.link != blank -%}
+              </a>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "In The Press",
+  "tag": "section",
+  "class": "section-in-the-press",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "In The Press"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Press Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Logo Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link (Optional)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "In The Press",
+      "blocks": [
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" }
+      ]
+    }
+  ]
+}
+{% endschema %}
