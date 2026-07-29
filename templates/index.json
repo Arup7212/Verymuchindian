@@ -339,205 +339,6 @@
         "padding-block-end": 0
       }
     },
-    "product_list_fa6P9H": {
-      "type": "product-list",
-      "blocks": {
-        "static-header": {
-          "type": "_product-list-content",
-          "name": "t:names.header",
-          "static": true,
-          "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "space-between",
-            "vertical_alignment": "flex-end",
-            "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "background_media": "none",
-            "background_color": "",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_list_text_YFtzcL": {
-              "type": "_product-list-text",
-              "name": "t:names.collection_title",
-              "settings": {
-                "text": "<h3>{{ closest.collection.title }}</h3>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h4",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "text_color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_list_button_MWeP9V": {
-              "type": "_product-list-button",
-              "name": "t:names.product_list_button",
-              "settings": {
-                "label": "View all",
-                "open_in_new_tab": false,
-                "style_class": "link",
-                "custom_button_background": "{{ settings.color_palette.foreground }}",
-                "custom_button_text": "{{ settings.color_palette.background }}",
-                "custom_button_border": "{{ settings.color_palette.background }}",
-                "link_text_color": "",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_list_text_YFtzcL",
-            "product_list_button_MWeP9V"
-          ]
-        },
-        "static-product-card": {
-          "type": "_product-card",
-          "name": "t:names.product_card",
-          "static": true,
-          "settings": {
-            "product_card_gap": 4,
-            "background_color": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_card_gallery_677WP3": {
-              "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
-              "settings": {
-                "image_ratio": "adapt",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_color": "",
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_title_YXxMTj": {
-              "type": "product-title",
-              "name": "t:names.product_title",
-              "settings": {
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "text_color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 4,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "price_JQzVV4": {
-              "type": "price",
-              "name": "t:names.product_price",
-              "settings": {
-                "show_sale_price_first": true,
-                "show_installments": false,
-                "show_tax_info": false,
-                "type_preset": "h6",
-                "width": "100%",
-                "alignment": "left",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "text_color": "",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_card_gallery_677WP3",
-            "product_title_YXxMTj",
-            "price_JQzVV4"
-          ]
-        }
-      },
-      "name": "t:names.product_list",
-      "settings": {
-        "collection": "all",
-        "layout_type": "grid",
-        "carousel_on_mobile": false,
-        "max_products": 8,
-        "columns": 4,
-        "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
-        "columns_gap": 8,
-        "rows_gap": 24,
-        "icons_style": "arrow",
-        "icons_shape": "none",
-        "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
-        "gap": 28,
-        "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 48,
-        "padding-block-end": 48
-      }
-    },
     "tradition_collections_CUAxEP": {
       "type": "tradition-collections",
       "blocks": {
@@ -787,6 +588,7 @@
         "background_color": "#ffffff",
         "heading": "Shop By Fabric",
         "subtitle": "Ten Fabrics, Each With Its Own Hand — From Featherlight Organza To Everyday Mul Cotton.",
+        "layout_style": "slider",
         "enable_autoplay": true,
         "autoplay_speed": 4,
         "circle_size": 190,
@@ -1153,6 +955,481 @@
         "cta_collection": "",
         "cta_url": ""
       }
+    },
+    "product_list_fa6P9H": {
+      "type": "product-list",
+      "blocks": {
+        "static-header": {
+          "type": "_product-list-content",
+          "name": "t:names.header",
+          "static": true,
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": false,
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "flex-end",
+            "align_baseline": true,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "background_media": "none",
+            "background_color": "",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_list_text_YFtzcL": {
+              "type": "_product-list-text",
+              "name": "t:names.collection_title",
+              "settings": {
+                "text": "<h3>{{ closest.collection.title }}</h3>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h4",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_list_button_MWeP9V": {
+              "type": "_product-list-button",
+              "name": "t:names.product_list_button",
+              "settings": {
+                "label": "View all",
+                "open_in_new_tab": false,
+                "style_class": "link",
+                "custom_button_background": "{{ settings.color_palette.foreground }}",
+                "custom_button_text": "{{ settings.color_palette.background }}",
+                "custom_button_border": "{{ settings.color_palette.background }}",
+                "link_text_color": "",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_list_text_YFtzcL",
+            "product_list_button_MWeP9V"
+          ]
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "name": "t:names.product_card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 4,
+            "background_color": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_card_gallery_677WP3": {
+              "type": "_product-card-gallery",
+              "name": "t:names.product_card_media",
+              "settings": {
+                "image_ratio": "adapt",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_title_YXxMTj": {
+              "type": "product-title",
+              "name": "t:names.product_title",
+              "settings": {
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 4,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "price_JQzVV4": {
+              "type": "price",
+              "name": "t:names.product_price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "h6",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "text_color": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_card_gallery_677WP3",
+            "product_title_YXxMTj",
+            "price_JQzVV4"
+          ]
+        }
+      },
+      "name": "t:names.product_list",
+      "settings": {
+        "collection": "all",
+        "layout_type": "grid",
+        "carousel_on_mobile": false,
+        "max_products": 8,
+        "columns": 4,
+        "mobile_columns": "2",
+        "mobile_card_size": "60cqw",
+        "columns_gap": 8,
+        "rows_gap": 24,
+        "icons_style": "arrow",
+        "icons_shape": "none",
+        "section_width": "page-width",
+        "horizontal_alignment": "flex-start",
+        "gap": 28,
+        "background_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
+    },
+    "celebs_choice_khTmH4": {
+      "type": "celebs-choice",
+      "blocks": {
+        "image_card_kawiEh": {
+          "type": "image_card",
+          "settings": {
+            "title": "Shark Tank",
+            "description": "Season 2 Feature",
+            "link": "",
+            "block_width": "wide"
+          }
+        },
+        "image_card_JXPF7D": {
+          "type": "image_card",
+          "settings": {
+            "title": "Shark Tank",
+            "description": "Season 2 Feature",
+            "link": "",
+            "block_width": "standard"
+          }
+        },
+        "image_card_KbEmDp": {
+          "type": "image_card",
+          "settings": {
+            "title": "Shark Tank",
+            "description": "Season 2 Feature",
+            "link": "",
+            "block_width": "standard"
+          }
+        },
+        "image_card_X8M7Wf": {
+          "type": "image_card",
+          "settings": {
+            "title": "Shark Tank",
+            "description": "Season 2 Feature",
+            "link": "",
+            "block_width": "wide"
+          }
+        }
+      },
+      "block_order": [
+        "image_card_kawiEh",
+        "image_card_JXPF7D",
+        "image_card_KbEmDp",
+        "image_card_X8M7Wf"
+      ],
+      "name": "Celeb's Choice",
+      "settings": {
+        "heading": "Celeb's Choice",
+        "subheading": "The Drapes Our Celebrity Clients And Shark Tank Judges Reached For — Swipe To Watch.",
+        "background_color": "#ffffff",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "loom_to_you_UgniMg": {
+      "type": "loom-to-you",
+      "blocks": {
+        "step_PqE3QF": {
+          "type": "step",
+          "settings": {
+            "title": "The Loom",
+            "description": "Warp threads set by hand, 100+ hours on a pit loom."
+          }
+        },
+        "step_WmiW7h": {
+          "type": "step",
+          "settings": {
+            "title": "The Weaver",
+            "description": "Pallu tapestry interlocked thread by thread, in Yeola."
+          }
+        },
+        "step_BUcUbL": {
+          "type": "step",
+          "settings": {
+            "title": "Silk Mark Check",
+            "description": "Every saree certified authentic before it leaves the loom."
+          }
+        },
+        "step_JdTdwY": {
+          "type": "step",
+          "settings": {
+            "title": "Packed With Care",
+            "description": "Folded, boxed and dispatched from our Pune facility."
+          }
+        },
+        "step_ta7mz4": {
+          "type": "step",
+          "settings": {
+            "title": "You",
+            "description": "Free shipping, right to your door, anywhere in India."
+          }
+        }
+      },
+      "block_order": [
+        "step_PqE3QF",
+        "step_WmiW7h",
+        "step_BUcUbL",
+        "step_JdTdwY",
+        "step_ta7mz4"
+      ],
+      "name": "From The Loom To You",
+      "settings": {
+        "heading": "From The Loom To You",
+        "subheading": "Every Saree's Path, Start To Doorstep — Handled By Hand At Every Step.",
+        "background_color": "#ffffff",
+        "line_color": "#34336e",
+        "node_color": "#e91e63",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "shop_by_fabric_eEcqYK": {
+      "type": "shop-by-fabric",
+      "blocks": {
+        "fabric_item_CtUhRd": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "title": "Pure Silk",
+            "url": ""
+          }
+        },
+        "fabric_item_k6cNWP": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "title": "Chiffon",
+            "url": ""
+          }
+        },
+        "fabric_item_pQLGUB": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "title": "Cotton Linen",
+            "url": ""
+          }
+        },
+        "fabric_item_pej6FC": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "title": "Cotton Silk",
+            "url": ""
+          }
+        },
+        "fabric_item_3T7Lkg": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "title": "Dupion Silk",
+            "url": ""
+          }
+        },
+        "fabric_item_jA3Rtk": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "title": "Katan Silk",
+            "url": ""
+          }
+        },
+        "fabric_item_bap7M4": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "title": "Organza",
+            "url": ""
+          }
+        },
+        "fabric_item_ghd4MQ": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "title": "Mul Cotton",
+            "url": ""
+          }
+        },
+        "fabric_item_8Ph8zh": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "title": "Tussar Silk",
+            "url": ""
+          }
+        },
+        "fabric_item_adPKKL": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "title": "Georgette",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "fabric_item_CtUhRd",
+        "fabric_item_k6cNWP",
+        "fabric_item_pQLGUB",
+        "fabric_item_pej6FC",
+        "fabric_item_3T7Lkg",
+        "fabric_item_jA3Rtk",
+        "fabric_item_bap7M4",
+        "fabric_item_ghd4MQ",
+        "fabric_item_8Ph8zh",
+        "fabric_item_adPKKL"
+      ],
+      "name": "Shop By Fabric",
+      "settings": {
+        "background_color": "#FFFFFF",
+        "heading": "Shop By Fabric",
+        "subtitle": "Ten Fabrics, Each With Its Own Hand — From Featherlight Organza To Everyday Mul Cotton.",
+        "layout_style": "grid",
+        "enable_autoplay": true,
+        "autoplay_speed": 4,
+        "circle_size": 190,
+        "show_arrows": true
+      }
+    },
+    "in_the_press_pwFPrL": {
+      "type": "in-the-press",
+      "blocks": {
+        "logo_aTjCJr": {
+          "type": "logo",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo_EpYDTb": {
+          "type": "logo",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo_axzpkf": {
+          "type": "logo",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo_RJcWAh": {
+          "type": "logo",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo_WAM4b9": {
+          "type": "logo",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo_tFVLmb": {
+          "type": "logo",
+          "settings": {
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_aTjCJr",
+        "logo_EpYDTb",
+        "logo_axzpkf",
+        "logo_RJcWAh",
+        "logo_WAM4b9",
+        "logo_tFVLmb"
+      ],
+      "name": "In The Press",
+      "settings": {
+        "heading": "In The Press",
+        "background_color": "#ffffff",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
     }
   },
   "order": [
@@ -1164,6 +1441,10 @@
     "best_sellers_products_UkXTJU",
     "shop_by_price_xfF4YB",
     "proud_moment_YwpchN",
-    "product_list_fa6P9H"
+    "product_list_fa6P9H",
+    "celebs_choice_khTmH4",
+    "loom_to_you_UgniMg",
+    "shop_by_fabric_eEcqYK",
+    "in_the_press_pwFPrL"
   ]
 }
