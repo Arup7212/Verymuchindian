@@ -17,7 +17,7 @@
         "announcement_BxgCk9": {
           "type": "_announcement",
           "settings": {
-            "text": "3 day International Shipping",
+            "text": "🌐3 day International Shipping",
             "link": "",
             "font": "var(--font-subheading--family)",
             "font_size": "0.75rem",
@@ -31,7 +31,7 @@
         "announcement_rQqxUL": {
           "type": "_announcement",
           "settings": {
-            "text": "Authentic handloom paithani",
+            "text": "🧵Authentic handloom paithani",
             "link": "",
             "font": "var(--font-subheading--family)",
             "font_size": "0.75rem",
@@ -45,7 +45,7 @@
         "announcement_aEfqAc": {
           "type": "_announcement",
           "settings": {
-            "text": "Silk mark Certified",
+            "text": "🦋Silk mark Certified",
             "link": "",
             "font": "var(--font-subheading--family)",
             "font_size": "0.75rem",
