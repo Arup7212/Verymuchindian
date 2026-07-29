@@ -105,37 +105,21 @@
     "variant_button_width": "equal-width-buttons",
     "content_for_index": [],
     "blocks": {
-      "7870687481494312845": {
-        "type": "shopify://apps/wishlist-hero/blocks/app-embed/a9a5079b-59e8-47cb-b659-ecf1c60b9b72",
+      "5946647744298494267": {
+        "type": "shopify://apps/wishlist-plus/blocks/wishlist-app-embed/80c3b1fc-3a8f-407e-8367-ffdeebb8b612",
         "disabled": false,
         "settings": {
-          "additionalWLButtonCssClasses": "",
-          "additionalWLCartBubbleCssClasses": ""
-        }
-      },
-      "10486658301671024706": {
-        "type": "shopify://apps/wishlist-hero/blocks/collection-embed/a9a5079b-59e8-47cb-b659-ecf1c60b9b72",
-        "disabled": false,
-        "settings": {
-          "customThemeName": "~",
-          "wlIconPlacementInCard": "auto",
-          "iconHorizontalOffset": 0,
-          "iconVerticalOffset": 0,
-          "iconBackgroundSize": 40,
-          "iconFontSize": 0,
-          "enableCustomColors": false,
-          "wishlistIconColor": "",
-          "wishlistIconBgColor": "",
-          "wishlistIconBgColorAlpha": 100,
-          "addedWishlistIconColor": "",
-          "addedWishlistIconBgColor": "",
-          "addedWishlistIconBgColorAlpha": 100,
-          "wlCollectionCardSelectorClass": "",
-          "wlIconPlacementInCardSelector": "",
-          "wlIconPlacementInCardMode": "I",
-          "wlProductHandleExtractor": "",
-          "enableSortMutation": false,
-          "searchAndFilterApp": "none"
+          "show_ui": true,
+          "storefront_layout_enabled": true,
+          "storefront_layout_primary_bg_color": "#000000",
+          "storefront_layout_primary_text_color": "#ffffff",
+          "storefront_layout_secondary_bg_color": "#F4F8FE",
+          "storefront_layout_secondary_text_color": "#333333",
+          "storefront_layout_ui_border_radius": 6,
+          "storefront_layout_notification_position": "left",
+          "storefront_layout_action_popup_position": "left",
+          "storefront_layout_drawer_position": "left",
+          "storefront_layout_as_section_page": ""
         }
       }
     },
