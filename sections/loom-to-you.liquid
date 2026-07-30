@@ -30,6 +30,16 @@
           <li class="loom__item" {{ block.shopify_attributes }}>
             <div class="loom__node"></div>
             
+            <div class="loom__text-content">
+              {%- if block.settings.title != blank -%}
+                <h3 class="loom__item-title">{{ block.settings.title }}</h3>
+              {%- endif -%}
+              
+              {%- if block.settings.description != blank -%}
+                <p class="loom__item-desc">{{ block.settings.description }}</p>
+              {%- endif -%}
+            </div>
+
             <div class="loom__media-container">
               <div class="loom__media-wrap">
                 {%- if block.settings.video != blank -%}
@@ -50,16 +60,6 @@
                   }}
                 {%- else -%}
                   {{ 'image' | placeholder_svg_tag: 'loom__media placeholder-svg' }}
-                {%- endif -%}
-              </div>
-              
-              <div class="loom__text-content">
-                {%- if block.settings.title != blank -%}
-                  <h3 class="loom__item-title">{{ block.settings.title }}</h3>
-                {%- endif -%}
-                
-                {%- if block.settings.description != blank -%}
-                  <p class="loom__item-desc">{{ block.settings.description }}</p>
                 {%- endif -%}
               </div>
             </div>

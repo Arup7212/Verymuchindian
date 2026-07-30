@@ -2,7 +2,7 @@
 .shop-by-fabric-section {
   position: relative;
   width: 100%;
-  padding: 60px 0 80px 0;
+  padding: 60px 0 0px;
   background-color: var(--sbf-bg-color, #ffffff);
   box-sizing: border-box;
   overflow: hidden;
@@ -204,13 +204,13 @@
   .sbf-title {
     font-size: 36px;
   }
-  
+
   .sbf-item,
   .sbf-circle-wrapper {
     width: 160px;
     height: 160px;
   }
-  
+
   .sbf-item-title {
     font-size: 18px;
   }
@@ -253,11 +253,13 @@
   }
 
   .sbf-nav-button {
-    display: none; /* Swipe interface for mobile */
+    display: none;
+    /* Swipe interface for mobile */
   }
 }
 
 @media (max-width: 480px) {
+
   .sbf-item,
   .sbf-circle-wrapper {
     width: 125px;

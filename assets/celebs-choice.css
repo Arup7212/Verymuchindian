@@ -11,7 +11,7 @@
 .celebs-choice__container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 60px 0 0;
 }
 
 /* Header Styles */
@@ -27,7 +27,8 @@
   font-family: var(--font-heading-family, 'Playfair Display', Georgia, serif);
   font-size: 42px;
   font-weight: 500;
-  color: #34336e; /* Dark blue matching design */
+  color: #34336e;
+  /* Dark blue matching design */
   margin: 0 0 16px 0;
   line-height: 1.2;
 }
@@ -45,7 +46,7 @@
   width: 150px;
   height: 2px;
   background: linear-gradient(90deg, transparent 0%, #f7941e 50%, transparent 100%);
-  margin: 0 auto;
+  margin: 16px auto 0;
   border-radius: 2px;
 }
 
@@ -66,9 +67,11 @@
   overflow: hidden;
   /* Default to 100% width, overridden by specific size classes on desktop */
   width: 100%;
-  aspect-ratio: 16/11; /* Gives a nice rectangular shape */
+  aspect-ratio: 16/11;
+  /* Gives a nice rectangular shape */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  transform: translateZ(0); /* Force hardware acceleration for rounding */
+  transform: translateZ(0);
+  /* Force hardware acceleration for rounding */
 }
 
 .celebs-choice__link {
@@ -120,7 +123,8 @@
   font-family: var(--font-body-family, 'Inter', sans-serif);
   font-size: 18px;
   font-weight: 700;
-  color: #34336e; /* Dark blue */
+  color: #34336e;
+  /* Dark blue */
   margin: 0;
   line-height: 1.3;
 }
@@ -129,18 +133,20 @@
   font-family: var(--font-body-family, 'Inter', sans-serif);
   font-size: 12px;
   font-weight: 400;
-  color: #7b7e8e; /* Gray text */
+  color: #7b7e8e;
+  /* Gray text */
   margin: 0;
   line-height: 1.4;
 }
 
 /* Desktop sizing classes (Flexbox approach) */
 @media screen and (min-width: 768px) {
+
   /* Subtract gap from percentage width */
   .celebs-choice__item--wide {
     width: calc(60% - 10px);
   }
-  
+
   .celebs-choice__item--standard {
     width: calc(40% - 10px);
   }
@@ -159,13 +165,14 @@
   .celebs-choice-section {
     padding-block: 40px;
   }
-  
+
   .celebs-choice__title {
     font-size: 32px;
   }
-  
+
   .celebs-choice__container {
-    padding-right: 0; /* Let cards bleed to right edge */
+    padding-right: 0;
+    /* Let cards bleed to right edge */
   }
 
   .celebs-choice__grid {
@@ -174,13 +181,15 @@
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    padding-right: 20px; /* Right padding for last item */
+    padding-right: 20px;
+    /* Right padding for last item */
     gap: 16px;
-    padding-bottom: 20px; /* Space for scrollbar */
+    padding-bottom: 20px;
+    /* Space for scrollbar */
     /* Hide scrollbar */
-    scrollbar-width: none; 
+    scrollbar-width: none;
   }
-  
+
   .celebs-choice__grid::-webkit-scrollbar {
     display: none;
   }
@@ -188,9 +197,10 @@
   .celebs-choice__item {
     flex: 0 0 calc(85vw - 20px);
     scroll-snap-align: center;
-    aspect-ratio: 4/5; /* Taller on mobile */
+    aspect-ratio: 4/5;
+    /* Taller on mobile */
   }
-  
+
   /* Fix first item alignment on scroll */
   .celebs-choice__item:first-child {
     scroll-margin-left: 20px;
