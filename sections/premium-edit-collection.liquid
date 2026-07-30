@@ -1,0 +1,140 @@
+{{ 'premium-edit-collection.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'premium-edit-collection.js' | asset_url }}" defer="defer"></script>
+
+<div class="premium-edit-section" style="--premium-bg-color: {{ section.settings.background_color }};">
+  <div class="premium-edit-container">
+    
+    <div class="premium-edit-header">
+      {% if section.settings.title != blank %}
+        <h2 class="premium-edit-title">
+          {{ section.settings.title | replace: '[', '<span class="premium-gradient-text">' | replace: ']', '</span>' }}
+        </h2>
+      {% endif %}
+      {% if section.settings.description != blank %}
+        <div class="premium-edit-description">
+          {{ section.settings.description }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="premium-edit-grid">
+      {%- assign collection = section.settings.collection -%}
+      {%- assign max_products = section.settings.max_products -%}
+      
+      {% if collection != blank and collection.products_count > 0 %}
+        {% for product in collection.products limit: max_products %}
+          <a href="{{ product.url }}" class="premium-product-card">
+            
+            <div class="premium-product-image-wrapper">
+              {% if product.tags contains 'NEW' or product.tags contains 'new' or product.tags contains 'New' %}
+                <span class="premium-product-badge premium-badge-new">NEW</span>
+              {% elsif product.tags contains 'PRE-ORDER' or product.tags contains 'pre-order' or product.tags contains 'Pre-order' %}
+                <span class="premium-product-badge premium-badge-preorder">PRE-ORDER</span>
+              {% endif %}
+              
+              {% if product.featured_media != blank %}
+                <img src="{{ product.featured_media | image_url: width: 600 }}"
+                     alt="{{ product.featured_media.alt | escape }}"
+                     loading="lazy"
+                     width="{{ product.featured_media.width }}"
+                     height="{{ product.featured_media.height }}">
+              {% else %}
+                {{ 'product-1' | placeholder_svg_tag }}
+              {% endif %}
+            </div>
+
+            <div class="premium-product-details">
+              {% if product.vendor != blank %}
+                <div class="premium-product-vendor">{{ product.vendor }}</div>
+              {% endif %}
+              
+              <h3 class="premium-product-title">{{ product.title }}</h3>
+              
+              {%- assign subtitle = product.metafields.custom.subtitle -%}
+              {% if subtitle != blank %}
+                <div class="premium-product-subtitle">{{ subtitle }}</div>
+              {% endif %}
+              
+              {%- assign manhours = product.metafields.custom.manhours -%}
+              {% if manhours == blank %}
+                {%- assign manhours = '450hrs' -%}
+              {% endif %}
+              <div class="premium-product-manhours">Manhours: {{ manhours }}</div>
+              
+              <div class="premium-product-price">
+                {% if product.compare_at_price > product.price %}
+                  <s>{{ product.compare_at_price | money }}</s> 
+                {% endif %}
+                {{ product.price | money }}
+              </div>
+            </div>
+            
+          </a>
+        {% endfor %}
+      {% else %}
+        {%- for i in (1..max_products) -%}
+          <div class="premium-product-card">
+            <div class="premium-product-image-wrapper">
+              {{ 'product-' | append: i | placeholder_svg_tag }}
+            </div>
+            <div class="premium-product-details">
+              <div class="premium-product-vendor">PAITHANI - YEOLA</div>
+              <h3 class="premium-product-title">Premium Masterpiece</h3>
+              <div class="premium-product-subtitle">All Over Zari Pure Silk Paithani - 3 Months Weaving</div>
+              <div class="premium-product-manhours">Manhours: 450hrs</div>
+              <div class="premium-product-price">{{ 229500 | money }}</div>
+            </div>
+          </div>
+        {%- endfor -%}
+      {% endif %}
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Premium Edit Collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "The Premium [Edit]",
+      "info": "Use brackets [ ] for pink gradient highlight."
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>All-over zari and hand-worked florals, woven only once you order. <br>₹75,000 to ₹2,50,000- reserved for the sarees that take the longest to make.</p>"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "max_products",
+      "label": "Maximum products to show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#282A4A"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Premium Edit Collection",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}

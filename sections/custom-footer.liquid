@@ -1,0 +1,260 @@
+{{ 'custom-footer.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'custom-footer.js' | asset_url }}" defer="defer"></script>
+
+<footer class="custom-footer" style="--footer-bg-color: {{ section.settings.background_color }};">
+  <div class="custom-footer-container">
+    
+    <div class="custom-footer-grid">
+      
+      <!-- Column 1: Logo, Contact & Social -->
+      <div class="footer-col-1">
+        {% if section.settings.logo != blank %}
+          <img src="{{ section.settings.logo | image_url: width: 500 }}" 
+               alt="{{ shop.name }}" 
+               class="footer-logo"
+               width="{{ section.settings.logo.width }}"
+               height="{{ section.settings.logo.height }}"
+               loading="lazy">
+        {% else %}
+          <h2 class="footer-heading">{{ shop.name }}</h2>
+        {% endif %}
+        
+        <ul class="footer-contact-list">
+          {% if section.settings.telephone != blank %}
+            <li>Telephone: {{ section.settings.telephone }}</li>
+          {% endif %}
+          {% if section.settings.fax != blank %}
+            <li>Fax: {{ section.settings.fax }}</li>
+          {% endif %}
+          {% if section.settings.email != blank %}
+            <li>Email: <a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a></li>
+          {% endif %}
+          {% if section.settings.careers_email != blank %}
+            <li>Careers: <a href="mailto:{{ section.settings.careers_email }}">{{ section.settings.careers_email }}</a></li>
+          {% endif %}
+        </ul>
+        
+        <div class="footer-social-icons">
+          {% if section.settings.social_facebook != blank %}
+            <a href="{{ section.settings.social_facebook }}" class="footer-social-link" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+          {% endif %}
+          {% if section.settings.social_instagram != blank %}
+            <a href="{{ section.settings.social_instagram }}" class="footer-social-link" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+          {% endif %}
+          {% if section.settings.social_youtube != blank %}
+            <a href="{{ section.settings.social_youtube }}" class="footer-social-link" target="_blank" rel="noopener" aria-label="YouTube">yt</a>
+          {% endif %}
+          {% if section.settings.social_pinterest != blank %}
+            <a href="{{ section.settings.social_pinterest }}" class="footer-social-link" target="_blank" rel="noopener" aria-label="Pinterest">p</a>
+          {% endif %}
+          {% if section.settings.social_linkedin != blank %}
+            <a href="{{ section.settings.social_linkedin }}" class="footer-social-link" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          {% endif %}
+        </div>
+      </div>
+      
+      <!-- Column 2: Information Menu -->
+      <div class="footer-col-2">
+        <h3 class="footer-heading">{{ section.settings.menu_1_title | default: 'Information' }}</h3>
+        {% if section.settings.menu_1 != blank %}
+          <ul class="footer-menu">
+            {% for link in section.settings.menu_1.links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+      
+      <!-- Column 3: Our Policies Menu -->
+      <div class="footer-col-3">
+        <h3 class="footer-heading">{{ section.settings.menu_2_title | default: 'Our Policies' }}</h3>
+        {% if section.settings.menu_2 != blank %}
+          <ul class="footer-menu">
+            {% for link in section.settings.menu_2.links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+      
+      <!-- Column 4: Newsletter & Address -->
+      <div class="footer-col-4">
+        <h3 class="footer-heading">Sign Up for Email</h3>
+        {% form 'customer', class: 'footer-newsletter-form' %}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <input type="email" 
+                 name="contact[email]" 
+                 class="footer-newsletter-input" 
+                 placeholder="Enter email address" 
+                 value="{{ form.email }}" 
+                 aria-required="true" 
+                 autocorrect="off" 
+                 autocapitalize="off" 
+                 required>
+          <button type="submit" class="footer-newsletter-btn" name="commit">
+            SIGN UP
+          </button>
+        {% endform %}
+        
+        <div class="footer-address">
+          {{ section.settings.office_address }}
+        </div>
+      </div>
+      
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="footer-bottom-bar">
+      <div class="footer-copyright">
+        &copy; {{ 'now' | date: "%Y" }} {{ shop.name | upcase }}. {{ section.settings.copyright_text }}
+      </div>
+      
+      {% if section.settings.track_order_link != blank %}
+        <a href="{{ section.settings.track_order_link }}" class="footer-track-order">
+          Track My Order
+        </a>
+      {% endif %}
+    </div>
+    
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Custom Footer",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#342A5C"
+    },
+    {
+      "type": "header",
+      "content": "Column 1: Logo & Contact"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo Image"
+    },
+    {
+      "type": "text",
+      "id": "telephone",
+      "label": "Telephone",
+      "default": "+91 7410027616"
+    },
+    {
+      "type": "text",
+      "id": "fax",
+      "label": "Fax",
+      "default": "84529 50459"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email",
+      "default": "verymuchindian.official@gmail.com"
+    },
+    {
+      "type": "text",
+      "id": "careers_email",
+      "label": "Careers Email",
+      "default": "verymuchindian.official@gmail.com"
+    },
+    {
+      "type": "header",
+      "content": "Social Links"
+    },
+    {
+      "type": "url",
+      "id": "social_facebook",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "url",
+      "id": "social_instagram",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "url",
+      "id": "social_youtube",
+      "label": "YouTube URL"
+    },
+    {
+      "type": "url",
+      "id": "social_pinterest",
+      "label": "Pinterest URL"
+    },
+    {
+      "type": "url",
+      "id": "social_linkedin",
+      "label": "LinkedIn URL"
+    },
+    {
+      "type": "header",
+      "content": "Column 2: Information Menu"
+    },
+    {
+      "type": "text",
+      "id": "menu_1_title",
+      "label": "Menu 1 Title",
+      "default": "Information"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_1",
+      "label": "Select Menu 1"
+    },
+    {
+      "type": "header",
+      "content": "Column 3: Our Policies Menu"
+    },
+    {
+      "type": "text",
+      "id": "menu_2_title",
+      "label": "Menu 2 Title",
+      "default": "Our Policies"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_2",
+      "label": "Select Menu 2"
+    },
+    {
+      "type": "header",
+      "content": "Column 4: Address"
+    },
+    {
+      "type": "richtext",
+      "id": "office_address",
+      "label": "Office Address",
+      "default": "<p><strong>Registered Office Address</strong><br>Rowhouse No. 1, Shrileela Plaza, Survey No. 115/3/6,<br>Near Orchid Tower, Baner, 411045</p>"
+    },
+    {
+      "type": "header",
+      "content": "Bottom Bar"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Additional Copyright Text",
+      "default": "HOMEPAGE REDESIGN CONCEPT."
+    },
+    {
+      "type": "url",
+      "id": "track_order_link",
+      "label": "Track Order Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Footer",
+      "category": "Footer"
+    }
+  ],
+  "enabled_on": {
+    "groups": ["footer"]
+  }
+}
+{% endschema %}
