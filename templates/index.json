@@ -320,6 +320,7 @@
         "slide_ULUF7Q",
         "slide_QrBYkJ"
       ],
+      "disabled": true,
       "name": "t:names.slideshow_full_frame",
       "settings": {
         "display_mode": "full_frame",
@@ -338,6 +339,57 @@
         "padding-block-start": 0,
         "padding-block-end": 0
       }
+    },
+    "dynamic_slider_9n8p4C": {
+      "type": "dynamic-slider",
+      "blocks": {
+        "video_split_y9yrD8": {
+          "type": "video_split",
+          "settings": {
+            "video": "shopify://files/videos/74d879e6fb064b46bf1a0a7a71be8787.mp4",
+            "video_tag": "LIVE FROM THE LOOM",
+            "overlay_title": "",
+            "overlay_subtitle": "YEOLA, MAHARASHTRA",
+            "overlay_desc": "Where the Paithani is still made by hand",
+            "content_subtitle": "HANDWOVEN - SILK MARK CERTIFIED",
+            "content_title": "Woven with<br><em>Centuries of</em><br>Tradition",
+            "content_desc": "<p>Every saree we sell is bought from the loom that made it. No middlemen, no mills, no shortcuts — only the weave, and the woman who carries it.</p>",
+            "btn1_label": "SHOP THE COLLECTION",
+            "btn1_link": "",
+            "btn2_label": "OUR STORY",
+            "btn2_link": ""
+          }
+        },
+        "full_banner_d3f3Tt": {
+          "type": "full_banner",
+          "settings": {
+            "image_desktop": "shopify://shop_images/Ajrakh_Web_Desktop_1_jpg.jpg",
+            "link": ""
+          }
+        },
+        "full_banner_q7RM8z": {
+          "type": "full_banner",
+          "settings": {
+            "image_desktop": "shopify://shop_images/VMI_Web_Banner_9_July_copy.webp",
+            "link": ""
+          }
+        },
+        "full_banner_8Hac7J": {
+          "type": "full_banner",
+          "settings": {
+            "image_desktop": "shopify://shop_images/VMI_Web_Banner_2_9_July_copy_1aeb9c60-f6ed-487d-b585-1d27a431e695.webp",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_split_y9yrD8",
+        "full_banner_d3f3Tt",
+        "full_banner_q7RM8z",
+        "full_banner_8Hac7J"
+      ],
+      "name": "Dynamic Slider",
+      "settings": {}
     },
     "tradition_collections_CUAxEP": {
       "type": "tradition-collections",
@@ -423,6 +475,7 @@
           "type": "collection_box",
           "settings": {
             "collection": "",
+            "image": "shopify://shop_images/HMP_3591.webp",
             "title": "BANARASI",
             "url": ""
           }
@@ -526,6 +579,7 @@
           "type": "fabric_item",
           "settings": {
             "collection": "",
+            "image": "shopify://shop_images/DSC_9132.webp",
             "title": "Dupion Silk",
             "url": ""
           }
@@ -600,6 +654,7 @@
       "blocks": {
         "custom_product_EegDPN": {
           "type": "custom_product",
+          "disabled": true,
           "settings": {
             "title": "Chandrakor",
             "subtitle": "Pure Silk Maharani Paithani · Maharani Pallu · Peacock Blue",
@@ -615,6 +670,7 @@
         },
         "custom_product_LYTwaN": {
           "type": "custom_product",
+          "disabled": true,
           "settings": {
             "title": "Chandrakor",
             "subtitle": "Pure Silk Maharani Paithani · Maharani Pallu · Peacock Blue",
@@ -630,6 +686,7 @@
         },
         "custom_product_fmrAWf": {
           "type": "custom_product",
+          "disabled": true,
           "settings": {
             "title": "Chandrakor",
             "subtitle": "Pure Silk Maharani Paithani · Maharani Pallu · Peacock Blue",
@@ -645,6 +702,7 @@
         },
         "custom_product_xp87iz": {
           "type": "custom_product",
+          "disabled": true,
           "settings": {
             "title": "Chandrakor",
             "subtitle": "Pure Silk Maharani Paithani · Maharani Pallu · Peacock Blue",
@@ -669,7 +727,7 @@
       "settings": {
         "background_color": "#ffffff",
         "heading": "Best Sellers",
-        "collection": "",
+        "collection": "best-sellers",
         "sort_by": "best-selling",
         "category_display_type": "collection",
         "show_category": true,
@@ -732,6 +790,7 @@
           "type": "collection_card",
           "settings": {
             "collection": "",
+            "image": "shopify://shop_images/DSC_9132.webp",
             "tag_text": "CLASSIC SILK PAITHANI",
             "title": "Festive",
             "subtitle": "Collection",
@@ -771,6 +830,7 @@
       "blocks": {
         "custom_product_BpBWiL": {
           "type": "custom_product",
+          "disabled": true,
           "settings": {
             "title": "Chandrakor",
             "subtitle": "Pure Silk Maharani Paithani · Maharani Pallu · Peacock Blue",
@@ -786,6 +846,7 @@
         },
         "custom_product_cYxURw": {
           "type": "custom_product",
+          "disabled": true,
           "settings": {
             "title": "Chandrakor",
             "subtitle": "Pure Silk Maharani Paithani · Maharani Pallu · Peacock Blue",
@@ -801,6 +862,7 @@
         },
         "custom_product_g7g8xb": {
           "type": "custom_product",
+          "disabled": true,
           "settings": {
             "title": "Chandrakor",
             "subtitle": "Pure Silk Maharani Paithani · Maharani Pallu · Peacock Blue",
@@ -816,6 +878,7 @@
         },
         "custom_product_mRMwD8": {
           "type": "custom_product",
+          "disabled": true,
           "settings": {
             "title": "Chandrakor",
             "subtitle": "Pure Silk Maharani Paithani · Maharani Pallu · Peacock Blue",
@@ -840,7 +903,7 @@
       "settings": {
         "background_color": "#ffffff",
         "heading": "Latest Weaves",
-        "collection": "",
+        "collection": "best-sellers",
         "sort_by": "best-selling",
         "category_display_type": "collection",
         "show_category": true,
@@ -891,6 +954,7 @@
           "type": "price_range",
           "settings": {
             "collection": "",
+            "image": "shopify://shop_images/DSC_0460.webp",
             "price_label": "40K - 50K",
             "url": ""
           }
@@ -938,6 +1002,7 @@
       "settings": {
         "background_color": "#ffffff",
         "image_top_alt": "Shark Tank India - Very Much Indian",
+        "image_bottom": "shopify://shop_images/unnamed.webp",
         "image_bottom_alt": "Very Much Indian Saree Collection",
         "heading_pre": "Proud Moment For",
         "heading_brand": "Very Much Indian",
@@ -1156,6 +1221,17 @@
         "padding-block-end": 48
       }
     },
+    "premium_edit_collection_g6efFT": {
+      "type": "premium-edit-collection",
+      "name": "Premium Edit Collection",
+      "settings": {
+        "title": "The Premium [Edit]",
+        "description": "<p>All-over zari and hand-worked florals, woven only once you order. <br/>₹75,000 to ₹2,50,000- reserved for the sarees that take the longest to make.</p>",
+        "collection": "best-sellers",
+        "max_products": 4,
+        "background_color": "#282a4a"
+      }
+    },
     "celebs_choice_khTmH4": {
       "type": "celebs-choice",
       "blocks": {
@@ -1316,6 +1392,7 @@
           "type": "fabric_item",
           "settings": {
             "collection": "",
+            "image": "shopify://shop_images/DSC_0460.webp",
             "title": "Dupion Silk",
             "url": ""
           }
@@ -1351,14 +1428,6 @@
             "title": "Tussar Silk",
             "url": ""
           }
-        },
-        "fabric_item_adPKKL": {
-          "type": "fabric_item",
-          "settings": {
-            "collection": "",
-            "title": "Georgette",
-            "url": ""
-          }
         }
       },
       "block_order": [
@@ -1370,8 +1439,7 @@
         "fabric_item_jA3Rtk",
         "fabric_item_bap7M4",
         "fabric_item_ghd4MQ",
-        "fabric_item_8Ph8zh",
-        "fabric_item_adPKKL"
+        "fabric_item_8Ph8zh"
       ],
       "name": "Shop By Fabric",
       "settings": {
@@ -1447,20 +1515,151 @@
         "padding_bottom": 60
       }
     },
-    "premium_edit_collection_g6efFT": {
-      "type": "premium-edit-collection",
-      "name": "Premium Edit Collection",
+    "draped_with_love_pApC3D": {
+      "type": "draped-with-love",
+      "blocks": {
+        "review_nWBfVY": {
+          "type": "review",
+          "settings": {
+            "card_style": "text",
+            "image": "shopify://shop_images/HMP_3003.webp",
+            "review_text": "Suta Sarees Are Always Comfortable To Drape Elegance And Comfort ...",
+            "read_more_link": "",
+            "author_name": "Kanchan T.",
+            "date": "4 November 2025",
+            "rating": 5,
+            "is_tall": false
+          }
+        },
+        "review_6fy4Jz": {
+          "type": "review",
+          "settings": {
+            "card_style": "image",
+            "image": "shopify://shop_images/HMP_0002.webp",
+            "review_text": "Suta Sarees Are Always Comfortable To Drape Elegance And Comfort ...",
+            "read_more_link": "",
+            "author_name": "Kanchan T.",
+            "date": "4 November 2025",
+            "rating": 5,
+            "is_tall": false
+          }
+        },
+        "review_gAfryM": {
+          "type": "review",
+          "settings": {
+            "card_style": "image",
+            "image": "shopify://shop_images/HMP_6993.webp",
+            "review_text": "Suta Sarees Are Always Comfortable To Drape Elegance And Comfort ...",
+            "read_more_link": "",
+            "author_name": "Kanchan T.",
+            "date": "4 November 2025",
+            "rating": 5,
+            "is_tall": true
+          }
+        },
+        "review_ViXnbi": {
+          "type": "review",
+          "settings": {
+            "card_style": "image",
+            "image": "shopify://shop_images/DSC_9140.webp",
+            "review_text": "Suta Sarees Are Always Comfortable To Drape Elegance And Comfort ...",
+            "read_more_link": "",
+            "author_name": "Kanchan T.",
+            "date": "4 November 2025",
+            "rating": 5,
+            "is_tall": false
+          }
+        },
+        "review_pRbna3": {
+          "type": "review",
+          "settings": {
+            "card_style": "text",
+            "review_text": "Suta Sarees Are Always Comfortable To Drape Elegance And Comfort ...",
+            "read_more_link": "",
+            "author_name": "Kanchan T.",
+            "date": "4 November 2025",
+            "rating": 5,
+            "is_tall": false
+          }
+        }
+      },
+      "block_order": [
+        "review_nWBfVY",
+        "review_6fy4Jz",
+        "review_gAfryM",
+        "review_ViXnbi",
+        "review_pRbna3"
+      ],
+      "name": "Draped With Love",
       "settings": {
-        "title": "The Premium [Edit]",
-        "description": "<p>All-over zari and hand-worked florals, woven only once you order. <br/>₹75,000 to ₹2,50,000- reserved for the sarees that take the longest to make.</p>",
-        "collection": "best-sellers",
-        "max_products": 4,
-        "background_color": "#282A4A"
+        "title": "Draped With Love",
+        "subtitle": "Verified Buyers, Real Drapes — Swipe Through What They Told Us After The Saree Arrived."
+      }
+    },
+    "journal_accordion_fX7GrC": {
+      "type": "journal-accordion",
+      "blocks": {
+        "journal_entry_QLtPEk": {
+          "type": "journal_entry",
+          "settings": {
+            "image": "shopify://shop_images/DSC_8940.webp",
+            "subtitle": "Weaver Story - 4 Min Read",
+            "title": "The Making of a Paithani",
+            "desc": "Why The Queen Of Maharashtra's Looms Takes Over A Hundred Patient Hours — And What That Means For The Saree In Your Wardrobe.",
+            "link_text": "Read the Story",
+            "link": ""
+          }
+        },
+        "journal_entry_YaQ8QV": {
+          "type": "journal_entry",
+          "settings": {
+            "image": "shopify://shop_images/HMP_4143.webp",
+            "subtitle": "Weaver Story - 4 Min Read",
+            "title": "The Making of a Paithani",
+            "desc": "Why The Queen Of Maharashtra's Looms Takes Over A Hundred Patient Hours — And What That Means For The Saree In Your Wardrobe.",
+            "link_text": "Read the Story",
+            "link": ""
+          }
+        },
+        "journal_entry_4QJUGN": {
+          "type": "journal_entry",
+          "settings": {
+            "image": "shopify://shop_images/DSC_4973.webp",
+            "subtitle": "Weaver Story - 4 Min Read",
+            "title": "The Making of a Paithani",
+            "desc": "Why The Queen Of Maharashtra's Looms Takes Over A Hundred Patient Hours — And What That Means For The Saree In Your Wardrobe.",
+            "link_text": "Read the Story",
+            "link": ""
+          }
+        },
+        "journal_entry_KAibNT": {
+          "type": "journal_entry",
+          "settings": {
+            "image": "shopify://shop_images/DSC_0017.webp",
+            "subtitle": "Weaver Story - 4 Min Read",
+            "title": "The Making of a Paithani",
+            "desc": "Why The Queen Of Maharashtra's Looms Takes Over A Hundred Patient Hours — And What That Means For The Saree In Your Wardrobe.",
+            "link_text": "Read the Story",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "journal_entry_QLtPEk",
+        "journal_entry_YaQ8QV",
+        "journal_entry_4QJUGN",
+        "journal_entry_KAibNT"
+      ],
+      "name": "Journal Accordion",
+      "settings": {
+        "title": "The Journal",
+        "subtitle": "Weaver Stories, Drape Guides, And The Craft Behind Every Very Much Indian Saree."
       }
     }
   },
   "order": [
     "slideshow_7JBU7R",
+    "dynamic_slider_9n8p4C",
     "tradition_collections_CUAxEP",
     "shop_by_fabric_EVqkJQ",
     "best_sellers_products_yb6QDW",
@@ -1473,6 +1672,8 @@
     "celebs_choice_khTmH4",
     "loom_to_you_UgniMg",
     "shop_by_fabric_eEcqYK",
+    "draped_with_love_pApC3D",
+    "journal_accordion_fX7GrC",
     "in_the_press_pwFPrL"
   ]
 }
