@@ -1,0 +1,232 @@
+{%- comment -%}
+  Dynamic Slider Section
+{%- endcomment -%}
+
+{{ 'dynamic-slider.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'dynamic-slider.js' | asset_url }}" defer="defer"></script>
+
+<div class="dynamic-slider-section" id="DynamicSlider-{{ section.id }}">
+  <div class="dynamic-slider-container">
+    <div class="dynamic-slider-wrapper">
+      {%- for block in section.blocks -%}
+        <div class="dynamic-slide" {{ block.shopify_attributes }}>
+          
+          {%- if block.type == 'video_split' -%}
+            <div class="split-slide-container">
+              <div class="split-video-col">
+                <div class="split-video-wrapper">
+                  {%- if block.settings.video != blank -%}
+                    {{ block.settings.video | video_tag: autoplay: true, loop: true, muted: true, playsinline: true }}
+                  {%- else -%}
+                    {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {%- endif -%}
+                  
+                  {%- if block.settings.video_tag != blank -%}
+                    <div class="video-top-tag">
+                      <span class="red-dot"></span> {{ block.settings.video_tag }}
+                    </div>
+                  {%- endif -%}
+
+                  <button class="mute-btn" aria-label="Mute/Unmute">
+                    <svg viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                  </button>
+                  
+                  <div class="video-bottom-overlay">
+                    {%- if block.settings.overlay_title != blank -%}
+                      <h2 class="video-overlay-title">{{ block.settings.overlay_title }}</h2>
+                    {%- endif -%}
+                    <div class="video-overlay-location-wrapper">
+                      {%- if block.settings.overlay_subtitle != blank -%}
+                        <div class="video-overlay-location">{{ block.settings.overlay_subtitle }}</div>
+                      {%- endif -%}
+                      {%- if block.settings.overlay_desc != blank -%}
+                        <p class="video-overlay-desc">{{ block.settings.overlay_desc }}</p>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="split-content-col">
+                <div class="split-content-inner">
+                  {%- if block.settings.content_subtitle != blank -%}
+                    <span class="content-subtitle">{{ block.settings.content_subtitle }}</span>
+                  {%- endif -%}
+                  {%- if block.settings.content_title != blank -%}
+                    <h2 class="content-title">{{ block.settings.content_title }}</h2>
+                  {%- endif -%}
+                  <hr class="content-divider">
+                  {%- if block.settings.content_desc != blank -%}
+                    <div class="content-desc">{{ block.settings.content_desc }}</div>
+                  {%- endif -%}
+                  
+                  <div class="content-buttons">
+                    {%- if block.settings.btn1_label != blank -%}
+                      <a href="{{ block.settings.btn1_link | default: '#' }}" class="dynamic-btn dynamic-btn-primary">{{ block.settings.btn1_label }}</a>
+                    {%- endif -%}
+                    {%- if block.settings.btn2_label != blank -%}
+                      <a href="{{ block.settings.btn2_link | default: '#' }}" class="dynamic-btn dynamic-btn-secondary">{{ block.settings.btn2_label }}</a>
+                    {%- endif -%}
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+          {%- elsif block.type == 'full_banner' -%}
+            <div class="full-banner-slide">
+              <a href="{{ block.settings.link | default: '#' }}">
+                <picture>
+                  {%- if block.settings.image_mobile != blank -%}
+                    <source media="(max-width: 767px)" srcset="{{ block.settings.image_mobile | image_url: width: 800 }}">
+                  {%- endif -%}
+                  
+                  {%- if block.settings.image_desktop != blank -%}
+                    {{ block.settings.image_desktop | image_url: width: 2000 | image_tag: loading: 'lazy' }}
+                  {%- else -%}
+                    {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {%- endif -%}
+                </picture>
+              </a>
+            </div>
+          {%- endif -%}
+          
+        </div>
+      {%- endfor -%}
+    </div>
+    
+    {%- if section.blocks.size > 1 -%}
+      <button class="slider-arrow prev-arrow" aria-label="Previous">
+        <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      </button>
+      <button class="slider-arrow next-arrow" aria-label="Next">
+        <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+      </button>
+      <div class="slider-dots"></div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Dynamic Slider",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "video_split",
+      "name": "Video & Content Split",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Video Section (Left)"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "text",
+          "id": "video_tag",
+          "label": "Top Left Tag",
+          "default": "LIVE FROM THE LOOM"
+        },
+        {
+          "type": "text",
+          "id": "overlay_title",
+          "label": "Overlay Main Title",
+          "default": "3000+ Skilled Weavers"
+        },
+        {
+          "type": "text",
+          "id": "overlay_subtitle",
+          "label": "Overlay Subtitle",
+          "default": "YEOLA, MAHARASHTRA"
+        },
+        {
+          "type": "text",
+          "id": "overlay_desc",
+          "label": "Overlay Description",
+          "default": "Where the Paithani is still made by hand"
+        },
+        {
+          "type": "header",
+          "content": "Content Section (Right)"
+        },
+        {
+          "type": "text",
+          "id": "content_subtitle",
+          "label": "Subtitle",
+          "default": "HANDWOVEN - SILK MARK CERTIFIED"
+        },
+        {
+          "type": "textarea",
+          "id": "content_title",
+          "label": "Title",
+          "default": "Woven with<br><em>Centuries of</em><br>Tradition",
+          "info": "You can use HTML like <br> for line breaks and <em> for italics."
+        },
+        {
+          "type": "richtext",
+          "id": "content_desc",
+          "label": "Description",
+          "default": "<p>Every saree we sell is bought from the loom that made it. No middlemen, no mills, no shortcuts — only the weave, and the woman who carries it.</p>"
+        },
+        {
+          "type": "text",
+          "id": "btn1_label",
+          "label": "Primary Button Label",
+          "default": "SHOP THE COLLECTION"
+        },
+        {
+          "type": "url",
+          "id": "btn1_link",
+          "label": "Primary Button Link"
+        },
+        {
+          "type": "text",
+          "id": "btn2_label",
+          "label": "Secondary Button Label",
+          "default": "OUR STORY"
+        },
+        {
+          "type": "url",
+          "id": "btn2_link",
+          "label": "Secondary Button Link"
+        }
+      ]
+    },
+    {
+      "type": "full_banner",
+      "name": "Full Image Banner",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_desktop",
+          "label": "Desktop Image",
+          "info": "Upload the banner image for desktop view"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Mobile Image",
+          "info": "Upload the banner image for mobile view (Optional)"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Banner Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dynamic Slider",
+      "blocks": [
+        { "type": "video_split" },
+        { "type": "full_banner" }
+      ]
+    }
+  ]
+}
+{% endschema %}

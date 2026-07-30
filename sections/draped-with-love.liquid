@@ -1,0 +1,156 @@
+{%- comment -%}
+  Draped With Love Section
+{%- endcomment -%}
+
+{{ 'draped-with-love.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'draped-with-love.js' | asset_url }}" defer="defer"></script>
+
+<div class="draped-with-love-section" id="DrapedWithLove-{{ section.id }}">
+  <div class="page-width">
+    <div class="draped-header">
+      {%- if section.settings.title != blank -%}
+        <h2 class="draped-title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subtitle != blank -%}
+        <p class="draped-subtitle">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+      <div class="draped-divider"></div>
+    </div>
+
+    <div class="draped-grid" id="DrapedGrid-{{ section.id }}">
+      {%- for block in section.blocks -%}
+        <div class="draped-card draped-style-{{ block.settings.card_style }} {% if block.settings.is_tall and block.settings.card_style == 'image' %}is-tall{% endif %}" {{ block.shopify_attributes }}>
+          
+          {%- if block.settings.card_style == 'image' -%}
+            <div class="draped-card-bg">
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 800 | image_tag: loading: 'lazy' }}
+              {%- else -%}
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              {%- endif -%}
+            </div>
+            <div class="draped-card-overlay"></div>
+          {%- endif -%}
+          
+          <div class="draped-card-content">
+            <p class="draped-review-text">
+              {{ block.settings.review_text }}
+              {%- if block.settings.read_more_link != blank -%}
+                <a href="{{ block.settings.read_more_link }}" class="draped-read-more">Read More</a>
+              {%- else -%}
+                <span class="draped-read-more" style="cursor: pointer;">Read More</span>
+              {%- endif -%}
+            </p>
+            <div class="draped-card-footer">
+              <div class="draped-author-info">
+                <h4 class="draped-author-name">{{ block.settings.author_name }}</h4>
+                <span class="draped-date">{{ block.settings.date }}</span>
+              </div>
+              <div class="draped-stars">
+                {%- assign rating = block.settings.rating | times: 1 -%}
+                {%- for i in (1..5) -%}
+                  <span class="star {% if i <= rating %}filled{% endif %}">★</span>
+                {%- endfor -%}
+              </div>
+            </div>
+          </div>
+
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Draped With Love",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Draped With Love"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Verified Buyers, Real Drapes — Swipe Through What They Told Us After The Saree Arrived."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "select",
+          "id": "card_style",
+          "label": "Card Style",
+          "options": [
+            { "value": "text", "label": "Text (Pink Background)" },
+            { "value": "image", "label": "Image Background" }
+          ],
+          "default": "text"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image (Only for Image Background)"
+        },
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Review Text",
+          "default": "Suta Sarees Are Always Comfortable To Drape Elegance And Comfort ..."
+        },
+        {
+          "type": "url",
+          "id": "read_more_link",
+          "label": "Read More Link"
+        },
+        {
+          "type": "text",
+          "id": "author_name",
+          "label": "Author Name",
+          "default": "Kanchan T."
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Date",
+          "default": "4 November 2025"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "label": "Rating",
+          "default": 5
+        },
+        {
+          "type": "checkbox",
+          "id": "is_tall",
+          "label": "Is Tall Card? (Desktop Only)",
+          "info": "Check this to make the card span larger vertically, ideal for the center image. Only applies to Image Background style.",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Draped With Love",
+      "blocks": [
+        { "type": "review", "settings": { "card_style": "text" } },
+        { "type": "review", "settings": { "card_style": "image" } },
+        { "type": "review", "settings": { "card_style": "image", "is_tall": true } },
+        { "type": "review", "settings": { "card_style": "image" } },
+        { "type": "review", "settings": { "card_style": "text" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
