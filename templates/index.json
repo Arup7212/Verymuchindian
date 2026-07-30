@@ -1134,9 +1134,10 @@
           ]
         }
       },
+      "disabled": true,
       "name": "t:names.product_list",
       "settings": {
-        "collection": "all",
+        "collection": "best-sellers",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 8,
@@ -1374,7 +1375,7 @@
       ],
       "name": "Shop By Fabric",
       "settings": {
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "heading": "Shop By Fabric",
         "subtitle": "Ten Fabrics, Each With Its Own Hand — From Featherlight Organza To Everyday Mul Cotton.",
         "layout_style": "grid",
@@ -1445,6 +1446,17 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
+    },
+    "premium_edit_collection_g6efFT": {
+      "type": "premium-edit-collection",
+      "name": "Premium Edit Collection",
+      "settings": {
+        "title": "The Premium [Edit]",
+        "description": "<p>All-over zari and hand-worked florals, woven only once you order. <br/>₹75,000 to ₹2,50,000- reserved for the sarees that take the longest to make.</p>",
+        "collection": "best-sellers",
+        "max_products": 4,
+        "background_color": "#282A4A"
+      }
     }
   },
   "order": [
@@ -1457,6 +1469,7 @@
     "shop_by_price_xfF4YB",
     "proud_moment_YwpchN",
     "product_list_fa6P9H",
+    "premium_edit_collection_g6efFT",
     "celebs_choice_khTmH4",
     "loom_to_you_UgniMg",
     "shop_by_fabric_eEcqYK",
