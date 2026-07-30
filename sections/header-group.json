@@ -91,7 +91,7 @@
           "static": true,
           "settings": {
             "menu": "main-menu",
-            "category_menu": "main-menu",
+            "category_menu": "shop-by-catagory",
             "background_color": "{{ settings.color_palette.background }}",
             "text_color": "",
             "type_font_primary_size": "0.875rem",
