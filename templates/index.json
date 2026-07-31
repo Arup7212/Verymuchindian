@@ -531,9 +531,9 @@
       ],
       "name": "Tradition & Collections",
       "settings": {
-        "background_color": "#faf8f5",
+        "background_color": "{{ settings.color_palette.background }}",
         "show_dot_bg": true,
-        "dot_color": "#b8b09d",
+        "dot_color": "#DBD5C6",
         "brand_title": "Thread . Time . Tradition",
         "brand_subtitle_1": "Very Much Indian Brings Together India's Most Skilled Weavers And Their Timeless Craft - Pure Handloom Sarees And Textiles.",
         "brand_subtitle_2": "Woven Thread By Thread, Region By Region, Story By Story.",
@@ -1453,68 +1453,6 @@
         "show_arrows": true
       }
     },
-    "in_the_press_pwFPrL": {
-      "type": "in-the-press",
-      "blocks": {
-        "logo_aTjCJr": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/Group_219.png",
-            "link": ""
-          }
-        },
-        "logo_hLeAAG": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/Group_219.png",
-            "link": ""
-          }
-        },
-        "logo_iEbrti": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/Group_219.png",
-            "link": ""
-          }
-        },
-        "logo_EpqQWG": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/Group_219.png",
-            "link": ""
-          }
-        },
-        "logo_faEjkm": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/Group_219.png",
-            "link": ""
-          }
-        },
-        "logo_d9kwFC": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/Group_219.png",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "logo_aTjCJr",
-        "logo_hLeAAG",
-        "logo_iEbrti",
-        "logo_EpqQWG",
-        "logo_faEjkm",
-        "logo_d9kwFC"
-      ],
-      "name": "In The Press",
-      "settings": {
-        "heading": "In The Press",
-        "background_color": "#ffffff",
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
     "draped_with_love_pApC3D": {
       "type": "draped-with-love",
       "blocks": {
@@ -1654,6 +1592,68 @@
       "settings": {
         "title": "The Journal",
         "subtitle": "Weaver Stories, Drape Guides, And The Craft Behind Every Very Much Indian Saree."
+      }
+    },
+    "in_the_press_pwFPrL": {
+      "type": "in-the-press",
+      "blocks": {
+        "logo_aTjCJr": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Group_219.png",
+            "link": ""
+          }
+        },
+        "logo_hLeAAG": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Group_219.png",
+            "link": ""
+          }
+        },
+        "logo_iEbrti": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Group_219.png",
+            "link": ""
+          }
+        },
+        "logo_EpqQWG": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Group_219.png",
+            "link": ""
+          }
+        },
+        "logo_faEjkm": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Group_219.png",
+            "link": ""
+          }
+        },
+        "logo_d9kwFC": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Group_219.png",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_aTjCJr",
+        "logo_hLeAAG",
+        "logo_iEbrti",
+        "logo_EpqQWG",
+        "logo_faEjkm",
+        "logo_d9kwFC"
+      ],
+      "name": "In The Press",
+      "settings": {
+        "heading": "In The Press",
+        "background_color": "#ffffff",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     }
   },
