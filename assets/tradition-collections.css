@@ -256,12 +256,13 @@
   }
 
   .tc-trust-bar {
-    flex-wrap: wrap;
-    gap: 24px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px 12px;
   }
 
   .tc-trust-item {
-    flex: 1 1 33.333%;
+    width: 100%;
   }
 
   .tc-trust-item:nth-child(3)::after {
@@ -286,8 +287,16 @@
     font-size: 30px;
   }
 
-  .tc-trust-item {
-    flex: 1 1 50%;
+  .tc-trust-bar {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px 10px !important;
+  }
+
+  .tc-trust-item:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 5px);
   }
 
   .tc-trust-item::after {
@@ -297,6 +306,12 @@
   .tc-collection-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+  }
+
+  .tc-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 8px);
   }
 
   .tc-card-title {
@@ -314,14 +329,21 @@
     height: 900px;
   }
 
-  .tc-trust-item {
-    flex: 1 1 100%;
-    padding: 10px 0;
+  .tc-trust-bar {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px 10px !important;
   }
 
   .tc-collection-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .tc-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 6px);
   }
 
   .tc-main-title {

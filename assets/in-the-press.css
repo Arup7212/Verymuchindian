@@ -78,13 +78,30 @@
     font-size: 32px;
   }
 
+  .itp__ticker-container {
+    padding: 0;
+  }
+
   .itp__ticker-track {
-    justify-content: center;
-    gap: 20px;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    justify-content: flex-start !important;
+    gap: 24px !important;
+    padding: 0 20px 20px 20px !important;
+    scroll-behavior: smooth !important;
+    width: 100% !important;
+  }
+
+  .itp__ticker-track::-webkit-scrollbar {
+    display: none !important;
   }
   
   .itp__logo-item {
-    flex: 0 0 calc(33.333% - 20px);
+    flex: 0 0 160px !important;
+    scroll-snap-align: center !important;
   }
 
   .itp__logo-image {
@@ -94,6 +111,6 @@
 
 @media screen and (max-width: 480px) {
   .itp__logo-item {
-    flex: 0 0 calc(50% - 20px);
+    flex: 0 0 140px;
   }
 }
