@@ -550,7 +550,7 @@
             "heading_color": "#000000",
             "sub_heading": "<p>Discover our latest collection through immersive videos</p>",
             "sub_heading_color": "#666666",
-            "columns": 6,
+            "columns": 4,
             "grid_gap": 16,
             "show_video_title": false,
             "autoplay_videos": true,
