@@ -531,13 +531,71 @@
       ],
       "name": "Tradition & Collections",
       "settings": {
-        "background_color": "#faf8f5",
+        "background_color": "{{ settings.color_palette.background }}",
         "show_dot_bg": true,
-        "dot_color": "#b8b09d",
+        "dot_color": "#dbd5c6",
         "brand_title": "Thread . Time . Tradition",
         "brand_subtitle_1": "Very Much Indian Brings Together India's Most Skilled Weavers And Their Timeless Craft - Pure Handloom Sarees And Textiles.",
         "brand_subtitle_2": "Woven Thread By Thread, Region By Region, Story By Story.",
         "collection_heading": "Our Collection"
+      }
+    },
+    "1785484701e9dacb2f": {
+      "type": "_blocks",
+      "blocks": {
+        "reelcart_reel_grid_3Lc78d": {
+          "type": "shopify://apps/reelcart/blocks/reel-grid/019bd63f-c7d3-75e1-874e-9ea24a028f0f",
+          "settings": {
+            "heading": "<h2>WATCH & SHOP</h2>",
+            "heading_color": "#000000",
+            "sub_heading": "<p>Discover our latest collection through immersive videos</p>",
+            "sub_heading_color": "#666666",
+            "columns": 4,
+            "grid_gap": 16,
+            "show_video_title": false,
+            "autoplay_videos": true,
+            "shuffle_videos": false,
+            "card_aspect_ratio": "9/16",
+            "card_hover_color": "#000000",
+            "btn_bg_color": "#1a1a2e",
+            "btn_text_color": "#FFFFFF",
+            "btn_border_color": "#1a1a2e",
+            "margin_top": 40,
+            "margin_bottom": 40,
+            "custom_css": ""
+          }
+        }
+      },
+      "block_order": [
+        "reelcart_reel_grid_3Lc78d"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "background_media": "none",
+        "background_color": "",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_color": "",
+        "border_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0
       }
     },
     "shop_by_fabric_EVqkJQ": {
@@ -1453,68 +1511,6 @@
         "show_arrows": true
       }
     },
-    "in_the_press_pwFPrL": {
-      "type": "in-the-press",
-      "blocks": {
-        "logo_aTjCJr": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/Group_219.png",
-            "link": ""
-          }
-        },
-        "logo_hLeAAG": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/Group_219.png",
-            "link": ""
-          }
-        },
-        "logo_iEbrti": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/Group_219.png",
-            "link": ""
-          }
-        },
-        "logo_EpqQWG": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/Group_219.png",
-            "link": ""
-          }
-        },
-        "logo_faEjkm": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/Group_219.png",
-            "link": ""
-          }
-        },
-        "logo_d9kwFC": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/Group_219.png",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "logo_aTjCJr",
-        "logo_hLeAAG",
-        "logo_iEbrti",
-        "logo_EpqQWG",
-        "logo_faEjkm",
-        "logo_d9kwFC"
-      ],
-      "name": "In The Press",
-      "settings": {
-        "heading": "In The Press",
-        "background_color": "#ffffff",
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
     "draped_with_love_pApC3D": {
       "type": "draped-with-love",
       "blocks": {
@@ -1655,12 +1651,75 @@
         "title": "The Journal",
         "subtitle": "Weaver Stories, Drape Guides, And The Craft Behind Every Very Much Indian Saree."
       }
+    },
+    "in_the_press_pwFPrL": {
+      "type": "in-the-press",
+      "blocks": {
+        "logo_aTjCJr": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Group_219.png",
+            "link": ""
+          }
+        },
+        "logo_hLeAAG": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Group_219.png",
+            "link": ""
+          }
+        },
+        "logo_iEbrti": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Group_219.png",
+            "link": ""
+          }
+        },
+        "logo_EpqQWG": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Group_219.png",
+            "link": ""
+          }
+        },
+        "logo_faEjkm": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Group_219.png",
+            "link": ""
+          }
+        },
+        "logo_d9kwFC": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Group_219.png",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_aTjCJr",
+        "logo_hLeAAG",
+        "logo_iEbrti",
+        "logo_EpqQWG",
+        "logo_faEjkm",
+        "logo_d9kwFC"
+      ],
+      "name": "In The Press",
+      "settings": {
+        "heading": "In The Press",
+        "background_color": "#ffffff",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
     }
   },
   "order": [
     "slideshow_7JBU7R",
     "dynamic_slider_9n8p4C",
     "tradition_collections_CUAxEP",
+    "1785484701e9dacb2f",
     "shop_by_fabric_EVqkJQ",
     "best_sellers_products_yb6QDW",
     "festive_collection_H9MFYc",
