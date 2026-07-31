@@ -533,7 +533,7 @@
       "settings": {
         "background_color": "{{ settings.color_palette.background }}",
         "show_dot_bg": true,
-        "dot_color": "#DBD5C6",
+        "dot_color": "#dbd5c6",
         "brand_title": "Thread . Time . Tradition",
         "brand_subtitle_1": "Very Much Indian Brings Together India's Most Skilled Weavers And Their Timeless Craft - Pure Handloom Sarees And Textiles.",
         "brand_subtitle_2": "Woven Thread By Thread, Region By Region, Story By Story.",
@@ -1655,6 +1655,64 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
+    },
+    "1785484701e9dacb2f": {
+      "type": "_blocks",
+      "blocks": {
+        "reelcart_reel_grid_3Lc78d": {
+          "type": "shopify://apps/reelcart/blocks/reel-grid/019bd63f-c7d3-75e1-874e-9ea24a028f0f",
+          "settings": {
+            "heading": "<h2>WATCH & SHOP</h2>",
+            "heading_color": "#000000",
+            "sub_heading": "<p>Discover our latest collection through immersive videos</p>",
+            "sub_heading_color": "#666666",
+            "columns": 4,
+            "grid_gap": 16,
+            "show_video_title": false,
+            "autoplay_videos": true,
+            "shuffle_videos": false,
+            "card_aspect_ratio": "9/16",
+            "card_hover_color": "#000000",
+            "btn_bg_color": "#1a1a2e",
+            "btn_text_color": "#FFFFFF",
+            "btn_border_color": "#1a1a2e",
+            "margin_top": 40,
+            "margin_bottom": 40,
+            "custom_css": ""
+          }
+        }
+      },
+      "block_order": [
+        "reelcart_reel_grid_3Lc78d"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "background_media": "none",
+        "background_color": "",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_color": "",
+        "border_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     }
   },
   "order": [
@@ -1674,6 +1732,7 @@
     "shop_by_fabric_eEcqYK",
     "draped_with_love_pApC3D",
     "journal_accordion_fX7GrC",
-    "in_the_press_pwFPrL"
+    "in_the_press_pwFPrL",
+    "1785484701e9dacb2f"
   ]
 }
