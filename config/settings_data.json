@@ -9,8 +9,8 @@
  */
 {
   "current": {
-    "logo": "shopify://shop_images/Logo_200x_2x_15d3af41-7642-4b55-9459-49eef8118fd6.avif",
-    "logo_height": 36,
+    "logo": "shopify://shop_images/vmi-logo.png",
+    "logo_height": 64,
     "logo_height_mobile": 28,
     "page_text_color": "{{ settings.color_palette.foreground }}",
     "type_body_font": "inter_n4",
@@ -103,53 +103,16 @@
     "variant_button_border_width": 1,
     "variant_button_radius": 14,
     "variant_button_width": "equal-width-buttons",
+    "swym_advanced_pdp_button_enabled": true,
+    "swym_advanced_collections_wishlist_enabled": true,
+    "swym_header_icon_enabled": false,
     "content_for_index": [],
-    "blocks": {
-      "5946647744298494267": {
-        "type": "shopify://apps/wishlist-plus/blocks/wishlist-app-embed/80c3b1fc-3a8f-407e-8367-ffdeebb8b612",
-        "disabled": false,
-        "settings": {
-          "show_ui": true,
-          "storefront_layout_enabled": true,
-          "storefront_layout_primary_bg_color": "#000000",
-          "storefront_layout_primary_text_color": "#ffffff",
-          "storefront_layout_secondary_bg_color": "#F4F8FE",
-          "storefront_layout_secondary_text_color": "#333333",
-          "storefront_layout_ui_border_radius": 6,
-          "storefront_layout_notification_position": "left",
-          "storefront_layout_action_popup_position": "left",
-          "storefront_layout_drawer_position": "left",
-          "storefront_layout_as_section_page": ""
-        }
-      },
-      "2734250573734242505": {
-        "type": "shopify://apps/wishlist-plus/blocks/storefront-ui-elements/80c3b1fc-3a8f-407e-8367-ffdeebb8b612",
-        "disabled": false,
-        "settings": {
-          "enable_variant_selector": true,
-          "swym_add_to_wishlist_title_color": "#333",
-          "swym_variant_selector_font_size_1": 14,
-          "swym_variant_selector_popup_bg_color": "#fff",
-          "swym_variant_selector_section_heading_color": "#000",
-          "swym_variant_selector_section_heading_font_size_2": 12,
-          "swym_variant_selector_choose_create_text": "Choose or Create new wishlist",
-          "swym_variant_selector_wishlist_btn_bg_color": "#292929",
-          "swym_variant_selector_wishlist_btn_color": "#fff",
-          "swym_variant_selector_product_detail_font_color": "#fff",
-          "swym_variant_selector_create_list_placeholder_text": "Enter wish list name",
-          "swym_variant_selector_create_list_title": "Name Your Wishlist"
-        }
-      }
-    },
     "color_palette": {
       "background": "#ffffff",
       "foreground": "#000000",
       "color1": "#333333",
       "color2": "#DFDFDF"
-    },
-    "swym_advanced_collections_wishlist_enabled": true,
-    "swym_advanced_pdp_button_enabled": true,
-    "swym_header_icon_enabled": false
+    }
   },
   "presets": {
     "Horizon": {
