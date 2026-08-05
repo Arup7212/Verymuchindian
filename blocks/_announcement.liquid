@@ -28,7 +28,26 @@
     aria-hidden="{% if block_index == 0 %}false{% else %}true{% endif %}"
   >
     <p class="announcement-bar__text">
-      {{ block.settings.text }}
+      {%- assign text = block.settings.text -%}
+      {%- if text contains '🌐' -%}
+        {%- capture icon -%}
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe" style="vertical-align: middle; margin-right: 6px; display: inline-block;"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        {%- endcapture -%}
+        {%- assign text = text | replace: '🌐', icon -%}
+      {%- endif -%}
+      {%- if text contains '🧵' -%}
+        {%- capture icon -%}
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-spool" style="vertical-align: middle; margin-right: 6px; display: inline-block;"><path d="M3 2h18"/><path d="M3 22h18"/><path d="M8 2v20"/><path d="M16 2v20"/><path d="M8 6h8"/><path d="M8 10h8"/><path d="M8 14h8"/><path d="M8 18h8"/></svg>
+        {%- endcapture -%}
+        {%- assign text = text | replace: '🧵', icon -%}
+      {%- endif -%}
+      {%- if text contains '🦋' -%}
+        {%- capture icon -%}
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award" style="vertical-align: middle; margin-right: 6px; display: inline-block;"><circle cx="12" cy="8" r="7"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg>
+        {%- endcapture -%}
+        {%- assign text = text | replace: '🦋', icon -%}
+      {%- endif -%}
+      {{ text }}
     </p>
 
     {% if block_settings.link != blank %}

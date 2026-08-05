@@ -19,7 +19,7 @@
 }
 
 .itp__title {
-  font-family: var(--font-heading-family, 'Playfair Display', Georgia, serif);
+  font-family: var(--font-heading-family, 'Prata', serif);
   font-size: 42px;
   font-weight: 500;
   color: #34336e;
@@ -68,49 +68,23 @@
 
 
 
-/* Responsive */
-@media screen and (max-width: 768px) {
-  .in-the-press-section {
-    padding-block: 40px;
-  }
-  
-  .itp__title {
-    font-size: 32px;
-  }
-
-  .itp__ticker-container {
-    padding: 0;
-  }
-
-  .itp__ticker-track {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory !important;
-    -webkit-overflow-scrolling: touch !important;
-    justify-content: flex-start !important;
-    gap: 24px !important;
-    padding: 0 20px 20px 20px !important;
-    scroll-behavior: smooth !important;
-    width: 100% !important;
-  }
-
-  .itp__ticker-track::-webkit-scrollbar {
-    display: none !important;
-  }
-  
+/* Responsive (Mobile-first min-width) */
+@media screen and (min-width: 481px) {
   .itp__logo-item {
-    flex: 0 0 160px !important;
-    scroll-snap-align: center !important;
-  }
-
-  .itp__logo-image {
-    max-height: 40px;
+    flex: 0 0 160px;
   }
 }
 
-@media screen and (max-width: 480px) {
-  .itp__logo-item {
-    flex: 0 0 140px;
+@media screen and (min-width: 769px) {
+  .in-the-press-section {
+    padding-block: 70px;
+  }
+
+  .itp__title {
+    font-size: 42px;
+  }
+
+  .itp__logo-image {
+    max-height: 50px;
   }
 }

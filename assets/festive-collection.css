@@ -23,7 +23,7 @@
 }
 
 .fc-title {
-  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-family: var(--font-heading-family, 'Prata', serif);
   font-size: 46px;
   font-weight: 500;
   color: #242946;
@@ -33,7 +33,7 @@
 }
 
 .fc-subtitle {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
   font-size: 15px;
   color: #72778e;
   line-height: 1.6;
@@ -132,29 +132,28 @@
 }
 
 .fc-bar-tag {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 11px;
-  font-weight: 800;
+
+  font-size: 16px;
+  font-weight: 500;
   text-transform: uppercase;
-  color: #1e2447;
-  letter-spacing: 0.14em;
+  color: var(--vmi-navy);
+  letter-spacing: 0px;
   margin-bottom: 2px;
 }
 
 .fc-bar-title {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 36px;
-  font-weight: 600;
-  color: #1e2447;
+  font-family: var(--font-heading-family, 'Prata', serif);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--vmi-navy);
   margin: 0;
   line-height: 1.1;
 }
 
 .fc-bar-subtitle {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  color: #1e2447;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--vmi-navy);
   margin-top: 2px;
 }
 
@@ -174,6 +173,7 @@
   transform: translateY(12px);
   transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
   z-index: 3;
+  color: var(--vmi-navy);
 }
 
 .fc-card:hover .fc-hover-overlay {
@@ -182,33 +182,32 @@
 }
 
 .fc-hover-tag {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 12px;
-  font-weight: 800;
+  font-size: 16px;
+  font-weight: 500;
   text-transform: uppercase;
-  color: #ffffff;
-  letter-spacing: 0.16em;
+  color: var(--vmi-white);
+  letter-spacing: 0px;
   margin-bottom: 2px;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 .fc-hover-title {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 34px;
-  font-weight: 600;
-  color: #ffffff;
+  font-family: var(--font-heading-family, 'Prata', serif);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--vmi-white);
   margin: 0;
   line-height: 1.1;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .fc-hover-subtitle {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 12px;
+  font-size: 16px;
   color: #f0ebe4;
   margin-top: 2px;
   margin-bottom: 14px;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
 }
 
 /* White Pill "Shop Now ->" Button */
@@ -217,10 +216,8 @@
   align-items: center;
   gap: 10px;
   background: #ffffff;
-  color: #1e2447;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
   padding: 10px 24px;
   border-radius: 30px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -235,7 +232,7 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  border: 1.5px solid #1e2447;
+  border: 1.5px solid var(--vmi-navy);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -243,7 +240,7 @@
 }
 
 .fc-shop-button:hover .fc-shop-button-icon {
-  background-color: #1e2447;
+  background-color: var(--vmi-navy);
 }
 
 .fc-shop-button:hover .fc-shop-button-icon svg {
@@ -253,68 +250,41 @@
 .fc-shop-button-icon svg {
   width: 12px;
   height: 12px;
-  stroke: #1e2447;
+  stroke: var(--vmi-navy);
   stroke-width: 2;
   fill: none;
   transition: stroke 0.3s ease;
 }
 
-/* Responsive Styles */
-@media (max-width: 1024px) {
-  .fc-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-
-  .fc-title {
-    font-size: 38px;
-  }
-}
-
-@media (max-width: 768px) {
-  .festive-collection-section {
-    padding: 40px 0 60px 0;
-  }
-
-  .fc-title {
-    font-size: 30px;
-  }
-
-  .fc-subtitle {
-    font-size: 14px;
-  }
-
+/* Responsive Styles (Mobile-first min-width) */
+@media (min-width: 481px) {
   .fc-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
+}
 
-  .fc-glass-bar {
-    bottom: 24px;
-    height: 90px;
+@media (min-width: 769px) {
+  .festive-collection-section {
+    padding: 70px 0 80px 0;
+  }
+
+  .fc-grid {
+    gap: 24px;
   }
 
   .fc-bar-title {
-    font-size: 26px;
+    font-size: 36px;
   }
 
   .fc-hover-title {
-    font-size: 26px;
-  }
-
-  .fc-shop-button {
-    padding: 8px 18px;
-    font-size: 13px;
+    font-size: 34px;
   }
 }
 
-@media (max-width: 480px) {
+@media (min-width: 1025px) {
   .fc-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .fc-card {
-    aspect-ratio: 1 / 1;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
   }
 }

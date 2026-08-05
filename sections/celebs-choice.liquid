@@ -2,16 +2,16 @@
 <script src="{{ 'celebs-choice.js' | asset_url }}" defer="defer"></script>
 
 <celebs-choice class="celebs-choice-section" style="--padding-block-start: {{ section.settings.padding_top }}px; --padding-block-end: {{ section.settings.padding_bottom }}px; --background-color: {{ section.settings.background_color }};">
-  <div class="celebs-choice__container">
+  <div class="vmi-container">
     
     {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
       <div class="celebs-choice__header">
         {%- if section.settings.heading != blank -%}
-          <h2 class="celebs-choice__title">{{ section.settings.heading }}</h2>
+          <h2 class="section-title">{{ section.settings.heading }}</h2>
         {%- endif -%}
         
         {%- if section.settings.subheading != blank -%}
-          <p class="celebs-choice__subheading celebs-choice__subtitle">{{ section.settings.subheading }}</p>
+          <p class="section-subtitle">{{ section.settings.subheading }}</p>
         {%- endif -%}
         
         <div class="celebs-choice__divider"></div>

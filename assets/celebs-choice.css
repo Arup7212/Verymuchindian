@@ -8,10 +8,8 @@
   overflow: hidden;
 }
 
-.celebs-choice__container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 0 0;
+.celebs-choice-section .vmi-container {
+  padding-top: 60px;
 }
 
 /* Header Styles */
@@ -24,7 +22,7 @@
 }
 
 .celebs-choice__title {
-  font-family: var(--font-heading-family, 'Playfair Display', Georgia, serif);
+  font-family: var(--font-heading-family, 'Prata', serif);
   font-size: 42px;
   font-weight: 500;
   color: #34336e;
@@ -34,7 +32,7 @@
 }
 
 .celebs-choice__subtitle {
-  font-family: var(--font-body-family, 'Inter', sans-serif);
+  font-family: var(--font-body-family, 'Jost', sans-serif);
   font-size: 13px;
   color: #7b7e8e;
   margin: 0 0 24px 0;
@@ -120,7 +118,7 @@
 }
 
 .celebs-choice__card-title {
-  font-family: var(--font-body-family, 'Inter', sans-serif);
+  font-family: var(--font-body-family, 'Jost', sans-serif);
   font-size: 18px;
   font-weight: 700;
   color: #34336e;
@@ -130,7 +128,7 @@
 }
 
 .celebs-choice__card-desc {
-  font-family: var(--font-body-family, 'Inter', sans-serif);
+  font-family: var(--font-body-family, 'Jost', sans-serif);
   font-size: 12px;
   font-weight: 400;
   color: #7b7e8e;
@@ -139,70 +137,42 @@
   line-height: 1.4;
 }
 
-/* Desktop sizing classes (Flexbox approach) */
+/* Desktop sizing & layout adjustments (Mobile-first min-width) */
 @media screen and (min-width: 768px) {
+  .celebs-choice-section {
+    padding-block: 70px;
+  }
 
-  /* Subtract gap from percentage width */
+  .celebs-choice__title {
+    font-size: 42px;
+  }
+
+  .celebs-choice__grid {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    gap: 20px;
+  }
+
   .celebs-choice__item--wide {
     width: calc(60% - 10px);
+    flex: 0 0 auto;
+    aspect-ratio: 16/9;
   }
 
   .celebs-choice__item--standard {
     width: calc(40% - 10px);
+    flex: 0 0 auto;
+    aspect-ratio: 4/5;
   }
 
   .celebs-choice__item--half {
     width: calc(50% - 10px);
+    flex: 0 0 auto;
+    aspect-ratio: 1/1;
   }
 
   .celebs-choice__item--full {
     width: 100%;
-  }
-}
-
-/* Mobile Layout - Swipeable Carousel */
-@media screen and (max-width: 767px) {
-  .celebs-choice-section {
-    padding-block: 40px;
-  }
-
-  .celebs-choice__title {
-    font-size: 32px;
-  }
-
-  .celebs-choice__container {
-    padding-right: 0;
-    /* Let cards bleed to right edge */
-  }
-
-  .celebs-choice__grid {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    padding-right: 20px;
-    /* Right padding for last item */
-    gap: 16px;
-    padding-bottom: 20px;
-    /* Space for scrollbar */
-    /* Hide scrollbar */
-    scrollbar-width: none;
-  }
-
-  .celebs-choice__grid::-webkit-scrollbar {
-    display: none;
-  }
-
-  .celebs-choice__item {
-    flex: 0 0 calc(85vw - 20px);
-    scroll-snap-align: center;
-    aspect-ratio: 4/5;
-    /* Taller on mobile */
-  }
-
-  /* Fix first item alignment on scroll */
-  .celebs-choice__item:first-child {
-    scroll-margin-left: 20px;
+    flex: 0 0 auto;
   }
 }

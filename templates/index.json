@@ -546,9 +546,9 @@
         "reelcart_reel_grid_3Lc78d": {
           "type": "shopify://apps/reelcart/blocks/reel-grid/019bd63f-c7d3-75e1-874e-9ea24a028f0f",
           "settings": {
-            "heading": "<h2>WATCH & SHOP</h2>",
+            "heading": "WATCH & SHOP",
             "heading_color": "#000000",
-            "sub_heading": "<p>Discover our latest collection through immersive videos</p>",
+            "sub_heading": "Discover our latest collection through immersive videos",
             "sub_heading_color": "#666666",
             "columns": 4,
             "grid_gap": 16,

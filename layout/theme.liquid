@@ -49,8 +49,9 @@
     {% comment %}VMI: Brand fonts + header overrides{% endcomment %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Jost:wght@300;400;500;600;700&family=Prata&display=swap" rel="stylesheet">
     {{ 'vmi-header-styles.css' | asset_url | stylesheet_tag }}
+    {{ 'reelscart.css' | asset_url | stylesheet_tag }}
 
     {{ content_for_header }}
   </head>

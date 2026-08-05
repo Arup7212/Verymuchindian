@@ -23,7 +23,7 @@
 }
 
 .loom__title {
-  font-family: var(--font-heading-family, 'Playfair Display', Georgia, serif);
+  font-family: var(--font-heading-family, 'Prata', serif);
   font-size: 42px;
   font-weight: 500;
   color: #34336e;
@@ -33,7 +33,7 @@
 }
 
 .loom__subtitle {
-  font-family: var(--font-body-family, 'Inter', sans-serif);
+  font-family: var(--font-body-family, 'Jost', sans-serif);
   font-size: 14px;
   color: #7b7e8e;
   margin: 0 0 40px 0;
@@ -129,7 +129,7 @@
 
 /* Item Content (Title & Description) */
 .loom__item-title {
-  font-family: var(--font-body-family, 'Inter', sans-serif);
+  font-family: var(--font-body-family, 'Jost', sans-serif);
   font-size: 16px;
   font-weight: 600;
   color: #34336e;
@@ -139,7 +139,7 @@
 }
 
 .loom__item-desc {
-  font-family: var(--font-body-family, 'Inter', sans-serif);
+  font-family: var(--font-body-family, 'Jost', sans-serif);
   font-size: 13px;
   color: #7b7e8e;
   margin: 0;
@@ -193,60 +193,29 @@
   z-index: 1;
 }
 
-/* Responsive - Mobile Swipeable Carousel */
-@media screen and (max-width: 989px) {
-  .loom-section {
-    padding-block: 40px;
-  }
-
-  .loom__title {
-    font-size: 32px;
-  }
-
-  .loom__container {
-    padding: 0;
-    /* Bleed to edges on mobile */
-  }
-
-  .loom__header {
-    padding: 0 20px;
-  }
-
-  .loom__grid {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    padding: 0 20px 20px 20px;
-    /* Space for scrollbar and edge */
-    gap: 20px;
-    /* Hide scrollbar */
-    scrollbar-width: none;
-    justify-content: flex-start;
-  }
-
-  .loom__item:not(:last-child)::after {
-    width: calc(100% + 20px);
-    /* Spans item and gap on mobile */
-  }
-
-  .loom__grid::-webkit-scrollbar {
-    display: none;
-  }
-
+/* Responsive (Mobile-first min-width) */
+@media screen and (min-width: 481px) {
   .loom__item {
     flex: 0 0 calc(70vw - 20px);
-    scroll-snap-align: center;
-  }
-
-  /* Fix first item alignment on scroll */
-  .loom__item:first-child {
-    scroll-margin-left: 20px;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 990px) {
+  .loom-section {
+    padding-block: 70px;
+  }
+
+  .loom__title {
+    font-size: 42px;
+  }
+
+  .loom__grid {
+    overflow-x: visible;
+    justify-content: space-between;
+    gap: 0;
+  }
+
   .loom__item {
-    flex: 0 0 calc(85vw - 20px);
+    flex: 1 1 0;
   }
 }

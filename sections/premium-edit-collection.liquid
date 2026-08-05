@@ -2,16 +2,16 @@
 <script src="{{ 'premium-edit-collection.js' | asset_url }}" defer="defer"></script>
 
 <div class="premium-edit-section" style="--premium-bg-color: {{ section.settings.background_color }};">
-  <div class="premium-edit-container">
+  <div class="vmi-container">
     
     <div class="premium-edit-header">
       {% if section.settings.title != blank %}
-        <h2 class="premium-edit-title">
+        <h2 class="section-title">
           {{ section.settings.title | replace: '[', '<span class="premium-gradient-text">' | replace: ']', '</span>' }}
         </h2>
       {% endif %}
       {% if section.settings.description != blank %}
-        <div class="premium-edit-description">
+        <div class="section-subtitle">
           {{ section.settings.description }}
         </div>
       {% endif %}

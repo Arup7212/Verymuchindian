@@ -16,7 +16,7 @@
     <div class="tc-dot-background"></div>
   {%- endif -%}
 
-  <div class="tc-container">
+  <div class="vmi-container">
     {%- if trust_blocks.size > 0 -%}
       <div class="tc-trust-bar">
         {%- for block in trust_blocks -%}
@@ -80,11 +80,12 @@
             </div>
 
             {%- if block.settings.title != blank -%}
-              <div class="tc-trust-title">{{ block.settings.title }}</div>
-            {%- endif -%}
-
-            {%- if block.settings.subtitle != blank -%}
-              <div class="tc-trust-subtitle">{{ block.settings.subtitle }}</div>
+              <div class="tc-trust-title">
+                {{ block.settings.title }}
+                {%- if block.settings.subtitle != blank -%}
+                   {{ block.settings.subtitle }}
+                {%- endif -%}
+              </div>
             {%- endif -%}
 
             {%- if block.settings.link != blank -%}
@@ -98,15 +99,15 @@
     {%- if section.settings.brand_title != blank or section.settings.brand_subtitle_1 != blank -%}
       <div class="tc-brand-banner">
         {%- if section.settings.brand_title != blank -%}
-          <h2 class="tc-main-title">{{ section.settings.brand_title }}</h2>
+          <h2 class="section-title">{{ section.settings.brand_title }}</h2>
         {%- endif -%}
 
         {%- if section.settings.brand_subtitle_1 != blank -%}
-          <p class="tc-subtitle-1">{{ section.settings.brand_subtitle_1 }}</p>
+          <p class="section-subtitle">{{ section.settings.brand_subtitle_1 }}</p>
         {%- endif -%}
 
         {%- if section.settings.brand_subtitle_2 != blank -%}
-          <p class="tc-subtitle-2">{{ section.settings.brand_subtitle_2 }}</p>
+          <p class="section-subtitle">{{ section.settings.brand_subtitle_2 }}</p>
         {%- endif -%}
 
         <div class="tc-divider"></div>
@@ -115,7 +116,7 @@
 
     {%- if section.settings.collection_heading != blank -%}
       <div class="tc-collection-header">
-        <h2 class="tc-section-title">{{ section.settings.collection_heading }}</h2>
+        <h2 class="section-title">{{ section.settings.collection_heading }}</h2>
         <div class="tc-divider"></div>
       </div>
     {%- endif -%}

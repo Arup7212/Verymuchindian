@@ -13,11 +13,11 @@
     {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
       <div class="loom__header">
         {%- if section.settings.heading != blank -%}
-          <h2 class="loom__title">{{ section.settings.heading }}</h2>
+          <h2 class="section-title">{{ section.settings.heading }}</h2>
         {%- endif -%}
         
         {%- if section.settings.subheading != blank -%}
-          <p class="loom__subheading loom__subtitle">{{ section.settings.subheading }}</p>
+          <p class="section-subtitle">{{ section.settings.subheading }}</p>
         {%- endif -%}
         
         <div class="loom__divider"></div>

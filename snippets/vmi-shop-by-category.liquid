@@ -87,29 +87,26 @@
     border: none;
     transition: color 0.2s ease;
   }
-
-  .vmi-category-dropdown-trigger:hover,
-  .vmi-category-dropdown-wrapper:hover .vmi-category-dropdown-trigger {
-    color: var(--vmi-magenta, #EB268F);
-  }
-
   .vmi-category-trigger-text {
-    font-family: 'Montserrat', var(--font-button-family), sans-serif;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0px;
     text-transform: uppercase;
     white-space: nowrap;
   }
 
   .vmi-category-trigger-caret {
-    width: 12px;
-    height: 12px;
+   
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #F48634; /* VMI Accent Orange */
+
     transition: transform 0.2s ease;
+  }
+  .vmi-category-trigger-caret svg{
+ width: 14px;
+    height: 14px;
+  color: var(--vmi-orange, #F48534);
   }
 
   .vmi-category-dropdown-wrapper:hover .vmi-category-trigger-caret {
@@ -180,7 +177,6 @@
     border-radius: 8px;
     color: var(--vmi-indigo, #353370);
     text-decoration: none;
-    font-family: 'Manrope', sans-serif;
     font-size: 0.85rem;
     font-weight: 600;
     white-space: nowrap;
@@ -190,8 +186,8 @@
 
   .vmi-category-vertical-link:hover {
     background: #FAF8F3;
-    color: var(--vmi-magenta, #EB268F);
-    border-left-color: var(--vmi-magenta, #EB268F);
+    color: var(--vmi-orange, #F48534);
+    border-left-color: var(--vmi-orange, #F48534);
     padding-left: 18px;
   }
 
@@ -205,7 +201,7 @@
     transition: background 0.18s ease, transform 0.18s ease;
   }
   .vmi-category-vertical-link:hover .vmi-category-item-dot {
-    background: var(--vmi-magenta, #EB268F);
+    background: var(--vmi-orange, #F48534);
     transform: scale(1.3);
   }
 
@@ -258,7 +254,6 @@
   .vmi-category-sub-link {
     display: block;
     padding: 8px 12px;
-    font-family: 'Manrope', sans-serif;
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--vmi-indigo, #353370);
@@ -268,6 +263,6 @@
   }
   .vmi-category-sub-link:hover {
     background: #FAF8F3;
-    color: var(--vmi-magenta, #EB268F);
+    color: var(--vmi-orange, #F48534);
   }
 </style>
