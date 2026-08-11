@@ -593,8 +593,7 @@
           "settings": {
             "collection": "",
             "label": "",
-            "image": "shopify://shop_images/HMP_5060.webp",
-            "mobile_bg_image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_04_31_15_PM.png"
+            "image": "shopify://shop_images/HMP_5060.webp"
           }
         }
       },
@@ -610,7 +609,6 @@
       "settings": {
         "enable_section": true,
         "heading": "Sangrah",
-        "logo_image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_04_57_27_PM.png",
         "logo_max_width": 220,
         "subtitle": "COLLECTIONS",
         "desktop_bg_image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_04_28_13_PM.png",
