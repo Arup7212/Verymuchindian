@@ -1435,7 +1435,7 @@
       "name": "VMI Virasat Slider",
       "settings": {
         "enable_section": true,
-        "collection": "",
+        "collection": "best-sellers",
         "products_to_show": 8,
         "enable_autoplay": true,
         "autoplay_speed": 3.5,
