@@ -1,0 +1,528 @@
+{%- comment -%}
+  VMI Founder Story — Rachna
+  Left side: Founder portrait with bottom gradient overlay & exact Rachna logo + "THE FOUNDER'S JOURNEY".
+  Right side: Mottled dark red panel with cream 4-sided convex scalloped box with inset border line, elegant serif typography, CTA link, and tagline.
+{%- endcomment -%}
+
+{%- if section.settings.enable_section -%}
+<section
+  class="vmi-founder vmi-section--full"
+  id="vmi-founder-{{ section.id }}"
+  style="
+    --vmi-right-bg-color: {{ section.settings.right_bg_color | default: '#4A121A' }};
+    --vmi-card-bg: {{ section.settings.card_bg_color | default: '#EAE2D5' }};
+    --vmi-card-heading: {{ section.settings.card_heading_color | default: '#2D2325' }};
+    --vmi-card-text: {{ section.settings.card_text_color | default: '#45383B' }};
+    --vmi-cta-color: {{ section.settings.cta_text_color | default: '#C8A8AF' }};
+    --vmi-tagline-color: {{ section.settings.tagline_color | default: '#A8828A' }};
+  "
+>
+  <div class="vmi-founder__split">
+
+    {%- comment -%} LEFT / TOP: Founder Portrait with Bottom Overlay {%- endcomment -%}
+    <div class="vmi-founder__media">
+      {%- if section.settings.image != blank -%}
+        <img
+          src="{{ section.settings.image | image_url: width: 1200 }}"
+          alt="{{ section.settings.image.alt | default: section.settings.founder_name | escape }}"
+          loading="lazy"
+          srcset="
+            {{ section.settings.image | image_url: width: 600 }} 600w,
+            {{ section.settings.image | image_url: width: 900 }} 900w,
+            {{ section.settings.image | image_url: width: 1200 }} 1200w
+          "
+          sizes="(max-width: 749px) 100vw, 50vw"
+          class="vmi-founder__img"
+        >
+      {%- else -%}
+        <img
+          src="{{ 'vmi-rachna-founder.png' | asset_url }}"
+          alt="{{ section.settings.founder_name | default: 'Rachna' | escape }}"
+          loading="lazy"
+          class="vmi-founder__img"
+        >
+      {%- endif -%}
+
+      <div class="vmi-founder__image-overlay"></div>
+
+      {%- comment -%} Bottom Overlay: Exact Rachna Logo SVG + Subtitle {%- endcomment -%}
+      <div class="vmi-founder__left-overlay">
+        <div class="vmi-founder__signature-wrap">
+          {%- if section.settings.founder_logo_image != blank -%}
+            <img src="{{ section.settings.founder_logo_image | image_url: width: 400 }}" alt="{{ section.settings.founder_name }}" class="vmi-founder__signature-img">
+          {%- else -%}
+            <svg class="vmi-founder__signature-svg" viewBox="0 0 280 85" width="220" height="66" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="{{ section.settings.founder_name | default: 'Rachna' }}">
+              <g fill="#FAF8F5">
+                <text x="32" y="58" font-family="'Cormorant Garamond', 'Playfair Display', serif" font-size="54" font-weight="400" font-style="italic" letter-spacing="-1">R</text>
+                <text x="74" y="56" font-family="'Cormorant Garamond', 'Playfair Display', serif" font-size="44" font-weight="400" letter-spacing="1">achna</text>
+                <path d="M 32 62 Q 130 78 245 54 Q 140 68 45 64" fill="#FAF8F5" opacity="0.95"/>
+              </g>
+            </svg>
+          {%- endif -%}
+        </div>
+
+        {%- if section.settings.subtitle != blank -%}
+          <div class="vmi-founder__subtitle-overlay">
+            {{ section.settings.subtitle | upcase }}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- comment -%} RIGHT / BOTTOM: Mottled Maroon Panel with Scalloped Box {%- endcomment -%}
+    <div
+      class="vmi-founder__content-panel"
+      style="
+        {%- if section.settings.right_bg_image != blank -%}
+          background-image: url('{{ section.settings.right_bg_image | image_url: width: 1400 }}');
+        {%- else -%}
+          background-image: url('{{ 'vmi-maroon-texture.png' | asset_url }}');
+        {%- endif -%}
+      "
+    >
+      
+      {%- comment -%} Scalloped Card Wrapper {%- endcomment -%}
+      <div class="vmi-founder__scalloped-box">
+        {%- comment -%} 4-sided SVG smooth convex scalloped background frame with double inset line {%- endcomment -%}
+        <svg class="vmi-founder__scallop-svg" viewBox="0 0 400 460" preserveAspectRatio="none" aria-hidden="true">
+          <!-- Outer Cream Scalloped Shape (Convex Pillow Bumps) -->
+          <path
+            d="M 40,35 A 28 28 0 0 1 93.33,35 A 28 28 0 0 1 146.67,35 A 28 28 0 0 1 200,35 A 28 28 0 0 1 253.33,35 A 28 28 0 0 1 306.67,35 A 28 28 0 0 1 360,35 A 24 24 0 0 1 365,40 A 28 28 0 0 1 365,94.28 A 28 28 0 0 1 365,148.57 A 28 28 0 0 1 365,202.86 A 28 28 0 0 1 365,257.14 A 28 28 0 0 1 365,311.43 A 28 28 0 0 1 365,365.71 A 28 28 0 0 1 365,420 A 24 24 0 0 1 360,425 A 28 28 0 0 1 306.67,425 A 28 28 0 0 1 253.33,425 A 28 28 0 0 1 200,425 A 28 28 0 0 1 146.67,425 A 28 28 0 0 1 93.33,425 A 28 28 0 0 1 40,425 A 24 24 0 0 1 35,420 A 28 28 0 0 1 35,365.71 A 28 28 0 0 1 35,311.43 A 28 28 0 0 1 35,257.14 A 28 28 0 0 1 35,202.86 A 28 28 0 0 1 35,148.57 A 28 28 0 0 1 35,94.28 A 28 28 0 0 1 35,40 A 24 24 0 0 1 40,35 Z"
+            fill="var(--vmi-card-bg)"
+          />
+
+          <!-- Fine Inset Outline Parallel to Scallops -->
+          <path
+            d="M 44,40 A 25 25 0 0 1 93.33,40 A 25 25 0 0 1 146.67,40 A 25 25 0 0 1 200,40 A 25 25 0 0 1 253.33,40 A 25 25 0 0 1 306.67,40 A 25 25 0 0 1 356,40 A 20 20 0 0 1 360,44 A 25 25 0 0 1 360,94.28 A 25 25 0 0 1 360,148.57 A 25 25 0 0 1 360,202.86 A 25 25 0 0 1 360,257.14 A 25 25 0 0 1 360,311.43 A 25 25 0 0 1 360,365.71 A 25 25 0 0 1 360,416 A 20 20 0 0 1 356,420 A 25 25 0 0 1 306.67,420 A 25 25 0 0 1 253.33,420 A 25 25 0 0 1 200,420 A 25 25 0 0 1 146.67,420 A 25 25 0 0 1 93.33,420 A 25 25 0 0 1 44,420 A 20 20 0 0 1 40,416 A 25 25 0 0 1 40,365.71 A 25 25 0 0 1 40,311.43 A 25 25 0 0 1 40,257.14 A 25 25 0 0 1 40,202.86 A 25 25 0 0 1 40,148.57 A 25 25 0 0 1 40,94.28 A 25 25 0 0 1 40,44 A 20 20 0 0 1 44,40 Z"
+            fill="none"
+            stroke="rgba(110, 85, 75, 0.25)"
+            stroke-width="1.3"
+          />
+        </svg>
+
+        <div class="vmi-founder__scallop-inner">
+          {%- if section.settings.story_heading != blank -%}
+            <h2 class="vmi-founder__story-title">
+              {{ section.settings.story_heading | replace: ' ', '&nbsp;' | replace: 'India’s&nbsp;', 'India’s<br>' | replace: "India's&nbsp;", "India's<br>" }}
+            </h2>
+          {%- endif -%}
+
+          {%- if section.settings.description != blank -%}
+            <div class="vmi-founder__story-text">
+              {{ section.settings.description }}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- comment -%} CTA & Tagline Below Card {%- endcomment -%}
+      <div class="vmi-founder__bottom-meta">
+        {%- if section.settings.cta_label != blank -%}
+          <a href="{{ section.settings.cta_url }}" class="vmi-founder__cta-link">
+            <span>{{ section.settings.cta_label | upcase }}</span>
+            <svg width="20" height="12" viewBox="0 0 20 12" fill="none" aria-hidden="true">
+              <path d="M1 6h17M12 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        {%- endif -%}
+
+        {%- if section.settings.tagline != blank -%}
+          <div class="vmi-founder__tagline">
+            {{ section.settings.tagline }}
+          </div>
+        {%- endif -%}
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&display=swap');
+
+  .vmi-founder {
+    overflow: hidden;
+    background-color: var(--vmi-right-bg-color);
+    width: 100%;
+  }
+
+  .vmi-founder__split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 640px;
+    width: 100%;
+  }
+
+  /* ════════════════════════════════
+     LEFT COLUMN: IMAGE & OVERLAY
+  ════════════════════════════════ */
+  .vmi-founder__media {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 600px;
+    background-color: #1A080C;
+  }
+
+  .vmi-founder__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    position: absolute;
+    inset: 0;
+    filter: grayscale(25%) contrast(1.05);
+    transition: filter 0.3s ease;
+  }
+
+  .vmi-founder__image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(40, 8, 15, 0.95) 0%,
+      rgba(40, 8, 15, 0.45) 35%,
+      transparent 70%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .vmi-founder__left-overlay {
+    position: absolute;
+    bottom: 2.2rem;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+    pointer-events: none;
+  }
+
+  .vmi-founder__signature-wrap {
+    margin-bottom: 0.1rem;
+  }
+
+  .vmi-founder__signature-svg {
+    max-width: 230px;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 3px 12px rgba(0, 0, 0, 0.5));
+  }
+
+  .vmi-founder__signature-img {
+    max-width: 230px;
+    height: auto;
+    display: block;
+  }
+
+  .vmi-founder__subtitle-overlay {
+    font-family: 'Jost', var(--vmi-font-body, system-ui, sans-serif);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    color: #FAF8F5;
+    text-transform: uppercase;
+    opacity: 0.92;
+    margin-top: 0.35rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  }
+
+  /* ════════════════════════════════
+     RIGHT COLUMN: CONTENT & SCALLOP CARD
+  ════════════════════════════════ */
+  .vmi-founder__content-panel {
+    background-color: var(--vmi-right-bg-color);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3.5rem 2.5rem;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+
+  /* Scalloped Box */
+  .vmi-founder__scalloped-box {
+    position: relative;
+    max-width: 450px;
+    width: 100%;
+    padding: 3.2rem 2.8rem 2.8rem 2.8rem;
+    box-sizing: border-box;
+    filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.24));
+  }
+
+  .vmi-founder__scallop-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: visible;
+  }
+
+  .vmi-founder__scallop-inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .vmi-founder__story-title {
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-size: clamp(1.45rem, 2.3vw, 1.85rem);
+    font-weight: 500;
+    color: var(--vmi-card-heading);
+    margin: 0 0 1.1rem 0;
+    line-height: 1.25;
+    text-align: center;
+    letter-spacing: -0.01em;
+  }
+
+  .vmi-founder__story-text {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 1.02rem;
+    line-height: 1.72;
+    color: var(--vmi-card-text);
+    text-align: center;
+    font-weight: 400;
+  }
+
+  .vmi-founder__story-text p {
+    margin: 0 0 0.85rem 0;
+  }
+
+  .vmi-founder__story-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Bottom Meta (CTA & Tagline) */
+  .vmi-founder__bottom-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 1.8rem;
+    z-index: 1;
+  }
+
+  .vmi-founder__cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-family: 'Jost', var(--vmi-font-body, system-ui, sans-serif);
+    font-size: 0.74rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--vmi-cta-color);
+    text-decoration: none;
+    transition: color 0.25s ease, gap 0.25s ease;
+  }
+
+  .vmi-founder__cta-link:hover {
+    color: #FAF8F5;
+    gap: 0.95rem;
+  }
+
+  .vmi-founder__cta-link svg {
+    transition: transform 0.25s ease;
+  }
+
+  .vmi-founder__cta-link:hover svg {
+    transform: translateX(4px);
+  }
+
+  .vmi-founder__tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--vmi-tagline-color);
+    margin-top: 0.9rem;
+    letter-spacing: 0.06em;
+    text-transform: lowercase;
+    opacity: 0.95;
+  }
+
+  /* ════════════════════════════════
+     TABLET & MOBILE RESPONSIVE
+  ════════════════════════════════ */
+  @media (max-width: 1024px) {
+    .vmi-founder__content-panel {
+      padding: 3rem 1.8rem;
+    }
+
+    .vmi-founder__scalloped-box {
+      padding: 2.8rem 2rem 2.4rem 2rem;
+    }
+  }
+
+  @media (max-width: 749px) {
+    .vmi-founder__split {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    .vmi-founder__media {
+      min-height: 400px;
+      aspect-ratio: 4 / 5;
+    }
+
+    .vmi-founder__left-overlay {
+      bottom: 2rem;
+      padding: 0 1.25rem;
+    }
+
+    .vmi-founder__content-panel {
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .vmi-founder__scalloped-box {
+      padding: 2.5rem 1.5rem 2.2rem 1.5rem;
+      max-width: 100%;
+    }
+
+    .vmi-founder__story-title {
+      font-size: 1.45rem;
+    }
+
+    .vmi-founder__story-text {
+      font-size: 0.95rem;
+      line-height: 1.68;
+    }
+  }
+</style>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "VMI Founder Story",
+  "tag": "div",
+  "class": "vmi-founder-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_section",
+      "label": "Enable section",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Left Side (Portrait & Logo)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Founder portrait image"
+    },
+    {
+      "type": "text",
+      "id": "founder_name",
+      "label": "Founder name",
+      "default": "Rachna"
+    },
+    {
+      "type": "image_picker",
+      "id": "founder_logo_image",
+      "label": "Custom Rachna logo image (optional)"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle under name",
+      "default": "THE FOUNDER'S JOURNEY"
+    },
+    {
+      "type": "header",
+      "content": "Right Side (Background & Content)"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_bg_image",
+      "label": "Right side background image (texture / photo)"
+    },
+    {
+      "type": "color",
+      "id": "right_bg_color",
+      "label": "Right side background color",
+      "default": "#4A121A"
+    },
+    {
+      "type": "text",
+      "id": "story_heading",
+      "label": "Story box heading",
+      "default": "Celebrating India's Craftsmanship"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Story text",
+      "default": "<p>Slony founded Very Much Indian to celebrate India's heritage weaves and empower the artisans behind them. Every piece reflects centuries of skill, culture, and craftsmanship, bringing timeless artistry into modern homes while preserving traditions and supporting the hands that make them.</p>"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA label",
+      "default": "READ FULL STORY"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA URL"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline under CTA",
+      "default": "made in india with love"
+    },
+    {
+      "type": "header",
+      "content": "Color Customizations"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Scalloped card background",
+      "default": "#EAE2D5"
+    },
+    {
+      "type": "color",
+      "id": "card_heading_color",
+      "label": "Story heading color",
+      "default": "#2D2325"
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Story text color",
+      "default": "#45383B"
+    },
+    {
+      "type": "color",
+      "id": "cta_text_color",
+      "label": "CTA link color",
+      "default": "#C8A8AF"
+    },
+    {
+      "type": "color",
+      "id": "tagline_color",
+      "label": "Tagline color",
+      "default": "#A8828A"
+    }
+  ],
+  "presets": [
+    {
+      "name": "VMI Founder Story"
+    }
+  ]
+}
+{% endschema %}
