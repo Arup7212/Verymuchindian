@@ -23,7 +23,24 @@
   "
 >
   {%- comment -%} Mobile Dynamic Background Layer {%- endcomment -%}
-  <div class="vmi-arch__mobile-bg-layer" id="vmi-arch-mob-bg-{{ section.id }}"></div>
+  {%- assign initial_bg_url = 'vmi-sangrah-bg-desktop.png' | asset_url -%}
+  {%- if section.settings.desktop_bg_image != blank -%}
+    {%- assign initial_bg_url = section.settings.desktop_bg_image | image_url: width: 1400 -%}
+  {%- endif -%}
+  {%- if section.blocks.size > 0 -%}
+    {%- assign active_index = 2 -%}
+    {%- if section.blocks.size < 3 -%}{%- assign active_index = 0 -%}{%- endif -%}
+    {%- assign init_block = section.blocks[active_index] -%}
+    {%- assign init_col = collections[init_block.settings.collection] -%}
+    {%- if init_block.settings.mobile_bg_image != blank -%}
+      {%- assign initial_bg_url = init_block.settings.mobile_bg_image | image_url: width: 1200 -%}
+    {%- elsif init_col.featured_image != blank -%}
+      {%- assign initial_bg_url = init_col.featured_image | image_url: width: 1200 -%}
+    {%- elsif init_block.settings.image != blank -%}
+      {%- assign initial_bg_url = init_block.settings.image | image_url: width: 1200 -%}
+    {%- endif -%}
+  {%- endif -%}
+  <div class="vmi-arch__mobile-bg-layer" id="vmi-arch-mob-bg-{{ section.id }}" style="background-image: url('{{ initial_bg_url }}');"></div>
   <div class="vmi-arch__bg-overlay"></div>
 
   <div class="vmi-arch__container">
@@ -65,10 +82,19 @@
             {%- assign card_img = block.settings.image | default: col.featured_image -%}
             {%- assign mob_bg = block.settings.mobile_bg_image | default: col.featured_image | default: card_img -%}
 
+            {%- assign mob_bg_url = '' -%}
+            {%- if mob_bg != blank -%}
+              {%- assign mob_bg_url = mob_bg | image_url: width: 1200 -%}
+            {%- elsif section.settings.desktop_bg_image != blank -%}
+              {%- assign mob_bg_url = section.settings.desktop_bg_image | image_url: width: 1400 -%}
+            {%- else -%}
+              {%- assign mob_bg_url = 'vmi-sangrah-bg-desktop.png' | asset_url -%}
+            {%- endif -%}
+
             <div
               class="vmi-arch-card {% if forloop.index == 3 or forloop.first and section.blocks.size < 3 %}active{% endif %}"
               data-index="{{ forloop.index0 }}"
-              data-mobile-bg="{% if mob_bg != blank %}{{ mob_bg | image_url: width: 1200 }}{% endif %}"
+              data-mobile-bg="{{ mob_bg_url }}"
               {{ block.shopify_attributes }}
             >
               <a href="{% if col != blank %}{{ col.url }}{% else %}#{% endif %}" class="vmi-arch-card__inner">
@@ -654,7 +680,7 @@
             }
           }
 
-          if (window.innerWidth <= 749 && mobBgLayer) {
+          if (mobBgLayer) {
             const mobBgUrl = closestCard.getAttribute('data-mobile-bg');
             if (mobBgUrl) {
               mobBgLayer.style.backgroundImage = 'url("' + mobBgUrl + '")';
@@ -682,6 +708,9 @@
       }
 
       track.addEventListener('scroll', function() {
+        window.requestAnimationFrame(updateActiveCard);
+      });
+      window.addEventListener('resize', function() {
         window.requestAnimationFrame(updateActiveCard);
       });
 
