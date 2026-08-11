@@ -799,6 +799,22 @@
         "view_all_url": ""
       }
     },
+    "vmi_trust_dTjgyn": {
+      "type": "vmi-trust",
+      "name": "VMI Trust",
+      "settings": {
+        "enable_section": true,
+        "bg_gradient": "linear-gradient(135deg, #CFDAE5 0%, #7B90A3 45%, #2B3E52 100%)",
+        "heading": "Sankalp",
+        "sankalp_logo_image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_01_38_30_PM.png",
+        "logo_max_width": 240,
+        "subtitle": "OUR PROMISE TO THE ARTISANS",
+        "small_heading": "Celebrating India's Craftsmanship",
+        "mission": "<p>At Very Much Indian, we revive traditional weaves and empower artisans, ensuring every piece tells a story and sustains a legacy. When you choose us, you support the hands that create, the communities that thrive, and the heritage that endures.</p>",
+        "card_bg_color": "#F4EFE6",
+        "text_color": "#1E354D"
+      }
+    },
     "festive_collection_H9MFYc": {
       "type": "festive-collection",
       "blocks": {
@@ -1599,9 +1615,10 @@
       "name": "VMI Founder Story",
       "settings": {
         "enable_section": true,
-        "image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_01_10_22_PM.png",
+        "logo_max_width": 240,
         "founder_name": "Rachna",
         "subtitle": "THE FOUNDER'S JOURNEY",
+        "image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_01_10_22_PM.png",
         "right_bg_image": "shopify://shop_images/WhatsApp_Image_2026-08-11_at_12.58.47_PM.jpg",
         "right_bg_color": "#4a121a",
         "story_heading": "Celebrating India's Craftsmanship",
@@ -1777,6 +1794,7 @@
     "1785484701e9dacb2f",
     "shop_by_fabric_EVqkJQ",
     "best_sellers_products_yb6QDW",
+    "vmi_trust_dTjgyn",
     "festive_collection_H9MFYc",
     "best_sellers_products_UkXTJU",
     "shop_by_price_xfF4YB",
