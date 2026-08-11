@@ -1,0 +1,776 @@
+{%- comment -%}
+  VMI Arch Collections Section (sections/vmi-arch-collections.liquid)
+  Luxury Indian Mughal Arch Collections Carousel
+  - Desktop: 100% Static Background Banner (never changes)
+  - Mobile: Dynamic background updating based on active card
+  - Image clipped strictly to SVG inner arch (zero black corners)
+  - Active card top cut-off fixed with extra vertical padding (3rem top/bottom)
+  - Desktop 1st card left cut-off fixed with safe scroll alignment & padding
+  - Title framed with top & bottom accent lines strictly contained inside card chin (max-width 135px)
+  - Active card diamond ornament updated to exact decorative_diamond_EXACT(1) SVG
+{%- endcomment -%}
+
+{%- if section.settings.enable_section -%}
+<section
+  class="vmi-arch-collections vmi-section--full"
+  id="vmi-arch-{{ section.id }}"
+  style="
+    {%- if section.settings.desktop_bg_image != blank -%}
+      --vmi-desktop-bg: url('{{ section.settings.desktop_bg_image | image_url: width: 2200 }}');
+    {%- else -%}
+      --vmi-desktop-bg: url('{{ 'vmi-sangrah-bg-desktop.png' | asset_url }}');
+    {%- endif -%}
+    --vmi-text-color: {{ section.settings.text_color | default: '#401F28' }};
+  "
+>
+  {%- comment -%} Mobile Dynamic Background Layer {%- endcomment -%}
+  <div class="vmi-arch__mobile-bg-layer" id="vmi-arch-mob-bg-{{ section.id }}"></div>
+  <div class="vmi-arch__bg-overlay"></div>
+
+  <div class="vmi-arch__container">
+    
+    {%- comment -%} Section Header: Sangrah Logo Calligraphy + COLLECTIONS Subtitle {%- endcomment -%}
+    <div class="vmi-arch__header">
+      <div class="vmi-arch__logo-brand">
+        {%- if section.settings.logo_image != blank -%}
+          <img
+            src="{{ section.settings.logo_image | image_url: width: 400 }}"
+            alt="{{ section.settings.heading | default: 'Sangrah' }}"
+            class="vmi-arch__logo-img"
+            style="max-width: {{ section.settings.logo_max_width | default: 220 }}px;"
+          >
+        {%- else -%}
+          {%- assign heading_text = section.settings.heading | default: 'Sangrah' -%}
+          {%- assign s_first_char = heading_text | slice: 0, 1 -%}
+          {%- assign s_rest_chars = heading_text | slice: 1, 100 -%}
+          <div class="vmi-arch__logo-text">
+            <span class="vmi-arch__first-letter">{{ s_first_char }}</span>
+            <span class="vmi-arch__rest-letters">{{ s_rest_chars }}</span>
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="vmi-arch__subtitle">
+        {{ section.settings.subtitle | default: 'COLLECTIONS' | upcase }}
+      </div>
+    </div>
+
+    {%- comment -%} Arch Collection Cards Track {%- endcomment -%}
+    <div class="vmi-arch__slider-wrap">
+      <div class="vmi-arch__track" id="vmi-arch-track-{{ section.id }}">
+        
+        {%- if section.blocks.size > 0 -%}
+          {%- for block in section.blocks -%}
+            {%- assign col = collections[block.settings.collection] -%}
+            {%- assign card_label = block.settings.label | default: col.title | default: 'COLLECTION' -%}
+            {%- assign card_img = block.settings.image | default: col.featured_image -%}
+            {%- assign mob_bg = block.settings.mobile_bg_image | default: col.featured_image | default: card_img -%}
+
+            <div
+              class="vmi-arch-card {% if forloop.index == 3 or forloop.first and section.blocks.size < 3 %}active{% endif %}"
+              data-index="{{ forloop.index0 }}"
+              data-mobile-bg="{% if mob_bg != blank %}{{ mob_bg | image_url: width: 1200 }}{% endif %}"
+              {{ block.shopify_attributes }}
+            >
+              <a href="{% if col != blank %}{{ col.url }}{% else %}#{% endif %}" class="vmi-arch-card__inner">
+                <div class="vmi-arch-card__frame-box">
+                  
+                  {%- comment -%} SVG Card Vector Container {%- endcomment -%}
+                  <svg class="vmi-arch-card__frame-svg" viewBox="0 0 965 1600" preserveAspectRatio="none" aria-hidden="true">
+                    <defs>
+                      <clipPath id="innerArchClip-{{ section.id }}-{{ block.id }}">
+                        <path d="M 476.0,55.0 L 544.0,60.0 L 575.0,67.0 L 613.0,80.0 L 644.0,99.0 L 654.0,102.0 L 687.0,129.0 L 714.0,161.0 L 720.0,173.0 L 767.0,173.0 L 770.0,176.0 L 771.0,190.0 L 777.0,206.0 L 800.0,239.0 L 823.0,255.0 L 831.0,255.0 L 835.0,259.0 L 846.0,261.0 L 848.0,277.0 L 847.0,1099.0 L 818.0,1104.0 L 815.0,1108.0 L 789.0,1120.0 L 784.0,1128.0 L 772.0,1137.0 L 772.0,1143.0 L 768.0,1145.0 L 759.0,1162.0 L 753.0,1193.0 L 705.0,1193.0 L 688.0,1218.0 L 654.0,1252.0 L 625.0,1266.0 L 622.0,1270.0 L 571.0,1290.0 L 545.0,1293.0 L 543.0,1296.0 L 484.0,1302.0 L 420.0,1296.0 L 414.0,1292.0 L 377.0,1284.0 L 337.0,1268.0 L 335.0,1264.0 L 321.0,1258.0 L 302.0,1240.0 L 294.0,1238.0 L 293.0,1233.0 L 288.0,1233.0 L 277.0,1217.0 L 271.0,1214.0 L 271.0,1209.0 L 260.0,1195.0 L 214.0,1194.0 L 207.0,1173.0 L 207.0,1163.0 L 202.0,1152.0 L 197.0,1151.0 L 197.0,1145.0 L 191.0,1136.0 L 174.0,1119.0 L 168.0,1118.0 L 167.0,1114.0 L 142.0,1103.0 L 128.0,1103.0 L 127.0,1100.0 L 121.0,1101.0 L 119.0,1098.0 L 119.0,261.0 L 144.0,254.0 L 171.0,232.0 L 188.0,204.0 L 191.0,186.0 L 197.0,174.0 L 242.0,174.0 L 267.0,140.0 L 289.0,118.0 L 319.0,99.0 L 321.0,95.0 L 326.0,95.0 L 368.0,73.0 L 382.0,71.0 L 385.0,67.0 L 412.0,61.0 Z" />
+                      </clipPath>
+
+                      <linearGradient id="frameFillInactive-{{ section.id }}" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#fbf8ef"/>
+                        <stop offset="55%" stop-color="#f5f0e4"/>
+                        <stop offset="100%" stop-color="#eee8da"/>
+                      </linearGradient>
+
+                      <linearGradient id="frameFillActive-{{ section.id }}" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#4B5663"/>
+                        <stop offset="55%" stop-color="#3A444E"/>
+                        <stop offset="100%" stop-color="#2D3640"/>
+                      </linearGradient>
+                    </defs>
+
+                    {%- comment -%} Photo image strictly clipped to inner arch window {%- endcomment -%}
+                    <g clip-path="url(#innerArchClip-{{ section.id }}-{{ block.id }})">
+                      {%- if card_img != blank -%}
+                        <image href="{{ card_img | image_url: width: 800 }}" x="118" y="54" width="732" height="1248" preserveAspectRatio="xMidYMid slice" />
+                      {%- else -%}
+                        <image href="{{ 'vmi-sangrah-banarasi.png' | asset_url }}" x="118" y="54" width="732" height="1248" preserveAspectRatio="xMidYMid slice" />
+                      {%- endif -%}
+                    </g>
+
+                    {%- comment -%} Frame Shapes {%- endcomment -%}
+                    <path
+                      class="vmi-arch-frame-path vmi-arch-frame-path--inactive"
+                      d="M 448.0,0.0 L 447.0,3.0 L 417.0,5.0 L 412.0,8.0 L 380.0,12.0 L 320.0,33.0 L 317.0,38.0 L 299.0,44.0 L 297.0,48.0 L 269.0,64.0 L 264.0,72.0 L 245.0,85.0 L 206.0,132.0 L 150.0,134.0 L 148.0,154.0 L 138.0,180.0 L 116.0,202.0 L 100.0,212.0 L 82.0,218.0 L 64.0,218.0 L 55.0,224.0 L 55.0,1384.0 L 57.0,1389.0 L 79.0,1391.0 L 117.0,1411.0 L 143.0,1441.0 L 152.0,1481.0 L 188.0,1480.0 L 223.0,1487.0 L 257.0,1519.0 L 289.0,1543.0 L 329.0,1563.0 L 369.0,1578.0 L 403.0,1583.0 L 411.0,1587.0 L 448.0,1591.0 L 511.0,1592.0 L 556.0,1586.0 L 560.0,1583.0 L 575.0,1583.0 L 639.0,1562.0 L 640.0,1559.0 L 655.0,1554.0 L 696.0,1528.0 L 704.0,1519.0 L 714.0,1514.0 L 719.0,1505.0 L 730.0,1498.0 L 733.0,1492.0 L 741.0,1491.0 L 752.0,1484.0 L 775.0,1480.0 L 814.0,1480.0 L 816.0,1460.0 L 823.0,1441.0 L 845.0,1413.0 L 850.0,1412.0 L 865.0,1399.0 L 881.0,1392.0 L 909.0,1387.0 L 910.0,222.0 L 900.0,218.0 L 880.0,217.0 L 848.0,203.0 L 846.0,198.0 L 843.0,198.0 L 827.0,181.0 L 815.0,151.0 L 815.0,134.0 L 752.0,129.0 L 751.0,123.0 L 745.0,119.0 L 737.0,104.0 L 728.0,100.0 L 725.0,92.0 L 714.0,86.0 L 713.0,81.0 L 702.0,70.0 L 698.0,70.0 L 686.0,58.0 L 681.0,58.0 L 677.0,52.0 L 666.0,48.0 L 654.0,38.0 L 648.0,38.0 L 633.0,28.0 L 618.0,26.0 L 603.0,18.0 L 589.0,16.0 L 576.0,10.0 L 532.0,4.0 L 529.0,0.0 Z M 476.0,55.0 L 544.0,60.0 L 575.0,67.0 L 613.0,80.0 L 644.0,99.0 L 654.0,102.0 L 687.0,129.0 L 714.0,161.0 L 720.0,173.0 L 767.0,173.0 L 770.0,176.0 L 771.0,190.0 L 777.0,206.0 L 800.0,239.0 L 823.0,255.0 L 831.0,255.0 L 835.0,259.0 L 846.0,261.0 L 848.0,277.0 L 847.0,1099.0 L 818.0,1104.0 L 815.0,1108.0 L 789.0,1120.0 L 784.0,1128.0 L 772.0,1137.0 L 772.0,1143.0 L 768.0,1145.0 L 759.0,1162.0 L 753.0,1193.0 L 705.0,1193.0 L 688.0,1218.0 L 654.0,1252.0 L 625.0,1266.0 L 622.0,1270.0 L 571.0,1290.0 L 545.0,1293.0 L 543.0,1296.0 L 484.0,1302.0 L 420.0,1296.0 L 414.0,1292.0 L 377.0,1284.0 L 337.0,1268.0 L 335.0,1264.0 L 321.0,1258.0 L 302.0,1240.0 L 294.0,1238.0 L 293.0,1233.0 L 288.0,1233.0 L 277.0,1217.0 L 271.0,1214.0 L 271.0,1209.0 L 260.0,1195.0 L 214.0,1194.0 L 207.0,1173.0 L 207.0,1163.0 L 202.0,1152.0 L 197.0,1151.0 L 197.0,1145.0 L 191.0,1136.0 L 174.0,1119.0 L 168.0,1118.0 L 167.0,1114.0 L 142.0,1103.0 L 128.0,1103.0 L 127.0,1100.0 L 121.0,1101.0 L 119.0,1098.0 L 119.0,261.0 L 144.0,254.0 L 171.0,232.0 L 188.0,204.0 L 191.0,186.0 L 197.0,174.0 L 242.0,174.0 L 267.0,140.0 L 289.0,118.0 L 319.0,99.0 L 321.0,95.0 L 326.0,95.0 L 368.0,73.0 L 382.0,71.0 L 385.0,67.0 L 412.0,61.0 Z"
+                      fill="url(#frameFillInactive-{{ section.id }})"
+                      fill-rule="evenodd"
+                    />
+
+                    <path
+                      class="vmi-arch-frame-path vmi-arch-frame-path--active"
+                      d="M 448.0,0.0 L 447.0,3.0 L 417.0,5.0 L 412.0,8.0 L 380.0,12.0 L 320.0,33.0 L 317.0,38.0 L 299.0,44.0 L 297.0,48.0 L 269.0,64.0 L 264.0,72.0 L 245.0,85.0 L 206.0,132.0 L 150.0,134.0 L 148.0,154.0 L 138.0,180.0 L 116.0,202.0 L 100.0,212.0 L 82.0,218.0 L 64.0,218.0 L 55.0,224.0 L 55.0,1384.0 L 57.0,1389.0 L 79.0,1391.0 L 117.0,1411.0 L 143.0,1441.0 L 152.0,1481.0 L 188.0,1480.0 L 223.0,1487.0 L 257.0,1519.0 L 289.0,1543.0 L 329.0,1563.0 L 369.0,1578.0 L 403.0,1583.0 L 411.0,1587.0 L 448.0,1591.0 L 511.0,1592.0 L 556.0,1586.0 L 560.0,1583.0 L 575.0,1583.0 L 639.0,1562.0 L 640.0,1559.0 L 655.0,1554.0 L 696.0,1528.0 L 704.0,1519.0 L 714.0,1514.0 L 719.0,1505.0 L 730.0,1498.0 L 733.0,1492.0 L 741.0,1491.0 L 752.0,1484.0 L 775.0,1480.0 L 814.0,1480.0 L 816.0,1460.0 L 823.0,1441.0 L 845.0,1413.0 L 850.0,1412.0 L 865.0,1399.0 L 881.0,1392.0 L 909.0,1387.0 L 910.0,222.0 L 900.0,218.0 L 880.0,217.0 L 848.0,203.0 L 846.0,198.0 L 843.0,198.0 L 827.0,181.0 L 815.0,151.0 L 815.0,134.0 L 752.0,129.0 L 751.0,123.0 L 745.0,119.0 L 737.0,104.0 L 728.0,100.0 L 725.0,92.0 L 714.0,86.0 L 713.0,81.0 L 702.0,70.0 L 698.0,70.0 L 686.0,58.0 L 681.0,58.0 L 677.0,52.0 L 666.0,48.0 L 654.0,38.0 L 648.0,38.0 L 633.0,28.0 L 618.0,26.0 L 603.0,18.0 L 589.0,16.0 L 576.0,10.0 L 532.0,4.0 L 529.0,0.0 Z M 476.0,55.0 L 544.0,60.0 L 575.0,67.0 L 613.0,80.0 L 644.0,99.0 L 654.0,102.0 L 687.0,129.0 L 714.0,161.0 L 720.0,173.0 L 767.0,173.0 L 770.0,176.0 L 771.0,190.0 L 777.0,206.0 L 800.0,239.0 L 823.0,255.0 L 831.0,255.0 L 835.0,259.0 L 846.0,261.0 L 848.0,277.0 L 847.0,1099.0 L 818.0,1104.0 L 815.0,1108.0 L 789.0,1120.0 L 784.0,1128.0 L 772.0,1137.0 L 772.0,1143.0 L 768.0,1145.0 L 759.0,1162.0 L 753.0,1193.0 L 705.0,1193.0 L 688.0,1218.0 L 654.0,1252.0 L 625.0,1266.0 L 622.0,1270.0 L 571.0,1290.0 L 545.0,1293.0 L 543.0,1296.0 L 484.0,1302.0 L 420.0,1296.0 L 414.0,1292.0 L 377.0,1284.0 L 337.0,1268.0 L 335.0,1264.0 L 321.0,1258.0 L 302.0,1240.0 L 294.0,1238.0 L 293.0,1233.0 L 288.0,1233.0 L 277.0,1217.0 L 271.0,1214.0 L 271.0,1209.0 L 260.0,1195.0 L 214.0,1194.0 L 207.0,1173.0 L 207.0,1163.0 L 202.0,1152.0 L 197.0,1151.0 L 197.0,1145.0 L 191.0,1136.0 L 174.0,1119.0 L 168.0,1118.0 L 167.0,1114.0 L 142.0,1103.0 L 128.0,1103.0 L 127.0,1100.0 L 121.0,1101.0 L 119.0,1098.0 L 119.0,261.0 L 144.0,254.0 L 171.0,232.0 L 188.0,204.0 L 191.0,186.0 L 197.0,174.0 L 242.0,174.0 L 267.0,140.0 L 289.0,118.0 L 319.0,99.0 L 321.0,95.0 L 326.0,95.0 L 368.0,73.0 L 382.0,71.0 L 385.0,67.0 L 412.0,61.0 Z"
+                      fill="url(#frameFillActive-{{ section.id }})"
+                      fill-rule="evenodd"
+                    />
+
+                    <path
+                      d="M 448.0,0.0 L 447.0,3.0 L 417.0,5.0 L 412.0,8.0 L 380.0,12.0 L 320.0,33.0 L 317.0,38.0 L 299.0,44.0 L 297.0,48.0 L 269.0,64.0 L 264.0,72.0 L 245.0,85.0 L 206.0,132.0 L 150.0,134.0 L 148.0,154.0 L 138.0,180.0 L 116.0,202.0 L 100.0,212.0 L 82.0,218.0 L 64.0,218.0 L 55.0,224.0 L 55.0,1384.0 L 57.0,1389.0 L 79.0,1391.0 L 117.0,1411.0 L 143.0,1441.0 L 152.0,1481.0 L 188.0,1480.0 L 223.0,1487.0 L 257.0,1519.0 L 289.0,1543.0 L 329.0,1563.0 L 369.0,1578.0 L 403.0,1583.0 L 411.0,1587.0 L 448.0,1591.0 L 511.0,1592.0 L 556.0,1586.0 L 560.0,1583.0 L 575.0,1583.0 L 639.0,1562.0 L 640.0,1559.0 L 655.0,1554.0 L 696.0,1528.0 L 704.0,1519.0 L 714.0,1514.0 L 719.0,1505.0 L 730.0,1498.0 L 733.0,1492.0 L 741.0,1491.0 L 752.0,1484.0 L 775.0,1480.0 L 814.0,1480.0 L 816.0,1460.0 L 823.0,1441.0 L 845.0,1413.0 L 850.0,1412.0 L 865.0,1399.0 L 881.0,1392.0 L 909.0,1387.0 L 910.0,222.0 L 900.0,218.0 L 880.0,217.0 L 848.0,203.0 L 846.0,198.0 L 843.0,198.0 L 827.0,181.0 L 815.0,151.0 L 815.0,134.0 L 752.0,129.0 L 751.0,123.0 L 745.0,119.0 L 737.0,104.0 L 728.0,100.0 L 725.0,92.0 L 714.0,86.0 L 713.0,81.0 L 702.0,70.0 L 698.0,70.0 L 686.0,58.0 L 681.0,58.0 L 677.0,52.0 L 666.0,48.0 L 654.0,38.0 L 648.0,38.0 L 633.0,28.0 L 618.0,26.0 L 603.0,18.0 L 589.0,16.0 L 576.0,10.0 L 532.0,4.0 L 529.0,0.0 Z M 476.0,55.0 L 544.0,60.0 L 575.0,67.0 L 613.0,80.0 L 644.0,99.0 L 654.0,102.0 L 687.0,129.0 L 714.0,161.0 L 720.0,173.0 L 767.0,173.0 L 770.0,176.0 L 771.0,190.0 L 777.0,206.0 L 800.0,239.0 L 823.0,255.0 L 831.0,255.0 L 835.0,259.0 L 846.0,261.0 L 848.0,277.0 L 847.0,1099.0 L 818.0,1104.0 L 815.0,1108.0 L 789.0,1120.0 L 784.0,1128.0 L 772.0,1137.0 L 772.0,1143.0 L 768.0,1145.0 L 759.0,1162.0 L 753.0,1193.0 L 705.0,1193.0 L 688.0,1218.0 L 654.0,1252.0 L 625.0,1266.0 L 622.0,1270.0 L 571.0,1290.0 L 545.0,1293.0 L 543.0,1296.0 L 484.0,1302.0 L 420.0,1296.0 L 414.0,1292.0 L 377.0,1284.0 L 337.0,1268.0 L 335.0,1264.0 L 321.0,1258.0 L 302.0,1240.0 L 294.0,1238.0 L 293.0,1233.0 L 288.0,1233.0 L 277.0,1217.0 L 271.0,1214.0 L 271.0,1209.0 L 260.0,1195.0 L 214.0,1194.0 L 207.0,1173.0 L 207.0,1163.0 L 202.0,1152.0 L 197.0,1151.0 L 197.0,1145.0 L 191.0,1136.0 L 174.0,1119.0 L 168.0,1118.0 L 167.0,1114.0 L 142.0,1103.0 L 128.0,1103.0 L 127.0,1100.0 L 121.0,1101.0 L 119.0,1098.0 L 119.0,261.0 L 144.0,254.0 L 171.0,232.0 L 188.0,204.0 L 191.0,186.0 L 197.0,174.0 L 242.0,174.0 L 267.0,140.0 L 289.0,118.0 L 319.0,99.0 L 321.0,95.0 L 326.0,95.0 L 368.0,73.0 L 382.0,71.0 L 385.0,67.0 L 412.0,61.0 Z"
+                      fill="none"
+                      stroke="#ded7c8"
+                      stroke-width="1.2"
+                      stroke-opacity="0.65"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+
+                  {%- comment -%} Layer 3: Collection Title & Diamond Symbol (Exact decorative_diamond_EXACT(1)) {%- endcomment -%}
+                  <div class="vmi-arch-card__meta">
+                    <div class="vmi-arch-card__title-wrap">
+                      <span class="vmi-arch-card__title-line vmi-arch-card__title-line--top"></span>
+                      <span class="vmi-arch-card__title">{{ card_label | upcase }}</span>
+                      <span class="vmi-arch-card__title-line vmi-arch-card__title-line--bottom"></span>
+                    </div>
+                    <div class="vmi-arch-card__diamond" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 32 32" fill="none" class="vmi-decorative-diamond-svg">
+                        <circle cx="16" cy="3" r="1.2" fill="#B83A38"/>
+                        <circle cx="14.5" cy="4.8" r="0.9" fill="#B83A38"/>
+                        <circle cx="17.5" cy="4.8" r="0.9" fill="#B83A38"/>
+                        <circle cx="16" cy="29" r="1.2" fill="#B83A38"/>
+                        <circle cx="14.5" cy="27.2" r="0.9" fill="#B83A38"/>
+                        <circle cx="17.5" cy="27.2" r="0.9" fill="#B83A38"/>
+                        <circle cx="3" cy="16" r="1.2" fill="#B83A38"/>
+                        <circle cx="4.8" cy="14.5" r="0.9" fill="#B83A38"/>
+                        <circle cx="4.8" cy="17.5" r="0.9" fill="#B83A38"/>
+                        <circle cx="29" cy="16" r="1.2" fill="#B83A38"/>
+                        <circle cx="27.2" cy="14.5" r="0.9" fill="#B83A38"/>
+                        <circle cx="27.2" cy="17.5" r="0.9" fill="#B83A38"/>
+                        <polygon points="16,6.5 25.5,16 16,25.5 6.5,16" fill="#1E252D" stroke="#D4AF37" stroke-width="0.8"/>
+                        <polygon points="16,8.5 23.5,16 16,23.5 8.5,16" fill="#E6C462"/>
+                        <polygon points="16,10 22,16 16,22 10,16" fill="none" stroke="#222B34" stroke-width="0.6" stroke-dasharray="1 1"/>
+                        <polygon points="16,11.5 20.5,16 16,20.5 11.5,16" fill="#202730"/>
+                        <polygon points="16,13 19,16 16,19 13,16" fill="#B83A38"/>
+                        <circle cx="16" cy="16" r="0.8" fill="#FFFFFF"/>
+                      </svg>
+                    </div>
+                  </div>
+
+                </div>
+              </a>
+            </div>
+          {%- endfor -%}
+        {%- else -%}
+          {%- comment -%} Default Demo Blocks {%- endcomment -%}
+          {%- assign demo_labels = 'AJRAK,AJRAK,BANARASI,KANJIVARAM,CHANDERI' | split: ',' -%}
+          {%- assign demo_images = 'vmi-card-ajrakh.png,vmi-sangrah-ajrakh.png,vmi-sangrah-banarasi.png,vmi-card-kanjivaram.png,vmi-card-chanderi.png' | split: ',' -%}
+          {%- for label in demo_labels -%}
+            {%- assign img_file = demo_images[forloop.index0] -%}
+            <div class="vmi-arch-card {% if forloop.index == 3 %}active{% endif %}" data-index="{{ forloop.index0 }}" data-mobile-bg="{{ img_file | asset_url }}">
+              <a href="#" class="vmi-arch-card__inner">
+                <div class="vmi-arch-card__frame-box">
+                  <svg class="vmi-arch-card__frame-svg" viewBox="0 0 965 1600" preserveAspectRatio="none" aria-hidden="true">
+                    <defs>
+                      <clipPath id="innerArchClip-demo-{{ forloop.index }}">
+                        <path d="M 476.0,55.0 L 544.0,60.0 L 575.0,67.0 L 613.0,80.0 L 644.0,99.0 L 654.0,102.0 L 687.0,129.0 L 714.0,161.0 L 720.0,173.0 L 767.0,173.0 L 770.0,176.0 L 771.0,190.0 L 777.0,206.0 L 800.0,239.0 L 823.0,255.0 L 831.0,255.0 L 835.0,259.0 L 846.0,261.0 L 848.0,277.0 L 847.0,1099.0 L 818.0,1104.0 L 815.0,1108.0 L 789.0,1120.0 L 784.0,1128.0 L 772.0,1137.0 L 772.0,1143.0 L 768.0,1145.0 L 759.0,1162.0 L 753.0,1193.0 L 705.0,1193.0 L 688.0,1218.0 L 654.0,1252.0 L 625.0,1266.0 L 622.0,1270.0 L 571.0,1290.0 L 545.0,1293.0 L 543.0,1296.0 L 484.0,1302.0 L 420.0,1296.0 L 414.0,1292.0 L 377.0,1284.0 L 337.0,1268.0 L 335.0,1264.0 L 321.0,1258.0 L 302.0,1240.0 L 294.0,1238.0 L 293.0,1233.0 L 288.0,1233.0 L 277.0,1217.0 L 271.0,1214.0 L 271.0,1209.0 L 260.0,1195.0 L 214.0,1194.0 L 207.0,1173.0 L 207.0,1163.0 L 202.0,1152.0 L 197.0,1151.0 L 197.0,1145.0 L 191.0,1136.0 L 174.0,1119.0 L 168.0,1118.0 L 167.0,1114.0 L 142.0,1103.0 L 128.0,1103.0 L 127.0,1100.0 L 121.0,1101.0 L 119.0,1098.0 L 119.0,261.0 L 144.0,254.0 L 171.0,232.0 L 188.0,204.0 L 191.0,186.0 L 197.0,174.0 L 242.0,174.0 L 267.0,140.0 L 289.0,118.0 L 319.0,99.0 L 321.0,95.0 L 326.0,95.0 L 368.0,73.0 L 382.0,71.0 L 385.0,67.0 L 412.0,61.0 Z" />
+                      </clipPath>
+                      <linearGradient id="frameFillInactive-demo-{{ forloop.index }}" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fbf8ef"/><stop offset="55%" stop-color="#f5f0e4"/><stop offset="100%" stop-color="#eee8da"/></linearGradient>
+                      <linearGradient id="frameFillActive-demo-{{ forloop.index }}" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4B5663"/><stop offset="55%" stop-color="#3A444E"/><stop offset="100%" stop-color="#2D3640"/></linearGradient>
+                    </defs>
+                    <g clip-path="url(#innerArchClip-demo-{{ forloop.index }})">
+                      <image href="{{ img_file | asset_url }}" x="118" y="54" width="732" height="1248" preserveAspectRatio="xMidYMid slice" />
+                    </g>
+                    <path class="vmi-arch-frame-path vmi-arch-frame-path--inactive" d="M 448.0,0.0 L 447.0,3.0 L 417.0,5.0 L 412.0,8.0 L 380.0,12.0 L 320.0,33.0 L 317.0,38.0 L 299.0,44.0 L 297.0,48.0 L 269.0,64.0 L 264.0,72.0 L 245.0,85.0 L 206.0,132.0 L 150.0,134.0 L 148.0,154.0 L 138.0,180.0 L 116.0,202.0 L 100.0,212.0 L 82.0,218.0 L 64.0,218.0 L 55.0,224.0 L 55.0,1384.0 L 57.0,1389.0 L 79.0,1391.0 L 117.0,1411.0 L 143.0,1441.0 L 152.0,1481.0 L 188.0,1480.0 L 223.0,1487.0 L 257.0,1519.0 L 289.0,1543.0 L 329.0,1563.0 L 369.0,1578.0 L 403.0,1583.0 L 411.0,1587.0 L 448.0,1591.0 L 511.0,1592.0 L 556.0,1586.0 L 560.0,1583.0 L 575.0,1583.0 L 639.0,1562.0 L 640.0,1559.0 L 655.0,1554.0 L 696.0,1528.0 L 704.0,1519.0 L 714.0,1514.0 L 719.0,1505.0 L 730.0,1498.0 L 733.0,1492.0 L 741.0,1491.0 L 752.0,1484.0 L 775.0,1480.0 L 814.0,1480.0 L 816.0,1460.0 L 823.0,1441.0 L 845.0,1413.0 L 850.0,1412.0 L 865.0,1399.0 L 881.0,1392.0 L 909.0,1387.0 L 910.0,222.0 L 900.0,218.0 L 880.0,217.0 L 848.0,203.0 L 846.0,198.0 L 843.0,198.0 L 827.0,181.0 L 815.0,151.0 L 815.0,134.0 L 752.0,129.0 L 751.0,123.0 L 745.0,119.0 L 737.0,104.0 L 728.0,100.0 L 725.0,92.0 L 714.0,86.0 L 713.0,81.0 L 702.0,70.0 L 698.0,70.0 L 686.0,58.0 L 681.0,58.0 L 677.0,52.0 L 666.0,48.0 L 654.0,38.0 L 648.0,38.0 L 633.0,28.0 L 618.0,26.0 L 603.0,18.0 L 589.0,16.0 L 576.0,10.0 L 532.0,4.0 L 529.0,0.0 Z M 476.0,55.0 L 544.0,60.0 L 575.0,67.0 L 613.0,80.0 L 644.0,99.0 L 654.0,102.0 L 687.0,129.0 L 714.0,161.0 L 720.0,173.0 L 767.0,173.0 L 770.0,176.0 L 771.0,190.0 L 777.0,206.0 L 800.0,239.0 L 823.0,255.0 L 831.0,255.0 L 835.0,259.0 L 846.0,261.0 L 848.0,277.0 L 847.0,1099.0 L 818.0,1104.0 L 815.0,1108.0 L 789.0,1120.0 L 784.0,1128.0 L 772.0,1137.0 L 772.0,1143.0 L 768.0,1145.0 L 759.0,1162.0 L 753.0,1193.0 L 705.0,1193.0 L 688.0,1218.0 L 654.0,1252.0 L 625.0,1266.0 L 622.0,1270.0 L 571.0,1290.0 L 545.0,1293.0 L 543.0,1296.0 L 484.0,1302.0 L 420.0,1296.0 L 414.0,1292.0 L 377.0,1284.0 L 337.0,1268.0 L 335.0,1264.0 L 321.0,1258.0 L 302.0,1240.0 L 294.0,1238.0 L 293.0,1233.0 L 288.0,1233.0 L 277.0,1217.0 L 271.0,1214.0 L 271.0,1209.0 L 260.0,1195.0 L 214.0,1194.0 L 207.0,1173.0 L 207.0,1163.0 L 202.0,1152.0 L 197.0,1151.0 L 197.0,1145.0 L 191.0,1136.0 L 174.0,1119.0 L 168.0,1118.0 L 167.0,1114.0 L 142.0,1103.0 L 128.0,1103.0 L 127.0,1100.0 L 121.0,1101.0 L 119.0,1098.0 L 119.0,261.0 L 144.0,254.0 L 171.0,232.0 L 188.0,204.0 L 191.0,186.0 L 197.0,174.0 L 242.0,174.0 L 267.0,140.0 L 289.0,118.0 L 319.0,99.0 L 321.0,95.0 L 326.0,95.0 L 368.0,73.0 L 382.0,71.0 L 385.0,67.0 L 412.0,61.0 Z" fill="url(#frameFillInactive-demo-{{ forloop.index }})" fill-rule="evenodd" clip-rule="evenodd"/>
+                    <path class="vmi-arch-frame-path vmi-arch-frame-path--active" d="M 448.0,0.0 L 447.0,3.0 L 417.0,5.0 L 412.0,8.0 L 380.0,12.0 L 320.0,33.0 L 317.0,38.0 L 299.0,44.0 L 297.0,48.0 L 269.0,64.0 L 264.0,72.0 L 245.0,85.0 L 206.0,132.0 L 150.0,134.0 L 148.0,154.0 L 138.0,180.0 L 116.0,202.0 L 100.0,212.0 L 82.0,218.0 L 64.0,218.0 L 55.0,224.0 L 55.0,1384.0 L 57.0,1389.0 L 79.0,1391.0 L 117.0,1411.0 L 143.0,1441.0 L 152.0,1481.0 L 188.0,1480.0 L 223.0,1487.0 L 257.0,1519.0 L 289.0,1543.0 L 329.0,1563.0 L 369.0,1578.0 L 403.0,1583.0 L 411.0,1587.0 L 448.0,1591.0 L 511.0,1592.0 L 556.0,1586.0 L 560.0,1583.0 L 575.0,1583.0 L 639.0,1562.0 L 640.0,1559.0 L 655.0,1554.0 L 696.0,1528.0 L 704.0,1519.0 L 714.0,1514.0 L 719.0,1505.0 L 730.0,1498.0 L 733.0,1492.0 L 741.0,1491.0 L 752.0,1484.0 L 775.0,1480.0 L 814.0,1480.0 L 816.0,1460.0 L 823.0,1441.0 L 845.0,1413.0 L 850.0,1412.0 L 865.0,1399.0 L 881.0,1392.0 L 909.0,1387.0 L 910.0,222.0 L 900.0,218.0 L 880.0,217.0 L 848.0,203.0 L 846.0,198.0 L 843.0,198.0 L 827.0,181.0 L 815.0,151.0 L 815.0,134.0 L 752.0,129.0 L 751.0,123.0 L 745.0,119.0 L 737.0,104.0 L 728.0,100.0 L 725.0,92.0 L 714.0,86.0 L 713.0,81.0 L 702.0,70.0 L 698.0,70.0 L 686.0,58.0 L 681.0,58.0 L 677.0,52.0 L 666.0,48.0 L 654.0,38.0 L 648.0,38.0 L 633.0,28.0 L 618.0,26.0 L 603.0,18.0 L 589.0,16.0 L 576.0,10.0 L 532.0,4.0 L 529.0,0.0 Z M 476.0,55.0 L 544.0,60.0 L 575.0,67.0 L 613.0,80.0 L 644.0,99.0 L 654.0,102.0 L 687.0,129.0 L 714.0,161.0 L 720.0,173.0 L 767.0,173.0 L 770.0,176.0 L 771.0,190.0 L 777.0,206.0 L 800.0,239.0 L 823.0,255.0 L 831.0,255.0 L 835.0,259.0 L 846.0,261.0 L 848.0,277.0 L 847.0,1099.0 L 818.0,1104.0 L 815.0,1108.0 L 789.0,1120.0 L 784.0,1128.0 L 772.0,1137.0 L 772.0,1143.0 L 768.0,1145.0 L 759.0,1162.0 L 753.0,1193.0 L 705.0,1193.0 L 688.0,1218.0 L 654.0,1252.0 L 625.0,1266.0 L 622.0,1270.0 L 571.0,1290.0 L 545.0,1293.0 L 543.0,1296.0 L 484.0,1302.0 L 420.0,1296.0 L 414.0,1292.0 L 377.0,1284.0 L 337.0,1268.0 L 335.0,1264.0 L 321.0,1258.0 L 302.0,1240.0 L 294.0,1238.0 L 293.0,1233.0 L 288.0,1233.0 L 277.0,1217.0 L 271.0,1214.0 L 271.0,1209.0 L 260.0,1195.0 L 214.0,1194.0 L 207.0,1173.0 L 207.0,1163.0 L 202.0,1152.0 L 197.0,1151.0 L 197.0,1145.0 L 191.0,1136.0 L 174.0,1119.0 L 168.0,1118.0 L 167.0,1114.0 L 142.0,1103.0 L 128.0,1103.0 L 127.0,1100.0 L 121.0,1101.0 L 119.0,1098.0 L 119.0,261.0 L 144.0,254.0 L 171.0,232.0 L 188.0,204.0 L 191.0,186.0 L 197.0,174.0 L 242.0,174.0 L 267.0,140.0 L 289.0,118.0 L 319.0,99.0 L 321.0,95.0 L 326.0,95.0 L 368.0,73.0 L 382.0,71.0 L 385.0,67.0 L 412.0,61.0 Z" fill="url(#frameFillActive-demo-{{ forloop.index }})" fill-rule="evenodd" clip-rule="evenodd"/>
+                  </svg>
+                  <div class="vmi-arch-card__meta">
+                    <div class="vmi-arch-card__title-wrap">
+                      <span class="vmi-arch-card__title-line vmi-arch-card__title-line--top"></span>
+                      <span class="vmi-arch-card__title">{{ label }}</span>
+                      <span class="vmi-arch-card__title-line vmi-arch-card__title-line--bottom"></span>
+                    </div>
+                    <div class="vmi-arch-card__diamond" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 32 32" fill="none" class="vmi-decorative-diamond-svg">
+                        <circle cx="16" cy="3" r="1.2" fill="#B83A38"/>
+                        <circle cx="14.5" cy="4.8" r="0.9" fill="#B83A38"/>
+                        <circle cx="17.5" cy="4.8" r="0.9" fill="#B83A38"/>
+                        <circle cx="16" cy="29" r="1.2" fill="#B83A38"/>
+                        <circle cx="14.5" cy="27.2" r="0.9" fill="#B83A38"/>
+                        <circle cx="17.5" cy="27.2" r="0.9" fill="#B83A38"/>
+                        <circle cx="3" cy="16" r="1.2" fill="#B83A38"/>
+                        <circle cx="4.8" cy="14.5" r="0.9" fill="#B83A38"/>
+                        <circle cx="4.8" cy="17.5" r="0.9" fill="#B83A38"/>
+                        <circle cx="29" cy="16" r="1.2" fill="#B83A38"/>
+                        <circle cx="27.2" cy="14.5" r="0.9" fill="#B83A38"/>
+                        <circle cx="27.2" cy="17.5" r="0.9" fill="#B83A38"/>
+                        <polygon points="16,6.5 25.5,16 16,25.5 6.5,16" fill="#1E252D" stroke="#D4AF37" stroke-width="0.8"/>
+                        <polygon points="16,8.5 23.5,16 16,23.5 8.5,16" fill="#E6C462"/>
+                        <polygon points="16,10 22,16 16,22 10,16" fill="none" stroke="#222B34" stroke-width="0.6" stroke-dasharray="1 1"/>
+                        <polygon points="16,11.5 20.5,16 16,20.5 11.5,16" fill="#202730"/>
+                        <polygon points="16,13 19,16 16,19 13,16" fill="#B83A38"/>
+                        <circle cx="16" cy="16" r="0.8" fill="#FFFFFF"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          {%- endfor -%}
+        {%- endif -%}
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,500;0,600&family=Cormorant+Garamond:ital,wght@0,400;0,500&family=Jost:wght@300;400;500;600&display=swap');
+
+  .vmi-arch-collections {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 660px;
+    background-image: var(--vmi-desktop-bg) !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 3.5rem 0 4rem;
+    box-sizing: border-box;
+  }
+
+  .vmi-arch__bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(250, 248, 245, 0.45) 0%, rgba(242, 238, 232, 0.9) 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* Mobile Dynamic Background Layer */
+  .vmi-arch__mobile-bg-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.5s ease, background-image 0.5s ease;
+    pointer-events: none;
+    display: none;
+  }
+
+  @media (max-width: 749px) {
+    .vmi-arch-collections {
+      background-image: none !important;
+      background-color: #2D3742;
+    }
+
+    .vmi-arch__mobile-bg-layer {
+      display: block;
+      opacity: 0.65;
+    }
+
+    .vmi-arch__bg-overlay {
+      background: linear-gradient(to bottom, rgba(30, 38, 46, 0.6) 0%, rgba(15, 20, 25, 0.88) 100%);
+    }
+  }
+
+  .vmi-arch__container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* ════════════════════════════════
+     HEADER LOGO & SUBTITLE
+  ════════════════════════════════ */
+  .vmi-arch__header {
+    text-align: center;
+    margin-bottom: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vmi-arch__logo-brand {
+    display: flex;
+    align-items: baseline;
+    line-height: 1;
+  }
+
+  .vmi-arch__first-letter {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 4.8rem;
+    line-height: 0.8;
+    color: var(--vmi-text-color);
+    margin-right: -0.06em;
+  }
+
+  .vmi-arch__rest-letters {
+    font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--vmi-text-color);
+  }
+
+  .vmi-arch__logo-img {
+    max-width: 220px;
+    height: auto;
+    display: block;
+  }
+
+  .vmi-arch__subtitle {
+    font-family: 'Jost', var(--vmi-font-body, system-ui, sans-serif);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.38em;
+    color: var(--vmi-text-color);
+    opacity: 0.92;
+    text-transform: uppercase;
+    margin-top: 0.15rem;
+  }
+
+  /* ════════════════════════════════
+     SLIDER TRACK & EXACT SVG LAYERING
+  ════════════════════════════════ */
+  .vmi-arch__slider-wrap {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .vmi-arch__track {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.8rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 3rem 4rem 3.5rem;
+    box-sizing: border-box;
+    scrollbar-width: none;
+    cursor: grab;
+  }
+
+  .vmi-arch__track:active {
+    cursor: grabbing;
+  }
+
+  .vmi-arch__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ── CARD BASE CONTAINER ── */
+  .vmi-arch-card {
+    flex: 0 0 250px;
+    scroll-snap-align: center;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease;
+    user-select: none;
+    opacity: 0.88;
+  }
+
+  .vmi-arch-card__inner {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .vmi-arch-card__frame-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 965 / 1600;
+  }
+
+  /* Layer 2: Exact User Frame SVG Overlay */
+  .vmi-arch-card__frame-svg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 2;
+  }
+
+  .vmi-arch-frame-path {
+    transition: opacity 0.4s ease;
+  }
+
+  .vmi-arch-frame-path--inactive {
+    opacity: 1;
+  }
+
+  .vmi-arch-frame-path--active {
+    opacity: 0;
+  }
+
+  /* Layer 3: Title & Diamond Symbol (Strictly Constrained Width inside Card Chin) */
+  .vmi-arch-card__meta {
+    position: absolute;
+    top: 82.5%;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .vmi-arch-card__title-wrap {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 0.5rem;
+    width: 125px;
+    max-width: 125px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .vmi-arch-card__title-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(63, 74, 84, 0.28);
+    transition: background-color 0.4s ease;
+  }
+
+  .vmi-arch-card__title-line--top {
+    top: 0;
+  }
+
+  .vmi-arch-card__title-line--bottom {
+    bottom: 0;
+  }
+
+  .vmi-arch-card__title {
+    font-family: 'Jost', var(--vmi-font-body, system-ui, sans-serif);
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    color: #3F4A54;
+    transition: color 0.4s ease;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .vmi-arch-card__diamond {
+    margin-top: 0.2rem;
+    display: none;
+  }
+
+  .vmi-decorative-diamond-svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+  }
+
+  /* ── ACTIVE CARD (CENTER FOCUSED CARD) ── */
+  .vmi-arch-card.active {
+    transform: scale(1.14);
+    opacity: 1;
+    z-index: 10;
+  }
+
+  .vmi-arch-card.active .vmi-arch-frame-path--inactive {
+    opacity: 0;
+  }
+
+  .vmi-arch-card.active .vmi-arch-frame-path--active {
+    opacity: 1;
+  }
+
+  .vmi-arch-card.active .vmi-arch-card__title {
+    color: #FAF8F5;
+  }
+
+  .vmi-arch-card.active .vmi-arch-card__title-line {
+    background: rgba(255, 255, 255, 0.38);
+  }
+
+  .vmi-arch-card.active .vmi-arch-card__diamond {
+    display: block;
+  }
+
+  /* ════════════════════════════════
+     RESPONSIVE
+  ════════════════════════════════ */
+  @media (max-width: 1024px) {
+    .vmi-arch__track {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @media (max-width: 749px) {
+    .vmi-arch-collections {
+      min-height: 560px;
+      padding: 2.5rem 0 3rem;
+    }
+
+    .vmi-arch__track {
+      gap: 1.2rem;
+      padding: 2rem 1.5rem 2.5rem;
+    }
+
+    .vmi-arch-card {
+      flex: 0 0 220px;
+    }
+
+    .vmi-arch-card.active {
+      transform: scale(1.08);
+    }
+
+    .vmi-arch__first-letter { font-size: 3.8rem; }
+    .vmi-arch__rest-letters { font-size: 2.2rem; }
+  }
+</style>
+
+<script>
+  (function() {
+    function initArchSlider() {
+      const track = document.getElementById('vmi-arch-track-{{ section.id }}');
+      const mobBgLayer = document.getElementById('vmi-arch-mob-bg-{{ section.id }}');
+      if (!track) return;
+
+      const cards = track.querySelectorAll('.vmi-arch-card');
+      if (!cards.length) return;
+
+      function updateActiveCard() {
+        const trackRect = track.getBoundingClientRect();
+        const trackCenter = trackRect.left + trackRect.width / 2;
+        let closestCard = null;
+        let minDistance = Infinity;
+
+        cards.forEach(card => {
+          const cardRect = card.getBoundingClientRect();
+          const cardCenter = cardRect.left + cardRect.width / 2;
+          const distance = Math.abs(trackCenter - cardCenter);
+          if (distance < minDistance) {
+            minDistance = distance;
+            closestCard = card;
+          }
+        });
+
+        if (closestCard) {
+          cards.forEach(c => c.classList.remove('active'));
+          closestCard.classList.add('active');
+
+          if (window.innerWidth <= 749 && mobBgLayer) {
+            const mobBgUrl = closestCard.getAttribute('data-mobile-bg');
+            if (mobBgUrl) {
+              mobBgLayer.style.backgroundImage = 'url("' + mobBgUrl + '")';
+              mobBgLayer.style.opacity = '0.65';
+            }
+          }
+        }
+      }
+
+      // Initial card centering on load
+      const initialActiveCard = track.querySelector('.vmi-arch-card.active') || cards[Math.min(2, cards.length - 1)];
+      if (initialActiveCard) {
+        setTimeout(function() {
+          const cardLeft = initialActiveCard.offsetLeft;
+          const cardWidth = initialActiveCard.offsetWidth;
+          const trackWidth = track.offsetWidth;
+          track.scrollTo({
+            left: cardLeft - (trackWidth / 2) + (cardWidth / 2),
+            behavior: 'auto'
+          });
+          updateActiveCard();
+        }, 100);
+      } else {
+        updateActiveCard();
+      }
+
+      track.addEventListener('scroll', function() {
+        window.requestAnimationFrame(updateActiveCard);
+      });
+
+      // Drag to scroll
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      track.addEventListener('mousedown', function(e) {
+        isDown = true;
+        startX = e.pageX - track.offsetLeft;
+        scrollLeft = track.scrollLeft;
+      });
+
+      track.addEventListener('mouseleave', function() { isDown = false; });
+      track.addEventListener('mouseup', function() { isDown = false; });
+
+      track.addEventListener('mousemove', function(e) {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - track.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        track.scrollLeft = scrollLeft - walk;
+      });
+
+      // Click card to center smoothly
+      cards.forEach(card => {
+        card.addEventListener('click', function() {
+          const cardLeft = card.offsetLeft;
+          const cardWidth = card.offsetWidth;
+          const trackWidth = track.offsetWidth;
+          track.scrollTo({
+            left: cardLeft - (trackWidth / 2) + (cardWidth / 2),
+            behavior: 'smooth'
+          });
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initArchSlider);
+    } else {
+      initArchSlider();
+    }
+  })();
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "VMI Arch Collections",
+  "tag": "div",
+  "class": "vmi-arch-collections-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_section",
+      "label": "Enable section",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Section Header & Logo"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading / Logo text",
+      "default": "Sangrah"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "Upload Logo Image (SVG / Transparent PNG)",
+      "info": "Custom logo graphic overrides text heading."
+    },
+    {
+      "type": "range",
+      "id": "logo_max_width",
+      "min": 100,
+      "max": 350,
+      "step": 10,
+      "unit": "px",
+      "label": "Logo max width",
+      "default": 220
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle under logo",
+      "default": "COLLECTIONS"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_bg_image",
+      "label": "Desktop static background image"
+    },
+    {
+      "type": "header",
+      "content": "Text Colors"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Header Text Color",
+      "default": "#401F28"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_card",
+      "name": "Collection Arch Card",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Select Collection"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Collection Label (e.g. BANARASI, AJRAK)",
+          "info": "Defaults to collection title if blank."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Card Portrait Image",
+          "info": "Defaults to collection featured image."
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_bg_image",
+          "label": "Mobile Background Image when active",
+          "info": "Changes mobile section background when this card is centered/active."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "VMI Arch Collections",
+      "blocks": [
+        {
+          "type": "collection_card",
+          "settings": { "label": "AJRAK" }
+        },
+        {
+          "type": "collection_card",
+          "settings": { "label": "AJRAK" }
+        },
+        {
+          "type": "collection_card",
+          "settings": { "label": "BANARASI" }
+        },
+        {
+          "type": "collection_card",
+          "settings": { "label": "KANJIVARAM" }
+        },
+        {
+          "type": "collection_card",
+          "settings": { "label": "CHANDERI" }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
