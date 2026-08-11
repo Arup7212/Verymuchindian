@@ -49,15 +49,17 @@
       <div class="vmi-founder__left-overlay">
         <div class="vmi-founder__signature-wrap">
           {%- if section.settings.founder_logo_image != blank -%}
-            <img src="{{ section.settings.founder_logo_image | image_url: width: 400 }}" alt="{{ section.settings.founder_name }}" class="vmi-founder__signature-img">
+            <img src="{{ section.settings.founder_logo_image | image_url: width: 600 }}" alt="{{ section.settings.founder_name }}" class="vmi-founder__signature-img" style="max-width: {{ section.settings.logo_max_width | default: 240 }}px;">
           {%- else -%}
-            <svg class="vmi-founder__signature-svg" viewBox="0 0 280 85" width="220" height="66" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="{{ section.settings.founder_name | default: 'Rachna' }}">
-              <g fill="#FAF8F5">
-                <text x="32" y="58" font-family="'Cormorant Garamond', 'Playfair Display', serif" font-size="54" font-weight="400" font-style="italic" letter-spacing="-1">R</text>
-                <text x="74" y="56" font-family="'Cormorant Garamond', 'Playfair Display', serif" font-size="44" font-weight="400" letter-spacing="1">achna</text>
-                <path d="M 32 62 Q 130 78 245 54 Q 140 68 45 64" fill="#FAF8F5" opacity="0.95"/>
-              </g>
-            </svg>
+            {%- assign founder_text = section.settings.founder_name | default: 'Rachna' -%}
+            {%- assign f_first_char = founder_text | slice: 0, 1 -%}
+            {%- assign f_rest_chars = founder_text | slice: 1, 100 -%}
+            <div class="vmi-founder__logo-brand">
+              <div class="vmi-founder__logo-text">
+                <span class="vmi-founder__first-letter">{{ f_first_char }}</span>
+                <span class="vmi-founder__rest-letters">{{ f_rest_chars }}</span>
+              </div>
+            </div>
           {%- endif -%}
         </div>
 
@@ -208,11 +210,42 @@
     margin-bottom: 0.1rem;
   }
 
-  .vmi-founder__signature-svg {
-    max-width: 230px;
-    height: auto;
-    display: block;
-    filter: drop-shadow(0 3px 12px rgba(0, 0, 0, 0.5));
+  .vmi-founder__logo-brand {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vmi-founder__logo-text {
+    display: flex;
+    align-items: baseline;
+    line-height: 1;
+  }
+
+  .vmi-founder__first-letter {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 4rem;
+    line-height: 0.8;
+    color: #FAF8F5;
+    margin-right: -0.08em;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .vmi-founder__rest-letters {
+    font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+    font-size: 2.3rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #FAF8F5;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .vmi-founder__swash-svg {
+    width: 92%;
+    height: 10px;
+    margin-top: -4px;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
   }
 
   .vmi-founder__signature-img {
@@ -416,29 +449,44 @@
     },
     {
       "type": "header",
-      "content": "Left Side (Portrait & Logo)"
+      "content": "Logo Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "founder_logo_image",
+      "label": "Upload Rachna Logo Image (SVG / Transparent PNG)",
+      "info": "Upload custom logo graphic. Overrides text logo."
+    },
+    {
+      "type": "range",
+      "id": "logo_max_width",
+      "min": 100,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "Logo image width",
+      "default": 240
+    },
+    {
+      "type": "text",
+      "id": "founder_name",
+      "label": "Founder name (Text fallback)",
+      "default": "Rachna"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle under logo",
+      "default": "THE FOUNDER'S JOURNEY"
+    },
+    {
+      "type": "header",
+      "content": "Left Side Portrait"
     },
     {
       "type": "image_picker",
       "id": "image",
       "label": "Founder portrait image"
-    },
-    {
-      "type": "text",
-      "id": "founder_name",
-      "label": "Founder name",
-      "default": "Rachna"
-    },
-    {
-      "type": "image_picker",
-      "id": "founder_logo_image",
-      "label": "Custom Rachna logo image (optional)"
-    },
-    {
-      "type": "text",
-      "id": "subtitle",
-      "label": "Subtitle under name",
-      "default": "THE FOUNDER'S JOURNEY"
     },
     {
       "type": "header",
