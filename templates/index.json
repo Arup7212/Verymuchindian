@@ -812,8 +812,8 @@
         "left_image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_02_26_40_PM.png",
         "small_heading": "Celebrating India's Craftsmanship",
         "mission": "<p>At Very Much Indian, we revive traditional weaves and empower artisans, ensuring every piece tells a story and sustains a legacy. When you choose us, you support the hands that create, the communities that thrive, and the heritage that endures.</p>",
-        "card_bg_color": "#F4EFE6",
-        "text_color": "#1E354D"
+        "card_bg_color": "#f4efe6",
+        "text_color": "#1e354d"
       }
     },
     "festive_collection_H9MFYc": {
@@ -1430,6 +1430,28 @@
         "padding_bottom": 60
       }
     },
+    "vmi_virasat_slider_FXaAAz": {
+      "type": "vmi-virasat-slider",
+      "name": "VMI Virasat Slider",
+      "settings": {
+        "enable_section": true,
+        "collection": "",
+        "products_to_show": 8,
+        "enable_autoplay": true,
+        "autoplay_speed": 3.5,
+        "bg_overlay_opacity": 35,
+        "left_cta_label": "EXPLORE COLLECTION",
+        "left_cta_url": "",
+        "card1_subtitle": "VMI PRESENTS YOU",
+        "card1_title": "Virasat",
+        "logo_max_width": 220,
+        "card1_description": "A curated edit of heritage\nAjrakh sarees",
+        "card1_url": "",
+        "card1_bg_color": "#4E0F1B",
+        "card1_bg_opacity": 85,
+        "card1_text_color": "#FAF8F5"
+      }
+    },
     "shop_by_fabric_eEcqYK": {
       "type": "shop-by-fabric",
       "blocks": {
@@ -1804,6 +1826,7 @@
     "premium_edit_collection_g6efFT",
     "celebs_choice_khTmH4",
     "loom_to_you_UgniMg",
+    "vmi_virasat_slider_FXaAAz",
     "shop_by_fabric_eEcqYK",
     "draped_with_love_pApC3D",
     "vmi_founder_story_jiCkpB",
