@@ -1,0 +1,435 @@
+{%- comment -%}
+  VMI Trust Section — Sankalp (Our Promise to the Artisans)
+  Left side: Seamless artisan weaver graphic with botanical block-print artwork.
+  Right side: Sankalp script & serif logo, subtitle, and cream 4-sided scalloped box with mission text.
+  Full section background image or gradient options.
+{%- endcomment -%}
+
+{%- if section.settings.enable_section -%}
+<section
+  class="vmi-trust vmi-section--full"
+  id="vmi-trust-{{ section.id }}"
+  style="
+    {%- if section.settings.bg_image != blank -%}
+      background-image: url('{{ section.settings.bg_image | image_url: width: 2000 }}');
+      background-size: cover;
+      background-position: center;
+    {%- else -%}
+      background: {{ section.settings.bg_gradient | default: 'linear-gradient(135deg, #CFDAE5 0%, #7B90A3 45%, #2B3E52 100%)' }};
+    {%- endif -%}
+    --vmi-card-bg: {{ section.settings.card_bg_color | default: '#F4EFE6' }};
+    --vmi-trust-text: {{ section.settings.text_color | default: '#1E354D' }};
+  "
+>
+  <div class="vmi-trust__split">
+
+    {%- comment -%} LEFT COLUMN: Seamless Artisan Weaver Artwork {%- endcomment -%}
+    <div class="vmi-trust__left-media">
+      {%- if section.settings.left_image != blank -%}
+        <img
+          src="{{ section.settings.left_image | image_url: width: 1200 }}"
+          alt="{{ section.settings.heading | escape }}"
+          loading="lazy"
+          class="vmi-trust__weaver-img"
+        >
+      {%- else -%}
+        <img
+          src="{{ 'vmi-sankalp-artisan-seamless.png' | asset_url }}"
+          alt="Sankalp Artisan Weaver"
+          loading="lazy"
+          class="vmi-trust__weaver-img"
+        >
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} RIGHT COLUMN: Sankalp Header & Scalloped Mission Box {%- endcomment -%}
+    <div class="vmi-trust__right-content">
+
+      {%- comment -%} Sankalp Logo & Subtitle {%- endcomment -%}
+      <div class="vmi-trust__header">
+        <div class="vmi-trust__logo-wrap">
+          {%- if section.settings.sankalp_logo_image != blank -%}
+            <img src="{{ section.settings.sankalp_logo_image | image_url: width: 600 }}" alt="{{ section.settings.heading }}" class="vmi-trust__logo-img" style="max-width: {{ section.settings.logo_max_width | default: 240 }}px;">
+          {%- else -%}
+            {%- assign heading_text = section.settings.heading | default: 'Sankalp' -%}
+            {%- assign first_char = heading_text | slice: 0, 1 -%}
+            {%- assign rest_chars = heading_text | slice: 1, 100 -%}
+            <div class="vmi-trust__logo-brand">
+              <div class="vmi-trust__logo-text">
+                <span class="vmi-trust__first-letter">{{ first_char }}</span>
+                <span class="vmi-trust__rest-letters">{{ rest_chars }}</span>
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+
+        {%- if section.settings.subtitle != blank -%}
+          <div class="vmi-trust__subtitle">
+            {{ section.settings.subtitle | upcase }}
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%} 4-Sided Smooth Scalloped Card {%- endcomment -%}
+      <div class="vmi-trust__scalloped-box">
+        <svg class="vmi-trust__scallop-svg" viewBox="0 0 400 460" preserveAspectRatio="none" aria-hidden="true">
+          <!-- Outer Cream Scalloped Shape -->
+          <path
+            d="M 40,35 A 28 28 0 0 1 93.33,35 A 28 28 0 0 1 146.67,35 A 28 28 0 0 1 200,35 A 28 28 0 0 1 253.33,35 A 28 28 0 0 1 306.67,35 A 28 28 0 0 1 360,35 A 24 24 0 0 1 365,40 A 28 28 0 0 1 365,94.28 A 28 28 0 0 1 365,148.57 A 28 28 0 0 1 365,202.86 A 28 28 0 0 1 365,257.14 A 28 28 0 0 1 365,311.43 A 28 28 0 0 1 365,365.71 A 28 28 0 0 1 365,420 A 24 24 0 0 1 360,425 A 28 28 0 0 1 306.67,425 A 28 28 0 0 1 253.33,425 A 28 28 0 0 1 200,425 A 28 28 0 0 1 146.67,425 A 28 28 0 0 1 93.33,425 A 28 28 0 0 1 40,425 A 24 24 0 0 1 35,420 A 28 28 0 0 1 35,365.71 A 28 28 0 0 1 35,311.43 A 28 28 0 0 1 35,257.14 A 28 28 0 0 1 35,202.86 A 28 28 0 0 1 35,148.57 A 28 28 0 0 1 35,94.28 A 28 28 0 0 1 35,40 A 24 24 0 0 1 40,35 Z"
+            fill="var(--vmi-card-bg)"
+          />
+
+          <!-- Fine Inset Outline Parallel to Scallops -->
+          <path
+            d="M 44,40 A 25 25 0 0 1 93.33,40 A 25 25 0 0 1 146.67,40 A 25 25 0 0 1 200,40 A 25 25 0 0 1 253.33,40 A 25 25 0 0 1 306.67,40 A 25 25 0 0 1 356,40 A 20 20 0 0 1 360,44 A 25 25 0 0 1 360,94.28 A 25 25 0 0 1 360,148.57 A 25 25 0 0 1 360,202.86 A 25 25 0 0 1 360,257.14 A 25 25 0 0 1 360,311.43 A 25 25 0 0 1 360,365.71 A 25 25 0 0 1 360,416 A 20 20 0 0 1 356,420 A 25 25 0 0 1 306.67,420 A 25 25 0 0 1 253.33,420 A 25 25 0 0 1 200,420 A 25 25 0 0 1 146.67,420 A 25 25 0 0 1 93.33,420 A 25 25 0 0 1 44,420 A 20 20 0 0 1 40,416 A 25 25 0 0 1 40,365.71 A 25 25 0 0 1 40,311.43 A 25 25 0 0 1 40,257.14 A 25 25 0 0 1 40,202.86 A 25 25 0 0 1 40,148.57 A 25 25 0 0 1 40,94.28 A 25 25 0 0 1 40,44 A 20 20 0 0 1 44,40 Z"
+            fill="none"
+            stroke="rgba(110, 85, 75, 0.25)"
+            stroke-width="1.3"
+          />
+        </svg>
+
+        <div class="vmi-trust__scallop-inner">
+          {%- if section.settings.small_heading != blank -%}
+            <div class="vmi-trust__small-heading">
+              {{ section.settings.small_heading }}
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.mission != blank -%}
+            <div class="vmi-trust__mission-text">
+              {{ section.settings.mission }}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@0,500;0,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@400;500;600&display=swap');
+
+  .vmi-trust {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  .vmi-trust__split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 640px;
+    width: 100%;
+    align-items: center;
+  }
+
+  /* ════════════════════════════════
+     LEFT COLUMN: SEAMLESS ARTISAN GRAPHIC
+  ════════════════════════════════ */
+  .vmi-trust__left-media {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 580px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    padding: 2rem 1rem 0 2rem;
+    box-sizing: border-box;
+  }
+
+  .vmi-trust__weaver-img {
+    max-width: 100%;
+    max-height: 560px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 8px 24px rgba(15, 30, 45, 0.25));
+  }
+
+  /* ════════════════════════════════
+     RIGHT COLUMN: SANKALP & CARD
+  ════════════════════════════════ */
+  .vmi-trust__right-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2.5rem 3.5rem;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .vmi-trust__header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Logo Typography: Pinyon Script First Letter + Playfair Display Rest */
+  .vmi-trust__logo-brand {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vmi-trust__logo-text {
+    display: flex;
+    align-items: baseline;
+    line-height: 1;
+  }
+
+  .vmi-trust__first-letter {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 3.8rem;
+    line-height: 0.8;
+    color: var(--vmi-trust-text);
+    margin-right: -0.08em;
+  }
+
+  .vmi-trust__rest-letters {
+    font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--vmi-trust-text);
+  }
+
+  .vmi-trust__swash-svg {
+    width: 92%;
+    height: 10px;
+    margin-top: -4px;
+
+  }
+
+  .vmi-trust__logo-img {
+    max-width: 220px;
+    height: auto;
+    display: block;
+  }
+
+  .vmi-trust__subtitle {
+    font-family: 'Jost', var(--vmi-font-body, system-ui, sans-serif);
+    font-size: 0.76rem;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    color: var(--vmi-trust-text);
+    text-transform: uppercase;
+    opacity: 0.92;
+    margin-top: 0.4rem;
+  }
+
+  /* Scalloped Card */
+  .vmi-trust__scalloped-box {
+    position: relative;
+    max-width: 460px;
+    width: 100%;
+    padding: 3.5rem 2.8rem 3.2rem 2.8rem;
+    box-sizing: border-box;
+    filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.18));
+  }
+
+  .vmi-trust__scallop-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: visible;
+  }
+
+  .vmi-trust__scallop-inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .vmi-trust__small-heading {
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-size: 0.88rem;
+    color: #555555;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.01em;
+    font-weight: 400;
+  }
+
+  .vmi-trust__mission-text {
+    font-family: 'Jost', var(--vmi-font-body, system-ui, sans-serif);
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: #3A3A3A;
+    text-align: center;
+    font-weight: 400;
+  }
+
+  .vmi-trust__mission-text p {
+    margin: 0 0 1rem 0;
+  }
+
+  .vmi-trust__mission-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ════════════════════════════════
+     RESPONSIVE
+  ════════════════════════════════ */
+  @media (max-width: 1024px) {
+    .vmi-trust__right-content {
+      padding: 2.5rem 1.8rem;
+    }
+
+    .vmi-trust__scalloped-box {
+      padding: 3rem 2.2rem;
+    }
+  }
+
+  @media (max-width: 749px) {
+    .vmi-trust__split {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    .vmi-trust__left-media {
+      min-height: 380px;
+      padding: 1.5rem 1rem 0;
+    }
+
+    .vmi-trust__weaver-img {
+      max-height: 360px;
+    }
+
+    .vmi-trust__right-content {
+      padding: 2.5rem 1.25rem 3.5rem;
+    }
+
+    .vmi-trust__scalloped-box {
+      padding: 2.6rem 1.5rem 2.4rem 1.5rem;
+      max-width: 100%;
+    }
+
+    .vmi-trust__mission-text {
+      font-size: 0.88rem;
+      line-height: 1.72;
+    }
+  }
+</style>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "VMI Trust",
+  "tag": "div",
+  "class": "vmi-trust-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_section",
+      "label": "Enable section",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Full Section Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Full section background image (optional)"
+    },
+    {
+      "type": "text",
+      "id": "bg_gradient",
+      "label": "Full section background gradient / color",
+      "default": "linear-gradient(135deg, #CFDAE5 0%, #7B90A3 45%, #2B3E52 100%)"
+    },
+    {
+      "type": "header",
+      "content": "Section Header & Logo"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading / Logo text",
+      "default": "Sankalp"
+    },
+    {
+      "type": "image_picker",
+      "id": "sankalp_logo_image",
+      "label": "Upload Logo Image (SVG / Transparent PNG)",
+      "info": "Upload an SVG or high-res transparent PNG logo. Overrides live text."
+    },
+    {
+      "type": "range",
+      "id": "logo_max_width",
+      "min": 100,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "Logo image width",
+      "default": 240
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "OUR PROMISE TO THE ARTISANS"
+    },
+    {
+      "type": "header",
+      "content": "Left Side Artwork"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Left side artisan weaver graphic"
+    },
+    {
+      "type": "header",
+      "content": "Mission Box & Content"
+    },
+    {
+      "type": "text",
+      "id": "small_heading",
+      "label": "Small card heading",
+      "default": "Celebrating India's Craftsmanship"
+    },
+    {
+      "type": "richtext",
+      "id": "mission",
+      "label": "Mission statement text",
+      "default": "<p>At Very Much Indian, we revive traditional weaves and empower artisans, ensuring every piece tells a story and sustains a legacy. When you choose us, you support the hands that create, the communities that thrive, and the heritage that endures.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Color Customizations"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Scalloped card background",
+      "default": "#F4EFE6"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#1E354D"
+    }
+  ],
+  "presets": [
+    {
+      "name": "VMI Trust"
+    }
+  ]
+}
+{% endschema %}
