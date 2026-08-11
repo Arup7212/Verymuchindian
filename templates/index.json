@@ -1599,20 +1599,21 @@
       "name": "VMI Founder Story",
       "settings": {
         "enable_section": true,
+        "image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_01_10_22_PM.png",
         "founder_name": "Rachna",
         "subtitle": "THE FOUNDER'S JOURNEY",
         "right_bg_image": "shopify://shop_images/WhatsApp_Image_2026-08-11_at_12.58.47_PM.jpg",
-        "right_bg_color": "#4A121A",
+        "right_bg_color": "#4a121a",
         "story_heading": "Celebrating India's Craftsmanship",
         "description": "<p>Slony founded Very Much Indian to celebrate India's heritage weaves and empower the artisans behind them. Every piece reflects centuries of skill, culture, and craftsmanship, bringing timeless artistry into modern homes while preserving traditions and supporting the hands that make them.</p>",
         "cta_label": "READ FULL STORY",
         "cta_url": "",
         "tagline": "made in india with love",
-        "card_bg_color": "#EAE2D5",
-        "card_heading_color": "#2D2325",
-        "card_text_color": "#45383B",
-        "cta_text_color": "#C8A8AF",
-        "tagline_color": "#A8828A"
+        "card_bg_color": "#eae2d5",
+        "card_heading_color": "#2d2325",
+        "card_text_color": "#45383b",
+        "cta_text_color": "#c8a8af",
+        "tagline_color": "#a8828a"
       }
     },
     "journal_accordion_fX7GrC": {
