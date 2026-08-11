@@ -547,9 +547,9 @@
           "type": "shopify://apps/reelcart/blocks/reel-grid/019bd63f-c7d3-75e1-874e-9ea24a028f0f",
           "settings": {
             "heading": "<h2>WATCH & SHOP</h2>",
-            "heading_color": "#FCFBFB",
+            "heading_color": "#fcfbfb",
             "sub_heading": "<p>Discover our latest collection through immersive videos</p>",
-            "sub_heading_color": "#FDFDFD",
+            "sub_heading_color": "#fdfdfd",
             "columns": 4,
             "grid_gap": 16,
             "card_border_radius": 12,
@@ -557,7 +557,7 @@
             "autoplay_videos": true,
             "shuffle_videos": false,
             "card_aspect_ratio": "9/16",
-            "section_bg_color": "#1B1630",
+            "section_bg_color": "#1b1630",
             "card_hover_color": "#000000",
             "btn_bg_color": "#1a1a2e",
             "btn_text_color": "#ffffff",
@@ -1594,6 +1594,26 @@
         "subtitle": "Verified Buyers, Real Drapes — Swipe Through What They Told Us After The Saree Arrived."
       }
     },
+    "vmi_founder_story_jiCkpB": {
+      "type": "vmi-founder-story",
+      "name": "VMI Founder Story",
+      "settings": {
+        "enable_section": true,
+        "founder_name": "Rachna",
+        "subtitle": "THE FOUNDER'S JOURNEY",
+        "right_bg_color": "#4A121A",
+        "story_heading": "Celebrating India's Craftsmanship",
+        "description": "<p>Slony founded Very Much Indian to celebrate India's heritage weaves and empower the artisans behind them. Every piece reflects centuries of skill, culture, and craftsmanship, bringing timeless artistry into modern homes while preserving traditions and supporting the hands that make them.</p>",
+        "cta_label": "READ FULL STORY",
+        "cta_url": "",
+        "tagline": "made in india with love",
+        "card_bg_color": "#EAE2D5",
+        "card_heading_color": "#2D2325",
+        "card_text_color": "#45383B",
+        "cta_text_color": "#C8A8AF",
+        "tagline_color": "#A8828A"
+      }
+    },
     "journal_accordion_fX7GrC": {
       "type": "journal-accordion",
       "blocks": {
@@ -1765,6 +1785,7 @@
     "loom_to_you_UgniMg",
     "shop_by_fabric_eEcqYK",
     "draped_with_love_pApC3D",
+    "vmi_founder_story_jiCkpB",
     "journal_accordion_fX7GrC",
     "in_the_press_pwFPrL",
     "178582077294cc6d67"
