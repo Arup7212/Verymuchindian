@@ -604,6 +604,22 @@
             "label": "",
             "image": "shopify://shop_images/HMP_5060.webp"
           }
+        },
+        "collection_card_WQNRpT": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "",
+            "image": "shopify://shop_images/DSC_0017.webp"
+          }
+        },
+        "collection_card_FjLVPN": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "",
+            "image": "shopify://shop_images/HMP_4497.webp"
+          }
         }
       },
       "block_order": [
@@ -612,7 +628,9 @@
         "collection_card_ydRKk6",
         "collection_card_pJ3XwQ",
         "collection_card_L4yR3d",
-        "collection_card_mibRU9"
+        "collection_card_mibRU9",
+        "collection_card_WQNRpT",
+        "collection_card_FjLVPN"
       ],
       "name": "VMI Arch Collections",
       "settings": {
