@@ -441,6 +441,7 @@
         },
         "collection_box_fBN77i": {
           "type": "collection_box",
+          "disabled": true,
           "settings": {
             "collection": "",
             "title": "ILKULS & KHUN",
@@ -449,6 +450,7 @@
         },
         "collection_box_WKUYit": {
           "type": "collection_box",
+          "disabled": true,
           "settings": {
             "collection": "",
             "title": "PAITHANI",
@@ -457,6 +459,7 @@
         },
         "collection_box_TQw7zT": {
           "type": "collection_box",
+          "disabled": true,
           "settings": {
             "collection": "",
             "title": "GADWAL",
@@ -465,6 +468,7 @@
         },
         "collection_box_78yjFk": {
           "type": "collection_box",
+          "disabled": true,
           "settings": {
             "collection": "",
             "title": "KANJEEVARAM",
@@ -473,6 +477,7 @@
         },
         "collection_box_jxTm3m": {
           "type": "collection_box",
+          "disabled": true,
           "settings": {
             "collection": "",
             "image": "shopify://shop_images/HMP_3591.webp",
@@ -482,6 +487,7 @@
         },
         "collection_box_AQcMbp": {
           "type": "collection_box",
+          "disabled": true,
           "settings": {
             "collection": "",
             "title": "CHANDERI",
@@ -490,6 +496,7 @@
         },
         "collection_box_h8NEzN": {
           "type": "collection_box",
+          "disabled": true,
           "settings": {
             "collection": "",
             "title": "MAHESHWARI",
@@ -498,6 +505,7 @@
         },
         "collection_box_UA9nzh": {
           "type": "collection_box",
+          "disabled": true,
           "settings": {
             "collection": "",
             "title": "TUSSAR SILK",
@@ -506,6 +514,7 @@
         },
         "collection_box_WPeH64": {
           "type": "collection_box",
+          "disabled": true,
           "settings": {
             "collection": "",
             "title": "ORGANZA & LINEN",
@@ -537,7 +546,7 @@
         "brand_title": "Thread . Time . Tradition",
         "brand_subtitle_1": "Very Much Indian Brings Together India's Most Skilled Weavers And Their Timeless Craft - Pure Handloom Sarees And Textiles.",
         "brand_subtitle_2": "Woven Thread By Thread, Region By Region, Story By Story.",
-        "collection_heading": "Our Collection"
+        "collection_heading": ""
       }
     },
     "vmi_arch_collections_WRbf3N": {
@@ -612,7 +621,7 @@
         "logo_max_width": 220,
         "subtitle": "COLLECTIONS",
         "desktop_bg_image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_04_28_13_PM.png",
-        "text_color": "#401F28"
+        "text_color": "#401f28"
       }
     },
     "1785484701e9dacb2f": {
