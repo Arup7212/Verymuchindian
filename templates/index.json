@@ -540,6 +540,82 @@
         "collection_heading": "Our Collection"
       }
     },
+    "vmi_arch_collections_WRbf3N": {
+      "type": "vmi-arch-collections",
+      "blocks": {
+        "collection_card_xxLi6j": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "AJRAK",
+            "image": "shopify://shop_images/HMP_2595.webp",
+            "mobile_bg_image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_04_31_15_PM.png"
+          }
+        },
+        "collection_card_qRFKTy": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "AJRAK",
+            "image": "shopify://shop_images/HMP_3625.webp",
+            "mobile_bg_image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_04_42_15_PM.png"
+          }
+        },
+        "collection_card_ydRKk6": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "BANARASI",
+            "image": "shopify://shop_images/HMP_2590.webp",
+            "mobile_bg_image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_04_36_13_PM.png"
+          }
+        },
+        "collection_card_pJ3XwQ": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "KANJIVARAM",
+            "image": "shopify://shop_images/DSC_0460.webp",
+            "mobile_bg_image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_04_36_17_PM.png"
+          }
+        },
+        "collection_card_L4yR3d": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "CHANDERI",
+            "image": "shopify://shop_images/HMP_6987.webp",
+            "mobile_bg_image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_04_33_40_PM.png"
+          }
+        },
+        "collection_card_mibRU9": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "",
+            "image": "shopify://shop_images/HMP_5060.webp",
+            "mobile_bg_image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_04_31_15_PM.png"
+          }
+        }
+      },
+      "block_order": [
+        "collection_card_xxLi6j",
+        "collection_card_qRFKTy",
+        "collection_card_ydRKk6",
+        "collection_card_pJ3XwQ",
+        "collection_card_L4yR3d",
+        "collection_card_mibRU9"
+      ],
+      "name": "VMI Arch Collections",
+      "settings": {
+        "enable_section": true,
+        "heading": "Sangrah",
+        "logo_max_width": 220,
+        "subtitle": "COLLECTIONS",
+        "desktop_bg_image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_04_28_13_PM.png",
+        "text_color": "#401F28"
+      }
+    },
     "1785484701e9dacb2f": {
       "type": "_blocks",
       "blocks": {
@@ -1840,6 +1916,7 @@
     "slideshow_7JBU7R",
     "dynamic_slider_9n8p4C",
     "tradition_collections_CUAxEP",
+    "vmi_arch_collections_WRbf3N",
     "1785484701e9dacb2f",
     "vmi_virasat_slider_NNwWWj",
     "shop_by_fabric_EVqkJQ",
