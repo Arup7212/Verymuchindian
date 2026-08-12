@@ -299,7 +299,7 @@
 
     <div class="announcement-bar__slides">
       {% for block in section.blocks %}
-        <div class="announcement-bar__slide" id="Slide-{{ section.id }}-{{ forloop.index }}" role="group" aria-roledescription="Slide" {% if forloop.first == false %}aria-hidden="true"{% endif %} {{ block.shopify_attributes }}>
+        <div class="announcement-bar__slide shopify-block shopify-app-block" id="Slide-{{ section.id }}-{{ forloop.index }}" role="group" aria-roledescription="Slide" {% if forloop.first %}aria-hidden="false"{% else %}aria-hidden="true"{% endif %} {{ block.shopify_attributes }}>
           {%- if block.settings.link != blank -%}
             <a href="{{ block.settings.link }}" class="announcement-bar__link"></a>
           {%- endif -%}
@@ -360,6 +360,8 @@
   .announcement-bar__slider slideshow-arrows {
     padding: 0;
     mix-blend-mode: normal;
+    position: relative;
+    z-index: 2;
   }
 
   .announcement-bar__slider slideshow-arrows .slideshow-control {
@@ -395,6 +397,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
   }
 
   .announcement-bar__content {
@@ -577,3 +580,4 @@
   ]
 }
 {% endschema %}
+
