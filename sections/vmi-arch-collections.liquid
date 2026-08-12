@@ -377,7 +377,7 @@
     justify-content: flex-start;
     gap: 1.8rem;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: none;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     padding: 3rem 4rem 2rem;
@@ -660,37 +660,76 @@
       const dotsContainer = document.getElementById('vmi-arch-dots-{{ section.id }}');
       if (!track) return;
 
-      const cards = track.querySelectorAll('.vmi-arch-card');
-      if (!cards.length) return;
+      const originalCards = Array.from(track.querySelectorAll('.vmi-arch-card'));
+      if (originalCards.length < 2) return;
 
       const dots = dotsContainer ? dotsContainer.querySelectorAll('.vmi-arch__dot') : [];
 
+      // Create infinite loop clones (prepend & append clones)
+      originalCards.forEach((card, idx) => {
+        const cloneBefore = card.cloneNode(true);
+        cloneBefore.classList.add('vmi-arch-card--clone');
+        cloneBefore.setAttribute('data-index', idx);
+        track.insertBefore(cloneBefore, track.firstChild);
+
+        const cloneAfter = card.cloneNode(true);
+        cloneAfter.classList.add('vmi-arch-card--clone');
+        cloneAfter.setAttribute('data-index', idx);
+        track.appendChild(cloneAfter);
+      });
+
+      const allCards = Array.from(track.querySelectorAll('.vmi-arch-card'));
+
+      function getSingleSetWidth() {
+        let setWidth = 0;
+        originalCards.forEach(card => {
+          setWidth += card.offsetWidth;
+        });
+        const gap = parseFloat(window.getComputedStyle(track).gap) || 28.8;
+        return setWidth + (originalCards.length * gap);
+      }
+
+      function checkInfiniteBoundary() {
+        const singleSetWidth = getSingleSetWidth();
+        if (!singleSetWidth) return;
+
+        const maxScroll = track.scrollWidth - track.clientWidth;
+        if (track.scrollLeft <= 50) {
+          track.scrollLeft += singleSetWidth;
+        } else if (track.scrollLeft >= maxScroll - 50) {
+          track.scrollLeft -= singleSetWidth;
+        }
+      }
+
       function updateActiveCard() {
+        checkInfiniteBoundary();
+
         const trackRect = track.getBoundingClientRect();
         const trackCenter = trackRect.left + trackRect.width / 2;
         let closestCard = null;
         let minDistance = Infinity;
-        let closestIndex = 0;
 
-        cards.forEach((card, index) => {
+        allCards.forEach((card) => {
           const cardRect = card.getBoundingClientRect();
           const cardCenter = cardRect.left + cardRect.width / 2;
           const distance = Math.abs(trackCenter - cardCenter);
           if (distance < minDistance) {
             minDistance = distance;
             closestCard = card;
-            closestIndex = index;
           }
         });
 
         if (closestCard) {
-          cards.forEach(c => c.classList.remove('active'));
+          allCards.forEach(c => c.classList.remove('active'));
           closestCard.classList.add('active');
 
-          if (dots.length) {
+          const cardIndexStr = closestCard.getAttribute('data-index');
+          const cardIndex = parseInt(cardIndexStr, 10);
+
+          if (dots.length && !isNaN(cardIndex)) {
             dots.forEach(d => d.classList.remove('active'));
-            if (dots[closestIndex]) {
-              dots[closestIndex].classList.add('active');
+            if (dots[cardIndex]) {
+              dots[cardIndex].classList.add('active');
             }
           }
 
@@ -704,26 +743,32 @@
         }
       }
 
-      // Initial card centering on load
-      const initialActiveCard = track.querySelector('.vmi-arch-card.active') || cards[Math.min(2, cards.length - 1)];
-      if (initialActiveCard) {
-        setTimeout(function() {
-          const cardLeft = initialActiveCard.offsetLeft;
-          const cardWidth = initialActiveCard.offsetWidth;
+      // Initial card centering on middle original set
+      setTimeout(function() {
+        const middleCard = originalCards[Math.floor(originalCards.length / 2)] || originalCards[0];
+        if (middleCard) {
+          const cardLeft = middleCard.offsetLeft;
+          const cardWidth = middleCard.offsetWidth;
           const trackWidth = track.offsetWidth;
           track.scrollTo({
             left: cardLeft - (trackWidth / 2) + (cardWidth / 2),
             behavior: 'auto'
           });
-          updateActiveCard();
-        }, 100);
-      } else {
+        }
         updateActiveCard();
-      }
+      }, 100);
 
+      let ticking = false;
       track.addEventListener('scroll', function() {
-        window.requestAnimationFrame(updateActiveCard);
+        if (!ticking) {
+          window.requestAnimationFrame(function() {
+            updateActiveCard();
+            ticking = false;
+          });
+          ticking = true;
+        }
       });
+
       window.addEventListener('resize', function() {
         window.requestAnimationFrame(updateActiveCard);
       });
@@ -732,8 +777,8 @@
       if (dots.length) {
         dots.forEach((dot, idx) => {
           dot.addEventListener('click', function() {
-            if (cards[idx]) {
-              const card = cards[idx];
+            if (originalCards[idx]) {
+              const card = originalCards[idx];
               const cardLeft = card.offsetLeft;
               const cardWidth = card.offsetWidth;
               const trackWidth = track.offsetWidth;
@@ -769,8 +814,9 @@
       });
 
       // Click card to center smoothly
-      cards.forEach(card => {
-        card.addEventListener('click', function() {
+      track.addEventListener('click', function(e) {
+        const card = e.target.closest('.vmi-arch-card');
+        if (card) {
           const cardLeft = card.offsetLeft;
           const cardWidth = card.offsetWidth;
           const trackWidth = track.offsetWidth;
@@ -778,7 +824,7 @@
             left: cardLeft - (trackWidth / 2) + (cardWidth / 2),
             behavior: 'smooth'
           });
-        });
+        }
       });
     }
 
