@@ -925,6 +925,96 @@
         "view_all_url": ""
       }
     },
+    "best_sellers_products_iBnAwV": {
+      "type": "best-sellers-products",
+      "blocks": {
+        "custom_product_xwmFeU": {
+          "type": "custom_product",
+          "disabled": true,
+          "settings": {
+            "title": "Chandrakor",
+            "subtitle": "Pure Silk Maharani Paithani · Maharani Pallu · Peacock Blue",
+            "category": "PAITHANI · YEOLA",
+            "badge_text": "LIMITED",
+            "badge_type": "limited",
+            "manhours": "450hrs",
+            "price": "₹28,560",
+            "compare_price": "₹32,436",
+            "save_percentage": "Save 12%",
+            "url": ""
+          }
+        },
+        "custom_product_KaeETm": {
+          "type": "custom_product",
+          "disabled": true,
+          "settings": {
+            "title": "Chandrakor",
+            "subtitle": "Pure Silk Maharani Paithani · Maharani Pallu · Peacock Blue",
+            "category": "PAITHANI · YEOLA",
+            "badge_text": "SALE",
+            "badge_type": "sale",
+            "manhours": "450hrs",
+            "price": "₹28,560",
+            "compare_price": "₹32,436",
+            "save_percentage": "Save 12%",
+            "url": ""
+          }
+        },
+        "custom_product_ajFP7D": {
+          "type": "custom_product",
+          "disabled": true,
+          "settings": {
+            "title": "Chandrakor",
+            "subtitle": "Pure Silk Maharani Paithani · Maharani Pallu · Peacock Blue",
+            "category": "PAITHANI · YEOLA",
+            "badge_text": "BESTSELLER",
+            "badge_type": "bestseller",
+            "manhours": "450hrs",
+            "price": "₹28,560",
+            "compare_price": "₹32,436",
+            "save_percentage": "Save 12%",
+            "url": ""
+          }
+        },
+        "custom_product_XdbGcq": {
+          "type": "custom_product",
+          "disabled": true,
+          "settings": {
+            "title": "Chandrakor",
+            "subtitle": "Pure Silk Maharani Paithani · Maharani Pallu · Peacock Blue",
+            "category": "PAITHANI · YEOLA",
+            "badge_text": "LIMITED",
+            "badge_type": "limited",
+            "manhours": "450hrs",
+            "price": "₹28,560",
+            "compare_price": "₹32,436",
+            "save_percentage": "Save 12%",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "custom_product_xwmFeU",
+        "custom_product_KaeETm",
+        "custom_product_ajFP7D",
+        "custom_product_XdbGcq"
+      ],
+      "name": "Best Sellers Products",
+      "settings": {
+        "background_color": "#ffffff",
+        "heading": "Best Sellers",
+        "collection": "best-sellers",
+        "sort_by": "best-selling",
+        "category_display_type": "collection",
+        "show_category": true,
+        "manhours_bg_color": "#f7941e",
+        "manhours_text_color": "#1e2447",
+        "products_to_show": 4,
+        "show_view_all": true,
+        "view_all_text": "View All",
+        "view_all_url": ""
+      }
+    },
     "vmi_trust_dTjgyn": {
       "type": "vmi-trust",
       "name": "VMI Trust",
@@ -1943,6 +2033,7 @@
     "dynamic_slider_9n8p4C",
     "tradition_collections_CUAxEP",
     "vmi_arch_collections_WRbf3N",
+    "best_sellers_products_iBnAwV",
     "1785484701e9dacb2f",
     "vmi_virasat_slider_NNwWWj",
     "shop_by_fabric_EVqkJQ",
