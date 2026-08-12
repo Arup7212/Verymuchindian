@@ -1192,6 +1192,7 @@
         "custom_product_g7g8xb",
         "custom_product_mRMwD8"
       ],
+      "disabled": true,
       "name": "Best Sellers Products",
       "settings": {
         "background_color": "#ffffff",
