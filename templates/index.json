@@ -642,6 +642,98 @@
         "text_color": "#401f28"
       }
     },
+    "collectionlist_UAHNdp": {
+      "type": "collectionlist",
+      "blocks": {
+        "collection_QzwJUQ": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/HMP_3587.webp",
+            "title": ""
+          }
+        },
+        "collection_QRdyQ7": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/HMP_3844_7b7e9810-2082-462f-91d5-36086154d8b3.webp",
+            "title": ""
+          }
+        },
+        "collection_Jhqn6D": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/HMP_2606.webp",
+            "title": ""
+          }
+        },
+        "collection_RTLMMB": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/HMP_3011.webp",
+            "title": ""
+          }
+        },
+        "collection_bBhLR8": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/HMP_3622.webp",
+            "title": ""
+          }
+        },
+        "collection_8Qyw4w": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/HEM_1935.jpg",
+            "title": ""
+          }
+        },
+        "collection_j9Wa4V": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/HEM_8706.webp",
+            "title": ""
+          }
+        },
+        "collection_gUXVJw": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/DSC_8945.webp",
+            "title": ""
+          }
+        },
+        "collection_X9kCFY": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/DSC_0462.webp",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_QzwJUQ",
+        "collection_QRdyQ7",
+        "collection_Jhqn6D",
+        "collection_RTLMMB",
+        "collection_bBhLR8",
+        "collection_8Qyw4w",
+        "collection_j9Wa4V",
+        "collection_gUXVJw",
+        "collection_X9kCFY"
+      ],
+      "name": "Custom Collection List",
+      "settings": {
+        "title": "Our Collection"
+      }
+    },
     "1785484701e9dacb2f": {
       "type": "_blocks",
       "blocks": {
@@ -1943,6 +2035,7 @@
     "dynamic_slider_9n8p4C",
     "tradition_collections_CUAxEP",
     "vmi_arch_collections_WRbf3N",
+    "collectionlist_UAHNdp",
     "1785484701e9dacb2f",
     "vmi_virasat_slider_NNwWWj",
     "shop_by_fabric_EVqkJQ",
