@@ -14,53 +14,35 @@
     "header_announcements_9jGBFp": {
       "type": "header-announcements",
       "blocks": {
-        "announcement_BxgCk9": {
-          "type": "_announcement",
+        "announcement_UTj7UJ": {
+          "type": "announcement",
           "settings": {
-            "text": "🌐3 day International Shipping",
-            "link": "",
-            "font": "var(--font-subheading--family)",
-            "font_size": "0.75rem",
-            "weight": "",
-            "letter_spacing": "normal",
-            "case": "none",
-            "text_color": ""
-          },
-          "blocks": {}
+            "logo": "shopify://shop_images/3_1.png",
+            "text": "3 day International Shipping",
+            "link": ""
+          }
         },
-        "announcement_rQqxUL": {
-          "type": "_announcement",
+        "announcement_B4pbHi": {
+          "type": "announcement",
           "settings": {
-            "text": "🧵Authentic handloom paithani",
-            "link": "",
-            "font": "var(--font-subheading--family)",
-            "font_size": "0.75rem",
-            "weight": "",
-            "letter_spacing": "normal",
-            "case": "none",
-            "text_color": ""
-          },
-          "blocks": {}
+            "logo": "shopify://shop_images/2_1.png",
+            "text": "Authentic handloom paithani",
+            "link": ""
+          }
         },
-        "announcement_aEfqAc": {
-          "type": "_announcement",
+        "announcement_36gUdC": {
+          "type": "announcement",
           "settings": {
-            "text": "🦋Silk mark Certified",
-            "link": "",
-            "font": "var(--font-subheading--family)",
-            "font_size": "0.75rem",
-            "weight": "",
-            "letter_spacing": "normal",
-            "case": "none",
-            "text_color": ""
-          },
-          "blocks": {}
+            "logo": "shopify://shop_images/1_1.png",
+            "text": "Silk mark Certified",
+            "link": ""
+          }
         }
       },
       "block_order": [
-        "announcement_BxgCk9",
-        "announcement_rQqxUL",
-        "announcement_aEfqAc"
+        "announcement_UTj7UJ",
+        "announcement_B4pbHi",
+        "announcement_36gUdC"
       ],
       "name": "t:names.announcement_bar",
       "settings": {
