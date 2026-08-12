@@ -71,156 +71,161 @@
       </div>
     </div>
 
-    {%- comment -%} Arch Collection Cards Track {%- endcomment -%}
+    {%- comment -%} Arch Collection Cards Track with Infinite Loop {%- endcomment -%}
     <div class="vmi-arch__slider-wrap">
       <div class="vmi-arch__track" id="vmi-arch-track-{{ section.id }}">
         
         {%- if section.blocks.size > 0 -%}
-          {%- for block in section.blocks -%}
-            {%- assign col = collections[block.settings.collection] -%}
-            {%- assign card_label = block.settings.label | default: col.title | default: 'COLLECTION' -%}
-            {%- assign card_img = block.settings.image | default: col.featured_image -%}
-            {%- assign mob_bg = block.settings.mobile_bg_image | default: col.featured_image | default: card_img -%}
+          {%- for set_i in (1..3) -%}
+            {%- for block in section.blocks -%}
+              {%- assign col = collections[block.settings.collection] -%}
+              {%- assign card_label = block.settings.label | default: col.title | default: 'COLLECTION' -%}
+              {%- assign card_img = block.settings.image | default: col.featured_image -%}
+              {%- assign mob_bg = block.settings.mobile_bg_image | default: col.featured_image | default: card_img -%}
 
-            {%- assign mob_bg_url = '' -%}
-            {%- if mob_bg != blank -%}
-              {%- assign mob_bg_url = mob_bg | image_url: width: 1200 -%}
-            {%- elsif section.settings.desktop_bg_image != blank -%}
-              {%- assign mob_bg_url = section.settings.desktop_bg_image | image_url: width: 1400 -%}
-            {%- else -%}
-              {%- assign mob_bg_url = 'vmi-sangrah-bg-desktop.png' | asset_url -%}
-            {%- endif -%}
+              {%- assign mob_bg_url = '' -%}
+              {%- if mob_bg != blank -%}
+                {%- assign mob_bg_url = mob_bg | image_url: width: 1200 -%}
+              {%- elsif section.settings.desktop_bg_image != blank -%}
+                {%- assign mob_bg_url = section.settings.desktop_bg_image | image_url: width: 1400 -%}
+              {%- else -%}
+                {%- assign mob_bg_url = 'vmi-sangrah-bg-desktop.png' | asset_url -%}
+              {%- endif -%}
 
-            <div
-              class="vmi-arch-card {% if forloop.index == 3 or forloop.first and section.blocks.size < 3 %}active{% endif %}"
-              data-index="{{ forloop.index0 }}"
-              data-mobile-bg="{{ mob_bg_url }}"
-              {{ block.shopify_attributes }}
-            >
-              <a href="{% if col != blank %}{{ col.url }}{% else %}#{% endif %}" class="vmi-arch-card__inner">
-                <div class="vmi-arch-card__frame-box">
+              <div
+                class="vmi-arch-card {% if set_i == 2 and forloop.index == 3 or set_i == 2 and forloop.first and section.blocks.size < 3 %}active{% endif %}"
+                data-real-index="{{ forloop.index0 }}"
+                data-set="{{ set_i }}"
+                data-mobile-bg="{{ mob_bg_url }}"
+                {{ block.shopify_attributes }}
+              >
+                <a href="{% if col != blank %}{{ col.url }}{% else %}#{% endif %}" class="vmi-arch-card__inner">
+                  <div class="vmi-arch-card__frame-box">
 
-                  {%- comment -%} Photo clipped to inner arch window via SVG clipPath {%- endcomment -%}
-                  <svg class="vmi-arch-photo-svg" viewBox="0 0 400 720" preserveAspectRatio="none" aria-hidden="true">
-                    <defs>
-                      <clipPath id="archPhotoClip-{{ section.id }}-{{ block.id }}">
-                        <path d="M199.403 29.3281C185.232 29.3281 171.199 31.047 158.105 34.3867C145.012 37.7264 133.116 42.622 123.095 48.793C113.074 54.9639 105.125 62.2898 99.7012 70.3525C98.1326 72.6845 96.7855 75.0656 95.6611 77.4824H65.3428C65.3425 99.9479 43.2887 118.429 31.5029 119.778H29.4297V436.198H43.6123C56.0512 439.438 74.2656 450.692 74.2656 477.669H95.6611C96.7854 480.086 98.1328 482.466 99.7012 484.798C105.125 492.861 113.074 500.186 123.095 506.357C133.116 512.528 145.012 517.424 158.105 520.764C171.199 524.103 185.232 525.822 199.403 525.822C213.575 525.822 227.608 524.103 240.701 520.764C253.794 517.424 265.691 512.528 275.712 506.357C285.733 500.186 293.682 492.861 299.105 484.798C300.674 482.466 302.021 480.086 303.146 477.669H324.043C324.397 465.566 331.3 441.644 355.397 436.198H370.583V119.778H369.716C341.532 116.708 331.732 90.3821 331.354 77.4824H303.146C302.021 75.0656 300.674 72.6845 299.105 70.3525C293.682 62.2898 285.733 54.9639 275.712 48.793C265.691 42.622 253.794 37.7264 240.701 34.3867C227.608 31.047 213.575 29.3281 199.403 29.3281Z" />
-                      </clipPath>
-                    </defs>
-                    {%- if card_img != blank -%}
-                      <image href="{{ card_img | image_url: width: 800 }}" x="0" y="0" width="400" height="720" clip-path="url(#archPhotoClip-{{ section.id }}-{{ block.id }})" preserveAspectRatio="xMidYMid slice" />
-                    {%- else -%}
-                      <image href="{{ 'vmi-sangrah-banarasi.png' | asset_url }}" x="0" y="0" width="400" height="720" clip-path="url(#archPhotoClip-{{ section.id }}-{{ block.id }})" preserveAspectRatio="xMidYMid slice" />
-                    {%- endif -%}
-                  </svg>
+                    {%- comment -%} Photo clipped to inner arch window via SVG clipPath {%- endcomment -%}
+                    <svg class="vmi-arch-photo-svg" viewBox="0 0 400 720" preserveAspectRatio="none" aria-hidden="true">
+                      <defs>
+                        <clipPath id="archPhotoClip-{{ section.id }}-{{ block.id }}-s{{ set_i }}">
+                          <path d="M199.403 29.3281C185.232 29.3281 171.199 31.047 158.105 34.3867C145.012 37.7264 133.116 42.622 123.095 48.793C113.074 54.9639 105.125 62.2898 99.7012 70.3525C98.1326 72.6845 96.7855 75.0656 95.6611 77.4824H65.3428C65.3425 99.9479 43.2887 118.429 31.5029 119.778H29.4297V436.198H43.6123C56.0512 439.438 74.2656 450.692 74.2656 477.669H95.6611C96.7854 480.086 98.1328 482.466 99.7012 484.798C105.125 492.861 113.074 500.186 123.095 506.357C133.116 512.528 145.012 517.424 158.105 520.764C171.199 524.103 185.232 525.822 199.403 525.822C213.575 525.822 227.608 524.103 240.701 520.764C253.794 517.424 265.691 512.528 275.712 506.357C285.733 500.186 293.682 492.861 299.105 484.798C300.674 482.466 302.021 480.086 303.146 477.669H324.043C324.397 465.566 331.3 441.644 355.397 436.198H370.583V119.778H369.716C341.532 116.708 331.732 90.3821 331.354 77.4824H303.146C302.021 75.0656 300.674 72.6845 299.105 70.3525C293.682 62.2898 285.733 54.9639 275.712 48.793C265.691 42.622 253.794 37.7264 240.701 34.3867C227.608 31.047 213.575 29.3281 199.403 29.3281Z" />
+                        </clipPath>
+                      </defs>
+                      {%- if card_img != blank -%}
+                        <image href="{{ card_img | image_url: width: 800 }}" x="0" y="0" width="400" height="720" clip-path="url(#archPhotoClip-{{ section.id }}-{{ block.id }}-s{{ set_i }})" preserveAspectRatio="xMidYMid slice" />
+                      {%- else -%}
+                        <image href="{{ 'vmi-sangrah-banarasi.png' | asset_url }}" x="0" y="0" width="400" height="720" clip-path="url(#archPhotoClip-{{ section.id }}-{{ block.id }}-s{{ set_i }})" preserveAspectRatio="xMidYMid slice" />
+                      {%- endif -%}
+                    </svg>
 
-                  {%- comment -%} Inactive frame overlay (dark navy) — shown by default {%- endcomment -%}
-                  <img src="{{ 'vmi-arch-inactive.svg' | asset_url }}" class="vmi-arch-frame-img vmi-arch-frame-img--inactive" aria-hidden="true" />
+                    {%- comment -%} Inactive frame overlay (dark navy) — shown by default {%- endcomment -%}
+                    <img src="{{ 'vmi-arch-inactive.svg' | asset_url }}" class="vmi-arch-frame-img vmi-arch-frame-img--inactive" aria-hidden="true" />
 
-                  {%- comment -%} Active frame overlay (white/cream) — shown when card is active {%- endcomment -%}
-                  <img src="{{ 'vmi-arch-active.svg' | asset_url }}" class="vmi-arch-frame-img vmi-arch-frame-img--active" aria-hidden="true" />
+                    {%- comment -%} Active frame overlay (white/cream) — shown when card is active {%- endcomment -%}
+                    <img src="{{ 'vmi-arch-active.svg' | asset_url }}" class="vmi-arch-frame-img vmi-arch-frame-img--active" aria-hidden="true" />
 
-                  {%- comment -%} Title, Flourish & Diamond Ornament {%- endcomment -%}
-                  <div class="vmi-arch-card__meta">
-                    <span class="vmi-arch-card__title">{{ card_label | upcase }}</span>
-                    <div class="vmi-arch-card__flourish-wrap">
-                      <svg width="100" height="10" viewBox="0 0 100 10" fill="none" class="vmi-arch-flourish-svg">
-                        <line x1="0" y1="5" x2="38" y2="5" stroke="currentColor" stroke-width="0.8" stroke-opacity="0.45"/>
-                        <path d="M 50 1 C 47 4 44 5 41 5 C 44 5 47 6 50 9 C 53 6 56 5 59 5 C 56 5 53 4 50 1 Z" fill="currentColor" fill-opacity="0.65"/>
-                        <circle cx="50" cy="5" r="1.2" fill="currentColor" fill-opacity="0.85"/>
-                        <line x1="62" y1="5" x2="100" y2="5" stroke="currentColor" stroke-width="0.8" stroke-opacity="0.45"/>
-                      </svg>
+                    {%- comment -%} Title, Flourish & Diamond Ornament {%- endcomment -%}
+                    <div class="vmi-arch-card__meta">
+                      <span class="vmi-arch-card__title">{{ card_label | upcase }}</span>
+                      <div class="vmi-arch-card__flourish-wrap">
+                        <svg width="100" height="10" viewBox="0 0 100 10" fill="none" class="vmi-arch-flourish-svg">
+                          <line x1="0" y1="5" x2="38" y2="5" stroke="currentColor" stroke-width="0.8" stroke-opacity="0.45"/>
+                          <path d="M 50 1 C 47 4 44 5 41 5 C 44 5 47 6 50 9 C 53 6 56 5 59 5 C 56 5 53 4 50 1 Z" fill="currentColor" fill-opacity="0.65"/>
+                          <circle cx="50" cy="5" r="1.2" fill="currentColor" fill-opacity="0.85"/>
+                          <line x1="62" y1="5" x2="100" y2="5" stroke="currentColor" stroke-width="0.8" stroke-opacity="0.45"/>
+                        </svg>
+                      </div>
+                      <div class="vmi-arch-card__diamond" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 32 32" fill="none" class="vmi-decorative-diamond-svg">
+                          <circle cx="16" cy="3" r="1.2" fill="#B83A38"/>
+                          <circle cx="14.5" cy="4.8" r="0.9" fill="#B83A38"/>
+                          <circle cx="17.5" cy="4.8" r="0.9" fill="#B83A38"/>
+                          <circle cx="16" cy="29" r="1.2" fill="#B83A38"/>
+                          <circle cx="14.5" cy="27.2" r="0.9" fill="#B83A38"/>
+                          <circle cx="17.5" cy="27.2" r="0.9" fill="#B83A38"/>
+                          <circle cx="3" cy="16" r="1.2" fill="#B83A38"/>
+                          <circle cx="4.8" cy="14.5" r="0.9" fill="#B83A38"/>
+                          <circle cx="4.8" cy="17.5" r="0.9" fill="#B83A38"/>
+                          <circle cx="29" cy="16" r="1.2" fill="#B83A38"/>
+                          <circle cx="27.2" cy="14.5" r="0.9" fill="#B83A38"/>
+                          <circle cx="27.2" cy="17.5" r="0.9" fill="#B83A38"/>
+                          <polygon points="16,6.5 25.5,16 16,25.5 6.5,16" fill="#1E252D" stroke="#D4AF37" stroke-width="0.8"/>
+                          <polygon points="16,8.5 23.5,16 16,23.5 8.5,16" fill="#E6C462"/>
+                          <polygon points="16,10 22,16 16,22 10,16" fill="none" stroke="#222B34" stroke-width="0.6" stroke-dasharray="1 1"/>
+                          <polygon points="16,11.5 20.5,16 16,20.5 11.5,16" fill="#202730"/>
+                          <polygon points="16,13 19,16 16,19 13,16" fill="#B83A38"/>
+                          <circle cx="16" cy="16" r="0.8" fill="#FFFFFF"/>
+                        </svg>
+                      </div>
                     </div>
-                    <div class="vmi-arch-card__diamond" aria-hidden="true">
-                      <svg width="24" height="24" viewBox="0 0 32 32" fill="none" class="vmi-decorative-diamond-svg">
-                        <circle cx="16" cy="3" r="1.2" fill="#B83A38"/>
-                        <circle cx="14.5" cy="4.8" r="0.9" fill="#B83A38"/>
-                        <circle cx="17.5" cy="4.8" r="0.9" fill="#B83A38"/>
-                        <circle cx="16" cy="29" r="1.2" fill="#B83A38"/>
-                        <circle cx="14.5" cy="27.2" r="0.9" fill="#B83A38"/>
-                        <circle cx="17.5" cy="27.2" r="0.9" fill="#B83A38"/>
-                        <circle cx="3" cy="16" r="1.2" fill="#B83A38"/>
-                        <circle cx="4.8" cy="14.5" r="0.9" fill="#B83A38"/>
-                        <circle cx="4.8" cy="17.5" r="0.9" fill="#B83A38"/>
-                        <circle cx="29" cy="16" r="1.2" fill="#B83A38"/>
-                        <circle cx="27.2" cy="14.5" r="0.9" fill="#B83A38"/>
-                        <circle cx="27.2" cy="17.5" r="0.9" fill="#B83A38"/>
-                        <polygon points="16,6.5 25.5,16 16,25.5 6.5,16" fill="#1E252D" stroke="#D4AF37" stroke-width="0.8"/>
-                        <polygon points="16,8.5 23.5,16 16,23.5 8.5,16" fill="#E6C462"/>
-                        <polygon points="16,10 22,16 16,22 10,16" fill="none" stroke="#222B34" stroke-width="0.6" stroke-dasharray="1 1"/>
-                        <polygon points="16,11.5 20.5,16 16,20.5 11.5,16" fill="#202730"/>
-                        <polygon points="16,13 19,16 16,19 13,16" fill="#B83A38"/>
-                        <circle cx="16" cy="16" r="0.8" fill="#FFFFFF"/>
-                      </svg>
-                    </div>
+
                   </div>
-
-                </div>
-              </a>
-            </div>
+                </a>
+              </div>
+            {%- endfor -%}
           {%- endfor -%}
         {%- else -%}
           {%- comment -%} Default Demo Blocks {%- endcomment -%}
           {%- assign demo_labels = 'AJRAK,AJRAK,BANARASI,KANJIVARAM,CHANDERI' | split: ',' -%}
           {%- assign demo_images = 'vmi-card-ajrakh.png,vmi-sangrah-ajrakh.png,vmi-sangrah-banarasi.png,vmi-card-kanjivaram.png,vmi-card-chanderi.png' | split: ',' -%}
-          {%- for label in demo_labels -%}
-            {%- assign img_file = demo_images[forloop.index0] -%}
-            <div class="vmi-arch-card {% if forloop.index == 3 %}active{% endif %}" data-index="{{ forloop.index0 }}" data-mobile-bg="{{ img_file | asset_url }}">
-              <a href="#" class="vmi-arch-card__inner">
-                <div class="vmi-arch-card__frame-box">
+          {%- for set_i in (1..3) -%}
+            {%- for label in demo_labels -%}
+              {%- assign img_file = demo_images[forloop.index0] -%}
+              <div class="vmi-arch-card {% if set_i == 2 and forloop.index == 3 %}active{% endif %}" data-real-index="{{ forloop.index0 }}" data-set="{{ set_i }}" data-mobile-bg="{{ img_file | asset_url }}">
+                <a href="#" class="vmi-arch-card__inner">
+                  <div class="vmi-arch-card__frame-box">
 
-                  {%- comment -%} Photo clipped to inner arch window via SVG clipPath {%- endcomment -%}
-                  <svg class="vmi-arch-photo-svg" viewBox="0 0 400 720" preserveAspectRatio="none" aria-hidden="true">
-                    <defs>
-                      <clipPath id="archPhotoClip-demo-{{ forloop.index }}">
-                        <path d="M199.403 29.3281C185.232 29.3281 171.199 31.047 158.105 34.3867C145.012 37.7264 133.116 42.622 123.095 48.793C113.074 54.9639 105.125 62.2898 99.7012 70.3525C98.1326 72.6845 96.7855 75.0656 95.6611 77.4824H65.3428C65.3425 99.9479 43.2887 118.429 31.5029 119.778H29.4297V436.198H43.6123C56.0512 439.438 74.2656 450.692 74.2656 477.669H95.6611C96.7854 480.086 98.1328 482.466 99.7012 484.798C105.125 492.861 113.074 500.186 123.095 506.357C133.116 512.528 145.012 517.424 158.105 520.764C171.199 524.103 185.232 525.822 199.403 525.822C213.575 525.822 227.608 524.103 240.701 520.764C253.794 517.424 265.691 512.528 275.712 506.357C285.733 500.186 293.682 492.861 299.105 484.798C300.674 482.466 302.021 480.086 303.146 477.669H324.043C324.397 465.566 331.3 441.644 355.397 436.198H370.583V119.778H369.716C341.532 116.708 331.732 90.3821 331.354 77.4824H303.146C302.021 75.0656 300.674 72.6845 299.105 70.3525C293.682 62.2898 285.733 54.9639 275.712 48.793C265.691 42.622 253.794 37.7264 240.701 34.3867C227.608 31.047 213.575 29.3281 199.403 29.3281Z" />
-                      </clipPath>
-                    </defs>
-                    <image href="{{ img_file | asset_url }}" x="0" y="0" width="400" height="720" clip-path="url(#archPhotoClip-demo-{{ forloop.index }})" preserveAspectRatio="xMidYMid slice" />
-                  </svg>
+                    {%- comment -%} Photo clipped to inner arch window via SVG clipPath {%- endcomment -%}
+                    <svg class="vmi-arch-photo-svg" viewBox="0 0 400 720" preserveAspectRatio="none" aria-hidden="true">
+                      <defs>
+                        <clipPath id="archPhotoClip-demo-s{{ set_i }}-{{ forloop.index }}">
+                          <path d="M199.403 29.3281C185.232 29.3281 171.199 31.047 158.105 34.3867C145.012 37.7264 133.116 42.622 123.095 48.793C113.074 54.9639 105.125 62.2898 99.7012 70.3525C98.1326 72.6845 96.7855 75.0656 95.6611 77.4824H65.3428C65.3425 99.9479 43.2887 118.429 31.5029 119.778H29.4297V436.198H43.6123C56.0512 439.438 74.2656 450.692 74.2656 477.669H95.6611C96.7854 480.086 98.1328 482.466 99.7012 484.798C105.125 492.861 113.074 500.186 123.095 506.357C133.116 512.528 145.012 517.424 158.105 520.764C171.199 524.103 185.232 525.822 199.403 525.822C213.575 525.822 227.608 524.103 240.701 520.764C253.794 517.424 265.691 512.528 275.712 506.357C285.733 500.186 293.682 492.861 299.105 484.798C300.674 482.466 302.021 480.086 303.146 477.669H324.043C324.397 465.566 331.3 441.644 355.397 436.198H370.583V119.778H369.716C341.532 116.708 331.732 90.3821 331.354 77.4824H303.146C302.021 75.0656 300.674 72.6845 299.105 70.3525C293.682 62.2898 285.733 54.9639 275.712 48.793C265.691 42.622 253.794 37.7264 240.701 34.3867C227.608 31.047 213.575 29.3281 199.403 29.3281Z" />
+                        </clipPath>
+                      </defs>
+                      <image href="{{ img_file | asset_url }}" x="0" y="0" width="400" height="720" clip-path="url(#archPhotoClip-demo-s{{ set_i }}-{{ forloop.index }})" preserveAspectRatio="xMidYMid slice" />
+                    </svg>
 
-                  {%- comment -%} Inactive frame overlay (dark navy) {%- endcomment -%}
-                  <img src="{{ 'vmi-arch-inactive.svg' | asset_url }}" class="vmi-arch-frame-img vmi-arch-frame-img--inactive" aria-hidden="true" />
+                    {%- comment -%} Inactive frame overlay (dark navy) {%- endcomment -%}
+                    <img src="{{ 'vmi-arch-inactive.svg' | asset_url }}" class="vmi-arch-frame-img vmi-arch-frame-img--inactive" aria-hidden="true" />
 
-                  {%- comment -%} Active frame overlay (white/cream) {%- endcomment -%}
-                  <img src="{{ 'vmi-arch-active.svg' | asset_url }}" class="vmi-arch-frame-img vmi-arch-frame-img--active" aria-hidden="true" />
+                    {%- comment -%} Active frame overlay (white/cream) {%- endcomment -%}
+                    <img src="{{ 'vmi-arch-active.svg' | asset_url }}" class="vmi-arch-frame-img vmi-arch-frame-img--active" aria-hidden="true" />
 
-                  <div class="vmi-arch-card__meta">
-                    <span class="vmi-arch-card__title">{{ label }}</span>
-                    <div class="vmi-arch-card__flourish-wrap">
-                      <svg width="100" height="10" viewBox="0 0 100 10" fill="none" class="vmi-arch-flourish-svg">
-                        <line x1="0" y1="5" x2="38" y2="5" stroke="currentColor" stroke-width="0.8" stroke-opacity="0.45"/>
-                        <path d="M 50 1 C 47 4 44 5 41 5 C 44 5 47 6 50 9 C 53 6 56 5 59 5 C 56 5 53 4 50 1 Z" fill="currentColor" fill-opacity="0.65"/>
-                        <circle cx="50" cy="5" r="1.2" fill="currentColor" fill-opacity="0.85"/>
-                        <line x1="62" y1="5" x2="100" y2="5" stroke="currentColor" stroke-width="0.8" stroke-opacity="0.45"/>
-                      </svg>
-                    </div>
-                    <div class="vmi-arch-card__diamond" aria-hidden="true">
-                      <svg width="24" height="24" viewBox="0 0 32 32" fill="none" class="vmi-decorative-diamond-svg">
-                        <circle cx="16" cy="3" r="1.2" fill="#B83A38"/>
-                        <circle cx="14.5" cy="4.8" r="0.9" fill="#B83A38"/>
-                        <circle cx="17.5" cy="4.8" r="0.9" fill="#B83A38"/>
-                        <circle cx="16" cy="29" r="1.2" fill="#B83A38"/>
-                        <circle cx="14.5" cy="27.2" r="0.9" fill="#B83A38"/>
-                        <circle cx="17.5" cy="27.2" r="0.9" fill="#B83A38"/>
-                        <circle cx="3" cy="16" r="1.2" fill="#B83A38"/>
-                        <circle cx="4.8" cy="14.5" r="0.9" fill="#B83A38"/>
-                        <circle cx="4.8" cy="17.5" r="0.9" fill="#B83A38"/>
-                        <circle cx="29" cy="16" r="1.2" fill="#B83A38"/>
-                        <circle cx="27.2" cy="14.5" r="0.9" fill="#B83A38"/>
-                        <circle cx="27.2" cy="17.5" r="0.9" fill="#B83A38"/>
-                        <polygon points="16,6.5 25.5,16 16,25.5 6.5,16" fill="#1E252D" stroke="#D4AF37" stroke-width="0.8"/>
-                        <polygon points="16,8.5 23.5,16 16,23.5 8.5,16" fill="#E6C462"/>
-                        <polygon points="16,10 22,16 16,22 10,16" fill="none" stroke="#222B34" stroke-width="0.6" stroke-dasharray="1 1"/>
-                        <polygon points="16,11.5 20.5,16 16,20.5 11.5,16" fill="#202730"/>
-                        <polygon points="16,13 19,16 16,19 13,16" fill="#B83A38"/>
-                        <circle cx="16" cy="16" r="0.8" fill="#FFFFFF"/>
-                      </svg>
+                    <div class="vmi-arch-card__meta">
+                      <span class="vmi-arch-card__title">{{ label }}</span>
+                      <div class="vmi-arch-card__flourish-wrap">
+                        <svg width="100" height="10" viewBox="0 0 100 10" fill="none" class="vmi-arch-flourish-svg">
+                          <line x1="0" y1="5" x2="38" y2="5" stroke="currentColor" stroke-width="0.8" stroke-opacity="0.45"/>
+                          <path d="M 50 1 C 47 4 44 5 41 5 C 44 5 47 6 50 9 C 53 6 56 5 59 5 C 56 5 53 4 50 1 Z" fill="currentColor" fill-opacity="0.65"/>
+                          <circle cx="50" cy="5" r="1.2" fill="currentColor" fill-opacity="0.85"/>
+                          <line x1="62" y1="5" x2="100" y2="5" stroke="currentColor" stroke-width="0.8" stroke-opacity="0.45"/>
+                        </svg>
+                      </div>
+                      <div class="vmi-arch-card__diamond" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 32 32" fill="none" class="vmi-decorative-diamond-svg">
+                          <circle cx="16" cy="3" r="1.2" fill="#B83A38"/>
+                          <circle cx="14.5" cy="4.8" r="0.9" fill="#B83A38"/>
+                          <circle cx="17.5" cy="4.8" r="0.9" fill="#B83A38"/>
+                          <circle cx="16" cy="29" r="1.2" fill="#B83A38"/>
+                          <circle cx="14.5" cy="27.2" r="0.9" fill="#B83A38"/>
+                          <circle cx="17.5" cy="27.2" r="0.9" fill="#B83A38"/>
+                          <circle cx="3" cy="16" r="1.2" fill="#B83A38"/>
+                          <circle cx="4.8" cy="14.5" r="0.9" fill="#B83A38"/>
+                          <circle cx="4.8" cy="17.5" r="0.9" fill="#B83A38"/>
+                          <circle cx="29" cy="16" r="1.2" fill="#B83A38"/>
+                          <circle cx="27.2" cy="14.5" r="0.9" fill="#B83A38"/>
+                          <circle cx="27.2" cy="17.5" r="0.9" fill="#B83A38"/>
+                          <polygon points="16,6.5 25.5,16 16,25.5 6.5,16" fill="#1E252D" stroke="#D4AF37" stroke-width="0.8"/>
+                          <polygon points="16,8.5 23.5,16 16,23.5 8.5,16" fill="#E6C462"/>
+                          <polygon points="16,10 22,16 16,22 10,16" fill="none" stroke="#222B34" stroke-width="0.6" stroke-dasharray="1 1"/>
+                          <polygon points="16,11.5 20.5,16 16,20.5 11.5,16" fill="#202730"/>
+                          <polygon points="16,13 19,16 16,19 13,16" fill="#B83A38"/>
+                          <circle cx="16" cy="16" r="0.8" fill="#FFFFFF"/>
+                        </svg>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </a>
-            </div>
+                </a>
+              </div>
+            {%- endfor -%}
           {%- endfor -%}
         {%- endif -%}
 
@@ -275,7 +280,7 @@
     pointer-events: none;
   }
 
-  /* Mobile Dynamic Background Layer (Warm Sepia & Rich Texture Visibility) */
+  /* Mobile Dynamic Background Layer */
   .vmi-arch__mobile-bg-layer {
     position: absolute;
     inset: 0;
@@ -364,11 +369,13 @@
   }
 
   /* ════════════════════════════════
-     SLIDER TRACK & CARD LAYERING
+     TRANSFORM SLIDER TRACK (ZERO SHAKE)
   ════════════════════════════════ */
   .vmi-arch__slider-wrap {
     width: 100%;
     overflow: hidden;
+    position: relative;
+    touch-action: pan-y;
   }
 
   .vmi-arch__track {
@@ -376,37 +383,37 @@
     align-items: center;
     justify-content: flex-start;
     gap: 1.8rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    padding: 3rem 4rem 2rem;
+    padding: 3rem 0 2rem;
     box-sizing: border-box;
-    scrollbar-width: none;
+    will-change: transform;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     cursor: grab;
+    user-select: none;
+    width: max-content;
   }
 
   .vmi-arch__track:active {
     cursor: grabbing;
   }
 
-  .vmi-arch__track::-webkit-scrollbar {
-    display: none;
+  /* ── CARD BASE CONTAINER ── */
+  .vmi-arch-card,
+  .vmi-arch-card * {
+    user-select: none;
+    -webkit-user-drag: none;
   }
 
-  /* ── CARD BASE CONTAINER (Inactive = Grey Fill) ── */
   .vmi-arch-card {
     flex: 0 0 250px;
-    scroll-snap-align: center;
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease;
-    user-select: none;
-    opacity: 0.88;
+    opacity: 0.82;
   }
 
   .vmi-arch-card__inner {
     display: block;
     text-decoration: none;
     color: inherit;
+    pointer-events: auto;
   }
 
   .vmi-arch-card__frame-box {
@@ -425,7 +432,7 @@
     z-index: 1;
   }
 
-  /* SVG Frame Image Overlay (sits on top of photo) */
+  /* SVG Frame Image Overlay */
   .vmi-arch-frame-img {
     position: absolute;
     inset: 0;
@@ -444,7 +451,6 @@
   .vmi-arch-frame-img--active {
     opacity: 0;
   }
-
 
   .vmi-arch-card__meta {
     position: absolute;
@@ -507,7 +513,7 @@
     display: block;
   }
 
-  /* ── ACTIVE CARD (White / Luxury Beige Fill) ── */
+  /* ── ACTIVE CARD ── */
   .vmi-arch-card.active {
     transform: scale(1.14);
     opacity: 1;
@@ -522,7 +528,6 @@
     opacity: 1;
   }
 
-  /* Active Card: Dark Text on White/Beige Fill */
   .vmi-arch-card.active .vmi-arch-card__title {
     color: #2D3640;
   }
@@ -536,10 +541,10 @@
   }
 
   /* ════════════════════════════════
-     CAROUSEL PAGINATION DOTS
+     CAROUSEL PAGINATION DOTS (MOBILE ONLY)
   ════════════════════════════════ */
   .vmi-arch__dots-container {
-    display: none;
+    display: none !important;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
@@ -563,35 +568,13 @@
     transform: scale(1.3);
   }
 
+  /* RESPONSIVE */
   @media (max-width: 749px) {
     .vmi-arch__dots-container {
-      display: flex;
+      display: flex !important;
       margin-top: 0.5rem;
     }
 
-    .vmi-arch__dot {
-      width: 9px;
-      height: 9px;
-      background: rgba(100, 85, 75, 0.35);
-    }
-
-    .vmi-arch__dot.active {
-      background: #6A1B29;
-      transform: scale(1.3);
-    }
-  }
-
-  /* ════════════════════════════════
-     RESPONSIVE
-  ════════════════════════════════ */
-  @media (max-width: 1024px) {
-    .vmi-arch__track {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-  }
-
-  @media (max-width: 749px) {
     .vmi-arch-collections {
       min-height: 560px;
       padding: 2.5rem 0 3rem;
@@ -599,7 +582,7 @@
 
     .vmi-arch__track {
       gap: 1.2rem;
-      padding: 2rem 1.5rem 2rem;
+      padding: 2rem 0;
     }
 
     .vmi-arch-card {
@@ -607,7 +590,7 @@
     }
 
     .vmi-arch-card.active {
-      transform: scale(1.06);
+      transform: scale(1.08);
     }
 
     .vmi-arch-card__meta {
@@ -631,7 +614,7 @@
 
     .vmi-arch__track {
       gap: 1rem;
-      padding: 1.5rem 1rem 1.5rem;
+      padding: 1.5rem 0;
     }
 
     .vmi-arch-card {
@@ -639,7 +622,7 @@
     }
 
     .vmi-arch-card.active {
-      transform: scale(1.04);
+      transform: scale(1.05);
     }
 
     .vmi-arch-card__title {
@@ -655,131 +638,179 @@
 <script>
   (function() {
     function initArchSlider() {
+      const sliderWrap = document.querySelector('#vmi-arch-{{ section.id }} .vmi-arch__slider-wrap');
       const track = document.getElementById('vmi-arch-track-{{ section.id }}');
       const mobBgLayer = document.getElementById('vmi-arch-mob-bg-{{ section.id }}');
       const dotsContainer = document.getElementById('vmi-arch-dots-{{ section.id }}');
-      if (!track) return;
 
-      const cards = track.querySelectorAll('.vmi-arch-card');
+      if (!track || !sliderWrap) return;
+
+      const cards = Array.from(track.querySelectorAll('.vmi-arch-card'));
       if (!cards.length) return;
 
-      const dots = dotsContainer ? dotsContainer.querySelectorAll('.vmi-arch__dot') : [];
+      const dots = dotsContainer ? Array.from(dotsContainer.querySelectorAll('.vmi-arch__dot')) : [];
+      const numItems = dots.length || Math.floor(cards.length / 3) || cards.length;
 
-      function updateActiveCard() {
-        const trackRect = track.getBoundingClientRect();
-        const trackCenter = trackRect.left + trackRect.width / 2;
-        let closestCard = null;
-        let minDistance = Infinity;
-        let closestIndex = 0;
+      // Start in middle set
+      let currentIndex = numItems >= 3 ? numItems + 2 : numItems;
+      let isDragging = false;
+      let startX = 0;
+      let dragDelta = 0;
+      let currentTx = 0;
+      let isClickPrevented = false;
+      let transitionTimer = null;
 
-        cards.forEach((card, index) => {
-          const cardRect = card.getBoundingClientRect();
-          const cardCenter = cardRect.left + cardRect.width / 2;
-          const distance = Math.abs(trackCenter - cardCenter);
-          if (distance < minDistance) {
-            minDistance = distance;
-            closestCard = card;
-            closestIndex = index;
-          }
+      // Prevent native desktop image/text dragging
+      track.addEventListener('dragstart', (e) => e.preventDefault());
+
+      function getTranslateForIndex(idx) {
+        const card = cards[idx] || cards[0];
+        const wrapWidth = sliderWrap.offsetWidth;
+        const cardCenter = card.offsetLeft + (card.offsetWidth / 2);
+        return (wrapWidth / 2) - cardCenter;
+      }
+
+      function updateUI(idx) {
+        cards.forEach((c, i) => {
+          c.classList.toggle('active', i === idx);
         });
 
-        if (closestCard) {
-          cards.forEach(c => c.classList.remove('active'));
-          closestCard.classList.add('active');
+        const realIdx = idx % numItems;
+        if (dots.length) {
+          dots.forEach((d, i) => {
+            d.classList.toggle('active', i === realIdx);
+          });
+        }
 
-          if (dots.length) {
-            dots.forEach(d => d.classList.remove('active'));
-            if (dots[closestIndex]) {
-              dots[closestIndex].classList.add('active');
-            }
-          }
-
-          if (mobBgLayer) {
-            const mobBgUrl = closestCard.getAttribute('data-mobile-bg');
-            if (mobBgUrl) {
-              mobBgLayer.style.backgroundImage = 'url("' + mobBgUrl + '")';
-              mobBgLayer.style.opacity = '0.75';
-            }
+        if (mobBgLayer && cards[idx]) {
+          const mobBgUrl = cards[idx].getAttribute('data-mobile-bg');
+          if (mobBgUrl) {
+            mobBgLayer.style.backgroundImage = 'url("' + mobBgUrl + '")';
+            mobBgLayer.style.opacity = '0.75';
           }
         }
       }
 
-      // Initial card centering on load
-      const initialActiveCard = track.querySelector('.vmi-arch-card.active') || cards[Math.min(2, cards.length - 1)];
-      if (initialActiveCard) {
-        setTimeout(function() {
-          const cardLeft = initialActiveCard.offsetLeft;
-          const cardWidth = initialActiveCard.offsetWidth;
-          const trackWidth = track.offsetWidth;
-          track.scrollTo({
-            left: cardLeft - (trackWidth / 2) + (cardWidth / 2),
-            behavior: 'auto'
-          });
-          updateActiveCard();
-        }, 100);
-      } else {
-        updateActiveCard();
+      function goToSlide(targetIdx, animate = true) {
+        clearTimeout(transitionTimer);
+        currentIndex = targetIdx;
+
+        if (animate) {
+          track.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
+        } else {
+          track.style.transition = 'none';
+        }
+
+        const tx = getTranslateForIndex(currentIndex);
+        track.style.transform = 'translate3d(' + tx + 'px, 0, 0)';
+
+        // Highlight active card for target position
+        updateUI(currentIndex);
+
+        // After smooth 400ms transition completes, perform silent boundary wrap into Set 2
+        if (animate) {
+          transitionTimer = setTimeout(() => {
+            let needsReset = false;
+            if (currentIndex < numItems) {
+              currentIndex += numItems;
+              needsReset = true;
+            } else if (currentIndex >= numItems * 2) {
+              currentIndex -= numItems;
+              needsReset = true;
+            }
+
+            if (needsReset) {
+              track.style.transition = 'none';
+              const resetTx = getTranslateForIndex(currentIndex);
+              track.style.transform = 'translate3d(' + resetTx + 'px, 0, 0)';
+              updateUI(currentIndex);
+            }
+          }, 400);
+        }
       }
 
-      track.addEventListener('scroll', function() {
-        window.requestAnimationFrame(updateActiveCard);
-      });
-      window.addEventListener('resize', function() {
-        window.requestAnimationFrame(updateActiveCard);
+      // Initial alignment on load
+      setTimeout(() => {
+        goToSlide(currentIndex, false);
+      }, 50);
+
+      window.addEventListener('resize', () => {
+        goToSlide(currentIndex, false);
       });
 
-      // Dots Click Navigation
+      // Dot Click Handler
       if (dots.length) {
         dots.forEach((dot, idx) => {
-          dot.addEventListener('click', function() {
-            if (cards[idx]) {
-              const card = cards[idx];
-              const cardLeft = card.offsetLeft;
-              const cardWidth = card.offsetWidth;
-              const trackWidth = track.offsetWidth;
-              track.scrollTo({
-                left: cardLeft - (trackWidth / 2) + (cardWidth / 2),
-                behavior: 'smooth'
-              });
-            }
+          dot.addEventListener('click', (e) => {
+            e.preventDefault();
+            goToSlide(numItems + idx, true);
           });
         });
       }
 
-      // Drag to scroll
-      let isDown = false;
-      let startX;
-      let scrollLeft;
-
-      track.addEventListener('mousedown', function(e) {
-        isDown = true;
-        startX = e.pageX - track.offsetLeft;
-        scrollLeft = track.scrollLeft;
-      });
-
-      track.addEventListener('mouseleave', function() { isDown = false; });
-      track.addEventListener('mouseup', function() { isDown = false; });
-
-      track.addEventListener('mousemove', function(e) {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - track.offsetLeft;
-        const walk = (x - startX) * 1.5;
-        track.scrollLeft = scrollLeft - walk;
-      });
-
-      // Click card to center smoothly
-      cards.forEach(card => {
-        card.addEventListener('click', function() {
-          const cardLeft = card.offsetLeft;
-          const cardWidth = card.offsetWidth;
-          const trackWidth = track.offsetWidth;
-          track.scrollTo({
-            left: cardLeft - (trackWidth / 2) + (cardWidth / 2),
-            behavior: 'smooth'
-          });
+      // Card Focus On Select & Click
+      cards.forEach((card, idx) => {
+        card.addEventListener('click', (e) => {
+          if (isClickPrevented) {
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+          }
+          if (idx !== currentIndex) {
+            e.preventDefault();
+            goToSlide(idx, true);
+          }
         });
       });
+
+      // Mouse & Touch Drag Handlers (Desktop + Mobile)
+      function onPointerDown(e) {
+        // Prevent default text/image drag on desktop mousedown
+        if (e.type === 'mousedown') {
+          e.preventDefault();
+        }
+
+        isDragging = true;
+        isClickPrevented = false;
+        startX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+        dragDelta = 0;
+        currentTx = getTranslateForIndex(currentIndex);
+        track.style.transition = 'none';
+        clearTimeout(transitionTimer);
+      }
+
+      function onPointerMove(e) {
+        if (!isDragging) return;
+        const clientX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+        dragDelta = clientX - startX;
+
+        if (Math.abs(dragDelta) > 6) {
+          isClickPrevented = true;
+        }
+
+        track.style.transform = 'translate3d(' + (currentTx + dragDelta) + 'px, 0, 0)';
+      }
+
+      function onPointerUp() {
+        if (!isDragging) return;
+        isDragging = false;
+
+        if (dragDelta < -40) {
+          goToSlide(currentIndex + 1, true);
+        } else if (dragDelta > 40) {
+          goToSlide(currentIndex - 1, true);
+        } else {
+          goToSlide(currentIndex, true);
+        }
+      }
+
+      track.addEventListener('mousedown', onPointerDown);
+      window.addEventListener('mousemove', onPointerMove);
+      window.addEventListener('mouseup', onPointerUp);
+
+      track.addEventListener('touchstart', onPointerDown, { passive: true });
+      window.addEventListener('touchmove', onPointerMove, { passive: true });
+      window.addEventListener('touchend', onPointerUp);
     }
 
     if (document.readyState === 'loading') {
