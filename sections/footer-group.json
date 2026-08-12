@@ -15,7 +15,7 @@
       "type": "custom-footer",
       "name": "Custom Footer",
       "settings": {
-        "background_color": "#342A5C",
+        "background_color": "#342a5c",
         "logo": "shopify://shop_images/Group_219.png",
         "telephone": "+91 7410027616",
         "fax": "84529 50459",
@@ -31,7 +31,7 @@
         "menu_2_title": "Our Policies",
         "menu_2": "footer",
         "office_address": "<p><strong>Registered Office Address</strong><br/>Rowhouse No. 1, Shrileela Plaza, Survey No. 115/3/6,<br/>Near Orchid Tower, Baner, 411045</p>",
-        "copyright_text": "HOMEPAGE REDESIGN CONCEPT.",
+        "copyright_text": "Powered by BlueHorse",
         "track_order_link": ""
       }
     },
