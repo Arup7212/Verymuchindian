@@ -1,13 +1,18 @@
-/* Custom Footer Styles */
 .custom-footer {
   background-color: var(--footer-bg-color, #342A5C);
   color: #ffffff;
-  padding: 60px 20px 20px;
+  padding: var(--vmi-section-py-mobile, 40px) var(--vmi-px-mobile, 20px) 20px;
   font-family: var(--font-body--family), sans-serif;
 }
 
+@media (min-width: 769px) {
+  .custom-footer {
+    padding: var(--vmi-section-py, 72px) var(--vmi-px, 40px) 30px;
+  }
+}
+
 .custom-footer-container {
-  max-width: 1400px;
+  max-width: var(--vmi-max-w, 1440px);
   margin: 0 auto;
 }
 

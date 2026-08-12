@@ -3,7 +3,6 @@
 
 <celebs-choice class="celebs-choice-section" style="--padding-block-start: {{ section.settings.padding_top }}px; --padding-block-end: {{ section.settings.padding_bottom }}px; --background-color: {{ section.settings.background_color }};">
   <div class="vmi-container">
-    
     {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
       <div class="celebs-choice__header">
         {%- if section.settings.heading != blank -%}
@@ -58,9 +57,9 @@
         </li>
       {%- endfor -%}
     </ul>
-    
   </div>
 </celebs-choice>
+
 
 {% schema %}
 {

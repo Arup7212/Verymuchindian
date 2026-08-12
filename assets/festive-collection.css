@@ -2,16 +2,28 @@
 .festive-collection-section {
   position: relative;
   width: 100%;
-  padding: 60px 0 0px;
+  padding: var(--vmi-section-py-mobile, 40px) 0;
   background-color: var(--fc-bg-color, #ffffff);
   box-sizing: border-box;
 }
 
+@media (min-width: 769px) {
+  .festive-collection-section {
+    padding: var(--vmi-section-py, 72px) 0;
+  }
+}
+
 .fc-container {
-  max-width: 1360px;
+  max-width: var(--vmi-max-w, 1440px);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 var(--vmi-px-mobile, 20px);
   box-sizing: border-box;
+}
+
+@media (min-width: 769px) {
+  .fc-container {
+    padding: 0 var(--vmi-px, 60px);
+  }
 }
 
 /* Header */
@@ -53,8 +65,8 @@
 /* 6-Card Grid Layout */
 .fc-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
 }
 
 /* Collection Card */
@@ -286,5 +298,23 @@
   .fc-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fc-title {
+    font-size: 28px;
+  }
+
+  .fc-bar-title {
+    font-size: 20px;
+  }
+
+  .fc-hover-title {
+    font-size: 20px;
+  }
+
+  .fc-container {
+    padding: 0 16px;
   }
 }

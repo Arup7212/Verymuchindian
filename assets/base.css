@@ -2251,17 +2251,23 @@ main>.shopify-section:first-child .section:not(.disable-section-top-offset) {
    VMI CONTAINER
    ================================================================= */
 .vmi-container {
-  max-width: 1920px !important;
+  max-width: var(--vmi-max-w, 1440px) !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  padding-inline: 40px !important;
+  padding-inline: var(--vmi-px, 40px) !important;
   width: 100% !important;
   box-sizing: border-box !important;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1024px) {
   .vmi-container {
-    padding-inline: 16px !important;
+    padding-inline: var(--vmi-px-tablet, 30px) !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .vmi-container {
+    padding-inline: var(--vmi-px-mobile, 20px) !important;
   }
 }
 

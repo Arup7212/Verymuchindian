@@ -49,9 +49,65 @@
     {% comment %}VMI: Brand fonts + header overrides{% endcomment %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Jost:wght@300;400;500;600;700&family=Prata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Prata&display=swap" rel="stylesheet">
     {{ 'vmi-header-styles.css' | asset_url | stylesheet_tag }}
     {{ 'reelscart.css' | asset_url | stylesheet_tag }}
+    <style>
+      /* ════════════════════════════════════════════════
+         VMI GLOBAL DESIGN TOKENS
+         Consistent section spacing & width across all
+         custom sections on the page
+      ════════════════════════════════════════════════ */
+      :root {
+        /* Vertical section padding */
+        --vmi-section-py: 72px;         /* desktop */
+        --vmi-section-py-tablet: 56px;  /* 769-1024 */
+        --vmi-section-py-mobile: 40px;  /* ≤768 */
+
+        /* Horizontal padding (left/right) */
+        --vmi-px: 60px;        /* ≥1025 */
+        --vmi-px-tablet: 40px; /* 769-1024 */
+        --vmi-px-mobile: 20px; /* ≤768 */
+        --vmi-px-small: 16px;  /* ≤480 */
+
+        /* Content max-width */
+        --vmi-max-w: 1440px;
+      }
+
+      /* Overflow & box-sizing guard */
+      html, body {
+        overflow-x: hidden;
+        max-width: 100%;
+      }
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+      .shopify-section {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      /* ─── Utility: full-width section with consistent vertical rhythm ─── */
+      .vmi-section {
+        width: 100%;
+        padding: var(--vmi-section-py-mobile) 0;
+      }
+      .vmi-inner {
+        width: 100%;
+        max-width: var(--vmi-max-w);
+        margin: 0 auto;
+        padding: 0 var(--vmi-px-mobile);
+      }
+
+      @media (min-width: 769px) {
+        .vmi-section  { padding: var(--vmi-section-py-tablet) 0; }
+        .vmi-inner    { padding: 0 var(--vmi-px-tablet); }
+      }
+      @media (min-width: 1025px) {
+        .vmi-section  { padding: var(--vmi-section-py) 0; }
+        .vmi-inner    { padding: 0 var(--vmi-px); }
+      }
+    </style>
 
     {{ content_for_header }}
   </head>

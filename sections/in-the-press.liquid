@@ -15,27 +15,55 @@
   {%- if section.blocks.size > 0 -%}
     <div class="itp__ticker-container">
       <div class="itp__ticker-track">
-        {%- for block in section.blocks -%}
-          <div class="itp__logo-item" {{ block.shopify_attributes }}>
-            {%- if block.settings.link != blank -%}
-              <a href="{{ block.settings.link }}" class="itp__logo-link" target="_blank" rel="noopener noreferrer" aria-label="Press link">
-            {%- endif -%}
-            
-            {%- if block.settings.image != blank -%}
-              {{ block.settings.image | image_url: width: 320 | image_tag: 
-                class: 'itp__logo-image', 
-                loading: 'lazy', 
-                alt: block.settings.image.alt | default: 'Press Logo' 
-              }}
-            {%- else -%}
-              {{ 'logo' | placeholder_svg_tag: 'itp__logo-image placeholder-svg' }}
-            {%- endif -%}
+        {%- comment -%} Original logo group {%- endcomment -%}
+        <div class="itp__logo-group">
+          {%- for block in section.blocks -%}
+            <div class="itp__logo-item" {{ block.shopify_attributes }}>
+              {%- if block.settings.link != blank -%}
+                <a href="{{ block.settings.link }}" class="itp__logo-link" target="_blank" rel="noopener noreferrer" aria-label="Press link">
+              {%- endif -%}
+              
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 320 | image_tag: 
+                  class: 'itp__logo-image', 
+                  loading: 'lazy', 
+                  alt: block.settings.image.alt | default: 'Press Logo' 
+                }}
+              {%- else -%}
+                {{ 'logo' | placeholder_svg_tag: 'itp__logo-image placeholder-svg' }}
+              {%- endif -%}
 
-            {%- if block.settings.link != blank -%}
-              </a>
-            {%- endif -%}
-          </div>
-        {%- endfor -%}
+              {%- if block.settings.link != blank -%}
+                </a>
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+        </div>
+
+        {%- comment -%} Duplicate logo group for seamless loop (aria-hidden) {%- endcomment -%}
+        <div class="itp__logo-group" aria-hidden="true">
+          {%- for block in section.blocks -%}
+            <div class="itp__logo-item">
+              {%- if block.settings.link != blank -%}
+                <a href="{{ block.settings.link }}" class="itp__logo-link" target="_blank" rel="noopener noreferrer" tabindex="-1">
+              {%- endif -%}
+              
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 320 | image_tag: 
+                  class: 'itp__logo-image', 
+                  loading: 'lazy', 
+                  alt: '' 
+                }}
+              {%- else -%}
+                {{ 'logo' | placeholder_svg_tag: 'itp__logo-image placeholder-svg' }}
+              {%- endif -%}
+
+              {%- if block.settings.link != blank -%}
+                </a>
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+        </div>
       </div>
     </div>
   {%- endif -%}

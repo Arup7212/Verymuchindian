@@ -1,13 +1,34 @@
 .draped-with-love-section {
-  padding: 0px 20px;
+  padding: var(--vmi-section-py-mobile, 40px) 0;
   background-color: #fff;
   overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 769px) {
+  .draped-with-love-section {
+    padding: var(--vmi-section-py, 72px) 0;
+  }
+}
+
+.draped-with-love-section .page-width {
+  max-width: var(--vmi-max-w, 1440px);
+  margin: 0 auto;
+  padding: 0 var(--vmi-px-mobile, 20px);
+  box-sizing: border-box;
+}
+
+@media (min-width: 769px) {
+  .draped-with-love-section .page-width {
+    padding: 0 var(--vmi-px, 40px);
+  }
 }
 
 .draped-header {
   text-align: center;
-  margin-bottom: 50px;
-  padding: 60px 0 0;
+  margin-bottom: 40px;
+  padding: 0;
 }
 
 .draped-title {
@@ -36,7 +57,7 @@
 .draped-grid {
   column-count: 3;
   column-gap: 24px;
-  max-width: 1200px;
+  max-width: var(--vmi-max-w, 1440px);
   margin: 0 auto;
 }
 
@@ -239,5 +260,19 @@
 
   .draped-style-image.is-tall {
     min-height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .draped-title {
+    font-size: 26px;
+  }
+
+  .draped-with-love-section {
+    padding: var(--vmi-section-py-mobile, 40px) 0;
+  }
+
+  .draped-card {
+    flex: 0 0 90%;
   }
 }
