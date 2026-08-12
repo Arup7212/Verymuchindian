@@ -644,9 +644,10 @@
       "settings": {
         "enable_section": true,
         "heading": "Sangrah",
+        "logo_image": "shopify://shop_images/Group_362.png",
         "logo_max_width": 220,
         "subtitle": "COLLECTIONS",
-        "desktop_bg_image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_04_28_13_PM.png",
+        "desktop_bg_image": "shopify://shop_images/Rectangle_49723_jpg.jpg",
         "text_color": "#401f28"
       }
     },
