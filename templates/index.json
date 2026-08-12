@@ -364,6 +364,7 @@
           "type": "full_banner",
           "settings": {
             "image_desktop": "shopify://shop_images/Ajrakh_Web_Desktop_1_jpg.jpg",
+            "image_mobile": "shopify://shop_images/ChatGPT_Image_Jul_30_2026_03_01_45_PM.png",
             "link": ""
           }
         },
@@ -371,6 +372,7 @@
           "type": "full_banner",
           "settings": {
             "image_desktop": "shopify://shop_images/VMI_Web_Banner_9_July_copy.webp",
+            "image_mobile": "shopify://shop_images/ChatGPT_Image_Jul_30_2026_03_09_08_PM.png",
             "link": ""
           }
         },
@@ -378,6 +380,7 @@
           "type": "full_banner",
           "settings": {
             "image_desktop": "shopify://shop_images/VMI_Web_Banner_2_9_July_copy_1aeb9c60-f6ed-487d-b585-1d27a431e695.webp",
+            "image_mobile": "shopify://shop_images/ChatGPT_Image_Jul_30_2026_02_55_46_PM.png",
             "link": ""
           }
         }
