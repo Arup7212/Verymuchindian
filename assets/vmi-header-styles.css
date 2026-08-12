@@ -5,7 +5,6 @@
 
 /* ── Brand Color Variables ───────────────────────────────────────── */
 
-
 /* =================================================================
    1. ANNOUNCEMENT BAR — navy background, white text
    ================================================================= */
@@ -42,19 +41,18 @@
    We override this on desktop (≥750px) to restore the 3-col layout.
    ================================================================= */
 @media screen and (min-width: 750px) {
-
   /* KEY FIX: restore columns from display:contents → display:flex */
-  #header-component[data-menu-style='drawer'] .header__column {
+  #header-component[data-menu-style="drawer"] .header__column {
     display: flex !important;
     align-items: center !important;
   }
 
   /* 3-column grid: [1fr | auto | 1fr] */
-  #header-component[data-menu-style='drawer'] .header__columns,
+  #header-component[data-menu-style="drawer"] .header__columns,
   .header__row--top .header__columns {
     display: grid !important;
     grid-template-columns: 1fr auto 1fr !important;
-    grid-template-areas: 'left center right' !important;
+    grid-template-areas: "left center right" !important;
     grid-template-rows: auto !important;
     align-items: center !important;
     column-gap: 0 !important;
@@ -63,21 +61,21 @@
   }
 
   /* Left column → hamburger + SHOP BY CATEGORY */
-  #header-component[data-menu-style='drawer'] .header__column--left,
+  #header-component[data-menu-style="drawer"] .header__column--left,
   .header__row--top .header__column--left {
     grid-area: left !important;
     justify-content: flex-start !important;
   }
 
   /* Center column → VMI logo + Shark Tank badge */
-  #header-component[data-menu-style='drawer'] .header__column--center,
+  #header-component[data-menu-style="drawer"] .header__column--center,
   .header__row--top .header__column--center {
     grid-area: center !important;
     justify-content: center !important;
   }
 
   /* Right column → search + account + cart */
-  #header-component[data-menu-style='drawer'] .header__column--right,
+  #header-component[data-menu-style="drawer"] .header__column--right,
   .header__row--top .header__column--right {
     grid-area: right !important;
     justify-content: flex-end !important;
@@ -85,16 +83,16 @@
 
   /* Reset direct grid-area overrides the theme puts on child elements
      when in drawer mode (logo gets center, actions get rightB, etc.) */
-  #header-component[data-menu-style='drawer'] .header-logo {
+  #header-component[data-menu-style="drawer"] .header-logo {
     grid-area: unset !important;
   }
 
-  #header-component[data-menu-style='drawer'] header-actions {
+  #header-component[data-menu-style="drawer"] header-actions {
     grid-area: unset !important;
     justify-self: unset !important;
   }
 
-  #header-component[data-menu-style='drawer'] .search-action {
+  #header-component[data-menu-style="drawer"] .search-action {
     grid-area: unset !important;
   }
 }
@@ -117,7 +115,6 @@ header-actions {
    7. RESPONSIVE — mobile layout
    ================================================================= */
 @media screen and (max-width: 749px) {
-
   /* Hide text label on mobile, showing only hamburger */
   .vmi-category-dropdown-wrapper {
     display: none !important;
@@ -129,12 +126,19 @@ header-actions {
   }
 
   .vmi-brand-name-accent {
-    font-size: 1.55rem;
+    font-size: 1.35rem;
+  }
+
+  .vmi-header-brand-logo {
+    gap: 6px;
+  }
+
+  header-actions {
+    gap: 0px !important;
   }
 }
 
 @media screen and (min-width: 750px) {
-
   /* Hide the injected Shop By Category in the drawer on desktop (since it's outside) */
   .vmi-mobile-category-menu {
     display: none !important;
@@ -143,11 +147,15 @@ header-actions {
 
 @media screen and (max-width: 380px) {
   .vmi-very-much {
-    font-size: 0.5rem;
+    font-size: 0.48rem;
   }
 
   .vmi-indian {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
+  }
+
+  .vmi-brand-name-accent {
+    font-size: 1.2rem;
   }
 }
 
@@ -174,7 +182,7 @@ header-actions {
 }
 
 .vmi-brand-name-accent {
-  font-family: 'Prata', serif;
+  font-family: "Prata", serif;
   font-size: 1.8rem;
   font-weight: 800;
   font-style: italic;
@@ -207,7 +215,6 @@ header-actions {
 #header-component .header-logo * {
   color: var(--vmi-navy);
 }
-
 
 /* =================================================================
    Header Menu Typography and Icon Sizing Override

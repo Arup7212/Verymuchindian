@@ -75,8 +75,11 @@
       }
 
       /* Overflow & box-sizing guard */
+      /* NOTE: Use overflow-x: clip (NOT hidden) — clip prevents horizontal overflow
+         without creating a scroll container, so position:sticky still works.
+         overflow-x: hidden breaks the theme's squeeze-layout sticky header. */
       html, body {
-        overflow-x: hidden;
+        overflow-x: clip;
         max-width: 100%;
       }
       *, *::before, *::after {
@@ -84,7 +87,7 @@
       }
       .shopify-section {
         max-width: 100%;
-        overflow-x: hidden;
+        overflow-x: clip;
       }
 
       /* ─── Utility: full-width section with consistent vertical rhythm ─── */
