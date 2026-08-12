@@ -397,6 +397,7 @@
         "trust_feature_EA4LCY": {
           "type": "trust_feature",
           "settings": {
+            "image": "shopify://shop_images/start.png",
             "icon_svg": "",
             "title": "4.8/5",
             "subtitle": "From 10,000+ Happy Customers",
@@ -406,6 +407,7 @@
         "trust_feature_PGzjUk": {
           "type": "trust_feature",
           "settings": {
+            "image": "shopify://shop_images/sark.png",
             "icon_svg": "",
             "title": "Featured On",
             "subtitle": "Shark Tank India Season 2",
@@ -415,6 +417,7 @@
         "trust_feature_gVQtgc": {
           "type": "trust_feature",
           "settings": {
+            "image": "shopify://shop_images/sm.png",
             "icon_svg": "",
             "title": "Silk Mark",
             "subtitle": "Certified",
@@ -424,6 +427,7 @@
         "trust_feature_8Qqz9i": {
           "type": "trust_feature",
           "settings": {
+            "image": "shopify://shop_images/mark.png",
             "icon_svg": "",
             "title": "100% Authentic",
             "subtitle": "Handloom Paithani",
@@ -433,6 +437,7 @@
         "trust_feature_kYb9YK": {
           "type": "trust_feature",
           "settings": {
+            "image": "shopify://shop_images/Globe.png",
             "icon_svg": "",
             "title": "Worldwide",
             "subtitle": "Shipping",
