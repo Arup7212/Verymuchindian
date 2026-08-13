@@ -744,33 +744,39 @@
     "1785484701e9dacb2f": {
       "type": "_blocks",
       "blocks": {
-        "reelcart_reel_grid_3Lc78d": {
-          "type": "shopify://apps/reelcart/blocks/reel-grid/019bd63f-c7d3-75e1-874e-9ea24a028f0f",
+        "reelcart_reel_cards_qXKhCc": {
+          "type": "shopify://apps/reelcart/blocks/reel-cards/019bd63f-c7d3-75e1-874e-9ea24a028f0f",
           "settings": {
-            "heading": "<h2>In the Spotlight</h2>",
-            "heading_color": "#fcfbfb",
-            "sub_heading": "<p>See the drape in motion — tap any reel to play, then shop the saree.</p>",
-            "sub_heading_color": "#fdfdfd",
+            "heading": "<h2>Watch and Buy</h2>",
+            "heading_color": "#000000",
+            "sub_heading": "<p>Experience our products through stories</p>",
+            "sub_heading_color": "#666666",
             "columns": 4,
             "grid_gap": 16,
-            "card_border_radius": 12,
-            "show_video_title": false,
+            "card_border_radius": 20,
             "autoplay_videos": true,
+            "show_video_title": true,
+            "show_ribbon": true,
+            "show_details_button": true,
+            "show_shop_now": true,
+            "show_product_img": false,
+            "show_product_box": true,
+            "show_cart_icon": true,
             "shuffle_videos": false,
             "card_aspect_ratio": "9/16",
-            "section_bg_color": "#1b1630",
+            "section_bg_color": "transparent",
             "card_hover_color": "#000000",
-            "btn_bg_color": "#1a1a2e",
-            "btn_text_color": "#ffffff",
-            "btn_border_color": "#1a1a2e",
-            "margin_top": 40,
-            "margin_bottom": 40,
+            "btn_bg_color": "#000000",
+            "btn_text_color": "#FFFFFF",
+            "btn_border_color": "#000000",
+            "margin_top": 20,
+            "margin_bottom": 20,
             "custom_css": ""
           }
         }
       },
       "block_order": [
-        "reelcart_reel_grid_3Lc78d"
+        "reelcart_reel_cards_qXKhCc"
       ],
       "settings": {
         "content_direction": "column",
