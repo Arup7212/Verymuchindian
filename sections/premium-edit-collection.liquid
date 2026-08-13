@@ -51,15 +51,17 @@
               <h3 class="premium-product-title">{{ product.title }}</h3>
               
               {%- assign subtitle = product.metafields.custom.subtitle -%}
+              {%- if subtitle == blank and product.description != blank -%}
+                {%- assign subtitle = product.description | strip_html | truncate: 120 -%}
+              {%- endif -%}
               {% if subtitle != blank %}
                 <div class="premium-product-subtitle">{{ subtitle }}</div>
               {% endif %}
               
               {%- assign manhours = product.metafields.custom.manhours -%}
-              {% if manhours == blank %}
-                {%- assign manhours = '450hrs' -%}
+              {% if manhours != blank %}
+                <div class="premium-product-manhours">Manhours: {{ manhours }}</div>
               {% endif %}
-              <div class="premium-product-manhours">Manhours: {{ manhours }}</div>
               
               <div class="premium-product-price">
                 {% if product.compare_at_price > product.price %}
@@ -72,20 +74,20 @@
           </a>
         {% endfor %}
       {% else %}
-        {%- for i in (1..max_products) -%}
-          <div class="premium-product-card">
-            <div class="premium-product-image-wrapper">
-              {{ 'product-' | append: i | placeholder_svg_tag }}
+        {% if request.design_mode %}
+          {%- for i in (1..max_products) -%}
+            <div class="premium-product-card">
+              <div class="premium-product-image-wrapper">
+                {{ 'product-' | append: i | placeholder_svg_tag }}
+              </div>
+              <div class="premium-product-details">
+                <div class="premium-product-vendor">Vendor Name</div>
+                <h3 class="premium-product-title">Product Title</h3>
+                <div class="premium-product-price">{{ 199900 | money }}</div>
+              </div>
             </div>
-            <div class="premium-product-details">
-              <div class="premium-product-vendor">PAITHANI - YEOLA</div>
-              <h3 class="premium-product-title">Premium Masterpiece</h3>
-              <div class="premium-product-subtitle">All Over Zari Pure Silk Paithani - 3 Months Weaving</div>
-              <div class="premium-product-manhours">Manhours: 450hrs</div>
-              <div class="premium-product-price">{{ 229500 | money }}</div>
-            </div>
-          </div>
-        {%- endfor -%}
+          {%- endfor -%}
+        {% endif %}
       {% endif %}
     </div>
 
