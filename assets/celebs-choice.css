@@ -159,14 +159,14 @@
   right: 0;
   z-index: 2;
   padding: 14px 22px;
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.72) 65%, rgba(255, 255, 255, 0.15) 100%);
+  background: linear-gradient(90deg, #ffffff, #ffffff00);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
   gap: 2px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .celebs-choice__card-title {
