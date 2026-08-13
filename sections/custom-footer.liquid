@@ -36,19 +36,60 @@
         
         <div class="footer-social-icons">
           {% if section.settings.social_facebook != blank %}
-            <a href="{{ section.settings.social_facebook }}" class="footer-social-link" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+            <a href="{{ section.settings.social_facebook }}" class="footer-social-link" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20">
+                {% render 'icon', icon: 'facebook' %}
+              </svg>
+            </a>
           {% endif %}
           {% if section.settings.social_instagram != blank %}
-            <a href="{{ section.settings.social_instagram }}" class="footer-social-link" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+            <a href="{{ section.settings.social_instagram }}" class="footer-social-link" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20">
+                {% render 'icon', icon: 'instagram' %}
+              </svg>
+            </a>
           {% endif %}
           {% if section.settings.social_youtube != blank %}
-            <a href="{{ section.settings.social_youtube }}" class="footer-social-link" target="_blank" rel="noopener" aria-label="YouTube">yt</a>
+            <a href="{{ section.settings.social_youtube }}" class="footer-social-link" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20">
+                {% render 'icon', icon: 'youtube' %}
+              </svg>
+            </a>
           {% endif %}
           {% if section.settings.social_pinterest != blank %}
-            <a href="{{ section.settings.social_pinterest }}" class="footer-social-link" target="_blank" rel="noopener" aria-label="Pinterest">p</a>
+            <a href="{{ section.settings.social_pinterest }}" class="footer-social-link" target="_blank" rel="noopener" aria-label="Pinterest">
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20">
+                {% render 'icon', icon: 'pinterest' %}
+              </svg>
+            </a>
           {% endif %}
           {% if section.settings.social_linkedin != blank %}
-            <a href="{{ section.settings.social_linkedin }}" class="footer-social-link" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+            <a href="{{ section.settings.social_linkedin }}" class="footer-social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20">
+                {% render 'icon', icon: 'linkedin' %}
+              </svg>
+            </a>
+          {% endif %}
+          {% if section.settings.social_twitter != blank %}
+            <a href="{{ section.settings.social_twitter }}" class="footer-social-link" target="_blank" rel="noopener" aria-label="Twitter">
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20">
+                {% render 'icon', icon: 'twitter' %}
+              </svg>
+            </a>
+          {% endif %}
+          {% if section.settings.social_tiktok != blank %}
+            <a href="{{ section.settings.social_tiktok }}" class="footer-social-link" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20">
+                {% render 'icon', icon: 'tiktok' %}
+              </svg>
+            </a>
+          {% endif %}
+          {% if section.settings.social_whatsapp != blank %}
+            <a href="{{ section.settings.social_whatsapp }}" class="footer-social-link" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20">
+                {% render 'icon', icon: 'whatsapp' %}
+              </svg>
+            </a>
           {% endif %}
         </div>
       </div>
@@ -190,6 +231,21 @@
       "type": "url",
       "id": "social_linkedin",
       "label": "LinkedIn URL"
+    },
+    {
+      "type": "url",
+      "id": "social_twitter",
+      "label": "Twitter / X URL"
+    },
+    {
+      "type": "url",
+      "id": "social_tiktok",
+      "label": "TikTok URL"
+    },
+    {
+      "type": "url",
+      "id": "social_whatsapp",
+      "label": "WhatsApp URL"
     },
     {
       "type": "header",
