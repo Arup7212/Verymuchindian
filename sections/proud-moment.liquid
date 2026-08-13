@@ -59,15 +59,19 @@
         <!-- Endorsement Card -->
         <div class="pm-endorsement-card">
           <div class="pm-endorsement-icon">
-            <!-- Handshake Icon -->
-            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 36l6-6 10 4 12-10 8 2" stroke="#1a3a5c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M16 42c4 4 10 6 16 4l14-8c2-1 3-4 1-6-1-1-3-2-5-1l-6 3" stroke="#1a3a5c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M8 28l4 12" stroke="#1a3a5c" stroke-width="3" stroke-linecap="round"/>
-              <path d="M46 18l6 8-6 4" stroke="#1a3a5c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="36" cy="18" r="4" stroke="#1a3a5c" stroke-width="3"/>
-              <path d="M30 26c1-4 4-8 10-8" stroke="#1a3a5c" stroke-width="2.5" stroke-linecap="round"/>
-            </svg>
+            {%- if section.settings.endorsement_icon != blank -%}
+              {{ section.settings.endorsement_icon | image_url: width: 100 | image_tag: loading: 'lazy', alt: section.settings.endorsement_label }}
+            {%- else -%}
+              <!-- Handshake Icon -->
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 36l6-6 10 4 12-10 8 2" stroke="#1a3a5c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 42c4 4 10 6 16 4l14-8c2-1 3-4 1-6-1-1-3-2-5-1l-6 3" stroke="#1a3a5c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 28l4 12" stroke="#1a3a5c" stroke-width="3" stroke-linecap="round"/>
+                <path d="M46 18l6 8-6 4" stroke="#1a3a5c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="36" cy="18" r="4" stroke="#1a3a5c" stroke-width="3"/>
+                <path d="M30 26c1-4 4-8 10-8" stroke="#1a3a5c" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            {%- endif -%}
           </div>
           <div class="pm-endorsement-text">
             <span class="pm-endorsement-label">{{ section.settings.endorsement_label | default: 'Invested & Endorsed By' }}</span>
@@ -80,10 +84,14 @@
           <!-- Stat 1: Rating -->
           <div class="pm-stat-item">
             <div class="pm-stat-icon">
-              <!-- Star icon -->
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
+              {%- if section.settings.stat1_icon != blank -%}
+                {{ section.settings.stat1_icon | image_url: width: 60 | image_tag: loading: 'lazy', alt: section.settings.stat1_label }}
+              {%- else -%}
+                <!-- Star icon -->
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              {%- endif -%}
             </div>
             <span class="pm-stat-value">{{ section.settings.stat1_value | default: '4.9/5' }}</span>
             <span class="pm-stat-label">{{ section.settings.stat1_label | default: '40K+ Reviews' }}</span>
@@ -92,10 +100,14 @@
           <!-- Stat 2: Customers -->
           <div class="pm-stat-item">
             <div class="pm-stat-icon">
-              <!-- People/Group icon -->
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
-              </svg>
+              {%- if section.settings.stat2_icon != blank -%}
+                {{ section.settings.stat2_icon | image_url: width: 60 | image_tag: loading: 'lazy', alt: section.settings.stat2_label }}
+              {%- else -%}
+                <!-- People/Group icon -->
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                </svg>
+              {%- endif -%}
             </div>
             <span class="pm-stat-value">{{ section.settings.stat2_value | default: '50K+' }}</span>
             <span class="pm-stat-label">{{ section.settings.stat2_label | default: 'Happy Customers' }}</span>
@@ -104,10 +116,14 @@
           <!-- Stat 3: Authentic -->
           <div class="pm-stat-item">
             <div class="pm-stat-icon">
-              <!-- Medal / Shield icon -->
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4l5 2.18V11c0 3.5-2.33 6.79-5 7.93-2.67-1.14-5-4.43-5-7.93V7.18L12 5zm-1 9h2v2h-2zm0-6h2v4h-2z"/>
-              </svg>
+              {%- if section.settings.stat3_icon != blank -%}
+                {{ section.settings.stat3_icon | image_url: width: 60 | image_tag: loading: 'lazy', alt: section.settings.stat3_label }}
+              {%- else -%}
+                <!-- Medal / Shield icon -->
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4l5 2.18V11c0 3.5-2.33 6.79-5 7.93-2.67-1.14-5-4.43-5-7.93V7.18L12 5zm-1 9h2v2h-2zm0-6h2v4h-2z"/>
+                </svg>
+              {%- endif -%}
             </div>
             <span class="pm-stat-value">{{ section.settings.stat3_value | default: '100%' }}</span>
             <span class="pm-stat-label">{{ section.settings.stat3_label | default: 'Authentic' }}</span>
@@ -123,7 +139,11 @@
         <a href="{{ cta_url }}" class="pm-cta-button">
           <span>{{ section.settings.cta_text | default: "Shop Namita's Curated Collection" }}</span>
           <div class="pm-cta-icon">
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            {%- if section.settings.cta_icon != blank -%}
+              {{ section.settings.cta_icon | image_url: width: 40 | image_tag: loading: 'lazy', alt: section.settings.cta_text }}
+            {%- else -%}
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            {%- endif -%}
           </div>
         </a>
       </div>
@@ -209,6 +229,12 @@
       "content": "Endorsement Card"
     },
     {
+      "type": "image_picker",
+      "id": "endorsement_icon",
+      "label": "Endorsement Custom Icon (PNG/SVG)",
+      "info": "Upload custom icon image (PNG/SVG). If left empty, default SVG icon is displayed."
+    },
+    {
       "type": "text",
       "id": "endorsement_label",
       "label": "Endorsement Label Text",
@@ -225,6 +251,12 @@
       "content": "Stats Card"
     },
     {
+      "type": "image_picker",
+      "id": "stat1_icon",
+      "label": "Stat 1 Custom Icon (PNG/SVG)",
+      "info": "Upload custom icon image for Stat 1."
+    },
+    {
       "type": "text",
       "id": "stat1_value",
       "label": "Stat 1 Value",
@@ -237,6 +269,12 @@
       "default": "40K+ Reviews"
     },
     {
+      "type": "image_picker",
+      "id": "stat2_icon",
+      "label": "Stat 2 Custom Icon (PNG/SVG)",
+      "info": "Upload custom icon image for Stat 2."
+    },
+    {
       "type": "text",
       "id": "stat2_value",
       "label": "Stat 2 Value",
@@ -247,6 +285,12 @@
       "id": "stat2_label",
       "label": "Stat 2 Label",
       "default": "Happy Customers"
+    },
+    {
+      "type": "image_picker",
+      "id": "stat3_icon",
+      "label": "Stat 3 Custom Icon (PNG/SVG)",
+      "info": "Upload custom icon image for Stat 3."
     },
     {
       "type": "text",
@@ -263,6 +307,12 @@
     {
       "type": "header",
       "content": "CTA Button"
+    },
+    {
+      "type": "image_picker",
+      "id": "cta_icon",
+      "label": "CTA Custom Arrow/Icon (PNG/SVG)",
+      "info": "Upload custom icon image for CTA button."
     },
     {
       "type": "text",
