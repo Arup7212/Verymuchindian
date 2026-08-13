@@ -177,7 +177,7 @@
 }
 
 .premium-product-manhours {
-  background: linear-gradient(90deg, #F03B8D, #3e204c);
+  background: linear-gradient(90deg, #f03b8d00, #f03b8d40 20%, #f03b8d 40% 60%, rgb(240 59 141 / 29%) 80%, #ffffff00);
   border-radius: 20px;
   padding: 6px 16px;
   font-size: 0.75rem;
