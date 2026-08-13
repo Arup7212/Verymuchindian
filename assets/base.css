@@ -2290,6 +2290,9 @@ button {
   font-family: 'Jost', sans-serif !important;
 }
 
+.premium-edit-header p{
+  color:#fff;
+}
 
 /* section titile */
 .section-title {
