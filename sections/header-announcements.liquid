@@ -299,7 +299,7 @@
 
     <div class="announcement-bar__slides">
       {% for block in section.blocks %}
-        <div class="announcement-bar__slide" id="Slide-{{ section.id }}-{{ forloop.index }}" role="group" aria-roledescription="Slide" {% if forloop.first == false %}aria-hidden="true"{% endif %} {{ block.shopify_attributes }}>
+        <div class="announcement-bar__slide" ref="slides[]" id="Slide-{{ section.id }}-{{ forloop.index }}" role="group" aria-roledescription="Slide" {% if forloop.first == false %}aria-hidden="true"{% else %}aria-hidden="false"{% endif %} {{ block.shopify_attributes }}>
           {%- if block.settings.link != blank -%}
             <a href="{{ block.settings.link }}" class="announcement-bar__link"></a>
           {%- endif -%}
