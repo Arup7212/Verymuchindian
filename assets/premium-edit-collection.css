@@ -1,12 +1,25 @@
-/* Premium Edit Collection Section CSS */
 .premium-edit-section {
-  padding: 60px 20px;
+  padding: var(--vmi-section-py-mobile, 40px) 0;
   background-color: var(--premium-bg-color, #282A4A);
 }
 
+@media (min-width: 769px) {
+  .premium-edit-section {
+    padding: var(--vmi-section-py, 72px) 0;
+  }
+}
+
 .premium-edit-container {
-  max-width: 1400px;
+  max-width: var(--vmi-max-w, 1440px);
   margin: 0 auto;
+  padding: 0 var(--vmi-px-mobile, 20px);
+  box-sizing: border-box;
+}
+
+@media (min-width: 769px) {
+  .premium-edit-container {
+    padding: 0 var(--vmi-px, 40px);
+  }
 }
 
 /* Header Styling */
@@ -36,9 +49,7 @@
 }
 
 .premium-gradient-text {
-  background: linear-gradient(90deg, #F03B8D, #F9A46B);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+ color:#F03B8D;
 }
 
 .premium-edit-description {
