@@ -9,7 +9,7 @@
 
 @media (min-width: 769px) {
   .draped-with-love-section {
-    padding: var(--vmi-section-py, 72px) 0;
+    padding: 0 0 72px 0;
   }
 }
 
