@@ -2293,7 +2293,9 @@ button {
 .premium-edit-header p{
   color:#fff;
 }
-
+.premium-edit-header .section-title{
+  color:#fff;
+}
 /* section titile */
 .section-title {
   font-family: Prata, serif;
@@ -2302,7 +2304,7 @@ button {
   color: var(--vmi-navy);
   letter-spacing: 0%;
   margin-bottom: 20px;
-  color:#fff;
+
 }
 
 @media(min-width:768px) {
