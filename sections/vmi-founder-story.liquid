@@ -37,7 +37,7 @@
       {%- else -%}
         <img
           src="{{ 'vmi-rachna-founder.png' | asset_url }}"
-          alt="{{ section.settings.founder_name | default: 'Rachna' | escape }}"
+          alt="{{ section.settings.founder_name | default: 'Slony' | escape }}"
           loading="lazy"
           class="vmi-founder__img"
         >
@@ -51,7 +51,7 @@
           {%- if section.settings.founder_logo_image != blank -%}
             <img src="{{ section.settings.founder_logo_image | image_url: width: 600 }}" alt="{{ section.settings.founder_name }}" class="vmi-founder__signature-img" style="max-width: {{ section.settings.logo_max_width | default: 240 }}px;">
           {%- else -%}
-            {%- assign founder_text = section.settings.founder_name | default: 'Rachna' -%}
+            {%- assign founder_text = section.settings.founder_name | default: 'Slony' -%}
             {%- assign f_first_char = founder_text | slice: 0, 1 -%}
             {%- assign f_rest_chars = founder_text | slice: 1, 100 -%}
             <div class="vmi-founder__logo-brand">
@@ -83,24 +83,14 @@
       "
     >
       
-      {%- comment -%} Scalloped Card Wrapper {%- endcomment -%}
+      {% comment %} {%- comment -%} Exact SVG Scalloped Frame {%- endcomment -%}
       <div class="vmi-founder__scalloped-box">
-        {%- comment -%} 4-sided SVG smooth convex scalloped background frame with double inset line {%- endcomment -%}
-        <svg class="vmi-founder__scallop-svg" viewBox="0 0 400 460" preserveAspectRatio="none" aria-hidden="true">
-          <!-- Outer Cream Scalloped Shape (Convex Pillow Bumps) -->
-          <path
-            d="M 40,35 A 28 28 0 0 1 93.33,35 A 28 28 0 0 1 146.67,35 A 28 28 0 0 1 200,35 A 28 28 0 0 1 253.33,35 A 28 28 0 0 1 306.67,35 A 28 28 0 0 1 360,35 A 24 24 0 0 1 365,40 A 28 28 0 0 1 365,94.28 A 28 28 0 0 1 365,148.57 A 28 28 0 0 1 365,202.86 A 28 28 0 0 1 365,257.14 A 28 28 0 0 1 365,311.43 A 28 28 0 0 1 365,365.71 A 28 28 0 0 1 365,420 A 24 24 0 0 1 360,425 A 28 28 0 0 1 306.67,425 A 28 28 0 0 1 253.33,425 A 28 28 0 0 1 200,425 A 28 28 0 0 1 146.67,425 A 28 28 0 0 1 93.33,425 A 28 28 0 0 1 40,425 A 24 24 0 0 1 35,420 A 28 28 0 0 1 35,365.71 A 28 28 0 0 1 35,311.43 A 28 28 0 0 1 35,257.14 A 28 28 0 0 1 35,202.86 A 28 28 0 0 1 35,148.57 A 28 28 0 0 1 35,94.28 A 28 28 0 0 1 35,40 A 24 24 0 0 1 40,35 Z"
-            fill="var(--vmi-card-bg)"
-          />
-
-          <!-- Fine Inset Outline Parallel to Scallops -->
-          <path
-            d="M 44,40 A 25 25 0 0 1 93.33,40 A 25 25 0 0 1 146.67,40 A 25 25 0 0 1 200,40 A 25 25 0 0 1 253.33,40 A 25 25 0 0 1 306.67,40 A 25 25 0 0 1 356,40 A 20 20 0 0 1 360,44 A 25 25 0 0 1 360,94.28 A 25 25 0 0 1 360,148.57 A 25 25 0 0 1 360,202.86 A 25 25 0 0 1 360,257.14 A 25 25 0 0 1 360,311.43 A 25 25 0 0 1 360,365.71 A 25 25 0 0 1 360,416 A 20 20 0 0 1 356,420 A 25 25 0 0 1 306.67,420 A 25 25 0 0 1 253.33,420 A 25 25 0 0 1 200,420 A 25 25 0 0 1 146.67,420 A 25 25 0 0 1 93.33,420 A 25 25 0 0 1 44,420 A 20 20 0 0 1 40,416 A 25 25 0 0 1 40,365.71 A 25 25 0 0 1 40,311.43 A 25 25 0 0 1 40,257.14 A 25 25 0 0 1 40,202.86 A 25 25 0 0 1 40,148.57 A 25 25 0 0 1 40,94.28 A 25 25 0 0 1 40,44 A 20 20 0 0 1 44,40 Z"
-            fill="none"
-            stroke="rgba(110, 85, 75, 0.25)"
-            stroke-width="1.3"
-          />
-        </svg>
+        <img
+          src="{{ 'decorative_frame_bg_exact.svg' | asset_url }}"
+          alt=""
+          loading="lazy"
+          class="vmi-founder__scallop-svg"
+        >
 
         <div class="vmi-founder__scallop-inner">
           {%- if section.settings.story_heading != blank -%}
@@ -115,8 +105,26 @@
             </div>
           {%- endif -%}
         </div>
-      </div>
+      </div> {% endcomment %}
+{%- comment -%} Exact SVG Scalloped Frame as Background {%- endcomment -%}
+<div
+  class="vmi-founder__scalloped-box"
+  style="background-image: url('{{ 'decorative_frame_bg_exact.svg' | asset_url }}');"
+>
+  <div class="vmi-founder__scallop-inner">
+    {%- if section.settings.story_heading != blank -%}
+      <h2 class="vmi-founder__story-title">
+        {{ section.settings.story_heading | replace: ' ', '&nbsp;' | replace: 'India’s&nbsp;', 'India’s<br>' | replace: "India's&nbsp;", "India's<br>" }}
+      </h2>
+    {%- endif -%}
 
+    {%- if section.settings.description != blank -%}
+      <div class="vmi-founder__story-text">
+        {{ section.settings.description }}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
       {%- comment -%} CTA & Tagline Below Card {%- endcomment -%}
       <div class="vmi-founder__bottom-meta">
         {%- if section.settings.cta_label != blank -%}
@@ -141,8 +149,6 @@
 </section>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&display=swap');
-
   .vmi-founder {
     overflow: hidden;
     background-color: var(--vmi-right-bg-color);
@@ -286,11 +292,10 @@
   /* Scalloped Box */
   .vmi-founder__scalloped-box {
     position: relative;
-    max-width: 450px;
+    max-width: 520px;
     width: 100%;
-    padding: 3.2rem 2.8rem 2.8rem 2.8rem;
+    padding: 3.2rem 3rem 3rem 3rem;
     box-sizing: border-box;
-    filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.24));
   }
 
   .vmi-founder__scallop-svg {
@@ -300,7 +305,7 @@
     height: 100%;
     z-index: 0;
     pointer-events: none;
-    overflow: visible;
+    object-fit: fill;
   }
 
   .vmi-founder__scallop-inner {
@@ -394,7 +399,7 @@
     }
 
     .vmi-founder__scalloped-box {
-      padding: 2.8rem 2rem 2.4rem 2rem;
+      padding: 4.5rem 3.2rem;
     }
   }
 
@@ -419,7 +424,7 @@
     }
 
     .vmi-founder__scalloped-box {
-      padding: 2.5rem 1.5rem 2.2rem 1.5rem;
+      padding: 4rem 2.5rem 3.8rem 2.5rem;
       max-width: 100%;
     }
 
