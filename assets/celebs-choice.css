@@ -154,7 +154,7 @@
 /* Frosted Glass Overlay */
 .celebs-choice__content {
   position: absolute;
-  bottom: 0;
+  bottom: 30px;
   left: 0;
   right: 0;
   z-index: 2;
