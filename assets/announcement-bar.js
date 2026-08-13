@@ -20,16 +20,48 @@ export class AnnouncementBar extends Component {
    * @type {number|undefined}
    */
   #interval = undefined;
+  #touchStartX = 0;
+  #touchEndX = 0;
 
   connectedCallback() {
     super.connectedCallback();
 
     this.addEventListener('mouseenter', this.suspend);
     this.addEventListener('mouseleave', this.resume);
+    this.addEventListener('touchstart', this.#handleTouchStart, { passive: true });
+    this.addEventListener('touchend', this.#handleTouchEnd, { passive: true });
     document.addEventListener('visibilitychange', this.#handleVisibilityChange);
 
     this.play();
   }
+
+  /**
+   * @param {TouchEvent} e
+   */
+  #handleTouchStart = (e) => {
+    this.suspend();
+    if (e.changedTouches && e.changedTouches[0]) {
+      this.#touchStartX = e.changedTouches[0].screenX;
+    }
+  };
+
+  /**
+   * @param {TouchEvent} e
+   */
+  #handleTouchEnd = (e) => {
+    if (e.changedTouches && e.changedTouches[0]) {
+      this.#touchEndX = e.changedTouches[0].screenX;
+      const diff = this.#touchStartX - this.#touchEndX;
+      if (Math.abs(diff) > 30) {
+        if (diff > 0) {
+          this.next();
+        } else {
+          this.previous();
+        }
+      }
+    }
+    this.resume();
+  };
 
   next() {
     this.current += 1;
