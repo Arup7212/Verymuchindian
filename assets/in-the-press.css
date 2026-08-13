@@ -1,90 +1,123 @@
-/* ══════════════════════════════════════════════════════════════
-   In The Press Section Styles
-   ══════════════════════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   In The Press â€” Marquee Scroll
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 .in-the-press-section {
-  padding: var(--padding-block-start, 60px) 0 var(--padding-block-end, 60px) 0;
+  padding: var(--vmi-section-py-mobile, 40px) 0;
   background-color: var(--background-color, #ffffff);
   overflow: hidden;
 }
 
-/* Header Styles */
+@media screen and (min-width: 769px) {
+  .in-the-press-section {
+    padding: var(--vmi-section-py, 72px) 0;
+  }
+}
+
+/* Header */
 .itp__header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 44px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 20px;
-}
-
-.itp__title {
-  font-family: var(--font-heading-family, 'Prata', serif);
-  font-size: 42px;
-  font-weight: 500;
-  color: #34336e;
-  margin: 0 0 16px 0;
-  line-height: 1.2;
+  padding: 0 var(--vmi-px-mobile, 20px);
 }
 
 .itp__divider {
   width: 150px;
   height: 2px;
   background: linear-gradient(90deg, transparent 0%, #f7941e 50%, transparent 100%);
-  margin: 0 auto;
+  margin: 16px auto 0;
   border-radius: 2px;
 }
 
-/* Logo Container */
+/* â”€â”€â”€ Marquee Track Wrapper â”€â”€â”€ */
 .itp__ticker-container {
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
+  overflow: hidden;
+  /* Edge fade masks */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
 }
 
+/* The moving track â€” contains two sets of logos for seamless loop */
 .itp__ticker-track {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 30px;
+  gap: 0;
+  width: max-content;
+  animation: itp-marquee 28s linear infinite;
+  will-change: transform;
+}
+
+/* Pause on hover */
+.itp__ticker-container:hover .itp__ticker-track {
+  animation-play-state: paused;
+}
+
+/* Each logo group (original + duplicate) */
+.itp__logo-group {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 0 var(--vmi-px-tablet, 40px);
 }
 
 .itp__logo-item {
-  flex: 1 1 120px; /* Let items grow and shrink */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.itp__logo-item:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+.itp__logo-link {
+  display: flex;
+  align-items: center;
+}
+
 .itp__logo-image {
-  max-width: 100%;
-  max-height: 50px; /* Controls the size, matches the Figma proportion */
+  height: 44px;
   width: auto;
-  height: auto;
+  max-width: 160px;
   object-fit: contain;
+  display: block;
 }
 
-
-
-/* Responsive (Mobile-first min-width) */
-@media screen and (min-width: 481px) {
-  .itp__logo-item {
-    flex: 0 0 160px;
-  }
+/* â”€â”€â”€ Marquee Keyframes â”€â”€â”€ */
+@keyframes itp-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
+/* Responsive */
 @media screen and (min-width: 769px) {
   .in-the-press-section {
-    padding-block: 70px;
-  }
-
-  .itp__title {
-    font-size: 42px;
+    padding-block: var(--vmi-section-py, 72px);
   }
 
   .itp__logo-image {
-    max-height: 50px;
+    height: 52px;
+  }
+
+  .itp__logo-group {
+    gap: 80px;
+    padding: 0 var(--vmi-px, 60px);
   }
 }
+
+@media screen and (max-width: 480px) {
+  .itp__logo-image {
+    height: 34px;
+  }
+
+  .itp__logo-group {
+    gap: 40px;
+    padding: 0 var(--vmi-px-mobile, 20px);
+  }
+}
+
