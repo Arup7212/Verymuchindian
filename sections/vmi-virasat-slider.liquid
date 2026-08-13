@@ -134,8 +134,6 @@
 </section>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,500;0,600&family=Cormorant+Garamond:ital,wght@0,400;0,500&family=Jost:wght@300;400;500;600&display=swap');
-
   .vmi-virasat {
     position: relative;
     overflow: hidden;
@@ -145,6 +143,7 @@
     background-position: center;
     display: flex;
     align-items: center;
+        margin-top: 60px;
   }
 
   .vmi-virasat__bg-overlay {
@@ -159,6 +158,7 @@
     position: relative;
     z-index: 2;
     width: 100%;
+    max-width: 100%;
     display: grid;
     grid-template-columns: 240px 1fr;
     align-items: center;
@@ -403,12 +403,35 @@
     }
 
     .vmi-virasat__card {
-      flex: 0 0 280px;
-      height: 420px;
+      flex: 0 0 260px;
+      height: 380px;
     }
 
     .vmi-virasat__first-letter { font-size: 3.8rem; }
     .vmi-virasat__rest-letters { font-size: 2.3rem; }
+  }
+
+  @media (max-width: 480px) {
+    .vmi-virasat {
+      min-height: unset;
+    }
+
+    .vmi-virasat__card {
+      flex: 0 0 220px;
+      height: 320px;
+    }
+
+    .vmi-virasat__container {
+      padding: 2.5rem 1rem;
+      gap: 1.5rem;
+    }
+
+    .vmi-virasat__first-letter { font-size: 3rem; }
+    .vmi-virasat__rest-letters { font-size: 1.9rem; }
+
+    .vmi-virasat__intro-inner {
+      padding: 2rem 1.5rem;
+    }
   }
 </style>
 
