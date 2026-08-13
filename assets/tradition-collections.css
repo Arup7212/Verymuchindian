@@ -2,10 +2,16 @@
 .tradition-collections-section {
   position: relative;
   width: 100%;
-  padding: 60px 0 0px;
+  padding: var(--vmi-section-py-mobile, 40px) 0;
   background-color: var(--tc-bg-color, #faf8f5);
   box-sizing: border-box;
   overflow: hidden;
+}
+
+@media (min-width: 769px) {
+  .tradition-collections-section {
+    padding: var(--vmi-section-py, 72px) 0;
+  }
 }
 
 /* Dotted Matrix Background Container with Vertical Mask */
@@ -27,10 +33,16 @@
 .tc-container {
   position: relative;
   z-index: 2;
-  max-width: 1320px;
+  max-width: var(--vmi-max-w, 1440px);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 var(--vmi-px-mobile, 20px);
   box-sizing: border-box;
+}
+
+@media (min-width: 769px) {
+  .tc-container {
+    padding: 0 var(--vmi-px, 60px);
+  }
 }
 
 /* --- Trust Bar Section --- */
@@ -90,7 +102,7 @@
   color: var(--vmi-navy);
   line-height: 1.3;
   margin: 0;
-  max-width: 200px;
+  max-width: 124px;
 }
 
 @media(min-width:768px) {
@@ -161,8 +173,8 @@
 /* --- Collection Grid --- */
 .tc-collection-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
   margin-top: 10px;
 }
 
@@ -237,16 +249,17 @@
   transform: translateY(0);
 }
 
-/* Responsive Styles (Mobile-first min-width) */
+/* Responsive Styles */
 @media (min-width: 481px) {
   .tc-collection-grid {
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
 }
 
 @media (min-width: 769px) {
   .tradition-collections-section {
-    padding: 60px 0 0px;
+    padding: var(--vmi-section-py-mobile, 40px) 0;
   }
 
   .tc-dot-background {
@@ -281,5 +294,37 @@
 @media (min-width: 1025px) {
   .tc-collection-grid {
     gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tc-main-title {
+    font-size: 28px;
+    letter-spacing: 0.02em;
+  }
+
+  .tc-section-title {
+    font-size: 26px;
+  }
+
+  .tc-brand-banner {
+    padding: 36px 0;
+  }
+
+  .tc-container {
+    padding: 0 16px;
+  }
+
+  .tc-trust-icon-wrapper {
+    width: 48px;
+    height: 48px;
+  }
+
+  .tc-trust-title {
+    font-size: 11px;
+  }
+
+  .tc-trust-item {
+    padding: 0 6px;
   }
 }
