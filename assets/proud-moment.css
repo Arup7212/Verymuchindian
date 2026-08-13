@@ -1,25 +1,38 @@
 /* proud-moment.css */
 
-
+/* ═══════════════════════════════════════
+   SECTION WRAPPER
+═══════════════════════════════════════ */
 .proud-moment-section {
   position: relative;
   width: 100%;
-  padding: 70px 0 80px 0;
+  padding: var(--vmi-section-py-mobile, 40px) 0;
   background-color: var(--pm-bg-color, #ffffff);
   box-sizing: border-box;
 }
 
-.proud-moment-section .vmi-container {
+/* ═══════════════════════════════════════
+   CONTAINER — stacks on mobile, 2-col on desktop
+═══════════════════════════════════════ */
+.pm-container {
   box-sizing: border-box;
-  display: grid;
-  grid-template-columns: 480px 1fr;
-  grid-template-rows: auto auto;
-  gap: 16px 60px;
+  width: 100%;
+  max-width: var(--vmi-max-w, 1440px);
+  margin: 0 auto;
+  padding: 0 var(--vmi-px-mobile, 20px);
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
 }
 
-/* ─── LEFT: Two Stacked Images ─── */
+/* ═══════════════════════════════════════
+   LEFT COLUMN: Two stacked images
+═══════════════════════════════════════ */
 .pm-images-col {
-  display: contents;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
 }
 
 .pm-image-wrap {
@@ -29,22 +42,7 @@
   background: #e8e3dc;
   box-shadow: 0 8px 28px rgba(30, 36, 71, 0.09);
   position: relative;
-}
-
-/* Top image: shorter */
-.pm-image-wrap.pm-img-top {
-  grid-column: 1;
-  grid-row: 1;
-  height: 100%;
-  aspect-ratio: auto;
-}
-
-/* Bottom image: taller */
-.pm-image-wrap.pm-img-bottom {
-  grid-column: 1;
-  grid-row: 2;
-  height: 100%;
-  aspect-ratio: auto;
+  aspect-ratio: 4 / 3;
 }
 
 .pm-image-wrap img,
@@ -61,31 +59,33 @@
   transform: scale(1.04);
 }
 
-/* ─── RIGHT: Content Column ─── */
+/* ═══════════════════════════════════════
+   RIGHT COLUMN: Text + Cards + CTA
+═══════════════════════════════════════ */
 .pm-content-col {
-  display: contents;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
 }
 
 .pm-text-block {
-  grid-column: 2;
-  grid-row: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .pm-cards-block {
-  grid-column: 2;
-  grid-row: 2;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  gap: 16px;
 }
 
-/* Heading */
+/* ═══════════════════════════════════════
+   TYPOGRAPHY
+═══════════════════════════════════════ */
 .pm-heading-pre {
   font-family: var(--font-heading-family, 'Prata', serif);
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 500;
   color: #3b3a4a;
   line-height: 1.25;
@@ -94,7 +94,7 @@
 
 .pm-heading-main {
   font-family: var(--font-heading-family, 'Prata', serif);
-  font-size: 44px;
+  font-size: 40px;
   font-weight: 600;
   line-height: 1.15;
   color: #3b3a4a;
@@ -111,41 +111,40 @@
 }
 
 .pm-heading-amp {
-  font-size: 30px;
+  font-size: 28px;
   color: #3b3a4a;
   font-weight: 400;
 }
 
 .pm-heading-line2 {
   font-family: var(--font-heading-family, 'Prata', serif);
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 500;
   color: #3b3a4a;
   line-height: 1.25;
   margin: 0 0 16px 0;
 }
 
-/* Divider */
 .pm-divider {
   display: block;
   width: 128px;
   height: 2px;
   border-radius: 2px;
   background: linear-gradient(90deg, #f7941e 0%, rgba(247, 148, 30, 0) 100%);
-  margin: 0 0 28px 0;
+  margin: 0 0 20px 0;
 }
 
-/* Description */
 .pm-description {
-
   font-size: 15px;
   color: #55586e;
   line-height: 1.75;
-  margin: 0 0 28px 0;
-  max-width: 440px;
+  margin: 0 0 20px 0;
+  max-width: 480px;
 }
 
-/* ─── Endorsement Card ─── */
+/* ═══════════════════════════════════════
+   ENDORSEMENT CARD
+═══════════════════════════════════════ */
 .pm-endorsement-card {
   display: flex;
   align-items: center;
@@ -154,7 +153,6 @@
   border-radius: 0 8px 8px 0;
   border-left: 6px solid #df3294;
   padding: 16px 22px;
-  margin-bottom: 16px;
   transition: transform 0.3s ease;
 }
 
@@ -171,10 +169,11 @@
   justify-content: center;
 }
 
-.pm-endorsement-icon svg {
+.pm-endorsement-icon svg,
+.pm-endorsement-icon img {
   width: 40px;
   height: 40px;
-  opacity: 1;
+  object-fit: contain;
 }
 
 .pm-endorsement-text {
@@ -200,7 +199,9 @@
   letter-spacing: 0.01em;
 }
 
-/* ─── Stats Card ─── */
+/* ═══════════════════════════════════════
+   STATS CARD
+═══════════════════════════════════════ */
 .pm-stats-card {
   display: flex;
   align-items: center;
@@ -209,7 +210,6 @@
   border-radius: 0 8px 8px 0;
   border-left: 6px solid #df3294;
   padding: 18px 22px;
-  margin-bottom: 28px;
   transition: transform 0.3s ease;
 }
 
@@ -227,7 +227,7 @@
   position: relative;
 }
 
-.pm-stat-item+.pm-stat-item::before {
+.pm-stat-item + .pm-stat-item::before {
   content: '';
   position: absolute;
   left: 0;
@@ -253,9 +253,15 @@
   fill: rgba(26, 58, 92, 0.7);
 }
 
+.pm-stat-icon img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
 .pm-stat-value {
   font-family: system-ui, -apple-system, sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 800;
   color: #df3294;
   line-height: 1;
@@ -270,15 +276,16 @@
   letter-spacing: 0.03em;
 }
 
-/* ─── CTA Button ─── */
+/* ═══════════════════════════════════════
+   CTA BUTTON
+═══════════════════════════════════════ */
 .pm-cta-button {
   display: inline-flex;
   align-items: center;
   gap: 12px;
   background: #eb8431;
   color: #ffffff;
-
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.02em;
   padding: 14px 28px;
@@ -286,7 +293,7 @@
   text-decoration: none;
   box-shadow: 0 8px 24px rgba(235, 132, 49, 0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  width: fit-content;
+  align-self: flex-start;
 }
 
 .pm-cta-button:hover {
@@ -304,6 +311,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  overflow: hidden;
 }
 
 .pm-cta-icon svg {
@@ -314,83 +322,99 @@
   fill: none;
 }
 
-/* ─── Responsive (Mobile-first min-width) ─── */
-@media (min-width: 481px) {
-  .pm-images-col {
-    flex-direction: row;
-  }
-
-  .pm-image-wrap.pm-img-top,
-  .pm-image-wrap.pm-img-bottom {
-    aspect-ratio: 1 / 1.3;
-  }
-
-  .pm-stat-value {
-    font-size: 22px;
-  }
-
-  .pm-stat-label {
-    font-size: 11px;
-  }
-
-  .pm-endorsement-name {
-    font-size: 20px;
-  }
+.pm-cta-icon img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
 }
 
+/* ═══════════════════════════════════════
+   DESKTOP: 2-COLUMN GRID (769px+)
+   LEFT col = images  |  RIGHT col = content
+═══════════════════════════════════════ */
 @media (min-width: 769px) {
   .proud-moment-section {
-    padding: 70px 0 80px 0;
+    padding: var(--vmi-section-py, 72px) 0;
   }
 
   .pm-container {
     display: grid;
-    grid-template-columns: 380px 1fr;
-    gap: 16px 40px;
-    padding: 0 30px;
+    grid-template-columns: 400px 1fr;
+    gap: 0 48px;
+    padding: 0 var(--vmi-px-tablet, 40px);
+    align-items: stretch;
+    flex-direction: unset;
   }
 
   .pm-images-col {
-    flex-direction: column;
+    grid-column: 1;
+    grid-row: 1;
+    gap: 20px;
   }
 
-  .pm-cta-button {
-    width: auto;
+  .pm-image-wrap {
+    aspect-ratio: 4 / 3;
+    flex: 1;
   }
 
-  .pm-heading-pre,
-  .pm-heading-line2 {
-    font-size: 24px;
+  .pm-content-col {
+    grid-column: 2;
+    grid-row: 1;
+    justify-content: center;
+    gap: 28px;
   }
 
-  .pm-heading-main {
-    font-size: 34px;
-  }
-
-  .pm-heading-amp {
-    font-size: 24px;
-  }
+  .pm-heading-pre { font-size: 24px; }
+  .pm-heading-main { font-size: 38px; }
+  .pm-heading-amp { font-size: 24px; }
+  .pm-heading-line2 { font-size: 24px; }
 }
 
 @media (min-width: 1025px) {
   .pm-container {
-    grid-template-columns: 460px 1fr;
-    gap: 24px 60px;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 40px;
+    grid-template-columns: 480px 1fr;
+    gap: 0 64px;
+    padding: 0 var(--vmi-px, 60px);
+  }
+
+  .pm-images-col { gap: 24px; }
+  .pm-heading-pre { font-size: 30px; }
+  .pm-heading-main { font-size: 46px; }
+  .pm-heading-amp { font-size: 30px; }
+  .pm-heading-line2 { font-size: 30px; }
+  .pm-stat-value { font-size: 22px; }
+}
+
+/* ═══════════════════════════════════════
+   SMALL MOBILE (480px and below)
+═══════════════════════════════════════ */
+@media (max-width: 480px) {
+  .proud-moment-section { padding: var(--vmi-section-py-mobile, 40px) 0; }
+
+  .pm-container {
+    padding: 0 16px;
+    gap: 24px;
   }
 
   .pm-heading-pre,
-  .pm-heading-line2 {
-    font-size: 30px;
-  }
+  .pm-heading-line2 { font-size: 18px; }
 
-  .pm-heading-main {
-    font-size: 44px;
-  }
+  .pm-heading-main { font-size: 26px; }
+  .pm-heading-amp { font-size: 18px; }
 
-  .pm-heading-amp {
-    font-size: 30px;
+  .pm-endorsement-card { padding: 12px 14px; gap: 12px; }
+  .pm-endorsement-name { font-size: 16px; }
+  .pm-stats-card { padding: 14px 12px; }
+  .pm-stat-value { font-size: 16px; }
+  .pm-stat-label { font-size: 10px; }
+
+  .pm-description { font-size: 14px; max-width: 100%; }
+
+  .pm-cta-button {
+    font-size: 14px;
+    padding: 12px 20px;
+    width: 100%;
+    justify-content: center;
+    align-self: stretch;
   }
 }
