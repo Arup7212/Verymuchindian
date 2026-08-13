@@ -2310,9 +2310,9 @@ button {
 
 .section-subtitle {
   font-family: 'Jost', sans-serif;
-  font-size: 14px;
-  color: rgb(var(--vmi-navy) / 50%);
+  font-size: 16px;
   margin-top: 0px;
+  color: #35336F80;
 }
 
 @media(min-width:768px) {
