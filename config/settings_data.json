@@ -110,12 +110,12 @@
     "blocks": {
       "12291841620498040239": {
         "type": "shopify://apps/flits-wishlist/blocks/flits-wishlist/019b0391-1d18-790b-90d9-8ec46e3094db",
-        "disabled": true,
+        "disabled": false,
         "settings": {}
       },
       "6877337165694132725": {
         "type": "shopify://apps/joy-wishlist/blocks/avada-embed/5f342ce6-6247-4fa7-a60c-2f9ca38eb160",
-        "disabled": false,
+        "disabled": true,
         "settings": {}
       }
     },
