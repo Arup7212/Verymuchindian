@@ -62,20 +62,21 @@
   background: linear-gradient(90deg, rgba(247, 148, 30, 0) 0%, #f7941e 25%, #e07a3c 50%, #f7941e 75%, rgba(247, 148, 30, 0) 100%);
 }
 
-/* 6-Card Grid Layout */
+/* 3-Card Grid Layout (Mobile & Desktop) */
 .fc-grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
 /* Collection Card */
 .fc-card {
   position: relative;
-  border-radius: 24px;
+  border-radius: 6px;
+  border: 1.5px solid #F5C73F;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(30, 36, 71, 0.08);
-  aspect-ratio: 1 / 1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 3 / 4;
   background-color: #f0ebe4;
   text-decoration: none;
   display: block;
@@ -108,30 +109,21 @@
   transform: scale(1.05);
 }
 
-/* Exact Figma Horizontal Gradient Fading Bar */
+/* Exact Figma Horizontal Gradient Fading Bar -> Changed to Dark Bottom Gradient to match screenshot */
 .fc-glass-bar {
   position: absolute;
-  bottom: 35px;
+  bottom: 0;
   left: 0;
   right: 0;
   width: 100%;
-  height: 110px;
-  background: linear-gradient(90deg,
-      rgba(255, 255, 255, 0.12) 0%,
-      rgba(255, 255, 255, 0.55) 20%,
-      rgba(255, 255, 255, 0.94) 40%,
-      rgba(255, 255, 255, 0.94) 60%,
-      rgba(255, 255, 255, 0.55) 80%,
-      rgba(255, 255, 255, 0.12) 100%);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  height: 50%;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   text-align: center;
+  padding: 10px;
   box-sizing: border-box;
   z-index: 2;
   transition: opacity 0.35s ease, transform 0.35s ease;
@@ -144,29 +136,22 @@
 }
 
 .fc-bar-tag {
-
-  font-size: 16px;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: var(--vmi-navy);
-  letter-spacing: 0px;
-  margin-bottom: 2px;
+  display: none;
 }
 
 .fc-bar-title {
-  font-family: var(--font-heading-family, 'Prata', serif);
-  font-size: 28px;
-  font-weight: 400;
-  color: var(--vmi-navy);
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
   margin: 0;
-  line-height: 1.1;
+  line-height: 1.25;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 }
 
 .fc-bar-subtitle {
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--vmi-navy);
-  margin-top: 2px;
+  display: none;
 }
 
 /* Lower Position Hover Overlay (Card 2 Design) */
@@ -268,10 +253,9 @@
   transition: stroke 0.3s ease;
 }
 
-/* Responsive Styles (Mobile-first min-width) */
+/* Responsive Styles */
 @media (min-width: 481px) {
   .fc-grid {
-    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
 }
@@ -282,11 +266,11 @@
   }
 
   .fc-grid {
-    gap: 24px;
+    gap: 20px;
   }
 
   .fc-bar-title {
-    font-size: 36px;
+    font-size: 16px;
   }
 
   .fc-hover-title {
@@ -296,8 +280,7 @@
 
 @media (min-width: 1025px) {
   .fc-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    gap: 24px;
   }
 }
 
@@ -306,15 +289,11 @@
     font-size: 28px;
   }
 
-  .fc-bar-title {
-    font-size: 20px;
-  }
-
   .fc-hover-title {
     font-size: 20px;
   }
 
   .fc-container {
-    padding: 0 16px;
+    padding: 0 10px;
   }
 }

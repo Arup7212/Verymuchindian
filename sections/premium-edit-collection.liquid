@@ -23,9 +23,10 @@
       
       {% if collection != blank and collection.products_count > 0 %}
         {% for product in collection.products limit: max_products %}
-          <a href="{{ product.url }}" class="premium-product-card">
+          <div class="premium-product-card">
             
-            <div class="premium-product-image-wrapper">
+            <a href="{{ product.url }}" style="display: block; color: inherit; text-decoration: none;">
+              <div class="premium-product-image-wrapper">
               {% if product.tags contains 'NEW' or product.tags contains 'new' or product.tags contains 'New' %}
                 <span class="premium-product-badge premium-badge-new">NEW</span>
               {% elsif product.tags contains 'PRE-ORDER' or product.tags contains 'pre-order' or product.tags contains 'Pre-order' %}
@@ -48,7 +49,9 @@
                 <div class="premium-product-vendor">{{ product.vendor }}</div>
               {% endif %}
               
-              <h3 class="premium-product-title">{{ product.title }}</h3>
+              <a href="{{ product.url }}" style="color: inherit; text-decoration: none;">
+                <h3 class="premium-product-title">{{ product.title }}</h3>
+              </a>
               
               {%- assign subtitle = product.metafields.custom.subtitle -%}
               {%- if subtitle == blank and product.description != blank -%}
@@ -69,9 +72,27 @@
                 {% endif %}
                 {{ product.price | money }}
               </div>
+              
+              <div class="premium-add-to-cart-wrapper" style="margin-top: 15px; width: 100%;">
+                {%- if product.available -%}
+                  <product-form-component data-section-id="{{ section.id }}" data-product-id="{{ product.id }}" on:submit="/handleSubmit">
+                    <div class="visually-hidden" aria-live="assertive" role="status" aria-atomic="true" ref="liveRegion"></div>
+                    {%- assign product_form_id = 'premium-product-form-' | append: section.id | append: '-' | append: product.id -%}
+                    {%- form 'product', product, id: product_form_id, novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+                      <input type="hidden" name="id" ref="variantId" value="{{ product.variants.first.id }}" />
+                      <input type="hidden" name="quantity" value="1" />
+                      <button type="submit" name="add" class="premium-add-to-cart-btn" style="width: 100%; padding: 10px; background-color: #F03B8D; color: #ffffff; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                        Add to Cart
+                      </button>
+                    {%- endform -%}
+                  </product-form-component>
+                {%- else -%}
+                  <button type="button" class="premium-add-to-cart-btn" disabled style="width: 100%; padding: 10px; background-color: #ccc; color: #666; border: none; border-radius: 4px; font-weight: bold; cursor: not-allowed;">Sold Out</button>
+                {%- endif -%}
+              </div>
             </div>
             
-          </a>
+          </div>
         {% endfor %}
       {% else %}
         {% if request.design_mode %}

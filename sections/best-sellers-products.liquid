@@ -21,8 +21,8 @@
   data-section-type="best-sellers-products"
   style="
     --bsp-bg-color: {{ section.settings.background_color | default: '#ffffff' }};
-    --bsp-mh-bg: {{ section.settings.manhours_bg_color | default: '#f7941e' }};
-    --bsp-mh-color: {{ section.settings.manhours_text_color | default: '#1e2447' }};
+    --bsp-mh-bg: {{ section.settings.manhours_bg_color | default: '#F7941E' }};
+    --bsp-mh-color: {{ section.settings.manhours_text_color | default: '#1E2447' }};
   "
 >
   <div class="vmi-container">
@@ -60,8 +60,8 @@
             assign card_image = block.settings.image
           -%}
 
-          <a href="{{ product_url }}" class="bsp-card" {{ block.shopify_attributes }}>
-            <div class="bsp-image-container">
+          <div class="bsp-card" {{ block.shopify_attributes }}>
+            <a href="{{ product_url }}" class="bsp-image-container" style="display: block;">
               {%- if badge_text != blank -%}
                 <div class="bsp-ribbon-badge {{ badge_type }}">{{ badge_text }}</div>
               {%- endif -%}
@@ -82,14 +82,16 @@
                     {{ 'product-1' | placeholder_svg_tag: 'bsp-product-image' }}
                 {%- endcase -%}
               {%- endif -%}
-            </div>
+            </a>
 
             <div class="bsp-info">
               {%- if section.settings.show_category -%}
                 <div class="bsp-category">{{ category_text }}</div>
               {%- endif -%}
 
-              <h3 class="bsp-product-title">{{ product_title }}</h3>
+              <a href="{{ product_url }}" style="text-decoration: none; color: inherit;">
+                <h3 class="bsp-product-title">{{ product_title }}</h3>
+              </a>
 
               {%- if subtitle_text != blank -%}
                 <p class="bsp-product-subtitle">{{ subtitle_text }}</p>
@@ -108,8 +110,12 @@
                   <span class="bsp-save-tag">{{ save_text }}</span>
                 {%- endif -%}
               </div>
+
+              <div class="bsp-add-to-cart-wrapper" style="margin-top: 15px;">
+                <a href="{{ product_url }}" class="bsp-add-to-cart-btn" style="display: block; width: 100%; padding: 10px; background-color: #F7941E; color: #1E2447; text-align: center; text-decoration: none; border-radius: 4px; font-weight: bold; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">View Options</a>
+              </div>
             </div>
-          </a>
+          </div>
         {%- endfor -%}
 
       {%- elsif collection_products != blank and collection_products.size > 0 -%}
@@ -150,8 +156,8 @@
               assign badge_class = 'pre-order'
             endif
           -%}
-          <a href="{{ product.url }}" class="bsp-card">
-            <div class="bsp-image-container">
+          <div class="bsp-card">
+            <a href="{{ product.url }}" class="bsp-image-container" style="display: block;">
               {%- if badge_text != blank -%}
                 <div class="bsp-ribbon-badge {{ badge_class }}">{{ badge_text }}</div>
               {%- endif -%}
@@ -161,14 +167,16 @@
               {%- else -%}
                 {{ 'product-1' | placeholder_svg_tag: 'bsp-product-image' }}
               {%- endif -%}
-            </div>
+            </a>
 
             <div class="bsp-info">
               {%- if section.settings.show_category and category_label != blank -%}
                 <div class="bsp-category">{{ category_label }}</div>
               {%- endif -%}
 
-              <h3 class="bsp-product-title">{{ product.title }}</h3>
+              <a href="{{ product.url }}" style="text-decoration: none; color: inherit;">
+                <h3 class="bsp-product-title">{{ product.title }}</h3>
+              </a>
               
               <p class="bsp-product-subtitle">
                 {{ product.description | strip_html | truncate: 75 | default: 'Pure Silk Maharani Paithani · Maharani Pallu · Peacock Blue' }}
@@ -189,8 +197,26 @@
                   <span class="bsp-save-tag">Save {{ savings_percent }}%</span>
                 {%- endif -%}
               </div>
+
+              <div class="bsp-add-to-cart-wrapper" style="margin-top: 15px;">
+                {%- if product.available -%}
+                  <product-form-component data-section-id="{{ section.id }}" data-product-id="{{ product.id }}" on:submit="/handleSubmit">
+                    <div class="visually-hidden" aria-live="assertive" role="status" aria-atomic="true" ref="liveRegion"></div>
+                    {%- assign product_form_id = 'product-form-' | append: section.id | append: '-' | append: product.id -%}
+                    {%- form 'product', product, id: product_form_id, novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+                      <input type="hidden" name="id" ref="variantId" value="{{ product.variants.first.id }}" />
+                      <input type="hidden" name="quantity" value="1" />
+                      <button type="submit" name="add" class="bsp-add-to-cart-btn" style="width: 100%; padding: 10px; background-color: #F7941E; color: #1E2447; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                        Add to Cart
+                      </button>
+                    {%- endform -%}
+                  </product-form-component>
+                {%- else -%}
+                  <button type="button" class="bsp-add-to-cart-btn" disabled style="width: 100%; padding: 10px; background-color: #ccc; color: #666; border: none; border-radius: 4px; font-weight: bold; cursor: not-allowed;">Sold Out</button>
+                {%- endif -%}
+              </div>
             </div>
-          </a>
+          </div>
         {%- endfor -%}
       {%- endif -%}
     </div>
