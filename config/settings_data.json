@@ -112,6 +112,13 @@
       "foreground": "#000000",
       "color1": "#333333",
       "color2": "#DFDFDF"
+    },
+    "blocks": {
+      "12291841620498040239": {
+        "type": "shopify://apps/flits-wishlist/blocks/flits-wishlist/019b0391-1d18-790b-90d9-8ec46e3094db",
+        "disabled": false,
+        "settings": {}
+      }
     }
   },
   "presets": {
