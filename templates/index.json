@@ -1051,6 +1051,42 @@
     "festive_collection_H9MFYc": {
       "type": "festive-collection",
       "blocks": {
+        "collection_card_YXJhUg": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/HEM_8721.webp",
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
+          }
+        },
+        "collection_card_FjDgcw": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/HMP_3591.webp",
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
+          }
+        },
+        "collection_card_b3j7bj": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/HMP_6993.webp",
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
+          }
+        },
         "collection_card_NDKDja": {
           "type": "collection_card",
           "settings": {
@@ -1066,6 +1102,7 @@
           "type": "collection_card",
           "settings": {
             "collection": "",
+            "image": "shopify://shop_images/DSC_9132.webp",
             "tag_text": "CLASSIC SILK PAITHANI",
             "title": "Festive",
             "subtitle": "Collection",
@@ -1088,6 +1125,7 @@
           "type": "collection_card",
           "settings": {
             "collection": "",
+            "image": "shopify://shop_images/DSC_0017.webp",
             "tag_text": "CLASSIC SILK PAITHANI",
             "title": "Festive",
             "subtitle": "Collection",
@@ -1111,6 +1149,7 @@
           "type": "collection_card",
           "settings": {
             "collection": "",
+            "image": "shopify://shop_images/HMP_4503.webp",
             "tag_text": "CLASSIC SILK PAITHANI",
             "title": "Festive",
             "subtitle": "Collection",
@@ -1120,6 +1159,9 @@
         }
       },
       "block_order": [
+        "collection_card_YXJhUg",
+        "collection_card_FjDgcw",
+        "collection_card_b3j7bj",
         "collection_card_NDKDja",
         "collection_card_jiG3ma",
         "collection_card_bQPxW3",
