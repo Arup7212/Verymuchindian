@@ -6,6 +6,9 @@
   background-color: var(--bsp-bg-color, #ffffff);
   box-sizing: border-box;
 }
+@media (max-width: 769px) {
+.best-sellers-section{}
+}
 
 @media (min-width: 769px) {
   .best-sellers-section {
