@@ -115,6 +115,7 @@
 @media(max-width:768px) {
   .tc-trust-title {
     font-size: 16px;
+    max-width:100%;
   }
   .tc-trust-item {
     flex: 1;
@@ -122,6 +123,7 @@
     flex-direction: inherit;  
     
  }
+ 
  .tc-trust-item:after{
   display:none;
  }
