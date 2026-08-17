@@ -26,7 +26,9 @@
     padding: 0 var(--vmi-px, 60px);
   }
 }
-
+@media (max-width: 769px) {
+ .shop-by-price-section{ padding-top:0; }
+}
 /* Header */
 .sbp-header {
   text-align: center;
