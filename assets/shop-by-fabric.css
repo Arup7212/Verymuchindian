@@ -308,3 +308,9 @@
     gap: 32px;
   }
 }
+
+@media (max-width: 1025px) {
+  .shop-by-fabric-section{
+
+  }
+}
