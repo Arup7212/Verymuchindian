@@ -113,6 +113,9 @@
 }
 
 @media(max-width:768px) {
+  .tc-trust-icon-wrapper{
+    height:inherit;
+  }
   .tc-trust-title {
     font-size: 16px;
     max-width:100%;
