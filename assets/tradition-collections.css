@@ -10,7 +10,7 @@
 
 @media (min-width: 769px) {
   .tradition-collections-section {
-    padding: 72px 0  0px 0 !important;
+    padding: var(--vmi-section-py, 72px) 0;
   }
 }
 
@@ -301,7 +301,9 @@
     column-count: 2;
     display: block;
   }
-  
+  .tradition-collections-section{
+    padding-bottom:0 !important;
+  }
 }
 
 @media (max-width: 480px) {
