@@ -119,8 +119,11 @@
   .tc-trust-item {
   flex: 1;
   display: block;
-  flex-direction: inherit;
-}
+  flex-direction: inherit;  
+ }
+ .tc-trust-bar{
+  columns: 2;
+ }
 }
 
 
