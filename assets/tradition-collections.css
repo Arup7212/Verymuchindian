@@ -112,6 +112,19 @@
   }
 }
 
+@media(max-width:768px) {
+  .tc-trust-title {
+    font-size: 16px;
+  }
+  .tc-trust-item {
+  flex: 1;
+  display: block;
+  flex-direction: inherit;
+}
+}
+
+
+
 /* --- Brand Heading & Subtitle Banner --- */
 .tc-brand-banner {
   text-align: center;
