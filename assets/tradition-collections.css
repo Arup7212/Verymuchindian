@@ -299,7 +299,9 @@
 @media (max-width: 768px) {
   .tc-trust-bar{
     column-count: 2;
+    display: block;
   }
+  
 }
 
 @media (max-width: 480px) {
