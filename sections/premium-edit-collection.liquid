@@ -46,7 +46,8 @@
 
             <div class="premium-product-details">
               {% if product.vendor != blank %}
-                <div class="premium-product-vendor">{{ product.vendor }}</div>
+                {% comment %} <div class="premium-product-vendor">{{ product.vendor }}</div> {% endcomment %}
+                 <div class="premium-product-manhours">Manhours: {{ manhours }}</div>
               {% endif %}
               
               <a href="{{ product.url }}" style="color: inherit; text-decoration: none;">
@@ -63,7 +64,7 @@
               
               {%- assign manhours = product.metafields.custom.manhours -%}
               {% if manhours != blank %}
-                <div class="premium-product-manhours">Manhours: {{ manhours }}</div>
+                
               {% endif %}
               
               <div class="premium-product-price">
