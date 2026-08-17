@@ -10,7 +10,7 @@
 
 @media (min-width: 769px) {
   .tradition-collections-section {
-    padding: var(--vmi-section-py, 72px) 0;
+    padding: 72px 0  0px 0 !important;
   }
 }
 
