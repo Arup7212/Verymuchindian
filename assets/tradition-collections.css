@@ -115,7 +115,9 @@
 @media(max-width:768px) {
   .tc-trust-icon-wrapper{
     height:inherit;
+    margin: 0 auto 10px;
   }
+  
   .tc-trust-title {
     font-size: 16px;
     max-width:100%;
