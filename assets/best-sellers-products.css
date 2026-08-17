@@ -7,7 +7,9 @@
   box-sizing: border-box;
 }
 @media (max-width: 769px) {
-.best-sellers-section{}
+ .best-sellers-section{
+  padding-bottom:0;
+ }
 }
 
 @media (min-width: 769px) {
