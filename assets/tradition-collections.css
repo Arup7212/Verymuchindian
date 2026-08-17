@@ -134,7 +134,9 @@
   display:none;
  }
  .tc-trust-bar{
-  columns: 2;
+         display: flex;
+        flex-flow: wrap;
+        justify-content: center;
  }
 }
 
