@@ -2332,7 +2332,7 @@ button {
   .section-title{
     font-size:20px;
   }
-  .rc-cards-header-container:after{
+  .shopify-block.shopify-app-block .rc-cards-header-container:after{
     margin-bottom:0 !important;
   }
 }
