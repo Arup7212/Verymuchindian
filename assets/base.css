@@ -2333,6 +2333,6 @@ button {
     font-size:20px;
   }
   .rc-cards-header-container:after{
-    margin-bottom:0;
+    margin-bottom:0 !important;
   }
 }
