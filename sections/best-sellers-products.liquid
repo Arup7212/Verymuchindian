@@ -172,7 +172,8 @@
 
             <div class="bsp-info">
               {%- if section.settings.show_category and category_label != blank -%}
-                <div class="bsp-category">{{ category_label }}</div>
+                {% comment %} <div class="bsp-category">{{ category_label }}</div> {% endcomment %}
+                 <div class="bsp-manhours-badge">Manhours: <strong>{{ manhours_val }}</strong></div>
               {%- endif -%}
 
               <a href="{{ product.url }}" style="text-decoration: none; color: inherit;">
@@ -184,7 +185,7 @@
               </p>
 
               {%- if manhours_val != blank -%}
-                <div class="bsp-manhours-badge">Manhours: <strong>{{ manhours_val }}</strong></div>
+                
               {%- elsif block.settings.manhours != blank -%}
                 <div class="bsp-manhours-badge">Manhours: <strong>{{ block.settings.manhours }}</strong></div>
               {%- else -%}
