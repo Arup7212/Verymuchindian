@@ -184,7 +184,7 @@
               </p>
 
               {%- if manhours_val != blank -%}
-                <div class="bsp-manhours-badge">Manhours: <strong>{{ manhours_val }}</strong></div>
+                {% comment %} <div class="bsp-manhours-badge">Manhours: <strong>{{ manhours_val }}</strong></div> {% endcomment %}
               {%- elsif block.settings.manhours != blank -%}
                 <div class="bsp-manhours-badge">Manhours: <strong>{{ block.settings.manhours }}</strong></div>
               {%- else -%}
