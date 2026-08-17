@@ -1043,7 +1043,7 @@
         "subtitle": "OUR PROMISE TO THE ARTISANS",
         "left_image": "shopify://shop_images/Group_354.png",
         "small_heading": "Celebrating India's Craftsmanship",
-        "mission": "<p>At Very Much Indian, we revive traditional weaves and empower artisans, ensuring every piece tells a story and sustains a legacy. When you choose us, you support the hands that create, the communities that thrive, and the heritage that endures.</p>",
+        "mission": "<p><br/>At Very Much Indian, we revive traditional weaves and empower artisans, ensuring every piece tells a story and sustains a legacy. When you choose us, you support the hands that create, the communities that thrive, and the heritage that endures. At Very Much Indian, we revive traditional weaves and empower artisans, ensuring every piece tells a story and sustains a legacy. When you choose us, you support the hands that create, the communities that thrive, and the heritage that endures.<br/><br/></p>",
         "card_bg_color": "#f4efe6",
         "text_color": "#1e354d"
       }
@@ -1671,10 +1671,10 @@
             "show_cart_icon": true,
             "shuffle_videos": false,
             "card_aspect_ratio": "9/16",
-            "section_bg_color": "transparent",
+            "section_bg_color": "rgba(0,0,0,0)",
             "card_hover_color": "#000000",
             "btn_bg_color": "#000000",
-            "btn_text_color": "#FFFFFF",
+            "btn_text_color": "#ffffff",
             "btn_border_color": "#000000",
             "margin_top": 20,
             "margin_bottom": 20,
