@@ -1650,6 +1650,41 @@
     },
     "178582077294cc6d67": {
       "type": "_blocks",
+      "blocks": {
+        "reelcart_reel_cards_x4t6UR": {
+          "type": "shopify://apps/reelcart/blocks/reel-cards/019bd63f-c7d3-75e1-874e-9ea24a028f0f",
+          "settings": {
+            "heading": "<h2>Celeb's Choice</h2>",
+            "heading_color": "#000000",
+            "sub_heading": "<p>Experience our products through stories</p>",
+            "sub_heading_color": "#666666",
+            "columns": 4,
+            "grid_gap": 16,
+            "card_border_radius": 20,
+            "autoplay_videos": true,
+            "show_video_title": true,
+            "show_ribbon": true,
+            "show_details_button": true,
+            "show_shop_now": true,
+            "show_product_img": false,
+            "show_product_box": true,
+            "show_cart_icon": true,
+            "shuffle_videos": false,
+            "card_aspect_ratio": "9/16",
+            "section_bg_color": "transparent",
+            "card_hover_color": "#000000",
+            "btn_bg_color": "#000000",
+            "btn_text_color": "#FFFFFF",
+            "btn_border_color": "#000000",
+            "margin_top": 20,
+            "margin_bottom": 20,
+            "custom_css": ""
+          }
+        }
+      },
+      "block_order": [
+        "reelcart_reel_cards_x4t6UR"
+      ],
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
