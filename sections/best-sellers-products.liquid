@@ -98,9 +98,9 @@
                 <p class="bsp-product-subtitle">{{ subtitle_text }}</p>
               {%- endif -%}
 
-              {%- if manhours_text != blank -%}
+              {% comment %} {%- if manhours_text != blank -%}
                 <div class="bsp-manhours-badge">Manhours: <strong>{{ manhours_text }}</strong></div>
-              {%- endif -%}
+              {%- endif -%} {% endcomment %}
 
               <div class="bsp-price-box">
                 <span class="bsp-price">{{ price_text }}</span>
