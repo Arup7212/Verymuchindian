@@ -122,6 +122,9 @@
     flex-direction: inherit;  
     height:89px;
  }
+ .tc-trust-item:after{
+  display:none;
+ }
  .tc-trust-bar{
   columns: 2;
  }
