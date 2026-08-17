@@ -27,8 +27,11 @@
   }
 }
 @media (max-width: 769px) {
- .shop-by-price-section{ padding-top:0; }
-     padding-bottom: 0;
+ .shop-by-price-section{
+   padding-top:0; 
+   padding-bottom: 0;
+  }
+    
 }
 /* Header */
 .sbp-header {
