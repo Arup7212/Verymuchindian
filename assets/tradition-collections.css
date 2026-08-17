@@ -117,9 +117,10 @@
     font-size: 16px;
   }
   .tc-trust-item {
-  flex: 1;
-  display: block;
-  flex-direction: inherit;  
+    flex: 1;
+    display: block;
+    flex-direction: inherit;  
+    height:89px;
  }
  .tc-trust-bar{
   columns: 2;
