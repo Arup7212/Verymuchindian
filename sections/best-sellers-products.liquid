@@ -26,6 +26,7 @@
   "
 >
   <div class="vmi-container">
+    <div class="bsp_title_view">
     <div class="bsp-header-bar">
       <div class="bsp-title-wrapper">
         <h2 class="section-title">{{ section.settings.heading | default: 'Best Sellers' }}</h2>
@@ -42,7 +43,7 @@
         </a>
       {%- endif -%}
     </div>
-
+  </div>
     <div class="bsp-grid">
       {%- if custom_product_blocks.size > 0 -%}
         {%- for block in custom_product_blocks limit: products_limit -%}
