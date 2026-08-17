@@ -16,7 +16,9 @@
   .celebs-choice-section {
     padding-top: var(--vmi-section-py-mobile, 40px);
     padding-bottom: var(--vmi-section-py-mobile, 40px);
+    margin-top:0;
   }
+  
 }
 
 /* Header Styles */
