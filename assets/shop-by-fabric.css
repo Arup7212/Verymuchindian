@@ -311,6 +311,6 @@
 
 @media (max-width: 1025px) {
   .shop-by-fabric-section{
-
+    padding-bottom:0;
   }
 }
