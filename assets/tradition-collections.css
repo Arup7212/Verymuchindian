@@ -120,9 +120,10 @@
   .tc-trust-item {
     flex: 1;
     display: block;
-    flex-direction: inherit;  
-    
+    flex-direction: inherit;     
+     margin-bottom:30px;
  }
+
  
  .tc-trust-item:after{
   display:none;
