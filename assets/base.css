@@ -2330,6 +2330,11 @@ button {
 
 @media(max-width:768px) {
 
+  .rcc-prod-name{
+        font-family: 'Jost', var(--vmi-font-body);
+    font-weight: normal !important;
+  }
+
   .reelcart-block-AbHFnNndlRUhQTTUyV__reelcart_reel_cards_qXKhCc .rcc-buy-btn {
     color: #ffffff !important;
     background: transparent !important;
