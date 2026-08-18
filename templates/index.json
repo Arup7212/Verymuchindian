@@ -1353,7 +1353,7 @@
           "type": "shopify://apps/reelcart/blocks/reel-cards/019bd63f-c7d3-75e1-874e-9ea24a028f0f",
           "settings": {
             "heading": "<h2>Celeb's Choice</h2>",
-            "heading_color": "#000000",
+            "heading_color": "#35336F",
             "sub_heading": "<p>Experience our products through stories</p>",
             "sub_heading_color": "#666666",
             "columns": 4,
