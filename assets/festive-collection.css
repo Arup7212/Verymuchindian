@@ -287,6 +287,12 @@
 .fc-hover-subtitle{
   font-size: 11px;
 }
+.fc-shop-button .fc-shop-button-icon {
+    display: none;
+}
+.fc-hover-tag{
+   font-size: 11px;
+}
 }
 @media (max-width: 480px) {
   .fc-title {
