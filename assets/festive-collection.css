@@ -284,6 +284,10 @@
   }
 }
 @media (max-width: 1024px) {
+  .fc-hover-overlay{
+    left:0;
+    right:0;
+  }
   .fc-hover-title{
     font-size: 9px;
   }
