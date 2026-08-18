@@ -334,6 +334,7 @@
   }
 
   .content-title {
+    margin-bottom: 10px;
     font-size: 22px;
   }
   .content-title br{ display:none;}
