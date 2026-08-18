@@ -192,17 +192,13 @@
                 <div class="bsp-manhours-badge">Manhours: <strong>450hrs</strong></div>
               {%- endif -%}
 
-            <div class="bsp-price-box">
-  <span class="bsp-price">{{ price_text | money_without_trailing_zeros }}</span>
-
-  {%- if compare_price_text != blank -%}
-    <span class="bsp-compare-price">{{ compare_price_text | money_without_trailing_zeros }}</span>
-  {%- endif -%}
-
-  {%- if save_text != blank -%}
-    <span class="bsp-save-tag">{{ save_text }}</span>
-  {%- endif -%}
-</div>
+              <div class="bsp-price-box">
+                <span class="bsp-price">{{ product.price | money }}</span>
+                {%- if product.compare_at_price > product.price -%}
+                  <span class="bsp-compare-price">{{ product.compare_at_price | money }}</span>
+                  <span class="bsp-save-tag">Save {{ savings_percent }}%</span>
+                {%- endif -%}
+              </div>
 
               <div class="bsp-add-to-cart-wrapper" style="margin-top: 15px;">
                 {%- if product.available -%}
