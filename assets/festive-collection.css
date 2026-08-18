@@ -293,7 +293,9 @@
 .fc-hover-tag{
    font-size: 11px;
 }
-
+.fc-shop-button{
+  font-size:10px;
+}
 }
 @media (max-width: 480px) {
   .fc-title {
