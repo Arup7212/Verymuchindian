@@ -318,6 +318,9 @@
 
 /* Responsive */
 @media (max-width: 991px) {
+  .dynamic-btn {
+    padding: 8px 28px;
+    font-size: 11px;}
   .slider-dots{
     bottom:1px;
   }
