@@ -1794,6 +1794,28 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
+    },
+    "shark_tank_banner_VzrC8T": {
+      "type": "shark-tank-banner",
+      "name": "Shark Tank Banner",
+      "settings": {
+        "bg_color": "#0fb1c8",
+        "brand_color": "#d81b83",
+        "heading_line1": "Proud Moment For",
+        "heading_brand": "Very Much Indian",
+        "heading_line2": "& Traditional Weavers",
+        "description": "Very Much Indian was featured on for reviving the Shark Tank india heritage of Indian handlooms and empowering local weavers. Our journey is a tribute to the beauty of Indian craftsmanship, culture, and the timeless elegance of sarees cherished by millions of women.",
+        "endorsement_title": "Invested & Endorsed By",
+        "endorsement_name": "Namita Thapar",
+        "stat_1_val": "4.9/5",
+        "stat_1_label": "40K+ Reviews",
+        "stat_2_val": "50K+",
+        "stat_2_label": "Happy Customers",
+        "stat_3_val": "100%",
+        "stat_3_label": "Authentic",
+        "btn_text": "Shop Namita's Curated Collection",
+        "btn_link": ""
+      }
     }
   },
   "order": [
@@ -1820,6 +1842,7 @@
     "draped_with_love_pApC3D",
     "vmi_founder_story_jiCkpB",
     "journal_accordion_fX7GrC",
-    "in_the_press_pwFPrL"
+    "in_the_press_pwFPrL",
+    "shark_tank_banner_VzrC8T"
   ]
 }
