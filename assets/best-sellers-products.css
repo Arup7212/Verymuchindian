@@ -349,6 +349,17 @@
 }
 
 @media (max-width: 480px) {
+{
+    .bsp-header-bar {
+    flex-direction: row;
+    align-items: start;
+    gap: 12px;
+    justify-content:space-between;
+  }
+}
+}
+
+@media (max-width: 480px) {
   .bsp-title {
     font-size: 28px;
   }
@@ -375,9 +386,5 @@
     transform: translateX(3px);
   }
 
-  .bsp-header-bar {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
+
 }
