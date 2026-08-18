@@ -267,6 +267,9 @@ display: inline-block;
     border-radius: 24px;
 
 }
+.bsp-manhours-badge strong{
+  color:#f7941e;
+}
 
 .bsp-manhours-badge strong,
 .bsp-manhours-badge b {
