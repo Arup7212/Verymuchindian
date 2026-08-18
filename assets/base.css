@@ -2331,7 +2331,7 @@ button {
 @media(max-width:768px) {
 
   .rcc-prod-name{
-        font-family: 'Jost', var(--vmi-font-body);
+        font-family: 'Jost', var(--vmi-font-body) !important;
     font-weight: normal !important;
   }
 
