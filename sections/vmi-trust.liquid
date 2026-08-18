@@ -90,8 +90,11 @@
           {%- endif -%}
 
           {%- if section.settings.mission != blank -%}
-            <div class="vmi-trust__mission-text">
+            <div class="vmi-trust__mission-wrapper">
+              <div class="vmi-trust__mission-text" id="vmi-trust-mission-{{ section.id }}">
               {{ section.settings.mission }}
+              </div>
+              <button type="button" class="vmi-trust__read-more-btn" onclick="toggleVmiTrustText('{{ section.id }}')">Read More</button>
             </div>
           {%- endif -%}
         </div>
