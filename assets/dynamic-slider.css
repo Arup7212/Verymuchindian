@@ -336,6 +336,9 @@
   .content-title {
     font-size: 44px;
   }
+  .content-subtitle{
+    margin-bottom:10px;
+  }
 }
 
 @media (max-width: 767px) {
