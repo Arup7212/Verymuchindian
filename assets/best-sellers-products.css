@@ -316,7 +316,7 @@ display: inline-block;
 
 @media (min-width: 641px) {
   .best-sellers-section {
-    padding: 47px 0 80px 0;
+    padding: 47px 0 0px 0;
   }
 
   .bsp-header-bar {
