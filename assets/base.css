@@ -2334,5 +2334,6 @@ button {
   }
   .shopify-block.shopify-app-block .rc-cards-header-container:after{
     margin-bottom:0 !important;
+    margin-top:0 !important;
   }
 }
