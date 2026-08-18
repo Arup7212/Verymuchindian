@@ -811,6 +811,32 @@
       track.addEventListener('touchstart', onPointerDown, { passive: true });
       window.addEventListener('touchmove', onPointerMove, { passive: true });
       window.addEventListener('touchend', onPointerUp);
+      // Auto Slide Logic
+      let autoSlideTimer = null;
+      const autoSlideDelay = 3000; // 3 seconds
+
+      function startAutoSlide() {
+        stopAutoSlide();
+        autoSlideTimer = setInterval(() => {
+          goToSlide(currentIndex + 1, true);
+        }, autoSlideDelay);
+      }
+
+      function stopAutoSlide() {
+        if (autoSlideTimer) {
+          clearInterval(autoSlideTimer);
+          autoSlideTimer = null;
+        }
+      }
+
+      // Pause auto-sliding on hover/touch
+      track.addEventListener('mouseenter', stopAutoSlide);
+      track.addEventListener('mouseleave', startAutoSlide);
+      track.addEventListener('touchstart', stopAutoSlide, { passive: true });
+      track.addEventListener('touchend', startAutoSlide);
+
+      // Start the auto slide initially
+      startAutoSlide();
     }
 
     if (document.readyState === 'loading') {
