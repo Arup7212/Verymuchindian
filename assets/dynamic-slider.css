@@ -334,8 +334,9 @@
   }
 
   .content-title {
-    font-size: 44px;
+    font-size: 22px;
   }
+  .content-title br{ display:none;}
   .content-subtitle{
     margin-bottom:10px;
   }
