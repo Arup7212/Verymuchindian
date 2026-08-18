@@ -285,8 +285,8 @@
 }
 @media (max-width: 1024px) {
   .fc-hover-overlay{
-    left:0;
-    right:0;
+    left:0 !important;
+    right:0 !important;
   }
   .fc-hover-title{
     font-size: 9px;
