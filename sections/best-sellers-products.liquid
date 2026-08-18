@@ -102,15 +102,17 @@
                 <div class="bsp-manhours-badge">Manhours: <strong>{{ manhours_text }}</strong></div>
               {%- endif -%}
 
-              <div class="bsp-price-box">
-                <span class="bsp-price">{{ price_text }}</span>
-                {%- if compare_price_text != blank -%}
-                  <span class="bsp-compare-price">{{ compare_price_text }}</span>
-                {%- endif -%}
-                {%- if save_text != blank -%}
-                  <span class="bsp-save-tag">{{ save_text }}</span>
-                {%- endif -%}
-              </div>
+             <div class="bsp-price-box">
+  <span class="bsp-price">{{ price_text | money_without_trailing_zeros }}</span>
+
+  {%- if compare_price_text != blank -%}
+    <span class="bsp-compare-price">{{ compare_price_text | money_without_trailing_zeros }}</span>
+  {%- endif -%}
+
+  {%- if save_text != blank -%}
+    <span class="bsp-save-tag">{{ save_text }}</span>
+  {%- endif -%}
+</div>
 
               <div class="bsp-add-to-cart-wrapper" style="margin-top: 15px;">
                 <a href="{{ product_url }}" class="bsp-add-to-cart-btn" style="display: block; width: 100%; padding: 10px; background-color: #F7941E; color: #1E2447; text-align: center; text-decoration: none; border-radius: 4px; font-weight: bold; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">View Options</a>
