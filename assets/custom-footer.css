@@ -213,3 +213,10 @@
 .footer-track-order:hover {
   opacity: 0.8;
 }
+
+
+@media (max-width:768px){
+  .rc-cards-block-heading h2 {
+    margin-bottom: 0 !important;
+}
+}
