@@ -144,6 +144,9 @@
         max-width: 300px;
         flex: inherit;
  }
+     .tc-trust-title {
+        font-size: 11px;
+    }
 }
 
 
