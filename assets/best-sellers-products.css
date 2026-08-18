@@ -360,6 +360,9 @@ display: inline-block;
     margin-bottom: 40px;
   }
    .bsp-header-bar .section-title{ margin-bottom:0;}
+   .bsp-product-subtitle{
+    display:none;
+   }
 
 }
 
