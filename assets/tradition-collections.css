@@ -138,6 +138,12 @@
         flex-flow: wrap;
         justify-content: center;
  }
+ .tc-trust-item{
+          padding: 0 6px;
+        width: 102px !important;
+        max-width: 300px;
+        flex: inherit;
+ }
 }
 
 
