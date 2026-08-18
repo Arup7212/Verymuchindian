@@ -318,6 +318,9 @@
 
 /* Responsive */
 @media (max-width: 991px) {
+  .slider-dots{
+    bottom:1px;
+  }
   .split-video-col {
     width: 100%;
     height: 500px;
