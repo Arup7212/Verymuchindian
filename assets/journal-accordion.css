@@ -263,6 +263,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     margin-bottom: 0;
+     font-family: 'Jost', sans-serif !important;
   }
 
   .journal-item:not(.active) .journal-item-desc {
