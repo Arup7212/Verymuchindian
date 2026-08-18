@@ -350,6 +350,7 @@
   .content-divider{
     margin-bottom:5px;
   }
+  .content-title em{ margin:0 5px;}
   .content-desc {font-size:12px;         margin-bottom: 12px;}
 }
 
