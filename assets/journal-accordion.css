@@ -1,7 +1,13 @@
 .journal-accordion-section {
-  padding: 60px 0 0;
+  padding: var(--vmi-section-py-mobile, 40px) 0;
   background-color: #fff;
   overflow: hidden;
+}
+
+@media (min-width: 769px) {
+  .journal-accordion-section {
+    padding: var(--vmi-section-py, 72px) 0;
+  }
 }
 
 .journal-header {
@@ -33,9 +39,23 @@
   margin: 20px auto 0;
 }
 
-.journal-accordion-wrapper {
-  max-width: 1200px;
+.journal-accordion-outer {
+  max-width: var(--vmi-max-w, 1440px);
   margin: 0 auto;
+  padding: 0 var(--vmi-px-mobile, 20px);
+  box-sizing: border-box;
+}
+
+@media (min-width: 769px) {
+  .journal-accordion-outer {
+    padding: 0 var(--vmi-px, 60px);
+  }
+}
+
+.journal-accordion-wrapper {
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
   display: flex;
   height: 550px;
   border-radius: 16px;
@@ -203,7 +223,9 @@
 }
 
 @media (max-width: 767px) {
-
+.journal-accordion-section{
+  padding-bottom:0;
+}
   /* On mobile, stack them vertically or make a horizontal scroll */
   .journal-accordion-wrapper {
     flex-direction: column;
