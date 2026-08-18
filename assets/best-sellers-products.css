@@ -348,15 +348,15 @@
   }
 }
 
-@media (max-width: 480px) {
-{
+@media (max-width: 768px) {
+
     .bsp-header-bar {
-    flex-direction: row;
+    display: flex;
     align-items: start;
-    gap: 12px;
-    justify-content:space-between;
+    justify-content: space-between;
+    margin-bottom: 40px;
   }
-}
+
 }
 
 @media (max-width: 480px) {
