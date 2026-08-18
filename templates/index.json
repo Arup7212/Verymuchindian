@@ -1052,7 +1052,7 @@
       "name": "Shark Tank Banner",
       "settings": {
         "image_desktop": "shopify://shop_images/Desktop_jpg.jpg",
-        "image_mobile": "shopify://shop_images/Mobile_jpg.jpg",
+        "image_mobile": "shopify://shop_images/Mobile_Top_jpg.jpg",
         "bg_color": "#0fb1c8",
         "brand_color": "#d81b83",
         "heading_line1": "Proud Moment For",
