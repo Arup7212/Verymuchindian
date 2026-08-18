@@ -2333,7 +2333,8 @@ button {
 }
 @media(min-width:769px) {
 .rcc-buy-btn{
-  text-align:left;
+  text-align:left !important;
+  background:transparent;
 }
 }
 @media(max-width:768px) {
