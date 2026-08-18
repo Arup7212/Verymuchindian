@@ -344,6 +344,7 @@
   .content-divider{
     margin-bottom:5px;
   }
+  .content-desc {font-size:12px;}
 }
 
 @media (max-width: 767px) {
