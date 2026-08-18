@@ -70,9 +70,11 @@
               
               <div class="premium-product-price">
                 {% if product.compare_at_price > product.price %}
-                  <s>{{ product.compare_at_price | money }}</s> 
+                  {% comment %} <s>{{ product.compare_at_price | money }}</s>  {% endcomment %}
+                  <s>{{ product.compare_at_price | money_without_trailing_zeros }}</s>
                 {% endif %}
-                {{ product.price | money }}
+                {% comment %} {{ product.price | money }} {% endcomment %}
+                 {{ product.price | money_without_trailing_zeros }}
               </div>
               
               <div class="premium-add-to-cart-wrapper" style="margin-top: 15px; width: 100%;">
