@@ -341,6 +341,9 @@
   .content-subtitle{
     margin-bottom:10px;
   }
+  .content-divider{
+    margin-bottom:5px;
+  }
 }
 
 @media (max-width: 767px) {
