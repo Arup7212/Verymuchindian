@@ -2331,7 +2331,11 @@ button {
 .premium-product-title{
       font-family: Jost, sans-serif !important;
 }
-
+@media(min-width:769px) {
+.rcc-buy-btn{
+  text-align:left;
+}
+}
 @media(max-width:768px) {
   .section .reelcart-playlist-container{
     padding-left:0 !important;
