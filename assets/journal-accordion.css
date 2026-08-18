@@ -135,12 +135,12 @@
   letter-spacing: 1px;
   margin-bottom: 10px;
   font-weight: 600;
-  font-family: sans-serif;
+  font-family: 'Jost', sans-serif !important;
   color: #e0e0e0;
 }
 
 .journal-item-title {
-  font-family: serif;
+ font-family: 'Jost', sans-serif !important;
   font-size: 32px;
   margin: 0 0 15px;
   line-height: 1.2;
