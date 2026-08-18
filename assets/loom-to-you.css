@@ -215,6 +215,9 @@
 
 /* â”€â”€â”€ MOBILE: Horizontal Swipe Slider â”€â”€â”€ */
 @media screen and (max-width: 989px) {
+  .loom__text-content{
+    margin-top: 10px;
+  }
   .loom__timeline-wrapper {
     padding-top: 0;
   }
