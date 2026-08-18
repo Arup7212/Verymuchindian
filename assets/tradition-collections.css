@@ -342,6 +342,9 @@
   .tradition-collections-section{
     padding-bottom:0 !important;
   }
+  .tc-trust-icon{
+    height:52px;
+  }
 }
 
 @media (max-width: 480px) {
