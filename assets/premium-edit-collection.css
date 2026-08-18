@@ -78,6 +78,11 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
+@media (max-width: 1024px) {
+.premium-product-subtitle{
+  display:none;
+}
+}
 
 /* Product Card */
 .premium-product-card {
