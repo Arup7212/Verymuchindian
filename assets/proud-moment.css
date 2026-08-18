@@ -227,7 +227,7 @@
   position: relative;
 }
 
-.pm-stat-item + .pm-stat-item::before {
+.pm-stat-item+.pm-stat-item::before {
   content: '';
   position: absolute;
   left: 0;
@@ -364,10 +364,21 @@
     gap: 28px;
   }
 
-  .pm-heading-pre { font-size: 24px; }
-  .pm-heading-main { font-size: 38px; }
-  .pm-heading-amp { font-size: 24px; }
-  .pm-heading-line2 { font-size: 24px; }
+  .pm-heading-pre {
+    font-size: 24px;
+  }
+
+  .pm-heading-main {
+    font-size: 38px;
+  }
+
+  .pm-heading-amp {
+    font-size: 24px;
+  }
+
+  .pm-heading-line2 {
+    font-size: 24px;
+  }
 }
 
 @media (min-width: 1025px) {
@@ -377,19 +388,38 @@
     padding: 0 var(--vmi-px, 60px);
   }
 
-  .pm-images-col { gap: 24px; }
-  .pm-heading-pre { font-size: 30px; }
-  .pm-heading-main { font-size: 46px; }
-  .pm-heading-amp { font-size: 30px; }
-  .pm-heading-line2 { font-size: 30px; }
-  .pm-stat-value { font-size: 22px; }
+  .pm-images-col {
+    gap: 24px;
+  }
+
+  .pm-heading-pre {
+    font-size: 30px;
+  }
+
+  .pm-heading-main {
+    font-size: 46px;
+  }
+
+  .pm-heading-amp {
+    font-size: 30px;
+  }
+
+  .pm-heading-line2 {
+    font-size: 30px;
+  }
+
+  .pm-stat-value {
+    font-size: 22px;
+  }
 }
 
 /* ═══════════════════════════════════════
    SMALL MOBILE (480px and below)
 ═══════════════════════════════════════ */
 @media (max-width: 480px) {
-  .proud-moment-section { padding: var(--vmi-section-py-mobile, 40px) 0; }
+  .proud-moment-section {
+    padding: var(--vmi-section-py-mobile, 40px) 0;
+  }
 
   .pm-container {
     padding: 0 16px;
@@ -397,18 +427,43 @@
   }
 
   .pm-heading-pre,
-  .pm-heading-line2 { font-size: 18px; }
+  .pm-heading-line2 {
+    font-size: 18px;
+  }
 
-  .pm-heading-main { font-size: 26px; }
-  .pm-heading-amp { font-size: 18px; }
+  .pm-heading-main {
+    font-size: 26px;
+  }
 
-  .pm-endorsement-card { padding: 12px 14px; gap: 12px; }
-  .pm-endorsement-name { font-size: 16px; }
-  .pm-stats-card { padding: 14px 12px; }
-  .pm-stat-value { font-size: 16px; }
-  .pm-stat-label { font-size: 10px; }
+  .pm-heading-amp {
+    font-size: 18px;
+  }
 
-  .pm-description { font-size: 14px; max-width: 100%; }
+  .pm-endorsement-card {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+
+  .pm-endorsement-name {
+    font-size: 16px;
+  }
+
+  .pm-stats-card {
+    padding: 14px 12px;
+  }
+
+  .pm-stat-value {
+    font-size: 16px;
+  }
+
+  .pm-stat-label {
+    font-size: 10px;
+  }
+
+  .pm-description {
+    font-size: 14px;
+    max-width: 100%;
+  }
 
   .pm-cta-button {
     font-size: 14px;

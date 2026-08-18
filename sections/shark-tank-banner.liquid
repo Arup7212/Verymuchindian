@@ -1,0 +1,296 @@
+{{ 'shark-tank-banner.css' | asset_url | stylesheet_tag }}
+
+{%- assign bg_color = section.settings.bg_color | default: '#0fb1c8' -%}
+{%- assign bg_color_r = bg_color | color_extract: 'red' -%}
+{%- assign bg_color_g = bg_color | color_extract: 'green' -%}
+{%- assign bg_color_b = bg_color | color_extract: 'blue' -%}
+{%- assign bg_color_rgb = bg_color_r | append: ', ' | append: bg_color_g | append: ', ' | append: bg_color_b -%}
+
+<div class="stb-section" style="--bg-color: {{ bg_color }}; --bg-rgb: {{ bg_color_rgb }}; --brand-color: {{ section.settings.brand_color | default: '#d81b83' }};">
+  
+  <div class="stb-bg-image">
+    {%- if section.settings.image_desktop != blank -%}
+      <img src="{{ section.settings.image_desktop | img_url: 'master' }}" alt="{{ section.settings.image_desktop.alt | default: 'Desktop Image' }}" class="stb-img-desktop" loading="lazy">
+    {%- else -%}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'stb-img-desktop placeholder-svg' }}
+    {%- endif -%}
+
+    {%- if section.settings.image_mobile != blank -%}
+      <img src="{{ section.settings.image_mobile | img_url: 'master' }}" alt="{{ section.settings.image_mobile.alt | default: 'Mobile Image' }}" class="stb-img-mobile" loading="lazy">
+    {%- else -%}
+      {{ 'lifestyle-2' | placeholder_svg_tag: 'stb-img-mobile placeholder-svg' }}
+    {%- endif -%}
+  </div>
+
+  <div class="stb-content-wrapper">
+    <div class="stb-content-inner">
+      
+      <h2 class="stb-heading">
+        <span class="stb-heading-1">{{ section.settings.heading_line1 }}</span><br>
+        <span class="stb-heading-2">{{ section.settings.heading_brand }}</span>
+        <span class="stb-heading-3">{{ section.settings.heading_line2 }}</span>
+      </h2>
+
+      <p class="stb-desc">{{ section.settings.description }}</p>
+
+      <div class="stb-banners">
+        <div class="stb-banner stb-endorsement">
+          <div class="stb-icon">
+             {%- if section.settings.endorsement_icon != blank -%}
+              {{ section.settings.endorsement_icon | image_url: width: 100 | image_tag: loading: 'lazy', alt: section.settings.endorsement_label }}
+            {%- else -%}
+              <!-- Handshake Icon -->
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 36l6-6 10 4 12-10 8 2" stroke="#1a3a5c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 42c4 4 10 6 16 4l14-8c2-1 3-4 1-6-1-1-3-2-5-1l-6 3" stroke="#1a3a5c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 28l4 12" stroke="#1a3a5c" stroke-width="3" stroke-linecap="round"/>
+                <path d="M46 18l6 8-6 4" stroke="#1a3a5c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="36" cy="18" r="4" stroke="#1a3a5c" stroke-width="3"/>
+                <path d="M30 26c1-4 4-8 10-8" stroke="#1a3a5c" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            {%- endif -%}
+          </div>
+          <div class="stb-text">
+            <div class="stb-end-title">{{ section.settings.endorsement_title }}</div>
+            <div class="stb-end-name">{{ section.settings.endorsement_name }}</div>
+          </div>
+        </div>
+
+        <div class="stb-banner stb-stats">
+          <div class="stb-stat">
+            <div class="stb-stat-icon">
+              {%- if section.settings.stat_1_icon != blank -%}
+                {{ section.settings.stat_1_icon | image_url: width: 60 | image_tag: loading: 'lazy', alt: section.settings.stat_1_label }}
+              {%- else -%}
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                </svg>
+              {%- endif -%}
+            </div>
+            <span class="stb-stat-val">{{ section.settings.stat_1_val }}</span>
+            <span class="stb-stat-label">{{ section.settings.stat_1_label }}</span>
+          </div>
+          
+          <div class="stb-stat-divider"></div>
+          
+          <div class="stb-stat">
+            <div class="stb-stat-icon">
+              {%- if section.settings.stat_2_icon != blank -%}
+                {{ section.settings.stat_2_icon | image_url: width: 60 | image_tag: loading: 'lazy', alt: section.settings.stat_2_label }}
+              {%- else -%}
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 11C17.66 11 18.99 9.66 18.99 8C18.99 6.34 17.66 5 16 5C14.34 5 13 6.34 13 8C13 9.66 14.34 11 16 11ZM8 11C9.66 11 10.99 9.66 10.99 8C10.99 6.34 9.66 5 8 5C6.34 5 5 6.34 5 8C5 9.66 6.34 11 8 11ZM8 13C5.33 13 0 14.34 0 17V20H16V17C16 14.34 10.67 13 8 13ZM24 17C24 14.65 19.82 13.25 17.31 13.06C18.37 14.07 19 15.42 19 17V20H24V17Z"/>
+                </svg>
+              {%- endif -%}
+            </div>
+            <span class="stb-stat-val">{{ section.settings.stat_2_val }}</span>
+            <span class="stb-stat-label">{{ section.settings.stat_2_label }}</span>
+          </div>
+          
+          <div class="stb-stat-divider"></div>
+          
+          <div class="stb-stat">
+            <div class="stb-stat-icon">
+              {%- if section.settings.stat_3_icon != blank -%}
+                {{ section.settings.stat_3_icon | image_url: width: 60 | image_tag: loading: 'lazy', alt: section.settings.stat_3_label }}
+              {%- else -%}
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1ZM12 7C13.66 7 15 8.34 15 10C15 11.66 13.66 13 12 13C10.34 13 9 11.66 9 10C9 8.34 10.34 7 12 7ZM12 19.2C9.5 19.2 7.29 17.92 6 15.98C6.03 13.99 10 12.9 12 12.9C13.99 12.9 17.97 13.99 18 15.98C16.71 17.92 14.5 19.2 12 19.2Z"/>
+                </svg>
+              {%- endif -%}
+            </div>
+            <span class="stb-stat-val">{{ section.settings.stat_3_val }}</span>
+            <span class="stb-stat-label">{{ section.settings.stat_3_label }}</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="{{ section.settings.btn_link }}" class="stb-btn">
+        {{ section.settings.btn_text }}
+        <span class="stb-btn-icon">
+          {%- if section.settings.btn_icon != blank -%}
+            {{ section.settings.btn_icon | image_url: width: 40 | image_tag: loading: 'lazy', alt: section.settings.btn_text }}
+          {%- else -%}
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2"/>
+              <path d="M10 8L14 12L10 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          {%- endif -%}
+        </span>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Shark Tank Banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Overlay Color",
+      "default": "#0fb1c8"
+    },
+    {
+      "type": "color",
+      "id": "brand_color",
+      "label": "Brand Highlight Color",
+      "default": "#d81b83"
+    },
+    {
+      "type": "header",
+      "content": "Text Content"
+    },
+    {
+      "type": "text",
+      "id": "heading_line1",
+      "label": "Heading Line 1",
+      "default": "Proud Moment For"
+    },
+    {
+      "type": "text",
+      "id": "heading_brand",
+      "label": "Brand Name",
+      "default": "Very Much Indian"
+    },
+    {
+      "type": "text",
+      "id": "heading_line2",
+      "label": "Heading Line 2",
+      "default": "& Traditional Weavers"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Very Much Indian was featured on for reviving the Shark Tank india heritage of Indian handlooms and empowering local weavers. Our journey is a tribute to the beauty of Indian craftsmanship, culture, and the timeless elegance of sarees cherished by millions of women."
+    },
+    {
+      "type": "header",
+      "content": "Endorsement Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "endorsement_icon",
+      "label": "Endorsement Custom Icon (PNG/SVG)",
+      "info": "Upload custom icon image (PNG/SVG). If left empty, default SVG icon is displayed."
+    },
+    {
+      "type": "text",
+      "id": "endorsement_title",
+      "label": "Title",
+      "default": "Invested & Endorsed By"
+    },
+    {
+      "type": "text",
+      "id": "endorsement_name",
+      "label": "Name",
+      "default": "Namita Thapar"
+    },
+    {
+      "type": "header",
+      "content": "Stats Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "stat_1_icon",
+      "label": "Stat 1 Custom Icon (PNG/SVG)",
+      "info": "Upload custom icon image for Stat 1."
+    },
+    {
+      "type": "text",
+      "id": "stat_1_val",
+      "label": "Stat 1 Value",
+      "default": "4.9/5"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_label",
+      "label": "Stat 1 Label",
+      "default": "40K+ Reviews"
+    },
+    {
+      "type": "image_picker",
+      "id": "stat_2_icon",
+      "label": "Stat 2 Custom Icon (PNG/SVG)",
+      "info": "Upload custom icon image for Stat 2."
+    },
+    {
+      "type": "text",
+      "id": "stat_2_val",
+      "label": "Stat 2 Value",
+      "default": "50K+"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_label",
+      "label": "Stat 2 Label",
+      "default": "Happy Customers"
+    },
+    {
+      "type": "image_picker",
+      "id": "stat_3_icon",
+      "label": "Stat 3 Custom Icon (PNG/SVG)",
+      "info": "Upload custom icon image for Stat 3."
+    },
+    {
+      "type": "text",
+      "id": "stat_3_val",
+      "label": "Stat 3 Value",
+      "default": "100%"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_label",
+      "label": "Stat 3 Label",
+      "default": "Authentic"
+    },
+    {
+      "type": "header",
+      "content": "Call to Action"
+    },
+    {
+      "type": "image_picker",
+      "id": "btn_icon",
+      "label": "Button Custom Arrow/Icon (PNG/SVG)",
+      "info": "Upload custom icon image for CTA button."
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "Shop Namita's Curated Collection"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shark Tank Banner"
+    }
+  ]
+}
+{% endschema %}
