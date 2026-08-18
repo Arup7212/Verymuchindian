@@ -284,7 +284,9 @@
   }
 }
 @media (max-width: 1024px) {
-
+.fc-hover-subtitle{
+  font-size: 11px;
+}
 }
 @media (max-width: 480px) {
   .fc-title {
