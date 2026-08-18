@@ -363,6 +363,9 @@ display: inline-block;
    .bsp-product-subtitle{
     display:none;
    }
+   .bsp-add-to-cart-wrapper{
+    margin-top:0 !important;
+   }
 
 }
 
