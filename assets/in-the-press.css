@@ -111,6 +111,9 @@
 }
 
 @media screen and (max-width: 480px) {
+  .itp__header{
+    margin-bottom:24px;
+  }
   .itp__logo-image {
     height: 34px;
   }
