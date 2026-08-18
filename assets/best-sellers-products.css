@@ -268,7 +268,7 @@ display: inline-block;
 
 }
 .bsp-manhours-badge strong{
-  color:#f7941e;
+  color:#f7941e !important;
 }
 
 .bsp-manhours-badge strong,
