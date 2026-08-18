@@ -1,22 +1,40 @@
-/* ══════════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    From The Loom To You Section Styles
-   ══════════════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 .loom-section {
-  padding: var(--padding-block-start, 60px) 0 var(--padding-block-end, 60px) 0;
+  padding-top: var(--padding-block-start, 52px);
+  padding-bottom: var(--padding-block-end, 52px);
   background-color: var(--background-color, #ffffff);
   overflow: hidden;
 }
 
-.loom__container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 60px 0 0;
+@media screen and (min-width: 769px) {
+  .loom-section {
+    padding-top: var(--padding-block-start, var(--vmi-section-py, 72px));
+    padding-bottom: var(--padding-block-end, var(--vmi-section-py, 72px));
+  }
 }
+
+.loom__container {
+  max-width: var(--vmi-max-w, 1440px);
+  margin: 0 auto;
+  padding: 0 var(--vmi-px-mobile, 20px);
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 769px) {
+  .loom__container {
+    padding: 0 var(--vmi-px, 40px);
+  }
+}
+  .loom__container {
+   padding:0;
+  }
 
 .loom__header {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -194,28 +212,67 @@
 }
 
 /* Responsive (Mobile-first min-width) */
-@media screen and (min-width: 481px) {
+
+/* â”€â”€â”€ MOBILE: Horizontal Swipe Slider â”€â”€â”€ */
+@media screen and (max-width: 989px) {
+  .loom__timeline-wrapper {
+    padding-top: 0;
+  }
+
+  .loom__grid {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+    gap: 16px;
+    padding: 0 20px 20px;
+    justify-content: flex-start;
+    /* hide timeline line on mobile */
+  }
+
+  .loom__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* hide the connector line on mobile */
+  .loom__item::after {
+    display: none !important;
+  }
+
   .loom__item {
-    flex: 0 0 calc(70vw - 20px);
+    flex: 0 0 72vw;
+    max-width: 320px;
+    scroll-snap-align: center;
+  }
+
+  .loom__media-container {
+    aspect-ratio: 9 / 14;
   }
 }
 
+/* â”€â”€â”€ DESKTOP: Timeline with gap between images â”€â”€â”€ */
 @media screen and (min-width: 990px) {
-  .loom-section {
-    padding-block: 70px;
-  }
-
   .loom__title {
     font-size: 42px;
+    margin-bottom: 40px;
   }
 
   .loom__grid {
     overflow-x: visible;
     justify-content: space-between;
-    gap: 0;
+    gap: 20px; /* gap between images on desktop */
+    padding: 0 var(--vmi-px, 60px);
   }
 
   .loom__item {
     flex: 1 1 0;
+    min-width: 0;
+  }
+
+  /* horizontal connector line respects gap */
+  .loom__item:not(:last-child)::after {
+    width: calc(100% + 20px);
   }
 }
