@@ -50,8 +50,8 @@
             </div>
            </product-card>
             <div class="premium-product-details">
-              {% if product.vendor != blank %}
-                {% comment %} <div class="premium-product-vendor">{{ product.vendor }}</div> {% endcomment %}
+              {%- assign manhours = product.metafields.custom.manhours -%}
+              {% if manhours != blank %}
                  <div class="premium-product-manhours">Manhours: {{ manhours }}</div>
               {% endif %}
               
@@ -65,11 +65,6 @@
               {%- endif -%}
               {% if subtitle != blank %}
                 <div class="premium-product-subtitle">{{ subtitle }}</div>
-              {% endif %}
-              
-              {%- assign manhours = product.metafields.custom.manhours -%}
-              {% if manhours != blank %}
-                
               {% endif %}
               
               <div class="premium-product-price">
