@@ -289,7 +289,7 @@
     right:0 !important;
   }
   .fc-hover-title{
-    font-size: 9px;
+    font-size: 9px !important;
   }
 .fc-hover-subtitle{
   font-size: 11px;
@@ -303,6 +303,7 @@
 }
 .fc-shop-button{
   font-size:10px;
+  padding:2px 5px; 
 }
 }
 @media (max-width: 480px) {
