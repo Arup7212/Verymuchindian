@@ -2328,6 +2328,10 @@ button {
   }
 }
 
+.premium-product-title{
+      font-family: Jost, sans-serif !important;
+}
+
 @media(max-width:768px) {
   .section .reelcart-playlist-container{
     padding-left:0 !important;
