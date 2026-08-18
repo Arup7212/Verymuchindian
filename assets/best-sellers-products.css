@@ -211,7 +211,7 @@
   flex-direction: column;
   flex-grow: 1;
   color: var(--vmi-navy);
-  gap: 10px;
+  gap: 5px;
 }
 
 /* Sub-header / Category Tag */
