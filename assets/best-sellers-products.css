@@ -379,7 +379,7 @@
   .bsp-view-all {
     position: static;
     transform: none;
-    margin-top: 8px;
+    margin-top: 0;
   }
 
   .bsp-view-all:hover {
