@@ -156,9 +156,9 @@
   color: #ffffff;
   margin: 0 0 6px;
   line-height: 1.25;
-  height: 2.5em;
+  height: 1.2em;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
