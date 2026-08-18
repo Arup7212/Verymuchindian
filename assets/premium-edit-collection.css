@@ -190,7 +190,7 @@
 
 @media (min-width: 768px) {
   .premium-product-manhours {
-    padding: 5px 20px;
+    padding: 0px;
     font-size: 0.75rem;
   }
 }
