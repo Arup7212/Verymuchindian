@@ -342,6 +342,7 @@
   .content-title {
     margin-bottom: 10px;
     font-size: 22px;
+    font-family: Jost, sans-serif;
   }
   .content-title br{ display:none;}
   .content-subtitle{
