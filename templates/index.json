@@ -1684,6 +1684,7 @@
       "name": "VMI Founder Story",
       "settings": {
         "enable_section": true,
+        "founder_logo_image": "shopify://shop_images/ChatGPT_Image_Aug_18_2026_04_56_52_PM.png",
         "logo_max_width": 240,
         "founder_name": "Slony",
         "subtitle": "THE FOUNDER'S JOURNEY",
