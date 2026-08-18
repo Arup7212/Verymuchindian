@@ -92,7 +92,7 @@
           {%- if section.settings.mission != blank -%}
             <div class="vmi-trust__mission-wrapper">
               <div class="vmi-trust__mission-text" id="vmi-trust-mission-{{ section.id }}">
-              {{ section.settings.mission }}
+                {{ section.settings.mission }}
               </div>
               <button type="button" class="vmi-trust__read-more-btn" onclick="toggleVmiTrustText('{{ section.id }}')">Read More</button>
             </div>
@@ -280,6 +280,38 @@
     margin-bottom: 0;
   }
 
+  .vmi-trust__mission-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vmi-trust__mission-text {
+    transition: all 0.3s ease;
+  }
+
+  .vmi-trust__read-more-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--vmi-trust-text, #1E354D);
+    font-family: 'Jost', var(--vmi-font-body, system-ui, sans-serif);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+    margin: 12px auto 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: opacity 0.2s ease;
+  }
+  
+  .vmi-trust__read-more-btn:hover {
+    opacity: 0.7;
+  }
+
   /* ════════════════════════════════
      RESPONSIVE
   ════════════════════════════════ */
@@ -331,9 +363,35 @@
     .vmi-trust__mission-text {
       font-size: 0.88rem;
       line-height: 1.72;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .vmi-trust__mission-text.is-expanded {
+      -webkit-line-clamp: unset;
+    }
+
+    .vmi-trust__read-more-btn {
+      display: inline-block;
     }
   }
 </style>
+
+<script>
+  function toggleVmiTrustText(sectionId) {
+    var textContainer = document.getElementById('vmi-trust-mission-' + sectionId);
+    var btn = textContainer.nextElementSibling;
+    if (textContainer.classList.contains('is-expanded')) {
+      textContainer.classList.remove('is-expanded');
+      btn.innerText = 'Read More';
+    } else {
+      textContainer.classList.add('is-expanded');
+      btn.innerText = 'Read Less';
+    }
+  }
+</script>
 {%- endif -%}
 
 {% schema %}
