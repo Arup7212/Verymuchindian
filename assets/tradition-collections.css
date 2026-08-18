@@ -337,8 +337,7 @@
 }
 @media (max-width: 768px) {
   .tc-trust-bar{
-    column-count: 2;
-    display: block;
+    display: flex;
   }
   .tradition-collections-section{
     padding-bottom:0 !important;
