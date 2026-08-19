@@ -2343,6 +2343,9 @@ button {
     font-weight: normal !important;
   }
 @media(max-width:768px) {
+    journal-accordion-outer{
+    margin-bottom:30px !important;
+  }
   .section .reelcart-playlist-container{
     padding-left:0 !important;
        padding-right:0 !important;
