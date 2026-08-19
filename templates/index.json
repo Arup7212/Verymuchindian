@@ -417,7 +417,7 @@
           "type": "shopify://apps/reelcart/blocks/reel-cards/019bd63f-c7d3-75e1-874e-9ea24a028f0f",
           "settings": {
             "heading": "<h2>In the Spotlight</h2>",
-            "heading_color": "#35336F",
+            "heading_color": "#35336f",
             "sub_heading": "<p>See the drape in motion — tap any reel to play, then shop the saree.</p>",
             "sub_heading_color": "#666666",
             "columns": 4,
@@ -440,7 +440,7 @@
             "btn_border_color": "#000000",
             "margin_top": 20,
             "margin_bottom": 20,
-            "custom_css": ".reelcart-block-AbHFnNndlRUhQTTUyV__reelcart_reel_cards_qXKhCc .rc-cards-block-heading, .reelcart-block-AbHFnNndlRUhQTTUyV__reelcart_reel_cards_qXKhCc .rc-cards-block-heading *{\ncolor:red !important;\n}"
+            "custom_css": ".rc-cards-header-container {\ngap: 0px !important;\n}"
           }
         }
       },
