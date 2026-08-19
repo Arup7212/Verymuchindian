@@ -13,7 +13,6 @@
   <search-button
     class="search-action{% if display_style == 'text' %} search-action--text{% endif %}{% if class != blank %} {{ class | strip }}{% endif %}"
   >
-    <div class="home-home">
     <button
       on:click="#search-modal/showDialog"
       {% comment %} class="button-unstyled header-actions__action{% if display_style == 'text' %} header-actions__text-style{% endif %}" {% endcomment %}
@@ -29,7 +28,6 @@
         {{ 'icon-search.svg' | inline_asset_content }}
       </span>
     </button>
-    </div>
   </search-button>
 {% endunless %}
 
