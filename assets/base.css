@@ -2333,6 +2333,9 @@ button {
       font-family: Jost, sans-serif !important;
 }
 @media(min-width:769px) {
+  .vmi-virasat{
+    margin-top:60px;
+  }
 .rcc-buy-btn{
   text-align:left !important;
   background:transparent;
