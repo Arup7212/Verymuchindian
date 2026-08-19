@@ -10,7 +10,6 @@
 {%- enddoc -%}
 
 {% unless style == 'none' %}
-  <div class="search-header">
   <search-button
     class="search-action{% if display_style == 'text' %} search-action--text{% endif %}{% if class != blank %} {{ class | strip }}{% endif %}"
   >
@@ -29,7 +28,6 @@
       </span>
     </button>
   </search-button>
-</div>
 {% endunless %}
 
 {% stylesheet %}
