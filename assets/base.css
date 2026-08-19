@@ -2363,7 +2363,7 @@ span.premium-product-manhours-value {
     font-size:20px;
   }
   .shopify-block.shopify-app-block .rc-cards-header-container:after{
-    margin-bottom:0 !important;
-    margin-top:0 !important;
+        margin-bottom: 20px !important;
+        margin-top: 12px !important;
   }
 }
