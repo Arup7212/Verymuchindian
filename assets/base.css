@@ -2351,6 +2351,11 @@ button {
   .cart-bubble__text-count{
     color:#fff !important;
   }
+  #header-component .header-actions__action.search-header-home svg{
+    height:34px !important;
+    width:34px !important;
+  }
+  
 @media(max-width:768px) {
 
 
