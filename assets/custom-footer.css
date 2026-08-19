@@ -206,7 +206,7 @@
   color: #ffffff;
   text-decoration: none;
   font-family: var(--font-heading--family), serif;
-  font-size: 1.1rem;
+  font-size: 14px;
   transition: opacity 0.3s ease;
 }
 
