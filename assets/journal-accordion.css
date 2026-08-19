@@ -225,7 +225,7 @@
 @media (max-width: 767px) {
 
 .journal-accordion-section{
-  padding-bottom:0;
+  padding-bottom:30px;
 }
   /* On mobile, stack them vertically or make a horizontal scroll */
   .journal-accordion-wrapper {
