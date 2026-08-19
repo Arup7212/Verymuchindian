@@ -223,9 +223,7 @@
 }
 
 @media (max-width: 767px) {
-  journal-accordion-outer{
-    margin-bottom:30px !important;
-  }
+
 .journal-accordion-section{
   padding-bottom:0;
 }
