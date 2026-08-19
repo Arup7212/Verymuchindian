@@ -2343,6 +2343,13 @@ button {
     font-weight: normal !important;
   }
 @media(max-width:768px) {
+
+
+.flits_wishlist_header_icon {
+        margin: 0 0px !important;
+    }
+
+
     journal-accordion-outer{
     margin-bottom:30px !important;
   }
