@@ -2348,6 +2348,9 @@ button {
         font-family: 'Jost', var(--vmi-font-body) !important;
     font-weight: normal !important;
   }
+  .cart-bubble__text-count{
+    color:#fff !important;
+  }
 @media(max-width:768px) {
 
 
