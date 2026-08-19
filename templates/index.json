@@ -440,7 +440,7 @@
             "btn_border_color": "#000000",
             "margin_top": 20,
             "margin_bottom": 20,
-            "custom_css": ".rc-cards-header-container {\ngap: 0px !important;\n}"
+            "custom_css": ".rc-cards-header-container {\ngap: 0px !important;\n}\n.rc-cards-header-container h2{margin-bottom:15px;}"
           }
         }
       },
