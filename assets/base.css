@@ -2332,6 +2332,9 @@ button {
 .premium-product-title{
       font-family: Jost, sans-serif !important;
 }
+.footer-newsletter-btn{
+  border-radius:6px;
+}
 @media(min-width:769px) {
   .vmi-virasat{
     margin-top:60px;
