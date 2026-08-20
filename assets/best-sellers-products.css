@@ -158,11 +158,19 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.bsp-card:hover .bsp-product-image {
-  transform: scale(1.05);
+.bsp-product-image.secondary-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.4s ease;
+}
+
+.bsp-card:hover .bsp-product-image.secondary-image {
+  opacity: 1;
 }
 
 /* Dynamic Vertical Ribbon Badges (Top-Left) */
@@ -365,6 +373,15 @@ display: inline-block;
    }
    .bsp-add-to-cart-wrapper{
     margin-top:0 !important;
+   }
+   
+   .main-collection-grid {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    box-sizing: border-box;
+   }
+   .product-grid {
+    gap: 12px !important;
    }
 
 }

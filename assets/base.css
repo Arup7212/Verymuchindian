@@ -2392,3 +2392,22 @@ span.premium-product-manhours-value {
         margin-top: 12px !important;
   }
 }
+/* Custom Filter text colors */
+.facets__heading,
+.facets--filters-title,
+.facets__summary,
+.facets__summary .facets__label,
+.facets__item:not(.facets__item--disabled) label,
+.facets__item:not(.facets__item--disabled) .facets__label,
+.facets__price .field__input,
+.facets__price .field__label,
+.facets__price .facets__price-text,
+.facets__header,
+.facets__selected,
+.facets__status,
+.facets__clear,
+.facets__reset,
+.facets-price-range__text,
+.price-range__text {
+  color: #35336f !important;
+}

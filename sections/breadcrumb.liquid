@@ -1,0 +1,651 @@
+{%- liquid
+  assign current_path = request.path
+  assign current_title = page_title
+  assign breadcrumb_menu = section.settings.breadcrumb_menu
+
+  assign hide_breadcrumb = false
+
+  if template.name == 'index'
+    assign hide_breadcrumb = true
+  endif
+
+  if template.name == 'cart'
+    assign hide_breadcrumb = true
+  endif
+
+  if template.name == '404'
+    assign hide_breadcrumb = true
+  endif
+
+  if template.name == 'list-collections'
+    assign hide_breadcrumb = true
+  endif
+-%}
+
+{%- unless hide_breadcrumb -%}
+
+  <nav
+    class="section premium-breadcrumb"
+    aria-label="Breadcrumb"
+  >
+    <div class="premium-breadcrumb__container">
+
+      <ol class="premium-breadcrumb__list">
+
+        <!-- HOME -->
+        <li class="premium-breadcrumb__item">
+          <a
+            href="{{ routes.root_url }}"
+            class="premium-breadcrumb__link"
+          >
+            Home
+          </a>
+        </li>
+
+        {%- assign menu_match_found = false -%}
+
+        {%- comment -%}
+          ==========================================================
+          COLLECTION PAGE
+          ==========================================================
+        {%- endcomment -%}
+
+        {%- if template.name == 'collection' and collection.handle -%}
+
+          {%- for level_1 in breadcrumb_menu.links -%}
+
+            {%- if level_1.url == collection.url -%}
+
+              {%- assign menu_match_found = true -%}
+
+              <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+
+              <li class="premium-breadcrumb__item">
+                <a
+                  href="{{ level_1.url }}"
+                  class="premium-breadcrumb__link"
+                >
+                  {{ level_1.title }}
+                </a>
+              </li>
+
+            {%- endif -%}
+
+            {%- for level_2 in level_1.links -%}
+
+              {%- if level_2.url == collection.url -%}
+
+                {%- assign menu_match_found = true -%}
+
+                <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+
+                <li class="premium-breadcrumb__item">
+                  <a
+                    href="{{ level_1.url }}"
+                    class="premium-breadcrumb__link"
+                  >
+                    {{ level_1.title }}
+                  </a>
+                </li>
+
+                <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+
+                <li class="premium-breadcrumb__item premium-breadcrumb__item--current">
+                  <span aria-current="page">
+                    {{ level_2.title }}
+                  </span>
+                </li>
+
+              {%- endif -%}
+
+              {%- for level_3 in level_2.links -%}
+
+                {%- if level_3.url == collection.url -%}
+
+                  {%- assign menu_match_found = true -%}
+
+                  <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+
+                  <li class="premium-breadcrumb__item">
+                    <a
+                      href="{{ level_1.url }}"
+                      class="premium-breadcrumb__link"
+                    >
+                      {{ level_1.title }}
+                    </a>
+                  </li>
+
+                  <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+
+                  <li class="premium-breadcrumb__item">
+                    <a
+                      href="{{ level_2.url }}"
+                      class="premium-breadcrumb__link"
+                    >
+                      {{ level_2.title }}
+                    </a>
+                  </li>
+
+                  <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+
+                  <li class="premium-breadcrumb__item premium-breadcrumb__item--current">
+                    <span aria-current="page">
+                      {{ level_3.title }}
+                    </span>
+                  </li>
+
+                {%- endif -%}
+
+              {%- endfor -%}
+
+            {%- endfor -%}
+
+          {%- endfor -%}
+
+          {%- unless menu_match_found -%}
+
+            <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+
+            <li class="premium-breadcrumb__item premium-breadcrumb__item--current">
+              <span aria-current="page">
+                {{ collection.title }}
+              </span>
+            </li>
+
+          {%- endunless -%}
+
+
+        {%- comment -%}
+          ==========================================================
+          PRODUCT PAGE
+          ==========================================================
+        {%- endcomment -%}
+
+        {%- elsif template.name == 'product' -%}
+
+          {%- assign breadcrumb_collection = collection -%}
+
+          {%- if breadcrumb_collection == blank and product.collections.size > 0 -%}
+            {%- assign breadcrumb_collection = product.collections.first -%}
+          {%- endif -%}
+
+
+          {%- if breadcrumb_collection != blank -%}
+
+            {%- assign collection_path_found = false -%}
+
+            {%- for level_1 in breadcrumb_menu.links -%}
+
+              {%- if level_1.url == breadcrumb_collection.url -%}
+
+                {%- assign collection_path_found = true -%}
+
+                <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+
+                <li class="premium-breadcrumb__item">
+                  <a
+                    href="{{ level_1.url }}"
+                    class="premium-breadcrumb__link"
+                  >
+                    {{ level_1.title }}
+                  </a>
+                </li>
+
+              {%- endif -%}
+
+
+              {%- for level_2 in level_1.links -%}
+
+                {%- if level_2.url == breadcrumb_collection.url -%}
+
+                  {%- assign collection_path_found = true -%}
+
+                  <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+
+                  <li class="premium-breadcrumb__item">
+                    <a
+                      href="{{ level_1.url }}"
+                      class="premium-breadcrumb__link"
+                    >
+                      {{ level_1.title }}
+                    </a>
+                  </li>
+
+                  <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+
+                  <li class="premium-breadcrumb__item">
+                    <a
+                      href="{{ level_2.url }}"
+                      class="premium-breadcrumb__link"
+                    >
+                      {{ level_2.title }}
+                    </a>
+                  </li>
+
+                {%- endif -%}
+
+
+                {%- for level_3 in level_2.links -%}
+
+                  {%- if level_3.url == breadcrumb_collection.url -%}
+
+                    {%- assign collection_path_found = true -%}
+
+                    <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+
+                    <li class="premium-breadcrumb__item">
+                      <a
+                        href="{{ level_1.url }}"
+                        class="premium-breadcrumb__link"
+                      >
+                        {{ level_1.title }}
+                      </a>
+                    </li>
+
+                    <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+
+                    <li class="premium-breadcrumb__item">
+                      <a
+                        href="{{ level_2.url }}"
+                        class="premium-breadcrumb__link"
+                      >
+                        {{ level_2.title }}
+                      </a>
+                    </li>
+
+                    <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+
+                    <li class="premium-breadcrumb__item">
+                      <a
+                        href="{{ level_3.url }}"
+                        class="premium-breadcrumb__link"
+                      >
+                        {{ level_3.title }}
+                      </a>
+                    </li>
+
+                  {%- endif -%}
+
+                {%- endfor -%}
+
+              {%- endfor -%}
+
+            {%- endfor -%}
+
+
+            {%- unless collection_path_found -%}
+
+              <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+
+              <li class="premium-breadcrumb__item">
+                <a
+                  href="{{ breadcrumb_collection.url }}"
+                  class="premium-breadcrumb__link"
+                >
+                  {{ breadcrumb_collection.title }}
+                </a>
+              </li>
+
+            {%- endunless -%}
+
+          {%- endif -%}
+
+
+          <!-- PRODUCT TITLE -->
+
+          <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+
+          <li class="premium-breadcrumb__item premium-breadcrumb__item--current">
+            <span aria-current="page">
+              {{ product.title }}
+            </span>
+          </li>
+
+
+        {%- comment -%}
+          ==========================================================
+          PAGE
+          ==========================================================
+        {%- endcomment -%}
+
+        {%- elsif template.name == 'page' -%}
+
+          <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+
+          <li class="premium-breadcrumb__item premium-breadcrumb__item--current">
+            <span aria-current="page">
+              {{ page.title }}
+            </span>
+          </li>
+
+
+        {%- comment -%}
+          ==========================================================
+          BLOG
+          ==========================================================
+        {%- endcomment -%}
+
+        {%- elsif template.name == 'blog' -%}
+
+          <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+
+          <li class="premium-breadcrumb__item premium-breadcrumb__item--current">
+            <span aria-current="page">
+              {{ blog.title }}
+            </span>
+          </li>
+
+
+        {%- comment -%}
+          ==========================================================
+          ARTICLE
+          ==========================================================
+        {%- endcomment -%}
+
+        {%- elsif template.name == 'article' -%}
+
+          <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+
+          <li class="premium-breadcrumb__item">
+            <a
+              href="{{ blog.url }}"
+              class="premium-breadcrumb__link"
+            >
+              {{ blog.title }}
+            </a>
+          </li>
+
+          <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+
+          <li class="premium-breadcrumb__item premium-breadcrumb__item--current">
+            <span aria-current="page">
+              {{ article.title }}
+            </span>
+          </li>
+
+
+        {%- comment -%}
+          ==========================================================
+          SEARCH
+          ==========================================================
+        {%- endcomment -%}
+
+        {%- elsif template.name == 'search' -%}
+
+          <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+
+          <li class="premium-breadcrumb__item premium-breadcrumb__item--current">
+            <span aria-current="page">
+              Search
+            </span>
+          </li>
+
+
+        {%- comment -%}
+          ==========================================================
+          OTHER PAGES
+          ==========================================================
+        {%- endcomment -%}
+
+        {%- else -%}
+
+          <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+
+          <li class="premium-breadcrumb__item premium-breadcrumb__item--current">
+            <span aria-current="page">
+              {{ page_title }}
+            </span>
+          </li>
+
+        {%- endif -%}
+
+      </ol>
+
+    </div>
+  </nav>
+
+{%- endunless -%}
+
+
+<style>
+  .premium-breadcrumb {
+    width: 100%;
+    background-color: {{ section.settings.background_color }} !important;
+  }
+
+  .premium-breadcrumb__container {
+    width: 100%;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  .premium-breadcrumb__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .premium-breadcrumb__item {
+    display: inline-flex;
+    align-items: center;
+    font-size: {{ section.settings.font_size }}px;
+    line-height: 1.5;
+  }
+
+  .premium-breadcrumb__link {
+    color: {{ section.settings.link_color }};
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .premium-breadcrumb__link:hover {
+    color: {{ section.settings.link_hover_color }};
+    text-decoration: underline;
+  }
+
+  .premium-breadcrumb__item--current {
+    color: {{ section.settings.current_color }};
+    font-weight: {{ section.settings.current_font_weight }};
+  }
+
+  .premium-breadcrumb__separator {
+    margin: 0 8px;
+    color: {{ section.settings.separator_color }};
+    font-size: {{ section.settings.font_size }}px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .premium-breadcrumb__container {
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    }
+
+    .premium-breadcrumb__item,
+    .premium-breadcrumb__separator {
+      font-size: {{ section.settings.mobile_font_size }}px;
+    }
+
+    .premium-breadcrumb__separator {
+      margin: 0 5px;
+    }
+  }
+</style>
+
+
+{% schema %}
+{
+  "name": "Premium Breadcrumb",
+  "tag": "section",
+  "class": "premium-breadcrumb-section",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "breadcrumb_menu",
+      "label": "Breadcrumb menu",
+      "info": "Create a nested menu in Shopify Navigation for collection hierarchy.",
+      "default": "main-menu"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 800,
+      "max": 1800,
+      "step": 20,
+      "default": 1400,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "horizontal_padding",
+      "label": "Desktop horizontal padding",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Desktop top padding",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Desktop bottom padding",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "mobile_horizontal_padding",
+      "label": "Mobile horizontal padding",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Mobile top padding",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Mobile bottom padding",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Desktop font size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_font_size",
+      "label": "Mobile font size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Link color",
+      "default": "#37348A"
+    },
+    {
+      "type": "color",
+      "id": "link_hover_color",
+      "label": "Link hover color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "current_color",
+      "label": "Current item color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "separator_color",
+      "label": "Separator color",
+      "default": "#555555"
+    },
+    {
+      "type": "select",
+      "id": "current_font_weight",
+      "label": "Current item weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Premium Breadcrumb"
+    }
+  ]
+}
+{% endschema %}
