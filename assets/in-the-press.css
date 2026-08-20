@@ -28,7 +28,7 @@
   width: 150px;
   height: 2px;
   background: linear-gradient(90deg, transparent 0%, #f7941e 50%, transparent 100%);
-  margin: 16px auto 0;
+  /* margin: 16px auto 0; */
   border-radius: 2px;
 }
 
