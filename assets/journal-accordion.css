@@ -6,7 +6,7 @@
 
 @media (min-width: 769px) {
   .journal-accordion-section {
-    padding: var(--vmi-section-py, 72px) 0;
+    /* padding: var(--vmi-section-py, 72px) 0; */
   }
 }
 
