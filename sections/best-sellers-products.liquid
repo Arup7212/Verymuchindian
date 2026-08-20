@@ -212,7 +212,8 @@
                     {%- form 'product', product, id: product_form_id, novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
                       <input type="hidden" name="id" ref="variantId" value="{{ product.variants.first.id }}" />
                       <input type="hidden" name="quantity" value="1" />
-                      <button type="submit" name="add" class="bsp-add-to-cart-btn" style="width: 100%; padding: 10px; background-color: #F7941E; color: #1E2447; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                      {% comment %} <button type="submit" name="add" class="bsp-add-to-cart-btn" style="width: 100%; padding: 10px; background-color: #F7941E; color: #1E2447; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'"> {% endcomment %}
+                       <button type="submit" name="add" class="bsp-add-to-cart-btn" style="width: 100%; padding: 10px; background-color: #F7941E; color: #1E2447; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'" onclick="const btn = this; btn.innerText = 'Added'; setTimeout(() => { btn.innerText = 'Add to Cart'; }, 2000);">
                         Add to Cart
                       </button>
                     {%- endform -%}
