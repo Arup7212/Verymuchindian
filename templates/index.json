@@ -226,98 +226,135 @@
         "collection_heading": ""
       }
     },
-    "vmi_arch_collections_WRbf3N": {
-      "type": "vmi-arch-collections",
+    "festive_collection_H9MFYc": {
+      "type": "festive-collection",
       "blocks": {
-        "collection_card_xxLi6j": {
+        "collection_card_YXJhUg": {
           "type": "collection_card",
           "settings": {
             "collection": "",
-            "label": "AJRAK",
-            "image": "shopify://shop_images/HMP_2595.webp",
-            "mobile_bg_image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_04_31_15_PM.png"
+            "image": "shopify://shop_images/HEM_8721.webp",
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
           }
         },
-        "collection_card_qRFKTy": {
+        "collection_card_FjDgcw": {
           "type": "collection_card",
           "settings": {
             "collection": "",
-            "label": "AJRAK",
-            "image": "shopify://shop_images/HMP_3625.webp",
-            "mobile_bg_image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_04_42_15_PM.png"
+            "image": "shopify://shop_images/HMP_3591.webp",
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
           }
         },
-        "collection_card_ydRKk6": {
+        "collection_card_b3j7bj": {
           "type": "collection_card",
           "settings": {
             "collection": "",
-            "label": "BANARASI",
-            "image": "shopify://shop_images/HMP_2590.webp",
-            "mobile_bg_image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_04_36_13_PM.png"
+            "image": "shopify://shop_images/HMP_6993.webp",
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
           }
         },
-        "collection_card_pJ3XwQ": {
+        "collection_card_NDKDja": {
           "type": "collection_card",
           "settings": {
             "collection": "",
-            "label": "KANJIVARAM",
-            "image": "shopify://shop_images/DSC_0460.webp",
-            "mobile_bg_image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_04_36_17_PM.png"
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
           }
         },
-        "collection_card_L4yR3d": {
+        "collection_card_jiG3ma": {
           "type": "collection_card",
           "settings": {
             "collection": "",
-            "label": "CHANDERI",
-            "image": "shopify://shop_images/HMP_6987.webp",
-            "mobile_bg_image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_04_33_40_PM.png"
+            "image": "shopify://shop_images/DSC_9132.webp",
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
           }
         },
-        "collection_card_mibRU9": {
+        "collection_card_bQPxW3": {
           "type": "collection_card",
           "settings": {
             "collection": "",
-            "label": "",
-            "image": "shopify://shop_images/HMP_5060.webp"
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
           }
         },
-        "collection_card_WQNRpT": {
+        "collection_card_erY4zm": {
           "type": "collection_card",
           "settings": {
             "collection": "",
-            "label": "",
-            "image": "shopify://shop_images/DSC_0017.webp"
+            "image": "shopify://shop_images/DSC_0017.webp",
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
           }
         },
-        "collection_card_FjLVPN": {
+        "collection_card_tYYrFy": {
           "type": "collection_card",
           "settings": {
             "collection": "",
-            "label": "",
-            "image": "shopify://shop_images/HMP_4497.webp"
+            "image": "shopify://shop_images/DSC_9132.webp",
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
+          }
+        },
+        "collection_card_E4wnNA": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/HMP_4503.webp",
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
           }
         }
       },
       "block_order": [
-        "collection_card_xxLi6j",
-        "collection_card_qRFKTy",
-        "collection_card_ydRKk6",
-        "collection_card_pJ3XwQ",
-        "collection_card_L4yR3d",
-        "collection_card_mibRU9",
-        "collection_card_WQNRpT",
-        "collection_card_FjLVPN"
+        "collection_card_YXJhUg",
+        "collection_card_FjDgcw",
+        "collection_card_b3j7bj",
+        "collection_card_NDKDja",
+        "collection_card_jiG3ma",
+        "collection_card_bQPxW3",
+        "collection_card_erY4zm",
+        "collection_card_tYYrFy",
+        "collection_card_E4wnNA"
       ],
-      "name": "VMI Arch Collections",
+      "name": "Festive Collection Grid",
       "settings": {
-        "enable_section": true,
-        "heading": "Sangrah",
-        "logo_image": "shopify://shop_images/Group_362.png",
-        "logo_max_width": 220,
-        "subtitle": "COLLECTIONS",
-        "desktop_bg_image": "shopify://shop_images/Rectangle_49723.png",
-        "text_color": "#401f28"
+        "background_color": "#ffffff",
+        "show_hover_text": true,
+        "desktop_columns": 3,
+        "mobile_columns": 3,
+        "heading": "",
+        "subtitle": ""
       }
     },
     "best_sellers_products_BzmgNf": {
@@ -477,8 +514,103 @@
         "padding-block-end": 0
       }
     },
+    "vmi_arch_collections_WRbf3N": {
+      "type": "vmi-arch-collections",
+      "blocks": {
+        "collection_card_xxLi6j": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "AJRAK",
+            "image": "shopify://shop_images/HMP_2595.webp",
+            "mobile_bg_image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_04_31_15_PM.png"
+          }
+        },
+        "collection_card_qRFKTy": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "AJRAK",
+            "image": "shopify://shop_images/HMP_3625.webp",
+            "mobile_bg_image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_04_42_15_PM.png"
+          }
+        },
+        "collection_card_ydRKk6": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "BANARASI",
+            "image": "shopify://shop_images/HMP_2590.webp",
+            "mobile_bg_image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_04_36_13_PM.png"
+          }
+        },
+        "collection_card_pJ3XwQ": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "KANJIVARAM",
+            "image": "shopify://shop_images/DSC_0460.webp",
+            "mobile_bg_image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_04_36_17_PM.png"
+          }
+        },
+        "collection_card_L4yR3d": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "CHANDERI",
+            "image": "shopify://shop_images/HMP_6987.webp",
+            "mobile_bg_image": "shopify://shop_images/ChatGPT_Image_Aug_11_2026_04_33_40_PM.png"
+          }
+        },
+        "collection_card_mibRU9": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "",
+            "image": "shopify://shop_images/HMP_5060.webp"
+          }
+        },
+        "collection_card_WQNRpT": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "",
+            "image": "shopify://shop_images/DSC_0017.webp"
+          }
+        },
+        "collection_card_FjLVPN": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "",
+            "image": "shopify://shop_images/HMP_4497.webp"
+          }
+        }
+      },
+      "block_order": [
+        "collection_card_xxLi6j",
+        "collection_card_qRFKTy",
+        "collection_card_ydRKk6",
+        "collection_card_pJ3XwQ",
+        "collection_card_L4yR3d",
+        "collection_card_mibRU9",
+        "collection_card_WQNRpT",
+        "collection_card_FjLVPN"
+      ],
+      "name": "VMI Arch Collections",
+      "settings": {
+        "enable_section": true,
+        "heading": "Sangrah",
+        "logo_image": "shopify://shop_images/Group_362.png",
+        "logo_max_width": 220,
+        "subtitle": "COLLECTIONS",
+        "desktop_bg_image": "shopify://shop_images/Rectangle_49723.png",
+        "text_color": "#401f28"
+      }
+    },
     "vmi_virasat_slider_NNwWWj": {
       "type": "vmi-virasat-slider",
+      "disabled": true,
       "name": "VMI Virasat Slider",
       "settings": {
         "enable_section": true,
@@ -718,46 +850,10 @@
         "text_color": "#1e354d"
       }
     },
-    "festive_collection_H9MFYc": {
-      "type": "festive-collection",
+    "collection_slider_cards_8ngHAn": {
+      "type": "collection-slider-cards",
       "blocks": {
-        "collection_card_YXJhUg": {
-          "type": "collection_card",
-          "settings": {
-            "collection": "",
-            "image": "shopify://shop_images/HEM_8721.webp",
-            "tag_text": "CLASSIC SILK PAITHANI",
-            "title": "Festive",
-            "subtitle": "Collection",
-            "button_text": "Shop Now",
-            "url": ""
-          }
-        },
-        "collection_card_FjDgcw": {
-          "type": "collection_card",
-          "settings": {
-            "collection": "",
-            "image": "shopify://shop_images/HMP_3591.webp",
-            "tag_text": "CLASSIC SILK PAITHANI",
-            "title": "Festive",
-            "subtitle": "Collection",
-            "button_text": "Shop Now",
-            "url": ""
-          }
-        },
-        "collection_card_b3j7bj": {
-          "type": "collection_card",
-          "settings": {
-            "collection": "",
-            "image": "shopify://shop_images/HMP_6993.webp",
-            "tag_text": "CLASSIC SILK PAITHANI",
-            "title": "Festive",
-            "subtitle": "Collection",
-            "button_text": "Shop Now",
-            "url": ""
-          }
-        },
-        "collection_card_NDKDja": {
+        "collection_card_nhT87L": {
           "type": "collection_card",
           "settings": {
             "collection": "",
@@ -768,60 +864,34 @@
             "url": ""
           }
         },
-        "collection_card_jiG3ma": {
+        "collection_card_Rzp6xn": {
           "type": "collection_card",
           "settings": {
             "collection": "",
-            "image": "shopify://shop_images/DSC_9132.webp",
-            "tag_text": "CLASSIC SILK PAITHANI",
-            "title": "Festive",
+            "tag_text": "PURE SILK PAITHANI",
+            "title": "Wedding",
             "subtitle": "Collection",
             "button_text": "Shop Now",
             "url": ""
           }
         },
-        "collection_card_bQPxW3": {
+        "collection_card_Jr6pCW": {
           "type": "collection_card",
           "settings": {
             "collection": "",
-            "tag_text": "CLASSIC SILK PAITHANI",
-            "title": "Festive",
+            "tag_text": "TURMERIC & GOLD",
+            "title": "Haldi",
             "subtitle": "Collection",
             "button_text": "Shop Now",
             "url": ""
           }
         },
-        "collection_card_erY4zm": {
+        "collection_card_r3Ge4A": {
           "type": "collection_card",
           "settings": {
             "collection": "",
-            "image": "shopify://shop_images/DSC_0017.webp",
-            "tag_text": "CLASSIC SILK PAITHANI",
-            "title": "Festive",
-            "subtitle": "Collection",
-            "button_text": "Shop Now",
-            "url": ""
-          }
-        },
-        "collection_card_tYYrFy": {
-          "type": "collection_card",
-          "settings": {
-            "collection": "",
-            "image": "shopify://shop_images/DSC_9132.webp",
-            "tag_text": "CLASSIC SILK PAITHANI",
-            "title": "Festive",
-            "subtitle": "Collection",
-            "button_text": "Shop Now",
-            "url": ""
-          }
-        },
-        "collection_card_E4wnNA": {
-          "type": "collection_card",
-          "settings": {
-            "collection": "",
-            "image": "shopify://shop_images/HMP_4503.webp",
-            "tag_text": "CLASSIC SILK PAITHANI",
-            "title": "Festive",
+            "tag_text": "FRESH GREEN",
+            "title": "Mehendi",
             "subtitle": "Collection",
             "button_text": "Shop Now",
             "url": ""
@@ -829,24 +899,18 @@
         }
       },
       "block_order": [
-        "collection_card_YXJhUg",
-        "collection_card_FjDgcw",
-        "collection_card_b3j7bj",
-        "collection_card_NDKDja",
-        "collection_card_jiG3ma",
-        "collection_card_bQPxW3",
-        "collection_card_erY4zm",
-        "collection_card_tYYrFy",
-        "collection_card_E4wnNA"
+        "collection_card_nhT87L",
+        "collection_card_Rzp6xn",
+        "collection_card_Jr6pCW",
+        "collection_card_r3Ge4A"
       ],
-      "name": "Festive Collection Grid",
+      "name": "Collection Slider Cards",
       "settings": {
-        "background_color": "#ffffff",
-        "show_hover_text": true,
-        "desktop_columns": 3,
-        "mobile_columns": 3,
+        "background_color": "#FFFFFF",
         "heading": "Season Finest: Festive Collection",
-        "subtitle": "Every Rite Has Its Colour, And Every Colour Has Its Weave — From The Haldi Yellow To The Maroon Kept For The Puja Room."
+        "subtitle": "Every Rite Has Its Colour, And Every Colour Has Its Weave — From The Haldi Yellow To The Maroon Kept For The Puja Room.",
+        "autoplay": true,
+        "autoplay_speed": 4
       }
     },
     "best_sellers_products_UkXTJU": {
@@ -1079,206 +1143,6 @@
         "btn_link": ""
       }
     },
-    "product_list_fa6P9H": {
-      "type": "product-list",
-      "blocks": {
-        "static-header": {
-          "type": "_product-list-content",
-          "name": "t:names.header",
-          "static": true,
-          "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "space-between",
-            "vertical_alignment": "flex-end",
-            "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "background_media": "none",
-            "background_color": "",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_list_text_YFtzcL": {
-              "type": "_product-list-text",
-              "name": "t:names.collection_title",
-              "settings": {
-                "text": "<h3>{{ closest.collection.title }}</h3>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h4",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "text_color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_list_button_MWeP9V": {
-              "type": "_product-list-button",
-              "name": "t:names.product_list_button",
-              "settings": {
-                "label": "View all",
-                "open_in_new_tab": false,
-                "style_class": "link",
-                "custom_button_background": "{{ settings.color_palette.foreground }}",
-                "custom_button_text": "{{ settings.color_palette.background }}",
-                "custom_button_border": "{{ settings.color_palette.background }}",
-                "link_text_color": "",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_list_text_YFtzcL",
-            "product_list_button_MWeP9V"
-          ]
-        },
-        "static-product-card": {
-          "type": "_product-card",
-          "name": "t:names.product_card",
-          "static": true,
-          "settings": {
-            "product_card_gap": 4,
-            "background_color": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_card_gallery_677WP3": {
-              "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
-              "settings": {
-                "image_ratio": "adapt",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_color": "",
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_title_YXxMTj": {
-              "type": "product-title",
-              "name": "t:names.product_title",
-              "settings": {
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "text_color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 4,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "price_JQzVV4": {
-              "type": "price",
-              "name": "t:names.product_price",
-              "settings": {
-                "show_sale_price_first": true,
-                "show_installments": false,
-                "show_tax_info": false,
-                "type_preset": "h6",
-                "width": "100%",
-                "alignment": "left",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "text_color": "",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_card_gallery_677WP3",
-            "product_title_YXxMTj",
-            "price_JQzVV4"
-          ]
-        }
-      },
-      "disabled": true,
-      "name": "t:names.product_list",
-      "settings": {
-        "collection": "best-sellers",
-        "layout_type": "grid",
-        "carousel_on_mobile": false,
-        "max_products": 8,
-        "columns": 4,
-        "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
-        "columns_gap": 8,
-        "rows_gap": 24,
-        "icons_style": "arrow",
-        "icons_shape": "none",
-        "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
-        "gap": 28,
-        "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 48,
-        "padding-block-end": 48
-      }
-    },
     "premium_edit_collection_g6efFT": {
       "type": "premium-edit-collection",
       "name": "Premium Edit Collection",
@@ -1288,66 +1152,6 @@
         "collection": "best-sellers",
         "max_products": 4,
         "background_color": "#282a4a"
-      }
-    },
-    "celebs_choice_khTmH4": {
-      "type": "celebs-choice",
-      "blocks": {
-        "image_card_kawiEh": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/HMP_3586.webp",
-            "title": "Shark Tank",
-            "description": "Season 2 Feature",
-            "link": "",
-            "block_width": "wide"
-          }
-        },
-        "image_card_JXPF7D": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/HMP_2595.webp",
-            "title": "Shark Tank",
-            "description": "Season 2 Feature",
-            "link": "",
-            "block_width": "standard"
-          }
-        },
-        "image_card_KbEmDp": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/HEM_8721.webp",
-            "title": "Shark Tank",
-            "description": "Season 2 Feature",
-            "link": "",
-            "block_width": "standard"
-          }
-        },
-        "image_card_X8M7Wf": {
-          "type": "image_card",
-          "settings": {
-            "image": "shopify://shop_images/HMP_0001-Copy.webp",
-            "title": "Shark Tank",
-            "description": "Season 2 Feature",
-            "link": "",
-            "block_width": "wide"
-          }
-        }
-      },
-      "block_order": [
-        "image_card_kawiEh",
-        "image_card_JXPF7D",
-        "image_card_KbEmDp",
-        "image_card_X8M7Wf"
-      ],
-      "disabled": true,
-      "name": "Celeb's Choice",
-      "settings": {
-        "heading": "Celeb's Choice",
-        "subheading": "The Drapes Our Celebrity Clients And Shark Tank Judges Reached For — Swipe To Watch.",
-        "background_color": "#ffffff",
-        "padding_top": 60,
-        "padding_bottom": 60
       }
     },
     "178582077294cc6d67": {
@@ -1481,6 +1285,7 @@
     },
     "vmi_virasat_slider_FXaAAz": {
       "type": "vmi-virasat-slider",
+      "disabled": true,
       "name": "VMI Virasat Slider",
       "settings": {
         "enable_section": true,
@@ -1834,21 +1639,20 @@
   "order": [
     "dynamic_slider_9n8p4C",
     "tradition_collections_CUAxEP",
-    "vmi_arch_collections_WRbf3N",
+    "festive_collection_H9MFYc",
     "best_sellers_products_BzmgNf",
     "1785484701e9dacb2f",
+    "vmi_arch_collections_WRbf3N",
     "vmi_virasat_slider_NNwWWj",
     "shop_by_fabric_EVqkJQ",
     "best_sellers_products_yb6QDW",
     "vmi_trust_dTjgyn",
-    "festive_collection_H9MFYc",
+    "collection_slider_cards_8ngHAn",
     "best_sellers_products_UkXTJU",
     "shop_by_price_xfF4YB",
     "proud_moment_YwpchN",
     "shark_tank_banner_VzrC8T",
-    "product_list_fa6P9H",
     "premium_edit_collection_g6efFT",
-    "celebs_choice_khTmH4",
     "178582077294cc6d67",
     "loom_to_you_UgniMg",
     "vmi_virasat_slider_FXaAAz",
