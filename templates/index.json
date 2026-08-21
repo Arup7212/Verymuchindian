@@ -350,7 +350,7 @@
       "name": "Festive Collection Grid",
       "settings": {
         "background_color": "#ffffff",
-        "show_hover_text": true,
+        "show_hover_text": false,
         "desktop_columns": 3,
         "mobile_columns": 3,
         "heading": "",
