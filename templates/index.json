@@ -218,7 +218,7 @@
       "name": "Tradition & Collections",
       "settings": {
         "background_color": "{{ settings.color_palette.background }}",
-        "show_dot_bg": true,
+        "show_dot_bg": false,
         "dot_color": "#dbd5c6",
         "brand_title": "Thread . Time . Tradition",
         "brand_subtitle_1": "Very Much Indian Brings Together India's Most Skilled Weavers And Their Timeless Craft - Pure Handloom Sarees And Textiles.",
@@ -842,6 +842,9 @@
       "name": "Festive Collection Grid",
       "settings": {
         "background_color": "#ffffff",
+        "show_hover_text": true,
+        "desktop_columns": 3,
+        "mobile_columns": 3,
         "heading": "Season Finest: Festive Collection",
         "subtitle": "Every Rite Has Its Colour, And Every Colour Has Its Weave — From The Haldi Yellow To The Maroon Kept For The Puja Room."
       }
