@@ -1,0 +1,238 @@
+{{ 'collection-slider-cards.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'collection-slider-cards.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign collection_blocks = section.blocks | where: 'type', 'collection_card'
+-%}
+
+<div 
+  id="CollectionSlider-{{ section.id }}" 
+  class="collection-slider-section"
+  data-section-type="collection-slider"
+  style="--cs-bg: {{ section.settings.background_color | default: '#ffffff' }};"
+>
+  <div class="cs-container">
+    {%- if section.settings.heading != blank or section.settings.subtitle != blank -%}
+      <div class="cs-header">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="cs-title">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        
+        {%- if section.settings.subtitle != blank -%}
+          <p class="cs-subtitle">{{ section.settings.subtitle }}</p>
+        {%- endif -%}
+        
+        <div class="cs-divider"></div>
+      </div>
+    {%- endif -%}
+
+    {%- if collection_blocks.size > 0 -%}
+      <div class="cs-slider-wrapper" data-autoplay="{{ section.settings.autoplay }}" data-speed="{{ section.settings.autoplay_speed | times: 1000 }}">
+        
+        <button class="cs-arrow prev" aria-label="Previous">
+          <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+
+        <div class="cs-slider-track">
+          {%- for block in collection_blocks -%}
+            {%- liquid
+              assign target_collection = block.settings.collection
+              assign tag_text = block.settings.tag_text | default: 'CLASSIC SILK PAITHANI'
+              assign title_text = block.settings.title | default: target_collection.title | default: 'Festive'
+              assign subtitle_text = block.settings.subtitle | default: 'Collection'
+              assign button_text = block.settings.button_text | default: 'Shop Now'
+              assign card_url = block.settings.url | default: target_collection.url | default: '#'
+              
+              assign card_image = null
+              if block.settings.image != blank
+                assign card_image = block.settings.image
+              elsif target_collection != blank and target_collection.featured_image != blank
+                assign card_image = target_collection.featured_image
+              endif
+            -%}
+
+            <a href="{{ card_url }}" class="cs-slide" {{ block.shopify_attributes }}>
+              {%- if card_image != blank -%}
+                {{ card_image | image_url: width: 800 | image_tag: class: 'cs-image', loading: 'lazy', alt: title_text }}
+              {%- else -%}
+                {%- case forloop.index -%}
+                  {%- when 1 -%}
+                    <img class="cs-image" loading="lazy" src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800&auto=format&fit=crop" alt="{{ title_text }}">
+                  {%- when 2 -%}
+                    <img class="cs-image" loading="lazy" src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=800&auto=format&fit=crop" alt="{{ title_text }}">
+                  {%- when 3 -%}
+                    <img class="cs-image" loading="lazy" src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=800&auto=format&fit=crop" alt="{{ title_text }}">
+                  {%- when 4 -%}
+                    <img class="cs-image" loading="lazy" src="https://images.unsplash.com/photo-1609357605129-26f69add5d6e?q=80&w=800&auto=format&fit=crop" alt="{{ title_text }}">
+                  {%- else -%}
+                    {{ 'collection-1' | placeholder_svg_tag: 'cs-image' }}
+                {%- endcase -%}
+              {%- endif -%}
+
+              <!-- Overlay Content matching Screenshot -->
+              <div class="cs-overlay">
+                {%- if tag_text != blank -%}
+                  <span class="cs-tag">{{ tag_text }}</span>
+                {%- endif -%}
+                
+                <h3 class="cs-card-title">{{ title_text }}</h3>
+                
+                {%- if subtitle_text != blank -%}
+                  <span class="cs-card-subtitle">{{ subtitle_text }}</span>
+                {%- endif -%}
+                
+                <div class="cs-btn">
+                  <span>{{ button_text }}</span>
+                  <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+              </div>
+            </a>
+          {%- endfor -%}
+        </div>
+
+        <button class="cs-arrow next" aria-label="Next">
+          <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection Slider Cards",
+  "class": "section-collection-slider",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading Title",
+      "default": "Featured Collections"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle Line"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Enable Auto Slider",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "label": "Slider Speed (seconds)",
+      "default": 4
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_card",
+      "name": "Slider Card",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Select Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Custom Image (Overrides collection image)"
+        },
+        {
+          "type": "text",
+          "id": "tag_text",
+          "label": "Sub-tag Text",
+          "default": "CLASSIC SILK PAITHANI"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Card Main Title",
+          "default": "Festive"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Card Subtitle",
+          "default": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Custom Link URL",
+          "info": "Leave blank to use Shopify Collection URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Slider Cards",
+      "settings": {
+        "heading": "Featured Collections"
+      },
+      "blocks": [
+        {
+          "type": "collection_card",
+          "settings": {
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now"
+          }
+        },
+        {
+          "type": "collection_card",
+          "settings": {
+            "tag_text": "PURE SILK PAITHANI",
+            "title": "Wedding",
+            "subtitle": "Collection",
+            "button_text": "Shop Now"
+          }
+        },
+        {
+          "type": "collection_card",
+          "settings": {
+            "tag_text": "TURMERIC & GOLD",
+            "title": "Haldi",
+            "subtitle": "Collection",
+            "button_text": "Shop Now"
+          }
+        },
+        {
+          "type": "collection_card",
+          "settings": {
+            "tag_text": "FRESH GREEN",
+            "title": "Mehendi",
+            "subtitle": "Collection",
+            "button_text": "Shop Now"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

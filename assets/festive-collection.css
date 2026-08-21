@@ -62,10 +62,10 @@
   background: linear-gradient(90deg, rgba(247, 148, 30, 0) 0%, #f7941e 25%, #e07a3c 50%, #f7941e 75%, rgba(247, 148, 30, 0) 100%);
 }
 
-/* 3-Card Grid Layout (Mobile & Desktop) */
+/* Grid Layout */
 .fc-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(var(--mobile-cols, 3), 1fr);
   gap: 10px;
 }
 
@@ -76,7 +76,7 @@
   border: 1.5px solid #F5C73F;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   background-color: #f0ebe4;
   text-decoration: none;
   display: block;
@@ -266,6 +266,7 @@
   }
 
   .fc-grid {
+    grid-template-columns: repeat(var(--desktop-cols, 3), 1fr);
     gap: 20px;
   }
 
@@ -319,3 +320,30 @@
     padding: 0 10px;
   }
 }
+
+/* Styles when Hover Text and Button is disabled (Clean Layout) */
+.festive-collection-section[data-show-hover="false"] .fc-card {
+  border: none;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+}
+
+.festive-collection-section[data-show-hover="false"] .fc-bar-title {
+  font-family: var(--font-heading-family, 'Prata', serif);
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: none;
+}
+
+.festive-collection-section[data-show-hover="false"] .fc-card:hover .fc-glass-bar {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .festive-collection-section[data-show-hover="false"] .fc-bar-title {
+    font-size: 18px;
+  }
+}
+

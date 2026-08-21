@@ -102,14 +102,26 @@
   top: 12px;
   /* Center of 28px node minus half of 4px line */
   left: 50%;
-  width: calc(100% + 12px);
+  width: calc(100% + 20px);
   /* Spans item and gap */
   height: 4px;
   background-color: var(--line-color, #34336e);
   z-index: 1;
 }
 
-/* Timeline Node (The Circle) */
+/* Vertical divider between columns */
+.loom__item:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  right: -10px; /* Adjust based on gap */
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background-color: #eef0f4;
+  z-index: 1;
+}
+
+/* Timeline Node */
 .loom__node {
   width: 28px;
   height: 28px;
@@ -117,8 +129,8 @@
   background-color: var(--node-color, #e91e63);
   z-index: 3;
   position: relative;
-  /* Fix layout rendering quirks */
   box-sizing: border-box;
+  margin-bottom: 24px;
 }
 
 /* Middle dots hollow */
@@ -130,19 +142,20 @@
 .loom__media-container {
   position: relative;
   width: 100%;
-  flex: 1;
+  flex: none;
   display: flex;
   flex-direction: column;
-  aspect-ratio: 9/16;
-  /* margin-top: 16px; */
+  aspect-ratio: 1 / 1;
 }
 
 .loom__text-content {
   position: relative;
   z-index: 3;
-  margin-top: 30px;
+  margin-top: 24px;
   padding: 0 10px;
-  flex: 0 0 auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Item Content (Title & Description) */
@@ -177,12 +190,11 @@
   top: 0;
   left: 0;
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 16px;
   z-index: 1;
 }
 
-/* The White Fade Effect (Crucial Requirement) */
-/* This overlays a gradient that is white at the top and bottom, and transparent in the middle */
+/* The White Fade Effect */
 .loom__media-wrap::after {
   content: '';
   position: absolute;
@@ -191,11 +203,9 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
-  /* Let clicks pass through to media */
   background: linear-gradient(to bottom,
-      var(--background-color, #ffffff) 0%,
-      rgba(255, 255, 255, 0) 25%,
-      rgba(255, 255, 255, 0) 85%,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 60%,
       var(--background-color, #ffffff) 100%);
   z-index: 2;
 }
@@ -251,7 +261,7 @@
   }
 
   .loom__media-container {
-    aspect-ratio: 9 / 14;
+    aspect-ratio: 1 / 1;
   }
 }
 
