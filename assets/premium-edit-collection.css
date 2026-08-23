@@ -155,7 +155,7 @@
 }
 
 .premium-product-title {
-  font-family: var(--font-heading-family, 'Prata', serif);
+  font-family: var(--font-heading--family);
   font-size: 14px;
   font-weight: 500;
   color: #ffffff;

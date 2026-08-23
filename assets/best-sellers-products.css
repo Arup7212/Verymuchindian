@@ -45,7 +45,7 @@
 }
 
 .bsp-title {
-  font-family: var(--font-heading-family, 'Prata', serif);
+  font-family: var(--font-heading--family);
   font-size: 44px;
   font-weight: 500;
   color: var(--vmi-navy);
@@ -234,7 +234,7 @@
 
 /* Product Title - Equal 1-Line Height */
 .bsp-product-title {
-font-family: Jost, sans-serif;
+font-family: var(--font-body--family);
   font-size: 20px;
   font-weight: 500;
   color: var(--vmi-navy);
@@ -298,7 +298,7 @@ display: inline-block;
   font-size: 20px;
   font-weight: 400;
   color: var(--vmi-navy);
-  font-family: Jost, sans-serif;
+  font-family: var(--font-body--family);
   margin: 0;
 }
 

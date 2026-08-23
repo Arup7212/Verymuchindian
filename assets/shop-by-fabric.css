@@ -35,7 +35,7 @@
 }
 
 .sbf-title {
-  font-family: var(--font-heading-family, 'Prata', serif);
+  font-family: var(--font-heading--family);
   font-size: 44px;
   font-weight: 500;
   color: #242946;
@@ -45,7 +45,7 @@
 }
 
 .sbf-subtitle {
-  font-family: var(--font-heading-family, 'Prata', serif);
+  font-family: var(--font-heading--family);
   font-size: 15px;
   color: #72778e;
   line-height: 1.6;
@@ -148,7 +148,7 @@
   letter-spacing: 4%;
   line-height: 1.3;
   transition: color 0.3s ease;
-      font-family: Jost, sans-serif;
+      font-family: var(--font-body--family);
 }
 
 .sbf-item:hover .sbf-item-title {

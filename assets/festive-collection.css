@@ -35,7 +35,7 @@
 }
 
 .fc-title {
-  font-family: var(--font-heading-family, 'Prata', serif);
+  font-family: var(--font-heading--family);
   font-size: 46px;
   font-weight: 500;
   color: #242946;
@@ -189,7 +189,7 @@
 }
 
 .fc-hover-title {
-  font-family: var(--font-heading-family, 'Prata', serif);
+  font-family: var(--font-heading--family);
   font-size: 28px;
   font-weight: 400;
   color: var(--vmi-white);
@@ -329,7 +329,7 @@
 }
 
 .festive-collection-section[data-show-hover="false"] .fc-bar-title {
-  font-family: var(--font-heading-family, 'Prata', serif);
+  font-family: var(--font-heading--family);
   font-size: 24px;
   font-weight: 400;
   text-transform: none;

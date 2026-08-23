@@ -41,7 +41,7 @@
 }
 
 .loom__title {
-  font-family: var(--font-heading-family, 'Prata', serif);
+  font-family: var(--font-heading--family);
   font-size: 42px;
   font-weight: 500;
   color: #34336e;
@@ -51,7 +51,7 @@
 }
 
 .loom__subtitle {
-  font-family: var(--font-body-family, 'Jost', sans-serif);
+  font-family: var(--font-body--family);
   font-size: 14px;
   color: #7b7e8e;
   margin: 0 0 40px 0;
@@ -160,7 +160,7 @@
 
 /* Item Content (Title & Description) */
 .loom__item-title {
-  font-family: var(--font-body-family, 'Jost', sans-serif);
+  font-family: var(--font-body--family);
   font-size: 16px;
   font-weight: 600;
   color: #34336e;
@@ -170,7 +170,7 @@
 }
 
 .loom__item-desc {
-  font-family: var(--font-body-family, 'Jost', sans-serif);
+  font-family: var(--font-body--family);
   font-size: 13px;
   color: #7b7e8e;
   margin: 0;

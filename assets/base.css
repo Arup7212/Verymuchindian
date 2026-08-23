@@ -1432,7 +1432,7 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6) .volume-pricing-note {
 /* Custom Typography style */
 .custom-typography,
 .custom-typography>* {
-  font-family: 'Jost', sans-serif !important;
+  font-family: var(--font-body--family) !important;
   font-weight: var(--font-weight);
   text-transform: var(--text-transform);
   text-wrap: var(--text-wrap);
@@ -2271,15 +2271,7 @@ main>.shopify-section:first-child .section:not(.disable-section-top-offset) {
   }
 }
 
-/* =================================================================
-   VMI FONTS SETUP
-   ================================================================= */
-:root {
-  --font-body--family: 'Jost', sans-serif !important;
-  --font-body-family: 'Jost', sans-serif !important;
-  --font-heading--family: 'Prata', serif !important;
-  --font-heading-family: 'Prata', serif !important;
-}
+/* Removed hardcoded VMI FONTS SETUP */
 
 body,
 html,
@@ -2287,7 +2279,7 @@ input,
 textarea,
 select,
 button {
-  font-family: 'Jost', sans-serif !important;
+  font-family: var(--font-body--family) !important;
 }
 
 .premium-edit-header p{
@@ -2298,7 +2290,7 @@ button {
 }
 /* section titile */
 .section-title {
-  font-family: Prata, serif;
+  font-family: var(--font-heading--family);
   font-size: 28px;
   font-weight: 400;
   color: var(--vmi-navy);
@@ -2315,7 +2307,7 @@ button {
 }
 
 .section-subtitle {
-  font-family: 'Jost', sans-serif;
+  font-family: var(--font-body--family);
   font-size: 16px;
   margin-top: 0px;
   color: #35336f;
@@ -2330,7 +2322,7 @@ button {
 }
 
 .premium-product-title{
-      font-family: Jost, sans-serif !important;
+      font-family: var(--font-body--family) !important;
 }
 .footer-newsletter-btn{
   border-radius:6px;
@@ -2345,7 +2337,7 @@ button {
 }
 }
   .rcc-prod-name{
-        font-family: 'Jost', var(--vmi-font-body) !important;
+        font-family: var(--font-body--family) !important;
     font-weight: normal !important;
   }
   .cart-bubble__text-count{

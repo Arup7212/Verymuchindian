@@ -10,7 +10,7 @@
 .rc-grid-block-heading,
 .rc-grid-block-heading div,
 .rc-grid-block-heading h2 {
-  font-family: Prata, serif !important;
+  font-family: var(--font-heading--family) !important;
   font-size: 28px !important;
   font-weight: 400 !important;
   color: var(--vmi-navy) !important;
@@ -47,7 +47,7 @@
 .rc-grid-block-subheading,
 .rc-grid-block-subheading div,
 .rc-grid-block-subheading p {
-  font-family: 'Jost', sans-serif !important;
+  font-family: var(--font-body--family) !important;
   font-size: 14px !important;
   color: var(--vmi-navy) !important;
   opacity: .5 !important;

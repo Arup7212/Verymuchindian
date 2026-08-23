@@ -135,12 +135,12 @@
   letter-spacing: 1px;
   margin-bottom: 10px;
   font-weight: 600;
-  font-family: 'Jost', sans-serif !important;
+  font-family: var(--font-body--family) !important;
   color: #e0e0e0;
 }
 
 .journal-item-title {
- font-family: 'Jost', sans-serif !important;
+ font-family: var(--font-body--family) !important;
   font-size: 32px;
   margin: 0 0 15px;
   line-height: 1.2;
@@ -264,7 +264,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     margin-bottom: 0;
-     font-family: 'Jost', sans-serif !important;
+     font-family: var(--font-body--family) !important;
   }
 
   .journal-item:not(.active) .journal-item-desc {

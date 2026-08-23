@@ -341,8 +341,8 @@
 
   .content-title {
     margin-bottom: 10px;
+    font-family: var(--font-heading--family);
     font-size: 22px;
-    font-family: Jost, sans-serif;
   }
   .content-title br{ display:none;}
   .content-subtitle{

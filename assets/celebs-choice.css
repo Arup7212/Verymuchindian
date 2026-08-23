@@ -35,7 +35,7 @@
 
 .celebs-choice__header .section-title,
 .celebs-choice__title {
-  font-family: var(--font-heading-family, 'Prata', 'Playfair Display', serif);
+  font-family: var(--font-heading--family);
   font-size: clamp(32px, 3vw, 42px);
   font-weight: 500;
   color: #34336e;
@@ -46,7 +46,7 @@
 
 .celebs-choice__header .section-subtitle,
 .celebs-choice__subtitle {
-  font-family: var(--font-body-family, 'Jost', sans-serif);
+  font-family: var(--font-body--family);
   font-size: 13px;
   color: #7b7e8e;
   margin: 0;
@@ -175,7 +175,7 @@
 }
 
 .celebs-choice__card-title {
-  font-family: var(--font-body-family, 'Jost', sans-serif);
+  font-family: var(--font-body--family);
   font-size: 17px;
   font-weight: 700;
   color: #34336e;
@@ -184,7 +184,7 @@
 }
 
 .celebs-choice__card-desc {
-  font-family: var(--font-body-family, 'Jost', sans-serif);
+  font-family: var(--font-body--family);
   font-size: 12px;
   font-weight: 400;
   color: #7b7e8e;

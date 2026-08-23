@@ -96,7 +96,7 @@
 }
 
 .tc-trust-title {
-  font-family: 'Jost', sans-serif;
+  font-family: var(--font-body--family);
   font-size: 14px;
   font-weight: 500;
   color: var(--vmi-navy);
@@ -160,7 +160,7 @@
 }
 
 .tc-main-title {
-  font-family: var(--font-heading-family, 'Prata', serif);
+  font-family: var(--font-heading--family);
   font-size: 46px;
   font-weight: 500;
   color: #242946;
@@ -201,7 +201,7 @@
 }
 
 .tc-section-title {
-  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-family: var(--font-heading--family);
   font-size: 40px;
   font-weight: 500;
   color: #242946;
@@ -268,7 +268,7 @@
   letter-spacing: 0px;
   text-align: center;
   margin: 0;
-  font-family: Jost, sans-serif;
+  font-family: var(--font-body--family);
   transition: color 0.3s ease;
 }
 
