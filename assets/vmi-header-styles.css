@@ -260,7 +260,7 @@ header-actions {
 }
 
 /* Active, Hover, and Open Underlines */
-.menu-list__link-title::after,
+.menu-list__link--active .menu-list__link-title::after,
 .menu-list__link:hover .menu-list__link-title::after,
 .menu-list__link[aria-expanded="true"] .menu-list__link-title::after {
   content: "";
