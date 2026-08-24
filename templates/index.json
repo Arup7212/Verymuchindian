@@ -1257,7 +1257,7 @@
         "step_PqE3QF": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/HMP_3586.webp",
+            "image": "shopify://shop_images/download.jpg",
             "title": "The Loom",
             "description": "Warp threads set by hand, 100+ hours on a pit loom."
           }
@@ -1265,7 +1265,7 @@
         "step_WmiW7h": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/HMP_3844_7b7e9810-2082-462f-91d5-36086154d8b3.webp",
+            "image": "shopify://shop_images/download_1.jpg",
             "title": "The Weaver",
             "description": "Pallu tapestry interlocked thread by thread, in Yeola."
           }
@@ -1273,7 +1273,7 @@
         "step_BUcUbL": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/HMP_2590.webp",
+            "image": "shopify://shop_images/download_2.jpg",
             "title": "Silk Mark Check",
             "description": "Every saree certified authentic before it leaves the loom."
           }
@@ -1281,7 +1281,7 @@
         "step_JdTdwY": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/HMP_3003.webp",
+            "image": "shopify://shop_images/download_3.jpg",
             "title": "Packed With Care",
             "description": "Folded, boxed and dispatched from our Pune facility."
           }
@@ -1289,7 +1289,7 @@
         "step_ta7mz4": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/HMP_6987.webp",
+            "image": "shopify://shop_images/download_4.jpg",
             "title": "You",
             "description": "Free shipping, right to your door, anywhere in India."
           }
