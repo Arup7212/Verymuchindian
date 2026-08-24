@@ -234,7 +234,6 @@
 
 /* Product Title - Equal 1-Line Height */
 .bsp-product-title {
-font-family: var(--font-body--family);
   font-size: 20px;
   font-weight: 500;
   color: var(--vmi-navy);
