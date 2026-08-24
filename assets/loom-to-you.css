@@ -28,9 +28,10 @@
     padding: 0 var(--vmi-px, 40px);
   }
 }
-  .loom__container {
-   padding:0;
-  }
+
+.loom__container {
+  padding: 0;
+}
 
 .loom__header {
   text-align: center;
@@ -69,8 +70,7 @@
 /* Timeline Layout */
 .loom__timeline-wrapper {
   position: relative;
-  /* Add padding so the nodes have room */
-  padding-top: 20px;
+  /* padding-top: 20px; */
 }
 
 .loom__grid {
@@ -113,11 +113,12 @@
 .loom__item:not(:last-child)::before {
   content: '';
   position: absolute;
-  right: -10px; /* Adjust based on gap */
+  right: -10px;
+  /* Adjust based on gap */
   top: 0;
   height: 100%;
   width: 1px;
-  background-color: #eef0f4;
+  background-color: #dedcf0;
   z-index: 1;
 }
 
@@ -145,7 +146,7 @@
   flex: none;
   display: flex;
   flex-direction: column;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4/5;
 }
 
 .loom__text-content {
@@ -194,7 +195,7 @@
 }
 
 /* The White Fade Effect */
-.loom__media-wrap::after {
+/* .loom__media-wrap::after {
   content: '';
   position: absolute;
   top: 0;
@@ -207,13 +208,13 @@
       rgba(255, 255, 255, 0) 60%,
       var(--background-color, #ffffff) 100%);
   z-index: 2;
-}
+} */
 
 .loom__media {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: top;
   position: absolute;
   top: 0;
   left: 0;
@@ -224,9 +225,10 @@
 
 /* â”€â”€â”€ MOBILE: Horizontal Swipe Slider â”€â”€â”€ */
 @media screen and (max-width: 989px) {
-  .loom__text-content{
+  .loom__text-content {
     margin-top: 10px;
   }
+
   .loom__timeline-wrapper {
     padding-top: 0;
   }
@@ -274,7 +276,8 @@
   .loom__grid {
     overflow-x: visible;
     justify-content: space-between;
-    gap: 20px; /* gap between images on desktop */
+    gap: 20px;
+    /* gap between images on desktop */
     padding: 0 var(--vmi-px, 60px);
   }
 

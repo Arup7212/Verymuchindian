@@ -39,7 +39,8 @@
   z-index: 1;
   width: 100%;
   display: flex;
-  margin-top: -80px; /* Pull up to overlap image on mobile */
+  margin-top: -80px;
+  /* Pull up to overlap image on mobile */
 }
 
 .stb-content-inner {
@@ -121,6 +122,7 @@
   letter-spacing: 0.5px;
   margin-bottom: 2px;
 }
+
 .stb-end-title::first-line {
   text-transform: capitalize;
 }
@@ -184,7 +186,7 @@
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
   transition: all 0.3s ease;
   width: 100%;
   box-sizing: border-box;
@@ -254,6 +256,7 @@
     bottom: 40px;
     left: 40px;
     width: auto;
+    font-size: 16px;
   }
 
   .stb-stat-val {
@@ -269,12 +272,15 @@
   .stb-heading {
     font-size: 52px;
   }
+
   .stb-content-inner {
     width: 50%;
     padding: 80px 80px 80px 120px;
   }
+
   .stb-btn {
-           bottom: 93px;
-        left: 7vw;
+    bottom: 93px;
+    left: 7vw;
+
   }
 }

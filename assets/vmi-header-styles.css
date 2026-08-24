@@ -28,10 +28,10 @@
    2. MAIN HEADER ROW — white bg, navy bottom border, min-height
    ================================================================= */
 .header__row--top {
-  background: #ffffff !important;
-  border-bottom: 2.5px solid var(--vmi-navy) !important;
-  box-shadow: 0 2px 8px rgba(27, 36, 96, 0.07) !important;
-  min-height: 70px;
+  background: #f7f7f7 !important;
+  border-bottom: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+  min-height: 80px;
 }
 
 /* =================================================================
@@ -41,6 +41,7 @@
    We override this on desktop (≥750px) to restore the 3-col layout.
    ================================================================= */
 @media screen and (min-width: 750px) {
+
   /* KEY FIX: restore columns from display:contents → display:flex */
   #header-component[data-menu-style="drawer"] .header__column {
     display: flex !important;
@@ -56,7 +57,7 @@
     grid-template-rows: auto !important;
     align-items: center !important;
     column-gap: 0 !important;
-    padding-inline: 24px !important;
+    padding-inline: 0px !important;
     padding-block: 0 !important;
   }
 
@@ -115,6 +116,7 @@ header-actions {
    7. RESPONSIVE — mobile layout
    ================================================================= */
 @media screen and (max-width: 749px) {
+
   /* Hide text label on mobile, showing only hamburger */
   .vmi-category-dropdown-wrapper {
     display: none !important;
@@ -139,6 +141,7 @@ header-actions {
 }
 
 @media screen and (min-width: 750px) {
+
   /* Hide the injected Shop By Category in the drawer on desktop (since it's outside) */
   .vmi-mobile-category-menu {
     display: none !important;
@@ -221,26 +224,340 @@ header-actions {
    ================================================================= */
 
 /* 1. Menu Icons (width/height of SVGs) */
-#header-component svg,
+
+
+#header-component svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
 #header-component .header-drawer-icon,
 #header-component .header-actions__action svg {
   width: 24px !important;
   height: 24px !important;
 }
 
-/* 2. Main Menu / Header-Level Text (14px) */
+/* 2. Main Menu / Header-Level Text */
 .header-menu__item,
 .header-menu a,
 .vmi-category-dropdown-trigger,
+.menu-list__link,
 #header-component {
-  font-size: 14px;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: var(--vmi-navy) !important;
+  text-decoration: none !important;
+  /* Kill native Shopify underlines */
 }
 
-/* 3. Hover / Dropdown list items (12px) */
+.menu-list__link-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+  /* Space for underline */
+}
+
+/* Active, Hover, and Open Underlines */
+.menu-list__link--active .menu-list__link-title::after,
+.menu-list__link:hover .menu-list__link-title::after,
+.menu-list__link[aria-expanded="true"] .menu-list__link-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--vmi-navy);
+}
+
+
+
+.menu-list__list {
+  gap: 24px !important;
+}
+
+/* 3. Mega Menu Dropdown Container */
+.menu-list__submenu-inner {
+  box-shadow: 0 10px 40px rgba(33, 34, 72, 0.08) !important;
+  background-color: #ffffff !important;
+  border-top: 1px solid #E5E5E5 !important;
+  padding: 20px 40px !important;
+  /* Reduced top padding */
+}
+
+/* Hover bridge removed — dropdowns now open on click/keyboard only */
+
+/* Force standard Shopify mega menu to be full width */
+.menu-list__submenu .mega-menu.section {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* 4. Mega Menu Column Headers */
+.mega-menu__link--parent {
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: #6C7A9C !important;
+  margin-bottom: 12px !important;
+  border-bottom: 1px solid #EAEAEA !important;
+  padding-bottom: 10px !important;
+  pointer-events: none !important;
+  /* Make parent menus unclickable */
+  cursor: default !important;
+}
+
+/* 5. Mega Menu Links */
+.mega-menu__link:not(.mega-menu__link--parent) {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  color: var(--vmi-navy) !important;
+  padding: 5px 0 !important;
+  border-bottom: none !important;
+  /* Removed grey lines */
+  display: flex !important;
+  width: 100% !important;
+}
+
+/* Hover underline for child menu items */
+.mega-menu__link:not(.mega-menu__link--parent):hover {
+  text-decoration: underline !important;
+  text-underline-offset: 4px;
+}
+
+.mega-menu__link:not(.mega-menu__link--parent):hover {
+  background-color: #F9F9F9 !important;
+}
+
+/* Remove bottom border from last link in column if needed */
+.mega-menu__column>div>ul>li:last-child .mega-menu__link {
+  border-bottom: none !important;
+}
+
+/* =================================================================
+   7. FORCE DESKTOP MEGA MENU
+   ================================================================= */
+@media screen and (min-width: 750px) {
+  #header-component .header-menu {
+    display: flex !important;
+  }
+
+  #header-component .header__drawer {
+    display: none !important;
+  }
+}
+
+/* 8. Custom Mega Menu Featured Card */
+.custom-mega-featured-card {
+  display: block;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 15px;
+  width: 250px;
+  height: 380px;
+  text-decoration: none !important;
+  white-space: normal !important;
+  /* Fix for cut off text */
+}
+
+.custom-mega-featured-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.custom-mega-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.custom-mega-preorder {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.custom-mega-title {
+  font-size: 22px;
+  font-family: Georgia, serif;
+  line-height: 1.1;
+  color: #fff;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.custom-mega-price {
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* 9. Hover / Dropdown list items fallback */
 .vmi-category-vertical-link,
 .vmi-category-sub-link,
 .header-menu__submenu a,
 .menu-drawer__menu-item--level-2,
 .menu-drawer__menu-item--level-3 {
   font-size: 12px !important;
+}
+
+/* 9b. Mobile drawer — main menu items: 16px, keep font family */
+.menu-drawer__menu-item--mainlist {
+  font-size: 16px !important;
+  /* font-family intentionally NOT overridden — inherits theme variable */
+  letter-spacing: 0.04em !important;
+  line-height: 1.2 !important;
+}
+
+/* 9c. Mobile drawer — child items (under images / sub-links): 16px */
+.menu-drawer__menu-item--child,
+.menu-drawer__menu-item--parent {
+  font-size: 16px !important;
+  letter-spacing: 0.03em !important;
+  line-height: 1.3 !important;
+}
+
+/* 9d. Mobile drawer — parent section headings: 600 weight + extra top gap */
+.menu-drawer__menu-item--parent {
+  font-weight: 600 !important;
+  margin-top: 20px !important;
+  /* extra gap to separate sections */
+  padding-top: 4px !important;
+}
+
+/* First parent heading — no extra top gap */
+.menu-drawer__menu-item--parent:first-of-type {
+  margin-top: 0 !important;
+}
+
+/* =================================================================
+   10 & 11. CATEGORY (submenu-4) + MORE (submenu-7)
+   Parent <li> → position:relative
+   Submenu wrapper → position:absolute, pinned under parent
+   Inner card → fit-content width, no margin:auto
+   ================================================================= */
+
+/* ── Shared: parent li anchors the dropdown ── */
+.menu-list__list-item:has(#submenu-4),
+.menu-list__list-item:has(#submenu-7) {
+  position: relative !important;
+  /* Reset theme clipping — the submenu is now relative to this li */
+  clip-path: none !important;
+  overflow: visible !important;
+}
+
+/* ── Shared: submenu wrapper → absolute, centred under parent ── */
+.menu-list__list-item:has(#submenu-4)>.menu-list__submenu,
+.menu-list__list-item:has(#submenu-7)>.menu-list__submenu {
+  position: absolute !important;
+  top: 100% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: max-content !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  padding-inline: 0 !important;
+  margin-top: 8px !important;
+  /* bottom space between nav item and dropdown */
+  clip-path: none !important;
+  z-index: 999 !important;
+}
+
+/* ── Shared: inner card — compact, rounded, shadowed ── */
+.menu-list__list-item:has(#submenu-4)>.menu-list__submenu>.menu-list__submenu-inner,
+.menu-list__list-item:has(#submenu-7)>.menu-list__submenu>.menu-list__submenu-inner {
+  width: max-content !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  padding-block: 14px !important;
+  /* top/bottom only — no left/right padding */
+  padding-inline: 0 !important;
+  background: #ffffff !important;
+  border-top: none !important;
+  border-radius: 10px !important;
+  border: 1px solid #e8e8e8 !important;
+  box-shadow: 0 8px 28px rgba(33, 34, 72, 0.12) !important;
+  transform: none !important;
+}
+
+/* ── Shared: mega-menu grid → flat flex column ── */
+#submenu-4 .mega-menu.section,
+#submenu-7 .mega-menu.section {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: max-content !important;
+}
+
+#submenu-4 .mega-menu__grid,
+#submenu-4 .mega-menu__list,
+#submenu-7 .mega-menu__grid,
+#submenu-7 .mega-menu__list {
+  display: flex !important;
+  flex-direction: column !important;
+  width: max-content !important;
+  max-width: none !important;
+  gap: 0 !important;
+  grid-template-columns: unset !important;
+}
+
+/* ── Shared: column wrapper passthrough ── */
+#submenu-4 .mega-menu__column,
+#submenu-7 .mega-menu__column {
+  display: contents !important;
+}
+
+/* ── Shared: links ── */
+#submenu-4 .mega-menu__link:not(.mega-menu__link--parent),
+#submenu-7 .mega-menu__link:not(.mega-menu__link--parent) {
+  display: block !important;
+  width: max-content !important;
+  white-space: nowrap !important;
+  padding: 7px 0 !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  color: var(--vmi-navy) !important;
+  border-bottom: none !important;
+  background: transparent !important;
+  line-height: 1.4 !important;
+}
+
+#submenu-4 .mega-menu__link:not(.mega-menu__link--parent):hover,
+#submenu-7 .mega-menu__link:not(.mega-menu__link--parent):hover {
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+  background: transparent !important;
+}
+
+/* ── Shared: no separator borders ── */
+#submenu-4 .mega-menu__column>div,
+#submenu-4 .mega-menu__column>div:last-child,
+#submenu-7 .mega-menu__column>div,
+#submenu-7 .mega-menu__column>div:last-child {
+  border-bottom: none !important;
+}
+
+/* ── Shared: hide full-width underlay for these compact menus ── */
+#header-component:has(.menu-list__link[aria-controls="submenu-4"][aria-expanded="true"]) .header__underlay-open,
+#header-component:has(.menu-list__link[aria-controls="submenu-7"][aria-expanded="true"]) .header__underlay-open {
+  display: none !important;
 }

@@ -2,9 +2,15 @@
 .collection-slider-section {
   position: relative;
   width: 100%;
-  padding: 50px 0;
+  padding: 40px 0;
   background-color: var(--cs-bg, #ffffff);
   overflow: hidden;
+}
+
+@media(min-width:769px) {
+  .collection-slider-section {
+    padding: 50px 0;
+  }
 }
 
 .cs-container {
@@ -59,8 +65,10 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
   padding-bottom: 10px;
   width: 100%;
 }
@@ -71,7 +79,8 @@
 
 /* Slide Item */
 .cs-slide {
-  flex: 0 0 calc(50% - 10px); /* 2 cards on mobile */
+  flex: 0 0 calc(50% - 10px);
+  /* 2 cards on mobile */
   scroll-snap-align: start;
   position: relative;
   border-radius: 20px;
@@ -79,19 +88,21 @@
   text-decoration: none;
   display: block;
   aspect-ratio: 3 / 4;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
 @media (min-width: 576px) {
   .cs-slide {
-    flex: 0 0 calc(33.333% - 13.33px); /* 3 cards on tablet */
+    flex: 0 0 calc(33.333% - 13.33px);
+    /* 3 cards on tablet */
   }
 }
 
 @media (min-width: 992px) {
   .cs-slide {
-    flex: 0 0 calc(25% - 15px); /* 4 cards on desktop */
+    flex: 0 0 calc(25% - 15px);
+    /* 4 cards on desktop */
   }
 }
 
@@ -104,6 +115,7 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.7s ease;
+  object-position: top;
 }
 
 .cs-slide:hover .cs-image {
@@ -117,7 +129,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.85) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.85) 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -134,7 +146,7 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 8px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .cs-card-title {
@@ -144,7 +156,7 @@
   color: #fff;
   margin: 0 0 4px 0;
   line-height: 1.1;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .cs-card-subtitle {
@@ -154,7 +166,7 @@
   text-transform: uppercase;
   letter-spacing: 3px;
   margin-bottom: 24px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .cs-btn {
@@ -205,13 +217,13 @@
   justify-content: center;
   cursor: pointer;
   z-index: 10;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: background 0.3s, box-shadow 0.3s;
 }
 
 .cs-arrow:hover {
   background: #f9f9f9;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
 .cs-arrow svg {
@@ -232,7 +244,8 @@
 
 @media (max-width: 768px) {
   .cs-arrow {
-    display: none; /* Hide arrows on mobile, rely on swipe */
+    display: none;
+    /* Hide arrows on mobile, rely on swipe */
   }
 }
 
@@ -240,16 +253,20 @@
   .cs-title {
     font-size: 32px;
   }
+
   .cs-card-title {
     font-size: 20px;
   }
+
   .cs-btn {
     font-size: 9px;
     padding: 8px 16px;
   }
+
   .cs-tag {
     font-size: 8px;
   }
+
   .cs-card-subtitle {
     font-size: 8px;
     margin-bottom: 16px;

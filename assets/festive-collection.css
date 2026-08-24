@@ -2,14 +2,14 @@
 .festive-collection-section {
   position: relative;
   width: 100%;
-  padding: var(--vmi-section-py-mobile, 40px) 0;
+  /* padding: var(--vmi-section-py-mobile, 40px) 0; */
   background-color: var(--fc-bg-color, #ffffff);
   box-sizing: border-box;
 }
 
 @media (min-width: 769px) {
   .festive-collection-section {
-    padding: var(--vmi-section-py, 72px) 0;
+    /* padding: var(--vmi-section-py, 72px) 0; */
   }
 }
 
@@ -117,7 +117,7 @@
   right: 0;
   width: 100%;
   height: 50%;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.85) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -147,7 +147,7 @@
   text-transform: uppercase;
   margin: 0;
   line-height: 1.25;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 .fc-bar-subtitle {
@@ -262,7 +262,7 @@
 
 @media (min-width: 769px) {
   .festive-collection-section {
-    padding: 50px 0 50px 0;
+    /* padding: 50px 0 50px 0; */
   }
 
   .fc-grid {
@@ -284,29 +284,36 @@
     gap: 24px;
   }
 }
+
 @media (max-width: 1024px) {
-  .fc-hover-overlay{
-    left:0 !important;
-    right:0 !important;
+  .fc-hover-overlay {
+    left: 0 !important;
+    right: 0 !important;
   }
-  .fc-hover-title{
+
+  .fc-hover-title {
     font-size: 9px !important;
   }
-.fc-hover-subtitle{
-  font-size: 11px;
-  padding:5px;
-}
-.fc-shop-button .fc-shop-button-icon {
+
+  .fc-hover-subtitle {
+    font-size: 11px;
+    padding: 5px;
+  }
+
+  .fc-shop-button .fc-shop-button-icon {
     display: none;
+  }
+
+  .fc-hover-tag {
+    font-size: 11px;
+  }
+
+  .fc-shop-button {
+    font-size: 10px;
+    padding: 2px 5px;
+  }
 }
-.fc-hover-tag{
-   font-size: 11px;
-}
-.fc-shop-button{
-  font-size:10px;
-  padding:2px 5px; 
-}
-}
+
 @media (max-width: 480px) {
   .fc-title {
     font-size: 28px;
@@ -346,4 +353,3 @@
     font-size: 18px;
   }
 }
-

@@ -113,40 +113,44 @@
 }
 
 @media(max-width:768px) {
-  .tc-trust-icon-wrapper{
-    height:inherit;
+  .tc-trust-icon-wrapper {
+    height: inherit;
     margin: 0 auto 10px;
   }
-  
+
   .tc-trust-title {
     font-size: 16px;
-    max-width:100%;
+    max-width: 100%;
   }
+
   .tc-trust-item {
     flex: 1;
     display: block;
-    flex-direction: inherit;     
-     margin-bottom:30px;
- }
+    flex-direction: inherit;
+    margin-bottom: 30px;
+  }
 
- 
- .tc-trust-item:after{
-  display:none;
- }
- .tc-trust-bar{
-         display: flex;
-        flex-flow: wrap;
-        justify-content: center;
- }
- .tc-trust-item{
-          padding: 0 6px;
-        width: 102px !important;
-        max-width: 300px;
-        flex: inherit;
- }
-     .tc-trust-title {
-        font-size: 11px;
-    }
+
+  .tc-trust-item:after {
+    display: none;
+  }
+
+  .tc-trust-bar {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+  }
+
+  .tc-trust-item {
+    padding: 0 6px;
+    width: 102px !important;
+    max-width: 300px;
+    flex: inherit;
+  }
+
+  .tc-trust-title {
+    font-size: 11px;
+  }
 }
 
 
@@ -187,7 +191,7 @@
 /* Exact Figma Underline / Divider */
 .tc-divider {
   display: block;
-  margin: 22px auto 36px auto;
+  margin: 22px auto 0px auto;
   width: 180px;
   height: 2px;
   border-radius: 2px;
@@ -326,7 +330,7 @@
 
   .tc-divider {
     width: 160px;
-    margin: 24px auto 36px auto;
+    margin: 24px auto 0px auto;
   }
 }
 
@@ -335,15 +339,16 @@
     gap: 24px;
   }
 }
+
 @media (max-width: 768px) {
-  .tc-trust-bar{
+  .tc-trust-bar {
     display: flex;
   }
-  .tradition-collections-section{
-    padding-bottom:0 !important;
-  }
-  .tc-trust-icon{
-    height:52px;
+
+
+
+  .tc-trust-icon {
+    height: 52px;
   }
 }
 
