@@ -2322,7 +2322,7 @@ button {
 }
 
 .premium-product-title{
-      font-family: var(--font-body--family) !important;
+      /* font-family: var(--font-body--family) !important; */
 }
 .footer-newsletter-btn{
   border-radius:6px;
