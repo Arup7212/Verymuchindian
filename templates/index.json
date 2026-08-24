@@ -853,12 +853,25 @@
     "collection_slider_cards_8ngHAn": {
       "type": "collection-slider-cards",
       "blocks": {
+        "collection_card_7XLY7h": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/gaurangi-garbhreshmi-handloom-cotton-silk-saree-with-golden-border-in-exclusive-royal-green-7558118_900x_d478022e-0975-476a-82c5-bc581dc56297.webp",
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Everyday",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
+          }
+        },
         "collection_card_nhT87L": {
           "type": "collection_card",
           "settings": {
             "collection": "",
+            "image": "shopify://shop_images/chandrakor-handloom-pure-silk-maharani-paithani-with-majestic-maharani-pallu-in-peacock-blue-7957452.webp",
             "tag_text": "CLASSIC SILK PAITHANI",
-            "title": "Festive",
+            "title": "Sangeet ",
             "subtitle": "Collection",
             "button_text": "Shop Now",
             "url": ""
@@ -868,8 +881,21 @@
           "type": "collection_card",
           "settings": {
             "collection": "",
+            "image": "shopify://shop_images/gaurangi-garden-of-heritage-handloom-all-over-pure-silk-paithani-saree-with-floral-handwork-in-zari-pink-shipping-in-90-days-7746311_900x_c9c3933a-73b1-4265-b93f-7144c4811698.webp",
             "tag_text": "PURE SILK PAITHANI",
             "title": "Wedding",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
+          }
+        },
+        "collection_card_9A6xkr": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/designer-masterpiece-handloom-all-over-zari-pure-silver-zari-silk-paithani-saree-1526122_900x_eccc0fd9-9310-4a6c-9ca2-3b444d0e840c.webp",
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
             "subtitle": "Collection",
             "button_text": "Shop Now",
             "url": ""
@@ -879,6 +905,7 @@
           "type": "collection_card",
           "settings": {
             "collection": "",
+            "image": "shopify://shop_images/gaurangi-garden-of-heritage-handloom-all-over-pure-silk-paithani-saree-with-floral-handwork-in-zari-yellow-3786263_900x_970dea17-a13b-4044-9efa-20bdbd5adaa9.webp",
             "tag_text": "TURMERIC & GOLD",
             "title": "Haldi",
             "subtitle": "Collection",
@@ -890,6 +917,7 @@
           "type": "collection_card",
           "settings": {
             "collection": "",
+            "image": "shopify://shop_images/exclusive-handloom-pure-cotton-paithani-with-asawali-pallu-pink-peach-9025900_900x_d9fd8953-f7ea-4d47-b196-7443c60f50ab.webp",
             "tag_text": "FRESH GREEN",
             "title": "Mehendi",
             "subtitle": "Collection",
@@ -899,14 +927,16 @@
         }
       },
       "block_order": [
+        "collection_card_7XLY7h",
         "collection_card_nhT87L",
         "collection_card_Rzp6xn",
+        "collection_card_9A6xkr",
         "collection_card_Jr6pCW",
         "collection_card_r3Ge4A"
       ],
       "name": "Collection Slider Cards",
       "settings": {
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "heading": "Season Finest: Festive Collection",
         "subtitle": "Every Rite Has Its Colour, And Every Colour Has Its Weave — From The Haldi Yellow To The Maroon Kept For The Puja Room.",
         "autoplay": true,
