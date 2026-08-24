@@ -269,7 +269,7 @@ header-actions {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: var(--vmi-navy);
+  /* background-color: var(--vmi-navy); */
 }
 
 
