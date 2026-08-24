@@ -160,7 +160,6 @@
 
 /* Item Content (Title & Description) */
 .loom__item-title {
-  font-family: var(--font-body--family);
   font-size: 16px;
   font-weight: 600;
   color: #34336e;
