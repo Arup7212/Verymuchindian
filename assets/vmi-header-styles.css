@@ -255,7 +255,7 @@ header-actions {
 .menu-list__link-title {
   position: relative;
   display: inline-block;
-  padding-bottom: 4px;
+  padding: 28px 0px; 
   /* Space for underline */
 }
 
