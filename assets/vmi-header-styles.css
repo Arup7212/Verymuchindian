@@ -475,7 +475,7 @@ header-actions {
   max-width: none !important;
   min-width: 0 !important;
   padding-inline: 0 !important;
-  margin-top: 8px !important;
+  /* margin-top: 8px !important; */
   /* bottom space between nav item and dropdown */
   clip-path: none !important;
   z-index: 999 !important;
