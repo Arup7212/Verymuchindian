@@ -333,7 +333,7 @@ header-actions {
 }
 
 .mega-menu__link:not(.mega-menu__link--parent):hover {
-  background-color: #F9F9F9 !important;
+  /* background-color: #F9F9F9 !important; */
 }
 
 /* Remove bottom border from last link in column if needed */
