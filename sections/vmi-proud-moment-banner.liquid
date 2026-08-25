@@ -1,0 +1,196 @@
+{{ 'vmi-proud-moment-banner.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'vmi-proud-moment-banner.js' | asset_url }}" defer="defer"></script>
+
+<div class="vmi-proud-moment-banner" style="--bg-color: {{ section.settings.background_color }};">
+  <div class="vmi-proud-moment-banner__container">
+    <div class="vmi-proud-moment-banner__image-wrapper">
+      {%- if section.settings.image != blank -%}
+        <img
+          srcset="
+            {%- if section.settings.image.width >= 375 -%}{{ section.settings.image | image_url: width: 375 }} 375w,{%- endif -%}
+            {%- if section.settings.image.width >= 750 -%}{{ section.settings.image | image_url: width: 750 }} 750w,{%- endif -%}
+            {%- if section.settings.image.width >= 1100 -%}{{ section.settings.image | image_url: width: 1100 }} 1100w,{%- endif -%}
+            {%- if section.settings.image.width >= 1500 -%}{{ section.settings.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+            {{ section.settings.image | image_url }} {{ section.settings.image.width }}w
+          "
+          src="{{ section.settings.image | image_url: width: 1500 }}"
+          sizes="(min-width: 769px) 60vw, 100vw"
+          alt="{{ section.settings.image.alt | escape }}"
+          class="vmi-proud-moment-banner__image {% if section.settings.image_mobile != blank %}vmi-proud-moment-banner__image--desktop{% endif %}"
+          loading="lazy"
+          width="{{ section.settings.image.width }}"
+          height="{{ section.settings.image.height }}"
+        >
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg vmi-proud-moment-banner__image' }}
+      {%- endif -%}
+
+      {%- if section.settings.image_mobile != blank -%}
+        <img
+          srcset="
+            {%- if section.settings.image_mobile.width >= 375 -%}{{ section.settings.image_mobile | image_url: width: 375 }} 375w,{%- endif -%}
+            {%- if section.settings.image_mobile.width >= 750 -%}{{ section.settings.image_mobile | image_url: width: 750 }} 750w,{%- endif -%}
+            {{ section.settings.image_mobile | image_url }} {{ section.settings.image_mobile.width }}w
+          "
+          src="{{ section.settings.image_mobile | image_url: width: 750 }}"
+          sizes="100vw"
+          alt="{{ section.settings.image_mobile.alt | escape }}"
+          class="vmi-proud-moment-banner__image vmi-proud-moment-banner__image--mobile"
+          loading="lazy"
+          width="{{ section.settings.image_mobile.width }}"
+          height="{{ section.settings.image_mobile.height }}"
+        >
+      {%- endif -%}
+    </div>
+
+    <div class="vmi-proud-moment-banner__content-wrapper">
+      <!-- Desktop Curve SVG (Rightward Bulge) -->
+      <svg class="vmi-proud-moment-banner__curve" viewBox="0 0 100 1000" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="vmiGoldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#b68d40" />
+            <stop offset="25%" stop-color="#f7e8a9" />
+            <stop offset="50%" stop-color="#d4af37" />
+            <stop offset="75%" stop-color="#f7e8a9" />
+            <stop offset="100%" stop-color="#8a6d2b" />
+          </linearGradient>
+          <filter id="vmiShadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="-10" dy="0" stdDeviation="10" flood-color="#000000" flood-opacity="0.8"/>
+          </filter>
+        </defs>
+        <path d="M100,0 L100,1000 L0,1000 Q190,500 0,0 Z" fill="var(--bg-color)" />
+        <path d="M0,1000 Q190,500 0,0" fill="none" stroke="url(#vmiGoldGradient)" stroke-width="4" filter="url(#vmiShadow)" />
+      </svg>
+
+      <!-- Mobile Curve SVG (Upward Bulge) -->
+      <svg class="vmi-proud-moment-banner__curve-mobile" viewBox="0 0 1000 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="vmiGoldGradientMobile" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#b68d40" />
+            <stop offset="25%" stop-color="#f7e8a9" />
+            <stop offset="50%" stop-color="#d4af37" />
+            <stop offset="75%" stop-color="#f7e8a9" />
+            <stop offset="100%" stop-color="#8a6d2b" />
+          </linearGradient>
+          <filter id="vmiShadowMobile" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="-10" stdDeviation="10" flood-color="#000000" flood-opacity="0.8"/>
+          </filter>
+        </defs>
+        <path d="M 1000,100 L 0,100 Q 500,-90 1000,100 Z" fill="var(--bg-color)" />
+        <path d="M 0,100 Q 500,-90 1000,100" fill="none" stroke="url(#vmiGoldGradientMobile)" stroke-width="4" filter="url(#vmiShadowMobile)" />
+      </svg>
+
+      <div class="vmi-proud-moment-banner__content">
+        {%- if section.settings.subtitle != blank -%}
+          <h3 class="vmi-proud-moment-banner__subtitle">{{ section.settings.subtitle }}</h3>
+        {%- endif -%}
+
+        {%- if section.settings.title != blank -%}
+          <h2 class="vmi-proud-moment-banner__title" style="--highlight-color: {{ section.settings.highlight_color }};">
+            {{ section.settings.title }}
+          </h2>
+        {%- endif -%}
+
+        {%- if section.settings.description != blank -%}
+          <div class="vmi-proud-moment-banner__text">
+            {{ section.settings.description }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.stats != blank -%}
+          <div class="vmi-proud-moment-banner__stats">
+            {{ section.settings.stats }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.button_label != blank -%}
+          <div class="vmi-proud-moment-banner__button-wrap">
+            <a
+              {% if section.settings.button_link == blank %}
+                role="link" aria-disabled="true"
+              {% else %}
+                href="{{ section.settings.button_link }}"
+              {% endif %}
+              class="vmi-proud-moment-banner__button"
+            >
+              {{ section.settings.button_label | escape }}
+            </a>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Proud Moment Banner",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Mobile Image (Optional)"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#35336f"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Proud Moment For"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "<p><strong>Very Much Indian</strong> &<br>Traditional Weavers</p>",
+      "info": "Use bold text to apply the highlight color."
+    },
+    {
+      "type": "color",
+      "id": "highlight_color",
+      "label": "Highlight Color (for bold text in Title)",
+      "default": "#d1358a"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Our journey celebrates the beauty of Indian craftsmanship, culture, and timeless sarees.</p>"
+    },
+    {
+      "type": "text",
+      "id": "stats",
+      "label": "Stats / Highlights",
+      "default": "4.9/5 Rated • 50K+ Customers • 100% Authentic"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Explore the Collection →"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Proud Moment Banner"
+    }
+  ]
+}
+{% endschema %}

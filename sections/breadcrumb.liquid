@@ -52,107 +52,101 @@
 
         {%- if template.name == 'collection' and collection.handle -%}
 
+          {%- assign last_menu_title = '' -%}
           {%- for level_1 in breadcrumb_menu.links -%}
+            {%- if menu_match_found -%}{%- break -%}{%- endif -%}
 
             {%- if level_1.url == collection.url -%}
-
               {%- assign menu_match_found = true -%}
-
+              {%- assign last_menu_title = level_1.title -%}
               <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
-
-              <li class="premium-breadcrumb__item">
-                <a
-                  href="{{ level_1.url }}"
-                  class="premium-breadcrumb__link"
-                >
-                  {{ level_1.title }}
-                </a>
-              </li>
-
+              {%- assign title_down = level_1.title | downcase -%}
+              {%- assign coll_down = collection.title | downcase -%}
+              {%- if title_down == coll_down -%}
+                <li class="premium-breadcrumb__item premium-breadcrumb__item--current">
+                  <span aria-current="page">{{ level_1.title }}</span>
+                </li>
+              {%- else -%}
+                <li class="premium-breadcrumb__item">
+                  <a href="{{ level_1.url }}" class="premium-breadcrumb__link">{{ level_1.title }}</a>
+                </li>
+              {%- endif -%}
             {%- endif -%}
 
-            {%- for level_2 in level_1.links -%}
+            {%- unless menu_match_found -%}
+              {%- for level_2 in level_1.links -%}
+                {%- if menu_match_found -%}{%- break -%}{%- endif -%}
 
-              {%- if level_2.url == collection.url -%}
-
-                {%- assign menu_match_found = true -%}
-
-                <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
-
-                <li class="premium-breadcrumb__item">
-                  <a
-                    href="{{ level_1.url }}"
-                    class="premium-breadcrumb__link"
-                  >
-                    {{ level_1.title }}
-                  </a>
-                </li>
-
-                <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
-
-                <li class="premium-breadcrumb__item premium-breadcrumb__item--current">
-                  <span aria-current="page">
-                    {{ level_2.title }}
-                  </span>
-                </li>
-
-              {%- endif -%}
-
-              {%- for level_3 in level_2.links -%}
-
-                {%- if level_3.url == collection.url -%}
-
+                {%- if level_2.url == collection.url -%}
                   {%- assign menu_match_found = true -%}
-
+                  {%- assign last_menu_title = level_2.title -%}
                   <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
-
                   <li class="premium-breadcrumb__item">
-                    <a
-                      href="{{ level_1.url }}"
-                      class="premium-breadcrumb__link"
-                    >
-                      {{ level_1.title }}
-                    </a>
+                    <a href="{{ level_1.url }}" class="premium-breadcrumb__link">{{ level_1.title }}</a>
                   </li>
-
                   <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
-
-                  <li class="premium-breadcrumb__item">
-                    <a
-                      href="{{ level_2.url }}"
-                      class="premium-breadcrumb__link"
-                    >
-                      {{ level_2.title }}
-                    </a>
-                  </li>
-
-                  <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
-
-                  <li class="premium-breadcrumb__item premium-breadcrumb__item--current">
-                    <span aria-current="page">
-                      {{ level_3.title }}
-                    </span>
-                  </li>
-
+                  {%- assign title_down = level_2.title | downcase -%}
+                  {%- assign coll_down = collection.title | downcase -%}
+                  {%- if title_down == coll_down -%}
+                    <li class="premium-breadcrumb__item premium-breadcrumb__item--current">
+                      <span aria-current="page">{{ level_2.title }}</span>
+                    </li>
+                  {%- else -%}
+                    <li class="premium-breadcrumb__item">
+                      <a href="{{ level_2.url }}" class="premium-breadcrumb__link">{{ level_2.title }}</a>
+                    </li>
+                  {%- endif -%}
                 {%- endif -%}
 
+                {%- unless menu_match_found -%}
+                  {%- for level_3 in level_2.links -%}
+                    {%- if menu_match_found -%}{%- break -%}{%- endif -%}
+
+                    {%- if level_3.url == collection.url -%}
+                      {%- assign menu_match_found = true -%}
+                      {%- assign last_menu_title = level_3.title -%}
+                      <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+                      <li class="premium-breadcrumb__item">
+                        <a href="{{ level_1.url }}" class="premium-breadcrumb__link">{{ level_1.title }}</a>
+                      </li>
+                      <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+                      <li class="premium-breadcrumb__item">
+                        <a href="{{ level_2.url }}" class="premium-breadcrumb__link">{{ level_2.title }}</a>
+                      </li>
+                      <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+                      {%- assign title_down = level_3.title | downcase -%}
+                      {%- assign coll_down = collection.title | downcase -%}
+                      {%- if title_down == coll_down -%}
+                        <li class="premium-breadcrumb__item premium-breadcrumb__item--current">
+                          <span aria-current="page">{{ level_3.title }}</span>
+                        </li>
+                      {%- else -%}
+                        <li class="premium-breadcrumb__item">
+                          <a href="{{ level_3.url }}" class="premium-breadcrumb__link">{{ level_3.title }}</a>
+                        </li>
+                      {%- endif -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                {%- endunless -%}
               {%- endfor -%}
-
-            {%- endfor -%}
-
+            {%- endunless -%}
           {%- endfor -%}
 
-          {%- unless menu_match_found -%}
-
+          {%- if menu_match_found -%}
+            {%- assign title_down = last_menu_title | downcase -%}
+            {%- assign coll_down = collection.title | downcase -%}
+            {%- if title_down != coll_down -%}
+              <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+              <li class="premium-breadcrumb__item premium-breadcrumb__item--current">
+                <span aria-current="page">{{ collection.title }}</span>
+              </li>
+            {%- endif -%}
+          {%- else -%}
             <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
-
             <li class="premium-breadcrumb__item premium-breadcrumb__item--current">
-              <span aria-current="page">
-                {{ collection.title }}
-              </span>
+              <span aria-current="page">{{ collection.title }}</span>
             </li>
-
-          {%- endunless -%}
+          {%- endif -%}
 
 
         {%- comment -%}
@@ -165,111 +159,60 @@
 
           {%- assign breadcrumb_collection = collection -%}
 
-          {%- if breadcrumb_collection == blank and product.collections.size > 0 -%}
-            {%- assign breadcrumb_collection = product.collections.first -%}
-          {%- endif -%}
-
-
           {%- if breadcrumb_collection != blank -%}
 
             {%- assign collection_path_found = false -%}
 
             {%- for level_1 in breadcrumb_menu.links -%}
+              {%- if collection_path_found -%}{%- break -%}{%- endif -%}
 
               {%- if level_1.url == breadcrumb_collection.url -%}
-
                 {%- assign collection_path_found = true -%}
-
                 <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
-
                 <li class="premium-breadcrumb__item">
-                  <a
-                    href="{{ level_1.url }}"
-                    class="premium-breadcrumb__link"
-                  >
-                    {{ level_1.title }}
-                  </a>
+                  <a href="{{ level_1.url }}" class="premium-breadcrumb__link">{{ level_1.title }}</a>
                 </li>
-
               {%- endif -%}
 
+              {%- unless collection_path_found -%}
+                {%- for level_2 in level_1.links -%}
+                  {%- if collection_path_found -%}{%- break -%}{%- endif -%}
 
-              {%- for level_2 in level_1.links -%}
-
-                {%- if level_2.url == breadcrumb_collection.url -%}
-
-                  {%- assign collection_path_found = true -%}
-
-                  <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
-
-                  <li class="premium-breadcrumb__item">
-                    <a
-                      href="{{ level_1.url }}"
-                      class="premium-breadcrumb__link"
-                    >
-                      {{ level_1.title }}
-                    </a>
-                  </li>
-
-                  <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
-
-                  <li class="premium-breadcrumb__item">
-                    <a
-                      href="{{ level_2.url }}"
-                      class="premium-breadcrumb__link"
-                    >
-                      {{ level_2.title }}
-                    </a>
-                  </li>
-
-                {%- endif -%}
-
-
-                {%- for level_3 in level_2.links -%}
-
-                  {%- if level_3.url == breadcrumb_collection.url -%}
-
+                  {%- if level_2.url == breadcrumb_collection.url -%}
                     {%- assign collection_path_found = true -%}
-
                     <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
-
                     <li class="premium-breadcrumb__item">
-                      <a
-                        href="{{ level_1.url }}"
-                        class="premium-breadcrumb__link"
-                      >
-                        {{ level_1.title }}
-                      </a>
+                      <a href="{{ level_1.url }}" class="premium-breadcrumb__link">{{ level_1.title }}</a>
                     </li>
-
                     <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
-
                     <li class="premium-breadcrumb__item">
-                      <a
-                        href="{{ level_2.url }}"
-                        class="premium-breadcrumb__link"
-                      >
-                        {{ level_2.title }}
-                      </a>
+                      <a href="{{ level_2.url }}" class="premium-breadcrumb__link">{{ level_2.title }}</a>
                     </li>
-
-                    <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
-
-                    <li class="premium-breadcrumb__item">
-                      <a
-                        href="{{ level_3.url }}"
-                        class="premium-breadcrumb__link"
-                      >
-                        {{ level_3.title }}
-                      </a>
-                    </li>
-
                   {%- endif -%}
 
+                  {%- unless collection_path_found -%}
+                    {%- for level_3 in level_2.links -%}
+                      {%- if collection_path_found -%}{%- break -%}{%- endif -%}
+
+                      {%- if level_3.url == breadcrumb_collection.url -%}
+                        {%- assign collection_path_found = true -%}
+                        <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+                        <li class="premium-breadcrumb__item">
+                          <a href="{{ level_1.url }}" class="premium-breadcrumb__link">{{ level_1.title }}</a>
+                        </li>
+                        <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+                        <li class="premium-breadcrumb__item">
+                          <a href="{{ level_2.url }}" class="premium-breadcrumb__link">{{ level_2.title }}</a>
+                        </li>
+                        <li class="premium-breadcrumb__separator" aria-hidden="true">/</li>
+                        <li class="premium-breadcrumb__item">
+                          <a href="{{ level_3.url }}" class="premium-breadcrumb__link">{{ level_3.title }}</a>
+                        </li>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  {%- endunless -%}
                 {%- endfor -%}
-
-              {%- endfor -%}
-
+              {%- endunless -%}
             {%- endfor -%}
 
 
