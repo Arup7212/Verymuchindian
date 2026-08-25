@@ -18,11 +18,11 @@
   .theme-drawer__dialog {
     --theme-drawer-padding: var(--padding-xl);
 
-    z-index: calc(var(--layer-sticky) + var(--drawer-stack-order, 0));
+    z-index: 99999;
     position: fixed;
     inset: unset;
     top: 0;
-    right: calc(-1 * var(--theme-drawer-width, var(--sidebar-width)));
+    right: 0;
     flex-direction: column;
     width: var(--theme-drawer-width, var(--sidebar-width));
     max-width: 100%;
@@ -33,49 +33,90 @@
     border-left: var(--style-border-drawer);
     background-color: var(--color-background);
     color: var(--color-foreground);
+    box-shadow: -6px 0 40px rgba(0, 0, 0, 0.22);
+    will-change: transform;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  .page-wrapper--drawer-open {
+    margin-right: 0 !important;
   }
 
   .theme-drawer__dialog[open] {
     display: flex;
-    right: 0;
+    transform: translate3d(0, 0, 0);
   }
 
   .theme-drawer__dialog--opening {
-    animation: drawer-slide-in var(--animation-speed) var(--animation-timing-fade-in);
+    animation: drawer-slide-in 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .theme-drawer__dialog--opening-inline-start {
-    animation: drawer-slide-in-inline-start var(--animation-speed) var(--animation-timing-fade-in);
+    animation: drawer-slide-in-inline-start 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .theme-drawer__dialog--closing {
-    animation: drawer-slide-out var(--animation-speed) var(--animation-timing-fade-out) forwards;
+    animation: drawer-slide-out 0.28s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
   .theme-drawer__dialog-instant {
-    animation: none;
+    animation: none !important;
+    transition: none !important;
   }
 
   @keyframes drawer-slide-in {
     from {
-      right: calc(-1 * var(--theme-drawer-width, var(--sidebar-width)));
+      transform: translate3d(100%, 0, 0);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
     }
   }
 
   @keyframes drawer-slide-in-inline-start {
     from {
-      right: calc(var(--theme-drawer-width, var(--sidebar-width)) / 2);
+      transform: translate3d(50%, 0, 0);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
     }
   }
 
   @keyframes drawer-slide-out {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
     to {
-      right: calc(-1 * var(--theme-drawer-width, var(--sidebar-width)));
+      transform: translate3d(100%, 0, 0);
     }
   }
 
   .theme-drawer__dialog::backdrop {
-    background: rgb(var(--backdrop-color-rgb) / var(--backdrop-opacity));
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(3px);
+    animation: drawer-backdrop-fade-in 0.35s ease forwards;
+  }
+
+  .theme-drawer__dialog--closing::backdrop {
+    animation: drawer-backdrop-fade-out 0.25s ease forwards;
+  }
+
+  @keyframes drawer-backdrop-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes drawer-backdrop-fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
   }
 
   /* Exclude open drawers from the page navigation cross-fade so they

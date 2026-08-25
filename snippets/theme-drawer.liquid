@@ -58,52 +58,11 @@
       drawer.dispatchEvent(new CustomEvent('theme-drawer:restoring'));
     }
 
-    // Apply squeeze immediately, bypassing the margin transition.
-    // Only squeeze if at least one drawer was actually restored — saved
-    // drawer IDs may not exist on every page (e.g. cart-drawer on /cart).
+    // Drawer opens as an absolute/fixed overlay on top of page content without squeezing page-wrapper
     var pageWrapper = document.querySelector('.page-wrapper');
-    if (pageWrapper && dialogs.length > 0) {
-      pageWrapper.style.transition = 'none';
-      pageWrapper.classList.add('page-wrapper--drawer-open');
+    if (pageWrapper) {
+      pageWrapper.classList.remove('page-wrapper--drawer-open');
     }
-
-    // Re-enable transitions after one paint so the instant state is rendered first.
-    requestAnimationFrame(function () {
-      requestAnimationFrame(function () {
-        if (pageWrapper) pageWrapper.style.transition = '';
-        for (var j = 0; j < dialogs.length; j++) {
-          dialogs[j].classList.remove('theme-drawer__dialog-instant');
-        }
-      });
-    });
-  })();
-</script>
-
-<script
-  type="module"
->
-  const pageWrapper = document.querySelector('.page-wrapper');
-  const squeezeQuery = window.matchMedia('(min-width: 990px)');
-
-  // ── Squeeze coordination ──
-  // Listens to all drawers. Only squeezes on wide viewports.
-  document.addEventListener('theme-drawer:open', () => {
-    if (squeezeQuery.matches) {
-      pageWrapper?.classList.add('page-wrapper--drawer-open');
-    }
-  });
-
-  document.addEventListener('theme-drawer:close', () => {
-    const openDrawer = document.querySelector('theme-drawer[open]');
-    if (!openDrawer) {
-      pageWrapper?.classList.remove('page-wrapper--drawer-open');
-    }
-  });
-
-  squeezeQuery.addEventListener('change', () => {
-    const openDrawer = document.querySelector('theme-drawer[open]');
-    pageWrapper?.classList.toggle('page-wrapper--drawer-open', Boolean(openDrawer) && squeezeQuery.matches);
-  });
 
   // ── State persistence ──
   // Store open drawer IDs sorted by their visual stack order so
