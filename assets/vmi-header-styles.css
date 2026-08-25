@@ -256,6 +256,7 @@ header-actions {
   position: relative;
   display: inline-block;
   padding: 28px 0px; 
+  cursor:pointer;
   /* Space for underline */
 }
 
