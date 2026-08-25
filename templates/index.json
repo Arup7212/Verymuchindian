@@ -1147,6 +1147,7 @@
     },
     "shark_tank_banner_VzrC8T": {
       "type": "shark-tank-banner",
+      "disabled": true,
       "name": "Shark Tank Banner",
       "settings": {
         "image_desktop": "shopify://shop_images/Desktop_jpg.jpg",
@@ -1171,6 +1172,22 @@
         "stat_3_label": "Authentic",
         "btn_text": "Shop Namita's Curated Collection",
         "btn_link": ""
+      }
+    },
+    "vmi_proud_moment_banner_VCjFRq": {
+      "type": "vmi-proud-moment-banner",
+      "name": "Proud Moment Banner",
+      "settings": {
+        "image": "shopify://shop_images/Desktop_jpg.jpg",
+        "image_mobile": "shopify://shop_images/Mobile_Top_jpg.jpg",
+        "background_color": "#35336f",
+        "subtitle": "Proud Moment For",
+        "title": "<p><strong>Very Much Indian</strong> &<br/>Traditional Weavers</p>",
+        "highlight_color": "#d1358a",
+        "description": "<p>Our journey celebrates the beauty of Indian craftsmanship, culture, and timeless sarees.</p>",
+        "stats": "4.9/5 Rated • 50K+ Customers • 100% Authentic",
+        "button_label": "Explore the Collection →",
+        "button_link": ""
       }
     },
     "premium_edit_collection_g6efFT": {
@@ -1682,6 +1699,7 @@
     "shop_by_price_xfF4YB",
     "proud_moment_YwpchN",
     "shark_tank_banner_VzrC8T",
+    "vmi_proud_moment_banner_VCjFRq",
     "premium_edit_collection_g6efFT",
     "178582077294cc6d67",
     "loom_to_you_UgniMg",

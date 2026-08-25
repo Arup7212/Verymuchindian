@@ -1,0 +1,103 @@
+{%- assign add_ons = closest.product.metafields.custom.wear_add_on.value -%}
+{%- if add_ons != blank -%}
+  {{ 'wear-add-ons.css' | asset_url | stylesheet_tag }}
+  <div class="wear-add-ons-container" data-wear-add-ons>
+    <div class="wear-add-ons-header">
+      Make it ready to wear
+    </div>
+    <div class="wear-add-ons-list">
+      {%- for add_on_product in add_ons -%}
+        {%- assign variant = add_on_product.selected_or_first_available_variant -%}
+        <label class="wear-add-on-item" for="wear-add-on-{{ variant.id }}">
+          <input 
+            type="checkbox" 
+            id="wear-add-on-{{ variant.id }}" 
+            class="wear-add-on-checkbox"
+            data-variant-id="{{ variant.id }}"
+          >
+          {%- if add_on_product.featured_image -%}
+            <img class="wear-add-on-image" src="{{ add_on_product.featured_image | image_url: width: 100 }}" alt="{{ add_on_product.title | escape }}">
+          {%- endif -%}
+          <div class="wear-add-on-details">
+            <h4 class="wear-add-on-title">{{ add_on_product.title }}</h4>
+            <p class="wear-add-on-desc">{{ add_on_product.description | strip_html | truncatewords: 8 }}</p>
+          </div>
+          <div class="wear-add-on-price">
+            {{ variant.price | money }}
+          </div>
+        </label>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.querySelector('[data-wear-add-ons]');
+      if (!container) return;
+      
+      const form = container.closest('form') || document.querySelector('form[action*="/cart/add"]');
+      if (!form) return;
+
+      form.addEventListener('submit', (e) => {
+        const checkedAddOns = container.querySelectorAll('.wear-add-on-checkbox:checked');
+        if (checkedAddOns.length > 0 && !form.dataset.handlingAddOns) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          
+          form.dataset.handlingAddOns = "true";
+          
+          let items = [];
+          
+          // Add main product
+          const mainVariantInput = form.querySelector('[name="id"]');
+          const mainQtyInput = form.querySelector('[name="quantity"]');
+          if (mainVariantInput) {
+            items.push({
+              id: mainVariantInput.value,
+              quantity: mainQtyInput ? mainQtyInput.value : 1
+            });
+          }
+          
+          // Add add-ons
+          checkedAddOns.forEach(cb => {
+            items.push({
+              id: cb.dataset.variantId,
+              quantity: 1
+            });
+          });
+          
+          // Add button loading state if applicable
+          const btn = form.querySelector('button[type="submit"]');
+          if (btn) btn.classList.add('loading');
+          
+          fetch(window.Shopify.routes.root + 'cart/add.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ items: items })
+          })
+          .then(response => response.json())
+          .then(data => {
+            window.location.href = window.Shopify.routes.root + 'cart';
+          })
+          .catch(error => {
+            console.error('Error adding to cart:', error);
+            form.dataset.handlingAddOns = "false";
+            if (btn) btn.classList.remove('loading');
+          });
+        }
+      }, true); // use capture phase to intercept before ProductFormComponent
+    });
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Wear Add-ons",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Wear Add-ons"
+    }
+  ]
+}
+{% endschema %}
