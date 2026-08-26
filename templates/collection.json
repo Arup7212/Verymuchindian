@@ -210,7 +210,7 @@
         "layout_style": "grid",
         "enable_autoplay": true,
         "autoplay_speed": 4,
-        "circle_size": 190,
+        "circle_size": 140,
         "show_arrows": true
       }
     },
