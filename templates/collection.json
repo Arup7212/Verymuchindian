@@ -107,6 +107,7 @@
           "type": "fabric_item",
           "settings": {
             "collection": "",
+            "image": "shopify://shop_images/gaurangi-garden-of-heritage-handloom-all-over-pure-silk-paithani-saree-with-floral-handwork-in-zari-pink-shipping-in-90-days-7746311_900x_c9c3933a-73b1-4265-b93f-7144c4811698.webp",
             "title": "Pure Silk",
             "url": ""
           }
@@ -115,6 +116,7 @@
           "type": "fabric_item",
           "settings": {
             "collection": "",
+            "image": "shopify://shop_images/HMP_3833-Copy.webp",
             "title": "Chiffon",
             "url": ""
           }
@@ -123,6 +125,7 @@
           "type": "fabric_item",
           "settings": {
             "collection": "",
+            "image": "shopify://shop_images/HMP_2606.webp",
             "title": "Cotton Linen",
             "url": ""
           }
@@ -131,6 +134,7 @@
           "type": "fabric_item",
           "settings": {
             "collection": "",
+            "image": "shopify://shop_images/HMP_3003.webp",
             "title": "Cotton Silk",
             "url": ""
           }
@@ -148,6 +152,7 @@
           "type": "fabric_item",
           "settings": {
             "collection": "",
+            "image": "shopify://shop_images/HMP_4143.webp",
             "title": "Katan Silk",
             "url": ""
           }
@@ -203,7 +208,7 @@
       ],
       "name": "Shop By Fabric",
       "settings": {
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "heading": "",
         "subtitle": "",
         "layout_style": "grid",
