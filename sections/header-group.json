@@ -162,8 +162,8 @@
         "current_font_weight": "600"
       }
     },
-    "breadcramp_aG39Xz": {
-      "type": "breadcramp",
+    "custom_breadcramp_aN4UJk": {
+      "type": "custom-breadcramp",
       "name": "Breadcrumb",
       "settings": {}
     }
@@ -172,6 +172,6 @@
     "header_announcements_9jGBFp",
     "header_section",
     "breadcrumb_xJwzwy",
-    "breadcramp_aG39Xz"
+    "custom_breadcramp_aN4UJk"
   ]
 }
