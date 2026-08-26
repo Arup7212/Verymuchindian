@@ -268,3 +268,75 @@
     padding: 3px 8px;
   }
 }
+
+/* Product Details 50/50 Desktop Half-Half Split & Full-Width Media */
+.product-information.section--page-width,
+.product-information.section {
+  max-width: 1440px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box !important;
+}
+
+@media screen and (max-width: 1024px) {
+  .product-information.section--page-width,
+  .product-information.section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .product-information.section--page-width,
+  .product-information.section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .product-information .product-information__grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 40px !important;
+    align-items: start !important;
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+  }
+
+  .product-information .product-information__media {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    grid-column: 1 / 2 !important;
+  }
+
+  .product-information .product-details {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    grid-column: 2 / 3 !important;
+  }
+
+  .product-information media-gallery {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .product-information .product-media-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: none !important;
+  }
+
+  .product-information .product-media-constraint-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
