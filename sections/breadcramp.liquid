@@ -1,0 +1,92 @@
+{% style %}
+.global-breadcrumb {
+  padding: 20px 40px;
+  font-size: 0.75rem; 
+  letter-spacing: 1.5px; 
+  text-transform: uppercase; 
+  color: rgb(var(--color-foreground-rgb) / 0.5);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.global-breadcrumb a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+.global-breadcrumb a:hover {
+  color: var(--color-foreground);
+}
+.global-breadcrumb span.separator {
+  margin: 0 10px;
+  opacity: 0.5;
+}
+.global-breadcrumb .current {
+  color: var(--color-foreground);
+}
+@media screen and (max-width: 768px) {
+  .global-breadcrumb {
+    padding: 15px 20px;
+    font-size: 0.7rem;
+  }
+}
+{% endstyle %}
+
+{% unless template == 'index' %}
+<div class="global-breadcrumb">
+  <a href="{{ routes.root_url }}">Home</a>
+
+  {% if template contains 'product' %}
+    {% if collection %}
+      <span class="separator">/</span>
+      <a href="{{ collection.url }}">{{ collection.title }}</a>
+    {% elsif product.collections.size > 0 %}
+      <span class="separator">/</span>
+      <a href="{{ product.collections.first.url }}">{{ product.collections.first.title }}</a>
+    {% endif %}
+    <span class="separator">/</span>
+    <span class="current">{{ product.title }}</span>
+
+  {% elsif template contains 'collection' and collection.handle %}
+    <span class="separator">/</span>
+    <span class="current">{{ collection.title }}</span>
+
+  {% elsif template contains 'page' %}
+    <span class="separator">/</span>
+    <span class="current">{{ page.title }}</span>
+
+  {% elsif template == 'cart' %}
+    <span class="separator">/</span>
+    <span class="current">Cart</span>
+
+  {% elsif template contains 'blog' or template contains 'article' %}
+    <span class="separator">/</span>
+    <a href="{{ blog.url }}">{{ blog.title }}</a>
+    {% if article %}
+      <span class="separator">/</span>
+      <span class="current">{{ article.title }}</span>
+    {% endif %}
+
+  {% elsif template contains 'search' %}
+    <span class="separator">/</span>
+    <span class="current">Search</span>
+
+  {% else %}
+    {% if page_title != blank %}
+      <span class="separator">/</span>
+      <span class="current">{{ page_title }}</span>
+    {% endif %}
+  {% endif %}
+</div>
+{% endunless %}
+
+{% schema %}
+{
+  "name": "Breadcrumb",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Breadcrumb"
+    }
+  ]
+}
+{% endschema %}
