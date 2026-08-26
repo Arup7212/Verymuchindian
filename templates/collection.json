@@ -100,6 +100,120 @@
         "padding-block-end": 48
       }
     },
+    "shop_by_fabric_xkTBwY": {
+      "type": "shop-by-fabric",
+      "blocks": {
+        "fabric_item_9Yj3PK": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "title": "Pure Silk",
+            "url": ""
+          }
+        },
+        "fabric_item_nELqfi": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "title": "Chiffon",
+            "url": ""
+          }
+        },
+        "fabric_item_dGYaTt": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "title": "Cotton Linen",
+            "url": ""
+          }
+        },
+        "fabric_item_H7TKAb": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "title": "Cotton Silk",
+            "url": ""
+          }
+        },
+        "fabric_item_rpXEgJ": {
+          "type": "fabric_item",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/designer-masterpiece-handloom-all-over-zari-pure-silver-zari-silk-paithani-saree-1526122_900x_eccc0fd9-9310-4a6c-9ca2-3b444d0e840c.webp",
+            "title": "Dupion Silk",
+            "url": ""
+          }
+        },
+        "fabric_item_mgb68t": {
+          "type": "fabric_item",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "title": "Katan Silk",
+            "url": ""
+          }
+        },
+        "fabric_item_4Lq89C": {
+          "type": "fabric_item",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "title": "Organza",
+            "url": ""
+          }
+        },
+        "fabric_item_zCq4hy": {
+          "type": "fabric_item",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "title": "Mul Cotton",
+            "url": ""
+          }
+        },
+        "fabric_item_9EVi7r": {
+          "type": "fabric_item",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "title": "Tussar Silk",
+            "url": ""
+          }
+        },
+        "fabric_item_mf9UGz": {
+          "type": "fabric_item",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "title": "Georgette",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "fabric_item_9Yj3PK",
+        "fabric_item_nELqfi",
+        "fabric_item_dGYaTt",
+        "fabric_item_H7TKAb",
+        "fabric_item_rpXEgJ",
+        "fabric_item_mgb68t",
+        "fabric_item_4Lq89C",
+        "fabric_item_zCq4hy",
+        "fabric_item_9EVi7r",
+        "fabric_item_mf9UGz"
+      ],
+      "name": "Shop By Fabric",
+      "settings": {
+        "background_color": "#FFFFFF",
+        "heading": "Best Sellers",
+        "subtitle": "",
+        "layout_style": "grid",
+        "enable_autoplay": true,
+        "autoplay_speed": 4,
+        "circle_size": 190,
+        "show_arrows": true
+      }
+    },
     "main": {
       "type": "main-collection",
       "blocks": {
@@ -108,9 +222,9 @@
           "static": true,
           "settings": {
             "enable_filtering": true,
-            "filter_style": "horizontal",
+            "filter_style": "vertical",
             "filter_width": "centered",
-            "text_label_case": "default",
+            "text_label_case": "uppercase",
             "show_swatch_label": false,
             "show_filter_label": false,
             "enable_sorting": true,
@@ -234,6 +348,7 @@
   },
   "order": [
     "section",
+    "shop_by_fabric_xkTBwY",
     "main"
   ]
 }
