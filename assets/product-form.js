@@ -330,6 +330,37 @@ class ProductFormComponent extends Component {
       return;
     }
 
+    const form = this.querySelector('form');
+    if (form) {
+      const wearAddOnsContainer = form.querySelector('[data-wear-add-ons]') || document.querySelector('[data-wear-add-ons]');
+      if (wearAddOnsContainer) {
+        const checkedAddOns = wearAddOnsContainer.querySelectorAll('.wear-add-on-checkbox:checked');
+        if (checkedAddOns.length > 0) {
+          let items = [];
+          
+          // Add main product
+          const mainVariantInput = /** @type {HTMLInputElement} */ (form.querySelector('[name="id"]'));
+          if (mainVariantInput) {
+            items.push({
+              variantId: mainVariantInput.value,
+              quantity: this.#getQuantity()
+            });
+          }
+          
+          // Add add-ons
+          checkedAddOns.forEach(cb => {
+            items.push({
+              variantId: cb.getAttribute('data-variant-id'),
+              quantity: 1
+            });
+          });
+          
+          this.#processBatchAddToCart(items);
+          return;
+        }
+      }
+    }
+
     this.#processAddToCart(undefined, undefined, event);
   }
 

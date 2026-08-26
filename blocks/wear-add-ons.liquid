@@ -38,27 +38,61 @@
       const form = container.closest('form') || document.querySelector('form[action*="/cart/add"]');
       if (!form) return;
 
-      form.addEventListener('submit', (e) => {
-        const checkedAddOns = container.querySelectorAll('.wear-add-on-checkbox:checked');
-        if (checkedAddOns.length > 0 && !form.dataset.handlingAddOns) {
+      const checkboxes = container.querySelectorAll('.wear-add-on-checkbox');
+      const acceleratedCheckout = form.querySelector('.accelerated-checkout-block');
+      
+      if (acceleratedCheckout && checkboxes.length > 0) {
+        // Create an overlay to intercept clicks
+        const overlay = document.createElement('div');
+        overlay.style.position = 'absolute';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.width = '100%';
+        overlay.style.height = '100%';
+        overlay.style.zIndex = '10';
+        overlay.style.cursor = 'pointer';
+        overlay.style.display = 'none';
+        
+        // Ensure the container is positioned relative so the absolute overlay covers it
+        acceleratedCheckout.style.position = 'relative';
+        acceleratedCheckout.appendChild(overlay);
+
+        const toggleOverlay = () => {
+          const anyChecked = Array.from(checkboxes).some(cb => cb.checked);
+          if (anyChecked) {
+            overlay.style.display = 'block';
+          } else {
+            overlay.style.display = 'none';
+          }
+        };
+
+        checkboxes.forEach(cb => {
+          cb.addEventListener('change', toggleOverlay);
+        });
+        
+        toggleOverlay();
+
+        overlay.addEventListener('click', (e) => {
           e.preventDefault();
-          e.stopImmediatePropagation();
-          
-          form.dataset.handlingAddOns = "true";
+          e.stopPropagation();
+
+          // Show some loading state on the overlay if desired
+          overlay.style.backgroundColor = 'rgba(255,255,255,0.5)';
           
           let items = [];
           
-          // Add main product
+          // Main product
           const mainVariantInput = form.querySelector('[name="id"]');
           const mainQtyInput = form.querySelector('[name="quantity"]');
           if (mainVariantInput) {
             items.push({
               id: mainVariantInput.value,
-              quantity: mainQtyInput ? mainQtyInput.value : 1
+              quantity: mainQtyInput ? parseInt(mainQtyInput.value) || 1 : 1
             });
           }
           
-          // Add add-ons
+          // Add-ons
+          const checkedAddOns = container.querySelectorAll('.wear-add-on-checkbox:checked');
           checkedAddOns.forEach(cb => {
             items.push({
               id: cb.dataset.variantId,
@@ -66,26 +100,21 @@
             });
           });
           
-          // Add button loading state if applicable
-          const btn = form.querySelector('button[type="submit"]');
-          if (btn) btn.classList.add('loading');
-          
           fetch(window.Shopify.routes.root + 'cart/add.js', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ items: items })
           })
           .then(response => response.json())
-          .then(data => {
-            window.location.href = window.Shopify.routes.root + 'cart';
+          .then(() => {
+            window.location.href = window.Shopify.routes.root + 'checkout';
           })
           .catch(error => {
             console.error('Error adding to cart:', error);
-            form.dataset.handlingAddOns = "false";
-            if (btn) btn.classList.remove('loading');
+            overlay.style.backgroundColor = 'transparent';
           });
-        }
-      }, true); // use capture phase to intercept before ProductFormComponent
+        });
+      }
     });
   </script>
 {%- endif -%}
