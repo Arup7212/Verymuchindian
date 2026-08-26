@@ -46,8 +46,8 @@
             "thumbnail_width": 44,
             "thumbnail_radius": 0,
             "aspect_ratio": "1/1.25",
-            "constrain_to_viewport": false,
-            "media_fit": "cover",
+            "constrain_to_viewport": true,
+            "media_fit": "contain",
             "media_radius": 0,
             "extend_media": false,
             "zoom": true,
@@ -131,7 +131,7 @@
                   "type": "text",
                   "name": "t:names.product_title",
                   "settings": {
-                    "text": "<h1 class=\"vmi-product-title\">{{ closest.product.title }}</h1>",
+                    "text": "<h1>{{ closest.product.title }}</h1>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -325,7 +325,7 @@
       "settings": {
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
-        "equal_columns": true,
+        "equal_columns": false,
         "limit_details_width": false,
         "gap": 48,
         "enable_sticky_add_to_cart": true,
