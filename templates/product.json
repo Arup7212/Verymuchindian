@@ -6,7 +6,8 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
     "main": {
       "type": "product-information",
@@ -38,6 +39,7 @@
             "media_columns": "two",
             "image_gap": 4,
             "large_first_image": false,
+            "icons_style": "arrow",
             "slideshow_controls_style": "counter",
             "slideshow_mobile_controls_style": "dots",
             "thumbnail_position": "right",
@@ -116,6 +118,7 @@
                 "border_opacity": 100,
                 "border_color": "",
                 "border_radius": 0,
+                "link": "",
                 "open_in_new_tab": false,
                 "placeholder": "",
                 "padding-block-start": 0,
@@ -189,6 +192,12 @@
                 "padding-block-start": 0,
                 "padding-block-end": 0
               },
+              "blocks": {}
+            },
+            "wear_add_ons_Dtwc9d": {
+              "type": "wear-add-ons",
+              "name": "Wear Add-ons",
+              "settings": {},
               "blocks": {}
             },
             "variant_picker_R3rGDr": {
@@ -303,6 +312,7 @@
           "block_order": [
             "group_icgrde",
             "divider_VJhene",
+            "wear_add_ons_Dtwc9d",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
             "text_aEtTtq"
