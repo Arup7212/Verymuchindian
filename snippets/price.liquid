@@ -15,8 +15,11 @@
   assign compare_at_price = selected_variant.compare_at_price
 
   assign show_compare_price = false
+  assign discount_percentage = 0
   if compare_at_price > price
     assign show_compare_price = true
+    assign discount_amount = compare_at_price | minus: price
+    assign discount_percentage = discount_amount | times: 100.0 | divided_by: compare_at_price | round
   endif
 
   if product_resource == blank
@@ -72,7 +75,7 @@
   endif
 -%}
 
-<div ref="priceContainer">
+<div ref="priceContainer" class="price-container">
   {% if has_volume_pricing %}
     {% comment %} Volume pricing display {% endcomment %}
     {% if show_compare_price %}
@@ -105,6 +108,11 @@
         <span class="price-item__group price">
           <span class="visually-hidden">{{ 'content.price_sale' | t }}&nbsp;</span>
           {{ price | default: '&nbsp;' }}
+        </span>
+      {% endif %}
+      {% if discount_percentage > 0 %}
+        <span class="price-sale-badge">
+          SAVE {{ discount_percentage }}%
         </span>
       {% endif %}
     {% else %}

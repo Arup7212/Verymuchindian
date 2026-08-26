@@ -1,32 +1,7 @@
-<style>
-  .product-title-wrapper {
-    position: relative;
-    margin-bottom: 0;
-  }
-  .product-title-text { 
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;  
-    overflow: hidden;
-    margin: 0;
-  }
-  .product-title-text.expanded {
-    -webkit-line-clamp: unset;
-  }
-  .product-title-read-more {
-    font-size: 14px; 
-    font-family: var(--font-body--family); 
-    font-weight: normal; 
-    text-decoration: underline; 
-    color: var(--color-foreground, #3B326B); 
-    cursor: pointer;
-    display: inline-block; 
-    margin-top: 4px;
-  }
-</style>
+
 
 <div class="product-title-wrapper">
-  <h1 id="pt-text" class="product-title-text">{{ closest.product.title }}</h1>
+  <h1 id="pt-text" class="product-title-text vmi-product-title">{{ closest.product.title }}</h1>
   <a id="pt-btn" class="product-title-read-more" href="#" onclick="event.preventDefault(); var t=document.getElementById('pt-text'); t.classList.toggle('expanded'); this.innerText = t.classList.contains('expanded') ? 'show less' : '...read more';">...read more</a>
 </div>
 
