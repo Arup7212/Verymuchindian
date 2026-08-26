@@ -141,6 +141,7 @@
     },
     "breadcrumb_xJwzwy": {
       "type": "breadcrumb",
+      "disabled": true,
       "name": "Premium Breadcrumb",
       "settings": {
         "breadcrumb_menu": "main-menu",
@@ -154,17 +155,23 @@
         "font_size": 16,
         "mobile_font_size": 14,
         "background_color": "#ffffff",
-        "link_color": "#37348A",
+        "link_color": "#37348a",
         "link_hover_color": "#111111",
         "current_color": "#111111",
         "separator_color": "#555555",
         "current_font_weight": "600"
       }
+    },
+    "breadcramp_aG39Xz": {
+      "type": "breadcramp",
+      "name": "Breadcrumb",
+      "settings": {}
     }
   },
   "order": [
     "header_announcements_9jGBFp",
     "header_section",
-    "breadcrumb_xJwzwy"
+    "breadcrumb_xJwzwy",
+    "breadcramp_aG39Xz"
   ]
 }
