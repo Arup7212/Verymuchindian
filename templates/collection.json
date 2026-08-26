@@ -146,7 +146,6 @@
         },
         "fabric_item_mgb68t": {
           "type": "fabric_item",
-          "disabled": true,
           "settings": {
             "collection": "",
             "title": "Katan Silk",
