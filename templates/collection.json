@@ -204,7 +204,7 @@
       "name": "Shop By Fabric",
       "settings": {
         "background_color": "#FFFFFF",
-        "heading": "Best Sellers",
+        "heading": "",
         "subtitle": "",
         "layout_style": "grid",
         "enable_autoplay": true,
